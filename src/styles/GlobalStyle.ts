@@ -43,6 +43,12 @@ export const reset = css`
 export const GlobalStyle = createGlobalStyle`
 ${reset}
 
+ @font-face {
+        font-family: "AppleSDGothicNeo";
+  src: local("Apple SD Gothic Neo Regular"), url('AppleSDGothicNeoT.woff2') format('woff2');
+        font-style: normal;
+  }
+
 #root, body, html {
     max-width: 43rem;
     margin: 0 auto;
