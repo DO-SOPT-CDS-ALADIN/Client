@@ -30,6 +30,8 @@ export default Header;
 const HeaderWrapper = styled.div`
   position: fixed;
   top: 0;
+  z-index: 10;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,18 +66,15 @@ const SearchBar = styled.div`
 
   padding: 0px 1.6rem;
 
-  flex-shrink: 0;
   border-radius: 16px;
+
   background-color: ${({ theme }) => theme.colors.grey_100};
 `;
 
 const PlaceHolder = styled.p`
   color: ${({ theme }) => theme.colors.grey_400};
   text-align: center;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 140%;
+  font: ${({ theme }) => theme.fonts.body2};
 `;
 
 const CartButton = styled.button`
@@ -105,19 +104,15 @@ const CartNumber = styled.p`
   z-index: 1;
 
   display: flex;
-  width: 0.7rem;
-  height: 1.4rem;
   flex-direction: column;
   justify-content: center;
-  flex-shrink: 0;
+
+  width: 0.7rem;
+  height: 1.4rem;
 
   color: ${({ theme }) => theme.colors.white};
   text-align: center;
-  font-size: 1.2rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: -0.06rem;
+  font: ${({ theme }) => theme.fonts.detail1};
 `;
 
 const CartIconWrapper = styled.div`
