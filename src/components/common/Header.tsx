@@ -28,32 +28,42 @@ function Header() {
 export default Header;
 
 const HeaderWrapper = styled.div`
+  position: fixed;
+  top: 0;
   display: flex;
-  width: 375px;
-  height: 48px;
-  padding-left: 0.8rem;
   justify-content: space-between;
   align-items: center;
+
+  width: 37.5rem;
+  height: 4.8rem;
+
+  padding-left: 0.8rem;
+
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 // const SearchBar = styled.div``;
 
 const LogoButton = styled.button`
   display: flex;
-  width: 52px;
-  height: 48px;
-  padding: 12px 2px;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
+
+  width: 52px;
+  height: 48px;
+
+  padding: 12px 2px;
 `;
 
 const SearchBar = styled.div`
   display: flex;
-  width: 236px;
-  height: 32px;
-  padding: 0px 16px;
   justify-content: space-between;
   align-items: center;
+
+  width: 23.6rem;
+  height: 3.2rem;
+
+  padding: 0px 1.6rem;
+
   flex-shrink: 0;
   border-radius: 16px;
   background-color: ${({ theme }) => theme.colors.grey_100};
