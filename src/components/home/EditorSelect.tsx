@@ -175,7 +175,9 @@ const DetailContainer = styled.div`
   height: 10.8rem;
   margin-top: 1.5rem;
   padding: 1.4rem 1.6rem;
-  color: white;
+
   background-color: ${({ theme }) => theme.colors.translucent};
   border-radius: ${({ theme }) => theme.radius.s};
+
+  color: white;
 `;
