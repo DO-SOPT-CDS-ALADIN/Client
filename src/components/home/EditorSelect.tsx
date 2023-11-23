@@ -104,9 +104,11 @@ const EditorSelectWrapper = styled.section`
   position: relative;
 
   width: 100%;
-  height: 50rem;
+  height: 52rem;
+  padding-top: 1.2rem;
 
   background: linear-gradient(to bottom, white 40%, rgba(61, 73, 159, 1) 40%);
+  border-top: 0.1rem solid ${({ theme }) => theme.colors.grey_300};
 
   overflow: hidden;
 `;
