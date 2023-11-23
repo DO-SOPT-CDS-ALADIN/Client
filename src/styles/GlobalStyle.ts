@@ -1,4 +1,5 @@
 import { createGlobalStyle, css } from 'styled-components';
+import AppleSDGothicNeoRegular from '../assets/fonts/AppleSDGothicNeo/AppleSDGothicNeoR.ttf';
 
 export const reset = css`
   * {
@@ -42,6 +43,12 @@ export const reset = css`
 
 export const GlobalStyle = createGlobalStyle`
 ${reset}
+
+ @font-face {
+    font-family: "AppleSDGothicNeo";
+    src: local("AppleSDGothicNeoR"), url(${AppleSDGothicNeoRegular}) format('truetype');
+    font-style: normal;
+}
 
 #root, body, html {
     max-width: 43rem;
