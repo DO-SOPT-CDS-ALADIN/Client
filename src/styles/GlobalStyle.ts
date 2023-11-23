@@ -46,7 +46,7 @@ ${reset}
 
  @font-face {
     font-family: "AppleSDGothicNeo";
-    src: local("AppleSDGothicNeoRegular"), url(${AppleSDGothicNeoRegular}) format('truetype');
+    src: local("AppleSDGothicNeoR"), url(${AppleSDGothicNeoRegular}) format('truetype');
     font-style: normal;
 }
 
