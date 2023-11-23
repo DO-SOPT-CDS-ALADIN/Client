@@ -1,9 +1,8 @@
-import { useEffect } from 'react';
-import './App.css';
 import Router from './components/Router';
 import styled, { ThemeProvider } from 'styled-components';
 import GlobalStyle from './styles/GlobalStyle';
 import theme from './styles/theme';
+import { useEffect } from 'react';
 
 const Wrapper = styled.div`
   background-color: white;
@@ -37,12 +36,14 @@ function App() {
     };
   }, []);
 
-  <Wrapper>
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Router />
-    </ThemeProvider>
-  </Wrapper>;
+  return (
+    <Wrapper>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Router />
+      </ThemeProvider>
+    </Wrapper>
+  );
 }
 
 export default App;
