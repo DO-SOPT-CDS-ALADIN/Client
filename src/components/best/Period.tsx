@@ -28,6 +28,8 @@ const PeriodWrapper = styled.div`
   padding: 1.6rem 0.8rem 0rem 31.7rem;
   justify-content: flex-end;
   align-items: center;
+  border-bottom: 0.5px solid ${({ theme }) => theme.colors.grey_300};
+  background: ${({ theme }) => theme.colors.white};
 `;
 
 const PeriodButton = styled.button`
