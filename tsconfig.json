@@ -6,6 +6,7 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "types": ["vite-plugin-svgr/client"],
 
     /* Bundler mode */
     "moduleResolution": "node",
@@ -21,6 +22,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "src/index.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
