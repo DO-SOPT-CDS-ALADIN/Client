@@ -100,7 +100,7 @@ const fonts = {
 
 const shadows = {
   large: '10px 20px 20px 0px rgba(0, 0, 0, 0.25)',
-  mini: '0px 6px 2px 0px rgba(0, 0, 0, 0.05)',
+  mini: '0px 2px 6px 0px rgba(0, 0, 0, 0.05)',
 };
 
 const radius = {
