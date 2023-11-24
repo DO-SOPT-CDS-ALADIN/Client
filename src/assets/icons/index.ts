@@ -78,6 +78,14 @@ import IcBack from './ic_back.svg?react';
 import IcAudio from './ic_audio.svg?react';
 import IcAd from './ic_ad.svg?react';
 import IcQuickDelivery from './ic_quick_delivery.svg?react';
+import IcStar0 from './ic_star_0.svg?react';
+import IcStar1 from './ic_star_1.svg?react';
+import IcStar2 from './ic_star_2.svg?react';
+import IcStar3 from './ic_star_3.svg?react';
+import IcStar4 from './ic_star_4.svg?react';
+import IcStar5 from './ic_star_5.svg?react';
+import IcEllipse51 from './ic_ellipse_51.svg?react';
+import IcEllipse51Grey from './ic_ellipse_51_grey.svg?react';
 
 export {
   IcUp,
@@ -158,4 +166,12 @@ export {
   IcAudio,
   IcAd,
   IcQuickDelivery,
+  IcStar0,
+  IcStar1,
+  IcStar2,
+  IcStar3,
+  IcStar4,
+  IcStar5,
+  IcEllipse51,
+  IcEllipse51Grey,
 };
