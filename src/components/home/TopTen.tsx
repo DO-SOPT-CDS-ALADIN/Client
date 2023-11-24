@@ -47,34 +47,34 @@ export function NowTime() {
 }
 
 const TopTenWrapper = styled.div`
+  position: relative;
+
   width: 100%;
   height: 23rem;
-  /* border: 1px solid purple; */
   padding-top: 4rem;
-
-  position: relative;
 `;
 
 const FirstRankBook = styled.div`
+  display: flex;
+  align-items: center;
+
   width: 100%;
   height: 5.4rem;
   padding: 0.8rem 1.6rem 0 1.6rem;
-  /* border: 1px solid green; */
-  display: flex;
-  align-items: center;
+
   border-bottom: 0.05rem solid ${({ theme }) => theme.colors.grey_300};
 `;
 
 const FirstRankBookImg = styled.img`
   width: 6.2rem;
   height: 4.6rem;
-  /* border: 1px solid red; */
 `;
 
 const FirstRankBookTitle = styled.div`
   display: flex;
   align-items: center;
   column-gap: 0.8rem;
+
   margin-left: 1rem;
   margin-right: 0.47rem;
 `;
@@ -86,6 +86,7 @@ const BookRank = styled.p`
 
 const BookTitle = styled.p`
   ${({ theme }) => theme.fonts.body2};
+
   width: 21.8rem;
 `;
 
@@ -94,26 +95,32 @@ const RankNumber = styled.p`
 `;
 
 const TagList = styled.div`
-  width: 100%;
   display: flex;
   justify-content: center;
   column-gap: 1rem;
+
+  width: 100%;
   margin-top: 0.8rem;
 `;
 
 const TagWrapper = styled.div`
   ${({ theme }) => theme.fonts.detail2};
+
   padding: 0.8rem 1.6rem;
+
   border: 0.1rem solid ${({ theme }) => theme.colors.grey_300};
   border-radius: 2rem;
 `;
 
 const NowTimeWrapper = styled.div`
   ${({ theme }) => theme.fonts.detail1};
+
   display: flex;
   align-items: center;
-  color: ${({ theme }) => theme.colors.blue_600};
+
   position: absolute;
   top: 5.5rem;
   right: 4.5rem;
+
+  color: ${({ theme }) => theme.colors.blue_600};
 `;
