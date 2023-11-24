@@ -83,7 +83,7 @@ const Category = styled.div`
 
 const ShowButton = styled.div`
   position: sticky;
-  right: -3rem;
+  right: -1.4rem;
 
   display: flex;
   justify-content: center;
