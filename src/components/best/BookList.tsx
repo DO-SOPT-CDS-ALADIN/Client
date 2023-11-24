@@ -6,7 +6,7 @@ function BookList() {
   return (
     <>
       {books.map(index => (
-        <Book key={index} rank={index} tagCount={1} />
+        <Book key={index} rank={index} tagCount={Math.floor(Math.random() * 3) + 1} />
       ))}
     </>
   );
