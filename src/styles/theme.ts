@@ -84,6 +84,18 @@ const fonts = {
     font-size: 1.4rem;
     line-height: 140%;
   `,
+  body3: css`
+    font-family: 'AppleSDGothicNeo';
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: normal;
+  `,
+  body4: css`
+    font-family: 'AppleSDGothicNeo';
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: normal;
+  `,
   detail1: css`
     font-family: 'AppleSDGothicNeo';
     font-weight: 700;
