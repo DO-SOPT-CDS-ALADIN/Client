@@ -5,7 +5,6 @@ import theme from './styles/theme';
 import { useEffect } from 'react';
 
 const Wrapper = styled.div`
-  background-color: white;
   border: none;
   min-height: calc(var(--vh, 1vh) * 100);
   max-width: var(--app-max-width, 375px);
