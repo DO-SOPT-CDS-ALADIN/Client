@@ -136,6 +136,7 @@ const EditorSelectBookImg = styled.img<{ isCurrent: boolean }>`
 const PrevButton = styled.button`
   position: absolute;
   top: 17rem;
+  left: 0.45rem;
 
   font-size: 3rem;
 `;
@@ -143,7 +144,7 @@ const PrevButton = styled.button`
 const NextButton = styled.button`
   position: absolute;
   top: 17rem;
-  right: 0;
+  right: 0.45rem;
 
   font-size: 3rem;
 `;
