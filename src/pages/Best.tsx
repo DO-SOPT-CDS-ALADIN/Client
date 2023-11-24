@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Book from '../components/best/Book';
 import Category from '../components/best/Category';
 import Pagenation from '../components/best/Pagenation';
 import Period from '../components/best/Period';
@@ -11,6 +10,7 @@ import Header from '../components/common/Header';
 import TopButton from '../components/common/TopButton';
 import TopNav from '../components/common/TopNav';
 import PAGE from '../constants/page';
+import BookList from '../components/best/BookList';
 
 function Best() {
   return (
@@ -20,9 +20,7 @@ function Best() {
       <Category />
       <CategoryNav />
       <Period />
-      <Book tagCount={1} />
-      <Book tagCount={2} />
-      <Book tagCount={3} />
+      <BookList />
       <Pagenation />
       <Footer />
       <BackButton />

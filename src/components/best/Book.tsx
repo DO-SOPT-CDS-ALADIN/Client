@@ -11,13 +11,15 @@ import book from '../../assets/imgs/bookImg.png';
 import { TAG } from '../../constants/tag';
 
 interface BookProps {
+  rank: number;
   tagCount: number;
 }
 
 interface TagProps {
   type: number;
 }
-function Book({ tagCount }: BookProps) {
+
+function Book({ rank, tagCount }: BookProps) {
   return (
     <BookWrapper>
       <BookInner>
@@ -29,7 +31,10 @@ function Book({ tagCount }: BookProps) {
           </PreviewButton>
         </Left>
         <Right>
-          <IcRanknumber />
+          <Rank>
+            <IcRanknumber />
+            <RankNum>{rank}</RankNum>
+          </Rank>
           <Title>
             <LargeBlackText>기적의 자세요정</LargeBlackText>
             <GreyText>- 무너진 자세를 바로 세우는</GreyText>
@@ -38,10 +43,10 @@ function Book({ tagCount }: BookProps) {
             <BlackText>자세요정</BlackText>
             <GreyText>(지은이)</GreyText>
           </Writer>
-          <Info>
+          <Writer>
             <BlackText>다산라이프</BlackText>
             <GreyText>I 2023년 10월</GreyText>
-          </Info>
+          </Writer>
           <Info>
             <IcBestIstarSmall />
             <Score>4.0</Score>
@@ -239,4 +244,16 @@ const Button = styled.button`
   border: 1px solid ${({ theme }) => theme.colors.grey_300};
 
   background: ${({ theme }) => theme.colors.white};
+`;
+
+const Rank = styled.div`
+  position: relative;
+`;
+const RankNum = styled.p`
+  position: absolute;
+  top: 0rem;
+  left: 0.45rem;
+
+  color: ${({ theme }) => theme.colors.white};
+  font: ${({ theme }) => theme.fonts.detail1};
 `;
