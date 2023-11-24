@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useState, useRef, useEffect } from 'react';
 import SectionHeader from './SectionHeader';
-import { IcEnter } from '../../assets/icons';
+import { IcEnter, IcBigcircleLeft, IcBigcircleRight } from '../../assets/icons';
 
 const dummyData = [
   {
@@ -84,10 +84,10 @@ function EditorSelect() {
         ))}
       </EditorSelectBookImgContainer>
       <PrevButton onClick={PrevSlide} className="prev_button">
-        ＜
+        <IcBigcircleLeft />
       </PrevButton>
       <NextButton onClick={NextSlide} className="next_button">
-        ＞
+        <IcBigcircleRight />
       </NextButton>
       <BookInfoContainer>
         <Title>{dummyData[currentSlide].title}</Title>
@@ -173,7 +173,7 @@ const SubTitle = styled.p`
 const DetailContainer = styled.div`
   ${({ theme }) => theme.fonts.body2};
 
-  width: 91%;
+  width: 34.3rem;
   height: 10.8rem;
   margin-top: 1.5rem;
   padding: 1.4rem 1.6rem;
@@ -182,4 +182,11 @@ const DetailContainer = styled.div`
   border-radius: ${({ theme }) => theme.radius.s};
 
   color: white;
+
+  white-space: wrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: hidden;
 `;
