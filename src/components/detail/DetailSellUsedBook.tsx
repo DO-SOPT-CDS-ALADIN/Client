@@ -37,7 +37,7 @@ const UsedBookDivWrapper = styled.div`
   width: 100%;
   height: 16.6rem;
   margin-top: 1.2rem;
-  padding: 2.4rem 1.2rem;
+  padding: 2.4rem 1.6rem;
   row-gap: 0.8rem;
 
   background-color: ${({ theme }) => theme.colors.white};
