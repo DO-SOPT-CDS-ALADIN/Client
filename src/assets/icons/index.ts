@@ -49,6 +49,7 @@ import IcCheckboxGray from './ic_checkbox_gray.svg?react';
 import IcCheckboxFilled from './ic_checkbox_filled.svg?react';
 import IcCheckboxEmpty from './ic_checkbox_empty.svg?react';
 import IcCheckboxChecked from './ic_checkbox_checked.svg?react';
+import IcCheckboxUncheckedGrey from './ic_checkbox_unchecked_grey.svg?react';
 import IcCheckWhite from './ic_check_white.svg?react';
 import IcCheckPink from './ic_check_pink.svg?react';
 import IcCheckGray from './ic_check_gray.svg?react';
@@ -174,4 +175,5 @@ export {
   IcStar5,
   IcEllipse51,
   IcEllipse51Grey,
+  IcCheckboxUncheckedGrey,
 };
