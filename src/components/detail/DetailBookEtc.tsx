@@ -125,7 +125,7 @@ const ReviewNum = styled.span`
   align-items: center;
 `;
 
-const BookDescriptionWrapper = styled.p`
+const BookDescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 0.8rem;
