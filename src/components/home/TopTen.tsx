@@ -41,7 +41,7 @@ export function NowTime() {
   return (
     <NowTimeWrapper>
       <IcTime />
-      16:16
+      <TimeText>16:16</TimeText>
     </NowTimeWrapper>
   );
 }
@@ -113,14 +113,15 @@ const TagWrapper = styled.div`
 `;
 
 const NowTimeWrapper = styled.div`
-  ${({ theme }) => theme.fonts.detail1};
-
   display: flex;
   align-items: center;
 
   position: absolute;
   top: 5.5rem;
   right: 4.5rem;
+`;
 
+const TimeText = styled.p`
+  ${({ theme }) => theme.fonts.detail1};
   color: ${({ theme }) => theme.colors.blue_600};
 `;
