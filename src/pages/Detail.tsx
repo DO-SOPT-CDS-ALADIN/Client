@@ -8,6 +8,8 @@ import DetailSeries from '../components/detail/DetailSeries';
 import DetailEvent from '../components/detail/DetailEvent';
 import DetailBookIntro from '../components/detail/DetailBookIntro';
 import DetailBookContents from '../components/detail/DetailBookContents';
+import DetailAuthorIntro from '../components/detail/DetailAuthorIntro';
+import DetailPublisherIntro from '../components/detail/DetailPublisherIntro';
 
 function Detail() {
   const [section, setSection] = useState('이벤트');
@@ -24,6 +26,8 @@ function Detail() {
       <DetailEvent />
       <DetailBookIntro />
       <DetailBookContents />
+      <DetailAuthorIntro />
+      <DetailPublisherIntro />
     </>
   );
 }
