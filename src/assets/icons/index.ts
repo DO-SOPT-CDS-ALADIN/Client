@@ -35,6 +35,7 @@ import IcGift from './ic_gift.svg?react';
 import IcEye from './ic_eye.svg?react';
 import IcEnter from './ic_enter.svg?react';
 import IcEnterXs from './ic_enter_xs.svg?react';
+import IcEnterXsGrey from './ic_enter_xs_grey.svg?react';
 import IcDown from './ic_down.svg?react';
 import IcDownXs from './ic_down_xs.svg?react';
 import IcDownXsGray from './ic_down_xs_gray.svg?react';
@@ -124,6 +125,7 @@ export {
   IcEye,
   IcEnter,
   IcEnterXs,
+  IcEnterXsGrey,
   IcDown,
   IcDownXs,
   IcDownXsGray,
