@@ -172,7 +172,6 @@ const WideButtonImageWrapper = styled.div`
 
   width: 7.8rem;
   height: 4rem;
-  padding: 1rem 1.5rem 0.8rem 1.5rem;
 
   border-radius: 0.4rem;
   border: 0.1rem solid ${({ theme }) => theme.colors.grey_300};
@@ -185,7 +184,6 @@ const ButtonImageWrapper = styled.div`
 
   width: 4rem;
   height: 4rem;
-  padding: 0.8rem;
 
   border-radius: 0.4rem;
   border: 0.1rem solid ${({ theme }) => theme.colors.grey_300};
