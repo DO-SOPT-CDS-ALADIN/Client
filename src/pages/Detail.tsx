@@ -1,10 +1,16 @@
+import { useState } from 'react';
 import Header from '../components/common/Header';
 import DetailBookEtc from '../components/detail/DetailBookEtc';
 import DetailBookSummary from '../components/detail/DetailBookSummary';
+import DetailNavBar from '../components/detail/DetailNavBar';
 import DetailSellUsedBook from '../components/detail/DetailSellUsedBook';
 import DetailSeries from '../components/detail/DetailSeries';
+import DetailEvent from '../components/detail/DetailEvent';
 
 function Detail() {
+  const [section, setSection] = useState('이벤트');
+  // lint 때문에 임시로 추가. 추후 기능 구현 때 삭제 예정
+  setSection('이벤트');
   return (
     <>
       <Header />
@@ -12,6 +18,8 @@ function Detail() {
       <DetailBookEtc />
       <DetailSellUsedBook />
       <DetailSeries />
+      <DetailNavBar section={section} />
+      <DetailEvent />
     </>
   );
 }
