@@ -14,10 +14,10 @@ function DetailEvent() {
         </Body2TextWrapper>
       </DetailEventTitleWrapper>
       <EventScrollWrapper>
-        <EventScrollCard src={ImgDetailEventCard} alt="Event Image"></EventScrollCard>
-        <EventScrollCard src={ImgDetailEventCard} alt="Event Image"></EventScrollCard>
-        <EventScrollCard src={ImgDetailEventCard} alt="Event Image"></EventScrollCard>
-        <EventScrollCard src={ImgDetailEventCard} alt="Event Image"></EventScrollCard>
+        <EventScrollCard src={ImgDetailEventCard} />
+        <EventScrollCard src={ImgDetailEventCard} />
+        <EventScrollCard src={ImgDetailEventCard} />
+        <EventScrollCard src={ImgDetailEventCard} />
       </EventScrollWrapper>
     </DetailEventWrapper>
   );
@@ -63,7 +63,6 @@ const Body2Text = styled.span`
 
 const EventScrollWrapper = styled.div`
   display: flex;
-  column-gap: 0.8rem;
 
   width: 100%;
   height: 22rem;
@@ -78,6 +77,7 @@ const EventScrollWrapper = styled.div`
 const EventScrollCard = styled.img`
   width: 32.1rem;
   height: 22rem;
+  margin-right: 0.8rem;
 
   border-radius: 0.8rem;
   box-shadow: ${({ theme }) => theme.shadows.mini};
