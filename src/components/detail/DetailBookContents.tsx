@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { IcBtnShowDown } from '../../assets/icons';
 
-function DetailBookIntro() {
+function DetailBookContents() {
   const [isMore, setIsMore] = useState(false);
 
   const onClickMoreButton = () => {
@@ -13,32 +13,31 @@ function DetailBookIntro() {
     return str?.length > n ? str.slice(0, n) + '...' : str;
   };
 
-  const TEXT = `언제나 우리에게 놀라운 재미와 따뜻한 감동을 동시에 전해주는 작가, 정세랑이 『시선으로부터,』
-        이후 3년 만의 신작 장편소설 『설자은, 금성으로 돌아오다』로 돌아왔다. 한번 손에 쥐면
-        순식간에 빠져들 수밖에 없는 흡인력 있는 전개와 사랑스러운 언제나 우리에게 놀라운 재미와 따뜻한 감동을
-        동시에 전해주는 작가, 정세랑이 『시선으로부터,』 이후 3년 만의 신작 장편소설 『설자은,
-        금성으로 돌아오다』로 돌아왔다. 한번 손에 쥐면 순식간에 빠져들 수밖에 없는 흡인력 있는
-        전개와 사랑스`;
+  const CONTENTS = `갑시다, 금성으로{'\n'}
+손바닥의 붉은 글씨{'\n'}
+보름의 노래{'\n'}
+갑시다, 금성으로{'\n'}
+손바닥의 붉은 글씨{'\n'}
+보름의 노래`;
 
   return (
-    <DetailBookIntroWrapper>
-      <Title1BoldText>책소개</Title1BoldText>
-      <Body2Text>{hideText(TEXT, 150)}</Body2Text>
+    <DetailBookContentsWrapper>
+      <Title1BoldText>목차</Title1BoldText>
+      <Body2Text>{hideText(CONTENTS, 150)}</Body2Text>
       <MoreBox>
         <IcBtnShowDown onClick={onClickMoreButton} />
       </MoreBox>
-    </DetailBookIntroWrapper>
+    </DetailBookContentsWrapper>
   );
 }
 
-export default DetailBookIntro;
+export default DetailBookContents;
 
-const DetailBookIntroWrapper = styled.div`
-  position: relative;
+const DetailBookContentsWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  height: 16.6rem;
+  height: 14.6rem;
   padding: 2.4rem 1.6rem;
   margin-top: 1.2rem;
 
@@ -51,7 +50,8 @@ const Title1BoldText = styled.span`
 
 const Body2Text = styled.p`
   margin-top: 1.6rem;
-  height: 7.84rem;
+  height: 5.88rem;
+  white-space: pre-wrap;
   font: ${({ theme }) => theme.fonts.body2};
   text-align: left;
   word-wrap: break-word;

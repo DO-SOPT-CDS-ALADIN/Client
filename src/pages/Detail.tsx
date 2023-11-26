@@ -6,6 +6,8 @@ import DetailNavBar from '../components/detail/DetailNavBar';
 import DetailSellUsedBook from '../components/detail/DetailSellUsedBook';
 import DetailSeries from '../components/detail/DetailSeries';
 import DetailEvent from '../components/detail/DetailEvent';
+import DetailBookIntro from '../components/detail/DetailBookIntro';
+import DetailBookContents from '../components/detail/DetailBookContents';
 
 function Detail() {
   const [section, setSection] = useState('이벤트');
@@ -20,6 +22,8 @@ function Detail() {
       <DetailSeries />
       <DetailNavBar section={section} />
       <DetailEvent />
+      <DetailBookIntro />
+      <DetailBookContents />
     </>
   );
 }
