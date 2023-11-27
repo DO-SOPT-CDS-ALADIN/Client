@@ -70,11 +70,10 @@ const ShowMore = styled.p`
 `;
 
 const List = styled.div`
-  overflow-y: scroll;
+  overflow-y: auto;
 
   display: flex;
   align-items: center;
-  gap: 1.6rem;
 
   &::-webkit-scrollbar {
     height: 0;
@@ -89,7 +88,7 @@ const BookWrapper = styled.div`
 
   width: 12.8rem;
 
-  margin-top: 0.4rem;
+  margin: 0.4rem 1.6rem 0 0;
 `;
 
 const BookTitle = styled.p`
