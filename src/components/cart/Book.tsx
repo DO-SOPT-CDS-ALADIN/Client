@@ -106,7 +106,7 @@ const BookInfo = styled.div`
 
 const Title = styled.p`
   min-height: 2rem;
-  font: ${({ theme }) => theme.fonts.title2_bold};
+  ${({ theme }) => theme.fonts.title2_bold};
 `;
 
 const PriceWrapper = styled.div`
@@ -118,12 +118,12 @@ const PriceWrapper = styled.div`
 const BlackText = styled.p`
   padding-top: -0.4rem;
 
-  font: ${({ theme }) => theme.fonts.body1};
+  ${({ theme }) => theme.fonts.body1};
 `;
 
 const GreyText = styled.p`
   color: ${({ theme }) => theme.colors.grey_400};
-  font: ${({ theme }) => theme.fonts.detail2};
+  ${({ theme }) => theme.fonts.detail2};
 `;
 
 const MileageWrapper = styled.div`
@@ -161,7 +161,7 @@ const StepNum = styled.p`
 
   border: 1px solid ${({ theme }) => theme.colors.grey_300};
 
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
 `;
 
 const Option = styled.div`
@@ -190,7 +190,7 @@ const Tag = styled.div`
   justify-content: center;
   align-items: center;
 
-  padding: 0.2rem 0.8rem;
+  padding: 0 0.8rem 0.2rem;
 
   border-radius: 1rem;
 
@@ -198,7 +198,7 @@ const Tag = styled.div`
 
   color: ${({ theme }) => theme.colors.white};
 
-  font: ${({ theme }) => theme.fonts.detail1};
+  ${({ theme }) => theme.fonts.detail1};
 `;
 
 const DeliveryInfo = styled.div`
