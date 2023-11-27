@@ -2,8 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { IcCircleBack } from '../../assets/icons';
 import { useNavigate } from 'react-router-dom';
+import PAGE from '../../constants/page';
 
-function BackButton() {
+interface BackButtonProps {
+  page: number;
+}
+
+interface ButtonWrapperProps {
+  page: number;
+}
+function BackButton({ page }: BackButtonProps) {
   const navigate = useNavigate();
 
   const goBack = () => {
@@ -11,17 +19,18 @@ function BackButton() {
   };
 
   return (
-    <ButtonWrapper onClick={goBack}>
+    <ButtonWrapper onClick={goBack} page={page}>
       <IcCircleBack />
     </ButtonWrapper>
   );
 }
 export default BackButton;
 
-const ButtonWrapper = styled.button`
+const ButtonWrapper = styled.button<ButtonWrapperProps>`
   position: fixed;
   left: 0.8rem;
-  bottom: 7.2rem;
+  bottom: ${({ page }) =>
+    page === PAGE.DETAIL ? '6.8rem' : page === PAGE.CART ? '11.2rem' : '7.2rem'};
 
   display: flex;
   justify-content: center;
