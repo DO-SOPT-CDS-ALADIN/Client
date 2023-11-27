@@ -22,6 +22,7 @@ export const reset = css`
     overflow-wrap: break-word;
     word-break: break-word;
     tab-size: 4;
+    background-color: ${({ theme }) => theme.colors.grey_200};
   }
   html,
   body {
