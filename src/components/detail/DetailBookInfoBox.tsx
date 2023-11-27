@@ -13,30 +13,30 @@ function DetailBookInfoBox({ price, discount_price, mileage }: BookInfoProps) {
     <BookInfoWrapper>
       <InfoSubjectWrapper>
         <BookInfoSubject>판매가</BookInfoSubject>
-        <BookInfoContent className="price">{price}</BookInfoContent>
+        <Body2Text className="price">{price}</Body2Text>
         <BookInfoContentPink>{discount_price}</BookInfoContentPink>
       </InfoSubjectWrapper>
       <InfoSubjectWrapper>
         <BookInfoSubject>마일리지</BookInfoSubject>
-        <BookInfoContent className="mileage">{mileage}</BookInfoContent>
+        <Body2Text className="mileage">{mileage}</Body2Text>
         <IcMinicircleDown />
       </InfoSubjectWrapper>
       <InfoSubjectWrapper>
         <BookInfoSubject>배송료</BookInfoSubject>
         <DeliveryContent>
-          <BookInfoContent>무료</BookInfoContent>
+          <Body2Text>무료</Body2Text>
           <IcQuickDelivery />
-          <BookInfoContent>밤 10시까지 주문하면</BookInfoContent>
-          <div>
-            <BookInfoContent>내일 아침 7시</BookInfoContent>
+          <Body2Text>밤 10시까지 주문하면</Body2Text>
+          <DeliveryWrapper>
+            <Body2Text>내일 아침 7시</Body2Text>
             <DeliveryContentPink>출근전 배송</DeliveryContentPink>
-          </div>
+          </DeliveryWrapper>
         </DeliveryContent>
       </InfoSubjectWrapper>
       <Divider />
       <InfoSubjectWrapper>
         <BookInfoSubject>전자책</BookInfoSubject>
-        <BookInfoContent className="eBook">10,620원</BookInfoContent>
+        <Body2Text className="eBook">10,620원</Body2Text>
         <IcCircleMini />
       </InfoSubjectWrapper>
     </BookInfoWrapper>
@@ -69,7 +69,7 @@ const BookInfoSubject = styled.span`
   vertical-align: middle;
 `;
 
-const BookInfoContent = styled.span`
+const Body2Text = styled.span`
   font: ${({ theme }) => theme.fonts.body2};
   display: inline-block;
 
@@ -103,6 +103,11 @@ const DeliveryContent = styled.div`
 
   font: ${({ theme }) => theme.fonts.body2};
 `;
+
+const DeliveryWrapper = styled.div`
+  display: flex;
+`;
+
 const DeliveryContentPink = styled.span`
   margin-left: 0.4rem;
 
