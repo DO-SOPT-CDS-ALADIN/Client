@@ -3,24 +3,22 @@ import { IcCheckWhite, IcHeartOff, IcDelete } from '../../assets/icons';
 
 function Filter() {
   return (
-    <>
-      <FilterWrapper>
-        <CheckBox>
-          <CheckWrapper>
-            <IcCheckWhite />
-          </CheckWrapper>
-        </CheckBox>
-        <CheckText>전체 선택</CheckText>
-        <ButtonWrapper>
-          <Button>
-            <IcHeartOff />
-          </Button>
-          <Button>
-            <IcDelete />
-          </Button>
-        </ButtonWrapper>
-      </FilterWrapper>
-    </>
+    <FilterWrapper>
+      <CheckBox>
+        <CheckWrapper>
+          <IcCheckWhite />
+        </CheckWrapper>
+      </CheckBox>
+      <CheckText>전체 선택</CheckText>
+      <ButtonWrapper>
+        <Button>
+          <IcHeartOff />
+        </Button>
+        <Button>
+          <IcDelete />
+        </Button>
+      </ButtonWrapper>
+    </FilterWrapper>
   );
 }
 export default Filter;
@@ -34,6 +32,8 @@ const FilterWrapper = styled.div`
   height: 5.4rem;
 
   padding: 0rem 0.8rem;
+
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 
 const CheckBox = styled.div`
@@ -58,7 +58,7 @@ const CheckWrapper = styled.div`
 `;
 
 const CheckText = styled.p`
-  font: ${({ theme }) => theme.fonts.title2_bold};
+  ${({ theme }) => theme.fonts.title2_bold};
 `;
 
 const ButtonWrapper = styled.div`

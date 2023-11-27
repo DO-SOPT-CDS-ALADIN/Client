@@ -25,9 +25,11 @@ const HeaderWrapper = styled.div`
   height: 4.8rem;
 
   padding-left: 1.2rem;
+
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 const HeaderTitle = styled.p`
-  font: ${({ theme }) => theme.fonts.title2_bold};
+  ${({ theme }) => theme.fonts.title2_bold};
 `;
 
 const BackButton = styled.button`
