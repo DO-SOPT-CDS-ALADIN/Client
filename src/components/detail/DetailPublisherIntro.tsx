@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { IcBtnShowDown } from '../../assets/icons';
+import DETAIL_TEXTS from '../../constants/detail';
 
 function DetailPublisherIntro() {
   const [isMore, setIsMore] = useState(false);
@@ -13,12 +14,10 @@ function DetailPublisherIntro() {
     return str?.length > n ? str.slice(0, n) + '...' : str;
   };
 
-  const TEXT = `『시선으로부터,』 『보건교사 안은영』 정세랑이 선보이는 본격 역사 미스터리 모험담! 언제나 우리에게 놀라운 재미와 따뜻한 감동을 동시에 전해주는 작가, 정세랑이 『시선으로부터,』 이후 3년 만의 신작 장편소설 『설자은, 금성으로 돌아『시선으로부터,』 『보건교사 안은영』 정세랑이 선보이는 본격 역사 미스터리 모험담! 언제나 우리에게 놀라운 재미와 따뜻한 감동을 동시에 전해주는 작가, 정세랑이 『시선으로부터,』 이후 3년 만의 신작 장편소설 『설자은, 금성으로 돌아`;
-
   return (
     <DetailPublisherIntroWrapper>
       <Title1BoldText>출판사 제공 책소개</Title1BoldText>
-      <Body2Text>{hideText(TEXT, 130)}</Body2Text>
+      <Body2Text>{hideText(DETAIL_TEXTS.PUBLISHER_INTRO, 130)}</Body2Text>
       <MoreBox>
         <IcBtnShowDown onClick={onClickMoreButton} />
       </MoreBox>

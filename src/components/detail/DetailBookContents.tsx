@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { IcBtnShowDown } from '../../assets/icons';
+import DETAIL_TEXTS from '../../constants/detail';
 
 function DetailBookContents() {
   const [isMore, setIsMore] = useState(false);
@@ -13,12 +14,10 @@ function DetailBookContents() {
     return str?.length > n ? str.slice(0, n) + '...' : str;
   };
 
-  const CONTENTS = `갑시다, 금성으로\n손바닥의 붉은 글씨\n보름의 노래\n월지에 엎드린 죽음\n\n작가의 말`;
-
   return (
     <DetailBookContentsWrapper>
       <Title1BoldText>목차</Title1BoldText>
-      <Body2Text>{hideText(CONTENTS, 150)}</Body2Text>
+      <Body2Text>{hideText(DETAIL_TEXTS.CONTENTS, 150)}</Body2Text>
       <MoreBox>
         <IcBtnShowDown onClick={onClickMoreButton} />
       </MoreBox>
