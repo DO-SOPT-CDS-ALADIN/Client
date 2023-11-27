@@ -13,12 +13,7 @@ function DetailBookContents() {
     return str?.length > n ? str.slice(0, n) + '...' : str;
   };
 
-  const CONTENTS = `갑시다, 금성으로{'\n'}
-손바닥의 붉은 글씨{'\n'}
-보름의 노래{'\n'}
-갑시다, 금성으로{'\n'}
-손바닥의 붉은 글씨{'\n'}
-보름의 노래`;
+  const CONTENTS = `갑시다, 금성으로\n손바닥의 붉은 글씨\n보름의 노래\n월지에 엎드린 죽음\n\n작가의 말`;
 
   return (
     <DetailBookContentsWrapper>
