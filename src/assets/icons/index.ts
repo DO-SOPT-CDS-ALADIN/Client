@@ -80,6 +80,7 @@ import IcBack from './ic_back.svg?react';
 import IcAudio from './ic_audio.svg?react';
 import IcAd from './ic_ad.svg?react';
 import IcQuickDelivery from './ic_quick_delivery.svg?react';
+import IcDetailsSelectRectangle from './ic_details_select_rectangle.svg?react';
 import IcStar0 from './ic_star_0.svg?react';
 import IcStar1 from './ic_star_1.svg?react';
 import IcStar2 from './ic_star_2.svg?react';
@@ -178,4 +179,5 @@ export {
   IcEllipse51,
   IcEllipse51Grey,
   IcCheckboxUncheckedGrey,
+  IcDetailsSelectRectangle,
 };
