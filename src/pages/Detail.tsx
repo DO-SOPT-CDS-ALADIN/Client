@@ -12,6 +12,7 @@ import DetailAuthorIntro from '../components/detail/DetailAuthorIntro';
 import DetailPublisherIntro from '../components/detail/DetailPublisherIntro';
 import DetailReviewSummary from '../components/detail/DetailReviewSummary';
 import DetailReviewGraph from '../components/detail/DetailReviewGraph';
+import DetailPostReview from '../components/detail/DetailPostReview';
 
 function Detail() {
   const [section, setSection] = useState('이벤트');
@@ -32,6 +33,7 @@ function Detail() {
       <DetailPublisherIntro />
       <DetailReviewSummary />
       <DetailReviewGraph />
+      <DetailPostReview />
     </>
   );
 }
