@@ -19,9 +19,67 @@ const GIFT_IMAGE_LINKS = [
 const MIDDLE_BANNER_IMAGE_LINK =
   'https://s3-alpha-sig.figma.com/img/ef11/d058/412be2d01c68875c3285be20db729bc3?Expires=1702252800&Signature=X0TVH~fK1MVn~KFt~BrIa0QawjeCyZU55jaS9vKHjYTmDIsscCcX1EVwNDrif6NdiH~MJ4b6j8UKyLx8dTJc5k0c1ooeIqM1DFC2Rns1x-Y6HHaR3Y70pCuL6Zu3xS9qMrlwjbOYSAvsTXTGxY6m3rJNq-4gwluiggLO0A4Q2dl~2v-n8w88dkNyJfPceJywt~WZnhkgQY35NBR3JLaRNQ~ltd830kn3vSYzTJMtJ7jxuTeqTCQt~tNj4lH2Vkg7AfwGwax-rE733cyN1jirZjyaE63P6BTAQP7jI9eNGwxq~RYP4rMAhKdOvYzz5JPN2aV-QIwJv0kDDp7TNFn5pQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4';
 
+const CONCENTRATE_BOOKS = [
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/4965/6167/2956c94c6b8578302a8a78ef21ee4b9a?Expires=1702252800&Signature=oCCrwxUhRE8AAx2Qp-tY6XONHGJyVhKWpcRXqOgVimK~DCbuN9Ix1df5sPx9zZYJ0OrgSyZCt~Ftf~paNUV6~lpcWuz4oiUwFDffAaRo2G2tnp6AOUK2d6tYo9cDjLH7W6lnclALZX0ADwSzZm1GXbTGhvGSpHFdrIwysem2NGa8d5hB9SfNLQSzUF4EmmK0aUG50MBJCN6HkrrGW7nO5gD-x57-iFqrc2zGRNUdv6-pJxhQeI9BEbz3lnDZJjxjruwA8I1YG~rBrC-gALeh1F8vrDi1wJVfDi0lasW5vQWCV5jD2U88AR6PU41beXMMBCTTv01YqTLd0~ybH-kBEw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '66일 자존감 대화법',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/4965/6167/2956c94c6b8578302a8a78ef21ee4b9a?Expires=1702252800&Signature=oCCrwxUhRE8AAx2Qp-tY6XONHGJyVhKWpcRXqOgVimK~DCbuN9Ix1df5sPx9zZYJ0OrgSyZCt~Ftf~paNUV6~lpcWuz4oiUwFDffAaRo2G2tnp6AOUK2d6tYo9cDjLH7W6lnclALZX0ADwSzZm1GXbTGhvGSpHFdrIwysem2NGa8d5hB9SfNLQSzUF4EmmK0aUG50MBJCN6HkrrGW7nO5gD-x57-iFqrc2zGRNUdv6-pJxhQeI9BEbz3lnDZJjxjruwA8I1YG~rBrC-gALeh1F8vrDi1wJVfDi0lasW5vQWCV5jD2U88AR6PU41beXMMBCTTv01YqTLd0~ybH-kBEw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '66일 자존감 대화법',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/4965/6167/2956c94c6b8578302a8a78ef21ee4b9a?Expires=1702252800&Signature=oCCrwxUhRE8AAx2Qp-tY6XONHGJyVhKWpcRXqOgVimK~DCbuN9Ix1df5sPx9zZYJ0OrgSyZCt~Ftf~paNUV6~lpcWuz4oiUwFDffAaRo2G2tnp6AOUK2d6tYo9cDjLH7W6lnclALZX0ADwSzZm1GXbTGhvGSpHFdrIwysem2NGa8d5hB9SfNLQSzUF4EmmK0aUG50MBJCN6HkrrGW7nO5gD-x57-iFqrc2zGRNUdv6-pJxhQeI9BEbz3lnDZJjxjruwA8I1YG~rBrC-gALeh1F8vrDi1wJVfDi0lasW5vQWCV5jD2U88AR6PU41beXMMBCTTv01YqTLd0~ybH-kBEw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '66일 자존감 대화법',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/4965/6167/2956c94c6b8578302a8a78ef21ee4b9a?Expires=1702252800&Signature=oCCrwxUhRE8AAx2Qp-tY6XONHGJyVhKWpcRXqOgVimK~DCbuN9Ix1df5sPx9zZYJ0OrgSyZCt~Ftf~paNUV6~lpcWuz4oiUwFDffAaRo2G2tnp6AOUK2d6tYo9cDjLH7W6lnclALZX0ADwSzZm1GXbTGhvGSpHFdrIwysem2NGa8d5hB9SfNLQSzUF4EmmK0aUG50MBJCN6HkrrGW7nO5gD-x57-iFqrc2zGRNUdv6-pJxhQeI9BEbz3lnDZJjxjruwA8I1YG~rBrC-gALeh1F8vrDi1wJVfDi0lasW5vQWCV5jD2U88AR6PU41beXMMBCTTv01YqTLd0~ybH-kBEw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '66일 자존감 대화법',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/4965/6167/2956c94c6b8578302a8a78ef21ee4b9a?Expires=1702252800&Signature=oCCrwxUhRE8AAx2Qp-tY6XONHGJyVhKWpcRXqOgVimK~DCbuN9Ix1df5sPx9zZYJ0OrgSyZCt~Ftf~paNUV6~lpcWuz4oiUwFDffAaRo2G2tnp6AOUK2d6tYo9cDjLH7W6lnclALZX0ADwSzZm1GXbTGhvGSpHFdrIwysem2NGa8d5hB9SfNLQSzUF4EmmK0aUG50MBJCN6HkrrGW7nO5gD-x57-iFqrc2zGRNUdv6-pJxhQeI9BEbz3lnDZJjxjruwA8I1YG~rBrC-gALeh1F8vrDi1wJVfDi0lasW5vQWCV5jD2U88AR6PU41beXMMBCTTv01YqTLd0~ybH-kBEw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '66일 자존감 대화법',
+  },
+];
+
+const DISCOUNT_BOOKS = [
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/67e6/7b61/4b9d062806dcf07ff42b17a8b8ed3823?Expires=1702252800&Signature=JT7CQMTopZd7pLuPEfsHLs3NSAC8GsMw9SwXafHG5k6etCww~6yJeFKsG~PbVKrZ2QWme1E9gSOWm3ufIEp~vjaJ6vx1tfChVwUfO8BW9tOkCGGdp2TxT5Wr7eD2jwJMmukmpZ2J6narmWAgGnbLRDKPewAuLWwbYs~awKAkk3svcb6JHuNqXGnLmmIK37ireIV9P4oG9~wyElhOTkcxfSRKo65d3xTH0ImsYc1YC5B1UnPSbzWMsuCGpKou6UKowvFm8jd9lkZn-PhHSqsgUddCX1w4jz79YPg~QtV10d63EpYzP3eG~5jLEwQYJLTwKEEZOy~0RnWDtW-V2acf-A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '북유럽 스타일 벙어리 장갑 손뜨개',
+    original_price: '11,800원',
+    discount_price: '3,240원',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/67e6/7b61/4b9d062806dcf07ff42b17a8b8ed3823?Expires=1702252800&Signature=JT7CQMTopZd7pLuPEfsHLs3NSAC8GsMw9SwXafHG5k6etCww~6yJeFKsG~PbVKrZ2QWme1E9gSOWm3ufIEp~vjaJ6vx1tfChVwUfO8BW9tOkCGGdp2TxT5Wr7eD2jwJMmukmpZ2J6narmWAgGnbLRDKPewAuLWwbYs~awKAkk3svcb6JHuNqXGnLmmIK37ireIV9P4oG9~wyElhOTkcxfSRKo65d3xTH0ImsYc1YC5B1UnPSbzWMsuCGpKou6UKowvFm8jd9lkZn-PhHSqsgUddCX1w4jz79YPg~QtV10d63EpYzP3eG~5jLEwQYJLTwKEEZOy~0RnWDtW-V2acf-A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '북유럽 스타일 벙어리 장갑 손뜨개',
+    original_price: '11,800원',
+    discount_price: '3,240원',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/67e6/7b61/4b9d062806dcf07ff42b17a8b8ed3823?Expires=1702252800&Signature=JT7CQMTopZd7pLuPEfsHLs3NSAC8GsMw9SwXafHG5k6etCww~6yJeFKsG~PbVKrZ2QWme1E9gSOWm3ufIEp~vjaJ6vx1tfChVwUfO8BW9tOkCGGdp2TxT5Wr7eD2jwJMmukmpZ2J6narmWAgGnbLRDKPewAuLWwbYs~awKAkk3svcb6JHuNqXGnLmmIK37ireIV9P4oG9~wyElhOTkcxfSRKo65d3xTH0ImsYc1YC5B1UnPSbzWMsuCGpKou6UKowvFm8jd9lkZn-PhHSqsgUddCX1w4jz79YPg~QtV10d63EpYzP3eG~5jLEwQYJLTwKEEZOy~0RnWDtW-V2acf-A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '북유럽 스타일 벙어리 장갑 손뜨개',
+    original_price: '11,800원',
+    discount_price: '3,240원',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/67e6/7b61/4b9d062806dcf07ff42b17a8b8ed3823?Expires=1702252800&Signature=JT7CQMTopZd7pLuPEfsHLs3NSAC8GsMw9SwXafHG5k6etCww~6yJeFKsG~PbVKrZ2QWme1E9gSOWm3ufIEp~vjaJ6vx1tfChVwUfO8BW9tOkCGGdp2TxT5Wr7eD2jwJMmukmpZ2J6narmWAgGnbLRDKPewAuLWwbYs~awKAkk3svcb6JHuNqXGnLmmIK37ireIV9P4oG9~wyElhOTkcxfSRKo65d3xTH0ImsYc1YC5B1UnPSbzWMsuCGpKou6UKowvFm8jd9lkZn-PhHSqsgUddCX1w4jz79YPg~QtV10d63EpYzP3eG~5jLEwQYJLTwKEEZOy~0RnWDtW-V2acf-A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '북유럽 스타일 벙어리 장갑 손뜨개',
+    original_price: '11,800원',
+    discount_price: '3,240원',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/67e6/7b61/4b9d062806dcf07ff42b17a8b8ed3823?Expires=1702252800&Signature=JT7CQMTopZd7pLuPEfsHLs3NSAC8GsMw9SwXafHG5k6etCww~6yJeFKsG~PbVKrZ2QWme1E9gSOWm3ufIEp~vjaJ6vx1tfChVwUfO8BW9tOkCGGdp2TxT5Wr7eD2jwJMmukmpZ2J6narmWAgGnbLRDKPewAuLWwbYs~awKAkk3svcb6JHuNqXGnLmmIK37ireIV9P4oG9~wyElhOTkcxfSRKo65d3xTH0ImsYc1YC5B1UnPSbzWMsuCGpKou6UKowvFm8jd9lkZn-PhHSqsgUddCX1w4jz79YPg~QtV10d63EpYzP3eG~5jLEwQYJLTwKEEZOy~0RnWDtW-V2acf-A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '북유럽 스타일 벙어리 장갑 손뜨개',
+    original_price: '11,800원',
+    discount_price: '3,240원',
+  },
+];
+
 export {
   FIRST_BANNER_IMAGE_LINKS,
   HOT_BOOK_IMAGE_LINKS,
   GIFT_IMAGE_LINKS,
   MIDDLE_BANNER_IMAGE_LINK,
+  CONCENTRATE_BOOKS,
+  DISCOUNT_BOOKS,
 };
