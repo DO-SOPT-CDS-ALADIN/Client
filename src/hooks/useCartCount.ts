@@ -1,4 +1,3 @@
-// useCartCount.ts
 import { useState, useEffect } from 'react';
 import { fetchCart } from '../apis/fetchData';
 
