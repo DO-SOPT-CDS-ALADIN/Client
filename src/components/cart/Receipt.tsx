@@ -70,11 +70,11 @@ const FlexBox = styled.div`
 `;
 
 const Title = styled.p`
-  font: ${({ theme }) => theme.fonts.body1};
+  ${({ theme }) => theme.fonts.body1};
 `;
 
 const Value = styled.p`
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
 `;
 
 const InfoIconWrapper = styled.div`
@@ -94,11 +94,11 @@ const TotalPriceWrapper = styled(FlexBox)`
 `;
 
 const TotalTitle = styled.p`
-  font: ${({ theme }) => theme.fonts.title2_bold};
+  ${({ theme }) => theme.fonts.title2_bold};
 `;
 
 const TotalPrice = styled.p`
-  font: ${({ theme }) => theme.fonts.head3};
+  ${({ theme }) => theme.fonts.head3};
   color: ${({ theme }) => theme.colors.pink_400};
 `;
 
