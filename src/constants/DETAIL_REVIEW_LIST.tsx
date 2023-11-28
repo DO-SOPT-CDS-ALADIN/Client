@@ -71,20 +71,6 @@ const DETAIL_REVIEW_LIST = [
     agreeNum: 2,
     commentNum: 3,
   },
-  {
-    userId: 'aladinnn',
-    date: '2023-10-07',
-    content: `${DETAIL_TEXTS.REVIEW_CONTENTS_4}`,
-    agreeNum: 0,
-    commentNum: 0,
-  },
-  {
-    userId: 'lalalalla',
-    date: '2023-11-28',
-    content: `${DETAIL_TEXTS.REVIEW_CONTENTS_3}`,
-    agreeNum: 4,
-    commentNum: 0,
-  },
 ];
 
 export default DETAIL_REVIEW_LIST;
