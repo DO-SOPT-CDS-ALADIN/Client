@@ -14,6 +14,7 @@ import DetailReviewSummary from '../components/detail/DetailReviewSummary';
 import DetailReviewGraph from '../components/detail/DetailReviewGraph';
 import DetailBuyerReviewList from '../components/detail/DetailBuyerReviewList';
 import DetailPostReview from '../components/detail/DetailPostReview';
+import DetailMyReview from '../components/detail/DetailMyReview';
 
 function Detail() {
   const [section, setSection] = useState('이벤트');
@@ -37,6 +38,7 @@ function Detail() {
       <DetailReviewGraph />
       <DetailBuyerReviewList />
       <DetailPostReview />
+      <DetailMyReview />
     </>
   );
 }
