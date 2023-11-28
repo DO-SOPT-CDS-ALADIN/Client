@@ -63,7 +63,7 @@ const Active = styled.div`
 
   background-color: ${({ theme }) => theme.colors.black};
 
-  font: ${({ theme }) => theme.fonts.body1};
+  ${({ theme }) => theme.fonts.body1};
   color: ${({ theme }) => theme.colors.white};
 `;
 
@@ -77,7 +77,7 @@ const Category = styled.div`
 
   padding: 6px 8px;
 
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
   color: ${({ theme }) => theme.colors.grey_500};
 `;
 
