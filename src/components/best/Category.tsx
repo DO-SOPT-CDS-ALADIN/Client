@@ -26,7 +26,7 @@ const CategoryWrapper = styled.div`
   display: flex;
   gap: 0.8rem;
 
-  padding: 0 1.6rem;
+  padding: 1.2rem 1.6rem 0;
 
   &::-webkit-scrollbar {
     height: 0;
