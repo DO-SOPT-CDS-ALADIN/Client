@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { IcBtnShowDown } from '../../assets/icons';
-import DETAIL_TEXTS from '../../constants/detail';
+import DETAIL_TEXTS from '../../constants/DETAIL_TEXTS';
 
 function DetailBookContents() {
   const [isMore, setIsMore] = useState(false);

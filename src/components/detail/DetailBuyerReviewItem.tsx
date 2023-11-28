@@ -75,7 +75,7 @@ const DetailBuyerReviewItemWrapper = styled.div`
   flex-direction: column;
   row-gap: 0.8rem;
 
-  padding: 1.6rem 1.6rem 1.5rem 1.6rem;
+  padding: 1.6rem 1.6rem 0 1.6rem;
 `;
 
 const ReviewWriterInfoWrapper = styled.div`
@@ -121,8 +121,16 @@ const Body2Text = styled.span`
 const CountsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+
+  padding-bottom: 1.5rem;
+  border-bottom: solid 1px ${({ theme }) => theme.colors.grey_300};
 `;
+
 const ButtonsWrapper = styled.div`
   display: flex;
   column-gap: 1.2rem;
+
+  & svg {
+    cursor: pointer;
+  }
 `;
