@@ -14,14 +14,15 @@ function DetailBuyerReviewList() {
         </NavWrapper>
         <SelectBoxWrapper>
           <Select>
-            <SelectOption selected>공감순</SelectOption>
+            <SelectOption defaultValue={'공감순'}>공감순</SelectOption>
           </Select>
           <IcDetailsSelectRectangle className="icon" />
           <IcDownXsBlue className="icon arrow" />
         </SelectBoxWrapper>
       </BuyerReviewListNavWrapper>
-      {DETAIL_REVIEW_LIST.map(review => (
+      {DETAIL_REVIEW_LIST.map((review, index) => (
         <DetailBuyerReviewItem
+          key={index}
           userId={review.userId}
           date={review.date}
           content={review.content}
