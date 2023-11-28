@@ -10,6 +10,7 @@ import AladinCoffee from '../components/cart/AladinCoffee';
 import Footer from '../components/common/Footer';
 import BackButton from '../components/common/BackButton';
 import BottomBar from '../components/cart/BottomBar';
+import PAGE from '../constants/page';
 
 function Cart() {
   return (
@@ -23,7 +24,7 @@ function Cart() {
       <AladinGoods />
       <AladinCoffee />
       <Footer />
-      <BackButton />
+      <BackButton page={PAGE.CART} />
       <BottomBar />
     </CartWrapper>
   );
