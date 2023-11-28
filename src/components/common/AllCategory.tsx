@@ -71,5 +71,5 @@ const SelectCategoryButton = styled.div<SelectedCategoryProps>`
   color: ${({ theme, active }) => (active === true ? theme.colors.white : theme.colors.grey_600)};
 
   text-align: center;
-  font: ${({ theme }) => theme.fonts.detail2};
+  ${({ theme }) => theme.fonts.detail2};
 `;
