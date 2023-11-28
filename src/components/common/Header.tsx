@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 import { IcLogo, IcSearch, IcCart } from '../../assets/icons';
-import { useCartCount } from '../../hooks/useCartCount';
+import { useCart } from '../../hooks/useCartCount';
 
 function Header() {
-  const { cartCount } = useCartCount();
+  const { cartCount } = useCart();
 
   return (
     <HeaderWrapper>
