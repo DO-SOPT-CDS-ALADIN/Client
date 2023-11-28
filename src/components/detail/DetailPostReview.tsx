@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { IcCheckboxGray, IcEnterXsGrey, IcStarLargePink } from '../../assets/icons';
-import DETAIL_TEXTS from '../../constants/detail';
+import DETAIL_TEXTS from '../../constants/DETAIL_TEXTS';
 
 function DetailPostReview() {
   const [textAreaValue, setTextAreaValue] = useState('');
