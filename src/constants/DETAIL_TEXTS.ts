@@ -10,6 +10,8 @@ const DETAIL_TEXTS = {
   REVIEW_CONTENTS_4: `역시 정세랑 작가님.재미있어요.`,
   REVIEW_CONTENTS_5: `설자은과 금성의 풍경이 생생해서, 이대로 이야기가 끝없이 이어져도 좋겠다고 생각했습니다.10권 내주세요 작가님!!!`,
   REVIEW_CONTENTS_6: `재밌어요 추천드려요`,
+  REVIEW_PLACEHOLDER: `배송 문의나 욕설 및 인신공격성 글은 상품 페이지에서 노출 제외처리됩니다.`,
+  SELECT_STARS: `별점을 선택하세요.`,
 };
 
 export default DETAIL_TEXTS;
