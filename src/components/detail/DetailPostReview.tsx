@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { IcCheckboxGray, IcEnterXsGrey, IcStarLargePink } from '../../assets/icons';
+import DETAIL_TEXTS from '../../constants/detail';
 
 function DetailPostReview() {
   const [textAreaValue, setTextAreaValue] = useState('');
@@ -25,13 +26,13 @@ function DetailPostReview() {
           <IcStarLargePink />
           <IcStarLargePink />
         </StarsWrapper>
-        <Detail2Text>별점을 선택하세요.</Detail2Text>
+        <Detail2Text>{DETAIL_TEXTS.SELECT_STARS}</Detail2Text>
       </StarClickWrapper>
       <ReviewTextarea
         value={textAreaValue}
         onChange={handleTextAreaChange}
         maxLength={280}
-        placeholder="배송 문의나 욕설 및 인신공격성 글은 상품 페이지에서 노출 제외처리됩니다."
+        placeholder={DETAIL_TEXTS.REVIEW_PLACEHOLDER}
       />
       <ByteCountText>현재 {textAreaValue.length}/280byte</ByteCountText>
       <SpoilerCheckboxWrapper>
