@@ -1,25 +1,23 @@
 import { useState, useEffect } from 'react';
-import { fetchCart } from '../apis/fetchData';
+import cart from '../apis/cart';
 
-interface CartCountData {
+interface CartData {
   cartCount: number;
 }
 
-export function useCartCount(): CartCountData {
+export function useCart(): CartData {
   const [cartCount, setCartCount] = useState<number>(0);
 
   useEffect(() => {
-    const _fetchCart = async () => {
+    const _getCartCount = async () => {
       try {
-        const response = await fetchCart();
-        const cartCountData = response?.data.data.countCart;
-        setCartCount(cartCountData);
+        const response = await cart.getCartCount();
+        setCartCount(response.data.data.countCart);
       } catch (err) {
         console.error(err);
       }
     };
-
-    _fetchCart();
+    _getCartCount();
   }, []);
 
   return { cartCount };
