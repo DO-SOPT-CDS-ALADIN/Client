@@ -1,20 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
 import { IcCircleTop } from '../../assets/icons';
+import PAGE from '../../constants/page';
 
-function TopButton() {
+interface TopButtonProps {
+  page: number;
+}
+
+interface ButtonWrapperProps {
+  page: number;
+}
+
+function TopButton({ page }: TopButtonProps) {
   return (
-    <ButtonWrapper>
+    <ButtonWrapper page={page}>
       <IcCircleTop />
     </ButtonWrapper>
   );
 }
 export default TopButton;
 
-const ButtonWrapper = styled.div`
+const ButtonWrapper = styled.div<ButtonWrapperProps>`
   position: fixed;
   right: 0.8rem;
-  bottom: 7.2rem;
+  bottom: ${({ page }) =>
+    page === PAGE.DETAIL ? '6.8rem' : page === PAGE.CART ? '11.2rem' : '7.2rem'};
 
   display: flex;
   justify-content: center;

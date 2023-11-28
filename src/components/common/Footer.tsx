@@ -57,7 +57,7 @@ const Menu = styled.p`
   width: 6rem;
   height: 4rem;
 
-  font: ${({ theme }) => theme.fonts.detail2};
+  ${({ theme }) => theme.fonts.detail2};
 `;
 
 const CompanyWrapper = styled.div`
@@ -70,7 +70,7 @@ const CompanyWrapper = styled.div`
 `;
 
 const Company = styled.p`
-  font: ${({ theme }) => theme.fonts.body1};
+  ${({ theme }) => theme.fonts.body1};
 `;
 
 const ContactWrapper = styled.div`
@@ -83,11 +83,11 @@ const ContactWrapper = styled.div`
 `;
 
 const Info = styled.p`
-  font: ${({ theme }) => theme.fonts.detail2};
+  ${({ theme }) => theme.fonts.detail2};
 `;
 
 const Tel = styled.p`
-  font: ${({ theme }) => theme.fonts.body1};
+  ${({ theme }) => theme.fonts.body1};
 `;
 
 const ButtonSection = styled.div`
@@ -116,7 +116,7 @@ const ShortButton = styled.button`
 
   background: ${({ theme }) => theme.colors.white};
 
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
 `;
 
 const LongButton = styled(ShortButton)`

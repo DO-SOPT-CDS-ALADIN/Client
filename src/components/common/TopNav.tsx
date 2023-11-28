@@ -43,10 +43,10 @@ const Nav = styled.div`
 `;
 
 const NavText = styled.p`
-  font: ${({ theme }) => theme.fonts.title2_reg};
+  ${({ theme }) => theme.fonts.title2_reg};
 `;
 const ActiveNavText = styled.p`
-  font: ${({ theme }) => theme.fonts.title2_bold};
+  ${({ theme }) => theme.fonts.title2_bold};
   color: ${({ theme }) => theme.colors.blue_600};
 `;
 

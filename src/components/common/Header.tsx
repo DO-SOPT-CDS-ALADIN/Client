@@ -74,7 +74,7 @@ const SearchBar = styled.div`
 const PlaceHolder = styled.p`
   color: ${({ theme }) => theme.colors.grey_400};
   text-align: center;
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
 `;
 
 const CartButton = styled.button`
@@ -112,7 +112,7 @@ const CartNumber = styled.p`
 
   color: ${({ theme }) => theme.colors.white};
   text-align: center;
-  font: ${({ theme }) => theme.fonts.detail1};
+  ${({ theme }) => theme.fonts.detail1};
 `;
 
 const CartIconWrapper = styled.div`
