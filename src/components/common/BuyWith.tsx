@@ -40,6 +40,8 @@ const BuyWithWrapper = styled.div`
   gap: 0.4rem;
 
   padding: 2.4rem 0rem 2.4rem 1.6rem;
+
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 
 const BuyWithHeader = styled.div`
