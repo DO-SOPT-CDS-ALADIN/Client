@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import {
   IcBottomHamburger,
@@ -36,27 +35,31 @@ export default BottomNav;
 const BottomNavWrapper = styled.div`
   position: fixed;
   bottom: 0;
+
   display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 37.5rem;
   height: 6.8rem;
   padding: 0.4rem 1.9rem 1.6rem 2rem;
-  justify-content: center;
-  align-items: center;
+
   background: ${({ theme }) => theme.colors.blue_600};
 `;
 
 const InnerWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 2.4rem;
+  align-items: center;
+  justify-content: center;
 `;
 
 const MenuButton = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 4.8rem;
   height: 4.8rem;
   padding: 1.2rem;
-  justify-content: center;
-  align-items: center;
 `;
