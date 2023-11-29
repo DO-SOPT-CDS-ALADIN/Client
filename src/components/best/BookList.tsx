@@ -7,7 +7,8 @@ function BookList() {
     <>
       {bestBookList.map((book, index) => (
         <Book
-          key={index}
+          key={book.bookId}
+          bookId={book.bookId}
           rank={index + 1}
           imgUrl={book.imgUrl}
           title={book.title}
