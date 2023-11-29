@@ -99,6 +99,34 @@ const PURE_BOOKS = [
 const BOOKFUND_BOOK_LINK =
   'https://s3-alpha-sig.figma.com/img/3476/9d9c/a4be90e70043510ac22c6bef2a63aac5?Expires=1702252800&Signature=LaF53LsTSMRHH9ydtT9skXk~BgNPAieLUcO47MwkU-skYk~FHB5lhWdeHyKhFlwn38nWiCXTAju2PSFzo4PmTgHnKJFkFvqjxVJZwe6k2oVbvqQcC1yanUVt7kCxpFXOwVJGUZaOqA-vY2Q~rpI7DeuespHpoCq1KujzdPvow4Zj8Ont-mE8Pzd7gCIqWu4A52KgzEjU0MtTFJgDqyz22J1BuYxWNhk5QMNDXWeuU1dtxOSmxEeydTVLXu1bGSPD4xrpifUTdbUh4JJVWyH4v-pwZSFeMBo5wKrPPgeXhg-0Hcl59RSYFhGLajWCQFQ1BB98xaMKuUjZN9htpS0Sbw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4';
 
+const TO_BE_CONTINUED_BOOKS = [
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/5748/2ffc/2e7f0bfd5a1de64199c130a6d3654ba1?Expires=1702252800&Signature=Ad8kX0eJjw9T2qq7uBdLwtru6lh-W3cSVqwKsgDFVuhGDQEv~vf8nUF~AiIGX0gPCCoM-idejXoo~q3sHf4ITi8NykRvadGZynHi2kJ1~Zd1IXaOjKmci-jWrTbV2REqKEETR4HGTE7hnuCpN55MZpX1TAdH2JHB9Vi2051FArm4dioWgADELiUqCQxom5UfjSP1TBzZhiQqKihiwMTjllH5ntKUajgpCxAav4LxQFiEYp2VCNcnCy4sUrTRwbXELXXYTQ8wVCqir-I4jDdcLavg3q1EPCcpVxleQ577HkYiLRjI6E3X1J5Zoi2OGZNoV0W1rViNuCO37PQQLuHlBA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '여름, 비',
+    author: '냥냥수염',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/5748/2ffc/2e7f0bfd5a1de64199c130a6d3654ba1?Expires=1702252800&Signature=Ad8kX0eJjw9T2qq7uBdLwtru6lh-W3cSVqwKsgDFVuhGDQEv~vf8nUF~AiIGX0gPCCoM-idejXoo~q3sHf4ITi8NykRvadGZynHi2kJ1~Zd1IXaOjKmci-jWrTbV2REqKEETR4HGTE7hnuCpN55MZpX1TAdH2JHB9Vi2051FArm4dioWgADELiUqCQxom5UfjSP1TBzZhiQqKihiwMTjllH5ntKUajgpCxAav4LxQFiEYp2VCNcnCy4sUrTRwbXELXXYTQ8wVCqir-I4jDdcLavg3q1EPCcpVxleQ577HkYiLRjI6E3X1J5Zoi2OGZNoV0W1rViNuCO37PQQLuHlBA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '여름, 비',
+    author: '냥냥수염',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/5748/2ffc/2e7f0bfd5a1de64199c130a6d3654ba1?Expires=1702252800&Signature=Ad8kX0eJjw9T2qq7uBdLwtru6lh-W3cSVqwKsgDFVuhGDQEv~vf8nUF~AiIGX0gPCCoM-idejXoo~q3sHf4ITi8NykRvadGZynHi2kJ1~Zd1IXaOjKmci-jWrTbV2REqKEETR4HGTE7hnuCpN55MZpX1TAdH2JHB9Vi2051FArm4dioWgADELiUqCQxom5UfjSP1TBzZhiQqKihiwMTjllH5ntKUajgpCxAav4LxQFiEYp2VCNcnCy4sUrTRwbXELXXYTQ8wVCqir-I4jDdcLavg3q1EPCcpVxleQ577HkYiLRjI6E3X1J5Zoi2OGZNoV0W1rViNuCO37PQQLuHlBA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '여름, 비',
+    author: '냥냥수염',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/5748/2ffc/2e7f0bfd5a1de64199c130a6d3654ba1?Expires=1702252800&Signature=Ad8kX0eJjw9T2qq7uBdLwtru6lh-W3cSVqwKsgDFVuhGDQEv~vf8nUF~AiIGX0gPCCoM-idejXoo~q3sHf4ITi8NykRvadGZynHi2kJ1~Zd1IXaOjKmci-jWrTbV2REqKEETR4HGTE7hnuCpN55MZpX1TAdH2JHB9Vi2051FArm4dioWgADELiUqCQxom5UfjSP1TBzZhiQqKihiwMTjllH5ntKUajgpCxAav4LxQFiEYp2VCNcnCy4sUrTRwbXELXXYTQ8wVCqir-I4jDdcLavg3q1EPCcpVxleQ577HkYiLRjI6E3X1J5Zoi2OGZNoV0W1rViNuCO37PQQLuHlBA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '여름, 비',
+    author: '냥냥수염',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/5748/2ffc/2e7f0bfd5a1de64199c130a6d3654ba1?Expires=1702252800&Signature=Ad8kX0eJjw9T2qq7uBdLwtru6lh-W3cSVqwKsgDFVuhGDQEv~vf8nUF~AiIGX0gPCCoM-idejXoo~q3sHf4ITi8NykRvadGZynHi2kJ1~Zd1IXaOjKmci-jWrTbV2REqKEETR4HGTE7hnuCpN55MZpX1TAdH2JHB9Vi2051FArm4dioWgADELiUqCQxom5UfjSP1TBzZhiQqKihiwMTjllH5ntKUajgpCxAav4LxQFiEYp2VCNcnCy4sUrTRwbXELXXYTQ8wVCqir-I4jDdcLavg3q1EPCcpVxleQ577HkYiLRjI6E3X1J5Zoi2OGZNoV0W1rViNuCO37PQQLuHlBA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '여름, 비',
+    author: '냥냥수염',
+  },
+];
+
 export {
   FIRST_BANNER_IMAGE_LINKS,
   HOT_BOOK_IMAGE_LINKS,
@@ -110,4 +138,5 @@ export {
   ANOTHER_COVER_LINK,
   PURE_BOOKS,
   BOOKFUND_BOOK_LINK,
+  TO_BE_CONTINUED_BOOKS,
 };

@@ -20,6 +20,7 @@ import OneSentence from '../components/home/OneSentence';
 import AnotherCover from '../components/home/AnotherCover';
 import PureBookSlider from '../components/home/PureBookSlider';
 import BookFund from '../components/home/BookFund';
+import ToBeContinuedSlider from '../components/home/ToBeContinuedSlider';
 
 function Home() {
   return (
@@ -41,6 +42,7 @@ function Home() {
       <AnotherCover />
       <PureBookSlider books={PURE_BOOKS} />
       <BookFund />
+      <ToBeContinuedSlider />
     </HomeWrapper>
   );
 }
