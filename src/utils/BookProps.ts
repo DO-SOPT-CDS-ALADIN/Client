@@ -1,4 +1,5 @@
 export interface BookProps {
+  bookId: number;
   rank: number;
   imgUrl: string;
   title: string;

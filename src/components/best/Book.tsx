@@ -11,6 +11,7 @@ import {
 } from '../../assets/icons';
 import { TAG } from '../../constants/tag';
 import { BookProps } from '../../utils/BookProps';
+import { useCart } from '../../hooks/useCartCount';
 
 interface TagProps {
   type: number;
@@ -18,6 +19,7 @@ interface TagProps {
 
 function Book(props: BookProps) {
   const {
+    bookId,
     rank,
     imgUrl,
     title,
@@ -33,6 +35,11 @@ function Book(props: BookProps) {
     heart,
   } = props;
 
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart(bookId);
+  };
   return (
     <BookWrapper>
       <BookInner>
@@ -85,7 +92,7 @@ function Book(props: BookProps) {
             <ButtonWrapper>
               <Button>{heart ? <IcHeartOn /> : <IcHeartOff />}</Button>
               <Button>
-                <IcCart />
+                <IcCart onClick={handleAddToCart} />
               </Button>
             </ButtonWrapper>
           </Price>
