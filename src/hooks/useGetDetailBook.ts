@@ -8,6 +8,7 @@ interface DetailBookResponse {
   code: number;
   message: string;
 }
+
 const useGetDetailBook = (bookId: number) => {
   const [response, setResponse] = useState<DetailBookProps>();
   const [error, setError] = useState<AxiosError>();

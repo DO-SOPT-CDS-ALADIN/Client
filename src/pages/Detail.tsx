@@ -29,7 +29,7 @@ function Detail() {
   const [section, setSection] = useState('이벤트');
   const { bookId } = useParams<{ bookId: string }>();
 
-  const parsedBookId = bookId ? parseInt(bookId, 10) : undefined;
+  const parsedBookId = bookId ? parseInt(bookId, 10) : 1;
 
   const { response, error, loading } = useGetDetailBook(parsedBookId as number);
 
@@ -39,6 +39,7 @@ function Detail() {
       {!error && !loading && response && (
         <>
           <DetailBookSummary
+            bookId={parsedBookId}
             title={response.title}
             src={response.imgUrl}
             author={response.writer}
