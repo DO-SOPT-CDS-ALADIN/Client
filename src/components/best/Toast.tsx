@@ -28,25 +28,23 @@ export default Toast;
 
 const ToastWrapper = styled.div`
   position: fixed;
+  right: 0;
   bottom: 8.4rem;
   left: 0;
-  right: 0;
 
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: flex-start;
 
   width: 34.3rem;
   height: 4.8rem;
-
   margin: 0 auto;
   padding: 1rem 3rem;
 
-  border-radius: 10px;
+  text-align: center;
 
   background-color: ${({ theme }) => theme.colors.grey_500};
-
-  text-align: center;
+  border-radius: 10px;
 `;
 
 const ToastMessage = styled.p`
