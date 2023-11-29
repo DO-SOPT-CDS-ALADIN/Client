@@ -28,7 +28,7 @@ function DetailMyReview() {
         agreeNum={DETAIL_MY_REVIEW.agreeNum}
         commentNum={DETAIL_MY_REVIEW.commentNum}
       />
-      <WriteButton>등록</WriteButton>
+      <WriteButton>쓰기</WriteButton>
     </DetailMyReviewWrapper>
   );
 }
