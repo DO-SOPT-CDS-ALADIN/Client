@@ -16,6 +16,11 @@ import DetailBuyerReviewList from '../components/detail/DetailBuyerReviewList';
 import DetailPostReview from '../components/detail/DetailPostReview';
 import DetailMyReview from '../components/detail/DetailMyReview';
 import DetailMyPaper from '../components/detail/DetailMyPaper';
+import BuyWith from '../components/common/BuyWith';
+import ClickWith from '../components/detail/ClickWith';
+import Footer from '../components/common/Footer';
+import DetailReturnRefund from '../components/detail/DetailReturnRefund';
+import DetailBottomBar from '../components/detail/DetailBottomBar';
 
 function Detail() {
   const [section, setSection] = useState('이벤트');
@@ -41,6 +46,11 @@ function Detail() {
       <DetailPostReview />
       <DetailMyReview />
       <DetailMyPaper />
+      <BuyWith />
+      <ClickWith />
+      <DetailReturnRefund />
+      <Footer />
+      <DetailBottomBar />
     </>
   );
 }

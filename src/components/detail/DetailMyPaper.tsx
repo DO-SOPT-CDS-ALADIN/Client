@@ -15,7 +15,7 @@ export default DetailMyPaper;
 
 const DetailMyReviewWrapper = styled.div`
   padding: 2.4rem 1.6rem;
-  margin-top: 1.2rem;
+  margin: 1.2rem 0;
 
   background-color: ${({ theme }) => theme.colors.white};
 `;
