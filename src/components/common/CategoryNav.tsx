@@ -32,8 +32,6 @@ const CategoryNavWrapper = styled.div`
 
   height: 5.6rem;
 
-  border-bottom: 0.1rem solid ${({ theme }) => theme.colors.grey_300};
-
   padding: 1.2rem 1.4rem 0.4rem 1.6rem;
 
   background-color: ${({ theme }) => theme.colors.white};
@@ -65,7 +63,7 @@ const Active = styled.div`
 
   background-color: ${({ theme }) => theme.colors.black};
 
-  font: ${({ theme }) => theme.fonts.body1};
+  ${({ theme }) => theme.fonts.body1};
   color: ${({ theme }) => theme.colors.white};
 `;
 
@@ -79,13 +77,13 @@ const Category = styled.div`
 
   padding: 6px 8px;
 
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
   color: ${({ theme }) => theme.colors.grey_500};
 `;
 
 const ShowButton = styled.div`
   position: sticky;
-  right: -3rem;
+  right: -1.4rem;
 
   display: flex;
   justify-content: center;

@@ -1,9 +1,11 @@
-import React from 'react';
 import styled from 'styled-components';
 
 import { IcLogo, IcSearch, IcCart } from '../../assets/icons';
+import { useCart } from '../../hooks/useCartCount';
 
 function Header() {
+  const { cartCount } = useCart();
+
   return (
     <HeaderWrapper>
       <LogoButton>
@@ -18,7 +20,7 @@ function Header() {
           <IcCart />
         </CartIconWrapper>
         <CartNumberWrapper>
-          <CartNumber>2</CartNumber>
+          <CartNumber>{cartCount}</CartNumber>
         </CartNumberWrapper>
       </CartButton>
     </HeaderWrapper>
@@ -43,7 +45,6 @@ const HeaderWrapper = styled.div`
 
   background-color: ${({ theme }) => theme.colors.white};
 `;
-// const SearchBar = styled.div``;
 
 const LogoButton = styled.button`
   display: flex;
@@ -74,7 +75,7 @@ const SearchBar = styled.div`
 const PlaceHolder = styled.p`
   color: ${({ theme }) => theme.colors.grey_400};
   text-align: center;
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
 `;
 
 const CartButton = styled.button`
@@ -112,7 +113,7 @@ const CartNumber = styled.p`
 
   color: ${({ theme }) => theme.colors.white};
   text-align: center;
-  font: ${({ theme }) => theme.fonts.detail1};
+  ${({ theme }) => theme.fonts.detail1};
 `;
 
 const CartIconWrapper = styled.div`
