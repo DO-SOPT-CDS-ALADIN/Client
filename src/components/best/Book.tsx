@@ -1,30 +1,55 @@
 import styled from 'styled-components';
 import {
   IcRanknumber,
+  IcRankLarge,
   IcEye,
   IcBestIstarSmall,
   IcMileage,
   IcHeartOff,
+  IcHeartOn,
   IcCart,
 } from '../../assets/icons';
-import book from '../../assets/imgs/bookImg.png';
 import { TAG } from '../../constants/tag';
-
-interface BookProps {
-  rank: number;
-  tagCount: number;
-}
+import { BookProps } from '../../utils/BookProps';
+import { useCart } from '../../hooks/useCart';
+import Toast from './Toast';
+import { useState } from 'react';
 
 interface TagProps {
   type: number;
 }
 
-function Book({ rank, tagCount }: BookProps) {
+function Book(props: BookProps) {
+  const {
+    bookId,
+    rank,
+    imgUrl,
+    title,
+    subtitle,
+    writer,
+    painter,
+    publisher,
+    pubDate,
+    score,
+    tag,
+    discountPrice,
+    mileage,
+    heart,
+  } = props;
+
+  const [toast, setToast] = useState(false);
+
+  const { response, addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart(bookId);
+    setToast(true);
+  };
   return (
     <BookWrapper>
       <BookInner>
         <Left>
-          <BookImg src={book} />
+          <BookImg src={imgUrl} />
           <PreviewButton>
             <IcEye />
             <PreviewText>미리보기</PreviewText>
@@ -32,48 +57,53 @@ function Book({ rank, tagCount }: BookProps) {
         </Left>
         <Right>
           <Rank>
-            <IcRanknumber />
+            {rank < 10 ? <IcRanknumber /> : <IcRankLarge />}
             <RankNum>{rank}</RankNum>
           </Rank>
           <Title>
-            <LargeBlackText>기적의 자세요정</LargeBlackText>
-            <GreyText>- 무너진 자세를 바로 세우는</GreyText>
+            <LargeBlackText>{title}</LargeBlackText>
+            {subtitle && <GreyText>- {subtitle}</GreyText>}
           </Title>
           <Writer>
-            <BlackText>자세요정</BlackText>
+            <BlackText>{writer}</BlackText>
             <GreyText>(지은이)</GreyText>
+            {painter && (
+              <>
+                <BlackText>, {painter}</BlackText>
+                <GreyText>(옮긴이)</GreyText>
+              </>
+            )}
           </Writer>
           <Writer>
-            <BlackText>다산라이프</BlackText>
-            <GreyText>I 2023년 10월</GreyText>
+            <BlackText>{publisher}</BlackText>
+            <GreyText>I {pubDate}</GreyText>
           </Writer>
           <Info>
             <IcBestIstarSmall />
-            <Score>4.0</Score>
+            <Score>{score}.0</Score>
           </Info>
           <TagWrapper>
-            {tagCount >= 1 && <Tag type={TAG.DELIVERY.ID}>{TAG.DELIVERY.TEXT}</Tag>}
-            {tagCount >= 2 && <Tag type={TAG.GIFT.ID}>{TAG.GIFT.TEXT}</Tag>}
-            {tagCount >= 3 && <Tag type={TAG.RESERVATION.ID}>{TAG.RESERVATION.TEXT}</Tag>}
+            {tag >= 1 && <Tag type={TAG.DELIVERY.ID}>{TAG.DELIVERY.TEXT}</Tag>}
+            {tag >= 2 && <Tag type={TAG.GIFT.ID}>{TAG.GIFT.TEXT}</Tag>}
+            {tag >= 3 && <Tag type={TAG.RESERVATION.ID}>{TAG.RESERVATION.TEXT}</Tag>}
           </TagWrapper>
           <Price>
             <Discount>10%</Discount>
-            <LargeBlackText>19,800원</LargeBlackText>
+            <LargeBlackText>{discountPrice}</LargeBlackText>
             <Mileage>
               <IcMileage />
-              <GreyText>1,100원</GreyText>
+              <GreyText>{mileage}</GreyText>
             </Mileage>
             <ButtonWrapper>
+              <Button>{heart ? <IcHeartOn /> : <IcHeartOff />}</Button>
               <Button>
-                <IcHeartOff />
-              </Button>
-              <Button>
-                <IcCart />
+                <IcCart onClick={handleAddToCart} />
               </Button>
             </ButtonWrapper>
           </Price>
         </Right>
       </BookInner>
+      {toast && <Toast setToast={setToast} message={response} />}
     </BookWrapper>
   );
 }
@@ -82,11 +112,10 @@ export default Book;
 const BookWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 1rem;
+  align-items: flex-start;
 
   width: 37.5rem;
-
   padding: 1.6rem;
 
   border-bottom: 0.5px solid ${({ theme }) => theme.colors.grey_300};
@@ -95,14 +124,13 @@ const BookWrapper = styled.div`
 const BookImg = styled.img`
   width: 8.2rem;
   height: 12.4rem;
-
   border: 0.05rem solid ${({ theme }) => theme.colors.grey_200};
 `;
 
 const BookInner = styled.div`
   display: flex;
-  align-items: flex-start;
   gap: 1rem;
+  align-items: flex-start;
 `;
 
 const Left = styled.div`
@@ -112,35 +140,35 @@ const Left = styled.div`
 
 const PreviewButton = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-shrink: 0;
   gap: 0.3rem;
+  align-items: center;
+  justify-content: center;
 
   width: 8.2rem;
   height: 2.7rem;
-  flex-shrink: 0;
   margin-top: 0.6rem;
-  border-radius: 0.2rem;
-  border: 1px solid ${({ theme }) => theme.colors.grey_300};
+
   background: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.grey_300};
+  border-radius: 0.2rem;
 `;
 
 const PreviewText = styled.p`
-  color: ${({ theme }) => theme.colors.grey_400};
   font: ${({ theme }) => theme.fonts.detail2};
+  color: ${({ theme }) => theme.colors.grey_400};
 `;
 
 const Right = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 0.2rem;
+  align-items: flex-start;
 `;
 const Title = styled.div`
   display: flex;
-  gap: 0.2rem;
   flex-wrap: wrap;
-
+  gap: 0.2rem;
   width: 25rem;
 `;
 
@@ -150,10 +178,10 @@ const LargeBlackText = styled.p`
 
 const Writer = styled.div`
   display: flex;
-  align-items: flex-start;
-  align-content: flex-start;
-  gap: 0.4rem;
   flex-wrap: wrap;
+  gap: 0.4rem;
+  align-content: flex-start;
+  align-items: flex-start;
 
   width: 25rem;
 `;
@@ -163,8 +191,8 @@ const BlackText = styled.p`
 `;
 
 const GreyText = styled.p`
-  color: ${({ theme }) => theme.colors.grey_400};
   font: ${({ theme }) => theme.fonts.detail2};
+  color: ${({ theme }) => theme.colors.grey_400};
 `;
 
 const Info = styled.div`
@@ -182,14 +210,14 @@ const Score = styled.p`
 
 const Tag = styled.div<TagProps>`
   display: flex;
-  justify-content: center;
+  gap: 1rem;
   align-items: center;
+  justify-content: center;
 
   padding: 0.2rem 0.8rem;
 
-  gap: 1rem;
-
-  border-radius: 1rem;
+  font: ${({ theme }) => theme.fonts.detail1};
+  color: ${({ theme }) => theme.colors.white};
 
   background: ${({ theme, type }) =>
     type === TAG.DELIVERY.ID
@@ -197,53 +225,46 @@ const Tag = styled.div<TagProps>`
       : type === TAG.GIFT.ID
         ? theme.colors.tangerine
         : theme.colors.pink_800};
-
-  color: ${({ theme }) => theme.colors.white};
-
-  font: ${({ theme }) => theme.fonts.detail1};
+  border-radius: 1rem;
 `;
 
 const Price = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
-  margin-top: 1rem;
   width: 25.1rem;
+  margin-top: 1rem;
 `;
 
 const Discount = styled.p`
   margin-right: 0.4rem;
-
-  color: ${({ theme }) => theme.colors.pink_400};
   font: ${({ theme }) => theme.fonts.body1};
+  color: ${({ theme }) => theme.colors.pink_400};
 `;
 
 const Mileage = styled.div`
   display: flex;
-
   margin-left: 0.4rem;
 `;
 const ButtonWrapper = styled.div`
   display: flex;
   gap: 0.4rem;
-
   margin-left: 1.4rem;
 `;
 
 const Button = styled.button`
-  justify-content: center;
-  align-items: center;
-
   display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 4rem;
   height: 4rem;
   padding: 0.8rem;
 
-  border-radius: 0.4rem;
-  border: 1px solid ${({ theme }) => theme.colors.grey_300};
-
   background: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.grey_300};
+  border-radius: 0.4rem;
 `;
 
 const Rank = styled.div`
@@ -251,9 +272,9 @@ const Rank = styled.div`
 `;
 const RankNum = styled.p`
   position: absolute;
-  top: 0rem;
+  top: 0;
   left: 0.45rem;
 
-  color: ${({ theme }) => theme.colors.white};
   font: ${({ theme }) => theme.fonts.detail1};
+  color: ${({ theme }) => theme.colors.white};
 `;
