@@ -11,7 +11,7 @@ import {
 } from '../../assets/icons';
 import { TAG } from '../../constants/tag';
 import { BookProps } from '../../utils/BookProps';
-import { useCart } from '../../hooks/useCartCount';
+import { useCart } from '../../hooks/useCart';
 import Toast from './Toast';
 import { useState } from 'react';
 
