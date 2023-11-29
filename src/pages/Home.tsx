@@ -19,6 +19,7 @@ import DiscountBookSlider from '../components/home/DiscountBookSlider';
 import OneSentence from '../components/home/OneSentence';
 import AnotherCover from '../components/home/AnotherCover';
 import PureBookSlider from '../components/home/PureBookSlider';
+import BookFund from '../components/home/BookFund';
 
 function Home() {
   return (
@@ -39,6 +40,7 @@ function Home() {
       <OneSentence />
       <AnotherCover />
       <PureBookSlider books={PURE_BOOKS} />
+      <BookFund />
     </HomeWrapper>
   );
 }
