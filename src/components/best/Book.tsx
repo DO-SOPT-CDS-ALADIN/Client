@@ -12,7 +12,7 @@ import {
 import { TAG } from '../../constants/tag';
 import { BookProps } from '../../utils/BookProps';
 import { useCart } from '../../hooks/useCart';
-import Toast from './Toast';
+import Toast from '../common/Toast';
 import { useState } from 'react';
 
 interface TagProps {
