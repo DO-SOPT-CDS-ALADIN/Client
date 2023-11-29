@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import cart from '../apis/cart';
+import { useRecoilState } from 'recoil';
+import { cartCountState } from '../recoil/atoms/cartCountState';
 
 interface CartData {
   cartCount: number;
@@ -7,32 +9,29 @@ interface CartData {
   addToCart: (bookId: number) => Promise<void>;
 }
 
+const _getCartCount = async (setCartCount: (count: number) => void) => {
+  try {
+    const response = await cart.getCartCount();
+    const newCartCount = response.data.data.countCart;
+    setCartCount(newCartCount);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 export function useCart(): CartData {
-  const [cartCount, setCartCount] = useState<number>(0);
+  const [cartCount, setCartCount] = useRecoilState(cartCountState);
   const [response, setResponse] = useState<string>('');
 
-  const _getCartCount = async () => {
-    try {
-      const response = await cart.getCartCount();
-      console.log(response.data.data.countCart);
-      setCartCount(response.data.data.countCart);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
   useEffect(() => {
-    _getCartCount();
-  }, []);
+    _getCartCount(setCartCount);
+  }, [setCartCount]);
 
   const addToCart = async (bookId: number) => {
-    setCartCount(prevCount => prevCount + 1);
-
     try {
       const response = await cart.addToCart(bookId);
-
       setResponse(response.data.message);
-      _getCartCount();
+      _getCartCount(setCartCount);
     } catch (err) {
       console.error(err);
     }
