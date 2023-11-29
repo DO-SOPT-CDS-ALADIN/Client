@@ -12,6 +12,8 @@ import {
 import { TAG } from '../../constants/tag';
 import { BookProps } from '../../utils/BookProps';
 import { useCart } from '../../hooks/useCartCount';
+import Toast from './Toast';
+import { useState } from 'react';
 
 interface TagProps {
   type: number;
@@ -35,10 +37,13 @@ function Book(props: BookProps) {
     heart,
   } = props;
 
-  const { addToCart } = useCart();
+  const [toast, setToast] = useState(false);
+
+  const { response, addToCart } = useCart();
 
   const handleAddToCart = () => {
     addToCart(bookId);
+    setToast(true);
   };
   return (
     <BookWrapper>
@@ -98,6 +103,7 @@ function Book(props: BookProps) {
           </Price>
         </Right>
       </BookInner>
+      {toast && <Toast setToast={setToast} message={response} />}
     </BookWrapper>
   );
 }
