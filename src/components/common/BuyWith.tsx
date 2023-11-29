@@ -36,8 +36,8 @@ export default BuyWith;
 const BuyWithWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 0.4rem;
+  justify-content: center;
 
   padding: 2.4rem 0rem 2.4rem 1.6rem;
 
@@ -56,12 +56,11 @@ const Title = styled.p`
 
 const ShowMoreWrapper = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 5.8rem;
   height: 4rem;
-
   margin-right: 0.8rem;
   padding: 1rem 0rem 1rem 0.1rem;
 `;
@@ -73,7 +72,6 @@ const ShowMore = styled.p`
 
 const List = styled.div`
   overflow-y: auto;
-
   display: flex;
   align-items: center;
 
@@ -85,11 +83,10 @@ const List = styled.div`
 const BookWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 1.2rem;
+  align-items: flex-start;
 
   width: 12.8rem;
-
   margin: 0.4rem 1.6rem 0 0;
 `;
 
