@@ -75,6 +75,27 @@ const DISCOUNT_BOOKS = [
   },
 ];
 
+const ONE_SENTENCE_LINK =
+  'https://s3-alpha-sig.figma.com/img/42d9/8454/d4182faf7b5c095448c17ed9d50c41a4?Expires=1702252800&Signature=S3gfDYvljkdpaY3SjpBYO5XsYJJZy6lQCBlATsHYhjpJ-UlGZjtROii-OIzPxg0zQB-PYvDknOcN83FcvE5GpCiEL~ut4fSh0Xsf4HazDRQqvEwuSpx6bqEl94w6449~VDrBEoL0TeJrquL5DF9GZCwiS~Dvb-MK3wt59ENIG68p3cDLwV6JgimP9-LsDHxwhOmbuPaUV3ETKd7w6qk6kQWNxlZr7Un48Bv15TJ0PIFAdzRvUjsXK~ac8aEbNq0Yv4EjmNsRLODCGeMIr0L1pTTqdI11GLBR9UbsHhI~Osmql-Hu5alHixKAIYeGDyIAq5joDBMT5c8mz~wWlKcoUw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4';
+
+const ANOTHER_COVER_LINK =
+  'https://s3-alpha-sig.figma.com/img/0566/df73/f9c4e5c00cabc3ec47057c7f6c1e4eb4?Expires=1702252800&Signature=SbxYHNuhTb1DOaJs-01hADbh482Wg4V0KbrqHxKv5tKcWa~NWkegUqeqx2~RDt7ITum5TtAGFt7qSbZtQC7nN2Xv4t37xbcNF5hdedFRADeBPicMF5pGRVzOG~LCfFl10nq2Uz1W4PSFGH62adlOkWhV8VGq~~i7kgpF4nvlKPtGFKGHl0SccahHb5K-IdxjyHSF0rQfmmw~ORAQZx8qII6t1Y~AC45ljC98l9VPeVt4P2zNdEobQanxhKtUOqy52pwqfDyYj9gIvTmAu8ET1K7LemxEhN3nZUAAYRcd0QcIkQijmjXyCKYjmR5x64Io8HBkPJ6VAkwSCgDr9yiOCA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4';
+
+const PURE_BOOKS = [
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/ef53/3af0/75169305d420ed6fd956c678fe899e70?Expires=1702252800&Signature=I4dXDpingv1iOVOSedNgJRb3NuxRJOcpPZWtm2H84WXKATRUWkkdgY-njQ-071Tlg4ynD5altIww-yMv-JOcrUK6dOyAMcjIEyUnz1sp23xQF0JGqXgs0cBLyvm0io1Fi2myEiFXuDaRwCzyw~hRD9F-tSpN0eQoI7le4xgPMneQv3qthGTeZUwUuw2b-H7eyOGlgORiX7aH5K-~UMkPY46w6Afy~UQOyAYAYKNlNHeGQbrLum07Wto00B893nhRso4rF4X6fB51lLvcScfBp42mLPBtizj~kvcI~LT3rf2btgK1FXZL299msrTetXGl0PEz~kjOasAcI8k4ZSf4vw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '방금 떠나온 세계 (2주년 기념 리커버)',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/ef53/3af0/75169305d420ed6fd956c678fe899e70?Expires=1702252800&Signature=I4dXDpingv1iOVOSedNgJRb3NuxRJOcpPZWtm2H84WXKATRUWkkdgY-njQ-071Tlg4ynD5altIww-yMv-JOcrUK6dOyAMcjIEyUnz1sp23xQF0JGqXgs0cBLyvm0io1Fi2myEiFXuDaRwCzyw~hRD9F-tSpN0eQoI7le4xgPMneQv3qthGTeZUwUuw2b-H7eyOGlgORiX7aH5K-~UMkPY46w6Afy~UQOyAYAYKNlNHeGQbrLum07Wto00B893nhRso4rF4X6fB51lLvcScfBp42mLPBtizj~kvcI~LT3rf2btgK1FXZL299msrTetXGl0PEz~kjOasAcI8k4ZSf4vw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '방금 떠나온 세계 (2주년 기념 리커버)',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/ef53/3af0/75169305d420ed6fd956c678fe899e70?Expires=1702252800&Signature=I4dXDpingv1iOVOSedNgJRb3NuxRJOcpPZWtm2H84WXKATRUWkkdgY-njQ-071Tlg4ynD5altIww-yMv-JOcrUK6dOyAMcjIEyUnz1sp23xQF0JGqXgs0cBLyvm0io1Fi2myEiFXuDaRwCzyw~hRD9F-tSpN0eQoI7le4xgPMneQv3qthGTeZUwUuw2b-H7eyOGlgORiX7aH5K-~UMkPY46w6Afy~UQOyAYAYKNlNHeGQbrLum07Wto00B893nhRso4rF4X6fB51lLvcScfBp42mLPBtizj~kvcI~LT3rf2btgK1FXZL299msrTetXGl0PEz~kjOasAcI8k4ZSf4vw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '방금 떠나온 세계 (2주년 기념 리커버)',
+  },
+];
+
 export {
   FIRST_BANNER_IMAGE_LINKS,
   HOT_BOOK_IMAGE_LINKS,
@@ -82,4 +103,7 @@ export {
   MIDDLE_BANNER_IMAGE_LINK,
   CONCENTRATE_BOOKS,
   DISCOUNT_BOOKS,
+  ONE_SENTENCE_LINK,
+  ANOTHER_COVER_LINK,
+  PURE_BOOKS,
 };

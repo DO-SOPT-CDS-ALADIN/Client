@@ -77,6 +77,8 @@ import IcBestDomestic from './ic_best_domestic.svg?react';
 import IcBack from './ic_back.svg?react';
 import IcAudio from './ic_audio.svg?react';
 import IcAd from './ic_ad.svg?react';
+import IcOpenQuota from './ic_open_quota.svg?react';
+import IcCloseQuota from './ic_close_quota.svg?react';
 
 export {
   IcUp,
@@ -156,4 +158,6 @@ export {
   IcBack,
   IcAudio,
   IcAd,
+  IcOpenQuota,
+  IcCloseQuota,
 };
