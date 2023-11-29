@@ -5,9 +5,16 @@ import EditorSelect from '../components/home/EditorSelect';
 import TopNav from '../components/common/TopNav';
 import SlideBanner from '../components/home/SlideBanner';
 import TopTen from '../components/home/TopTen';
-import { FIRST_BANNER_IMAGE_LINKS, MIDDLE_BANNER_IMAGE_LINK } from '../constants/home';
+import {
+  FIRST_BANNER_IMAGE_LINKS,
+  MIDDLE_BANNER_IMAGE_LINK,
+  CONCENTRATE_BOOKS,
+  DISCOUNT_BOOKS,
+} from '../constants/home';
 import HotBook from '../components/home/HotBook';
 import MadeGift from '../components/home/MadeGift';
+import BookSlider from '../components/home/BookSlider';
+import DiscountBookSlider from '../components/home/DiscountBookSlider';
 
 function Home() {
   return (
@@ -23,6 +30,8 @@ function Home() {
       </BannerImgWrapper>
       <HotBook />
       <MadeGift />
+      <BookSlider section_title="이달의 주목도서" books={CONCENTRATE_BOOKS} />
+      <DiscountBookSlider section_title="이 주의 특가" books={DISCOUNT_BOOKS} />
     </HomeWrapper>
   );
 }

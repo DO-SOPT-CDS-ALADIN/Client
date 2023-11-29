@@ -25,7 +25,6 @@ export default MadeGift;
 
 const MadeGiftWrapper = styled.div`
   width: 100%;
-  height: 22.6rem;
   margin-top: 4rem;
 `;
 
