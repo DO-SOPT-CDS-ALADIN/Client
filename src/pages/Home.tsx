@@ -10,11 +10,15 @@ import {
   MIDDLE_BANNER_IMAGE_LINK,
   CONCENTRATE_BOOKS,
   DISCOUNT_BOOKS,
+  PURE_BOOKS,
 } from '../constants/home';
 import HotBook from '../components/home/HotBook';
 import MadeGift from '../components/home/MadeGift';
 import BookSlider from '../components/home/BookSlider';
 import DiscountBookSlider from '../components/home/DiscountBookSlider';
+import OneSentence from '../components/home/OneSentence';
+import AnotherCover from '../components/home/AnotherCover';
+import PureBookSlider from '../components/home/PureBookSlider';
 
 function Home() {
   return (
@@ -32,6 +36,9 @@ function Home() {
       <MadeGift />
       <BookSlider section_title="이달의 주목도서" books={CONCENTRATE_BOOKS} />
       <DiscountBookSlider section_title="이 주의 특가" books={DISCOUNT_BOOKS} />
+      <OneSentence />
+      <AnotherCover />
+      <PureBookSlider books={PURE_BOOKS} />
     </HomeWrapper>
   );
 }
