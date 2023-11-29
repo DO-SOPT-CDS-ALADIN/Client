@@ -52,17 +52,14 @@ const BookWrapper = styled.div`
   width: 37.5rem;
   height: 17.8rem;
 
-  border-bottom: 1px solid ${({ theme }) => theme.colors.grey_200};
-
   background: ${({ theme }) => theme.colors.white};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.grey_200};
 `;
 
 const CheckButton = styled.button`
   position: absolute;
-
   width: 4rem;
   height: 4rem;
-
   margin-left: 0.8rem;
 `;
 
@@ -71,18 +68,16 @@ const CheckBox = styled.div`
   top: 1.6rem;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
 
   width: 2rem;
   height: 2rem;
-
   margin: 0 1.4rem 0 1rem;
 
-  border: 1px solid ${({ theme }) => theme.colors.grey_200};
-
   background: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.grey_200};
 `;
 
 const BookImg = styled.img`
@@ -92,16 +87,15 @@ const BookImg = styled.img`
 
 const InnerWrapper = styled.div`
   display: flex;
-  align-items: flex-start;
   gap: 1.2rem;
-
+  align-items: flex-start;
   padding: 2.4rem 0 0 5.6rem;
 `;
 const BookInfo = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 0.8rem;
+  align-items: flex-start;
 `;
 
 const Title = styled.p`
@@ -111,8 +105,8 @@ const Title = styled.p`
 
 const PriceWrapper = styled.div`
   display: flex;
-  align-items: center;
   gap: 0.8rem;
+  align-items: center;
 `;
 
 const BlackText = styled.p`
@@ -128,27 +122,23 @@ const GreyText = styled.p`
 
 const MileageWrapper = styled.div`
   display: flex;
-  align-items: center;
   gap: 0.4rem;
-
+  align-items: center;
   padding: 0.2rem 0rem;
 `;
 
 const Stapper = styled.div`
   overflow: hidden;
-
   display: flex;
-  align-items: center;
   gap: 0.4rem;
+  align-items: center;
 
   height: 3.2rem;
-
   padding: 0rem 0.4rem;
 
-  border-radius: 0.4rem;
-  border: 1px solid ${({ theme }) => theme.colors.grey_300};
-
   background: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.grey_300};
+  border-radius: 0.4rem;
 `;
 
 const StepNum = styled.p`
@@ -170,19 +160,17 @@ const Option = styled.div`
 
 const Button = styled.button`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 3.2rem;
   height: 3.2rem;
-
-  padding: 0.3rem;
   margin-left: 1.2rem;
-
-  border-radius: 0.4rem;
-  border: 1px solid ${({ theme }) => theme.colors.grey_300};
+  padding: 0.3rem;
 
   background: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.grey_300};
+  border-radius: 0.4rem;
 `;
 
 const Tag = styled.div`
@@ -193,7 +181,6 @@ const Tag = styled.div`
   padding: 0 0.8rem 0.2rem;
 
   border-radius: 1rem;
-
   background: ${({ theme }) => theme.colors.orange};
 
   color: ${({ theme }) => theme.colors.white};
@@ -204,7 +191,6 @@ const Tag = styled.div`
 const DeliveryInfo = styled.div`
   display: flex;
   gap: 0.4rem;
-
   margin-top: 0.5rem;
 `;
 

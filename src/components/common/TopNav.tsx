@@ -35,9 +35,9 @@ export default TopNav;
 
 const Nav = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
   gap: 1rem;
+  align-items: flex-start;
+  justify-content: center;
 
   padding: 1.6rem 1rem 1.2rem 1rem;
 `;
@@ -47,6 +47,7 @@ const NavText = styled.p`
 `;
 const ActiveNavText = styled.p`
   ${({ theme }) => theme.fonts.title2_bold};
+
   color: ${({ theme }) => theme.colors.blue_600};
 `;
 

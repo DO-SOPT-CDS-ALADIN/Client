@@ -51,8 +51,8 @@ const DetailPostReviewWrapper = styled.div`
   flex-direction: column;
 
   height: 38.6rem;
-  padding: 2.4rem 1.6rem;
   margin-top: 1.2rem;
+  padding: 2.4rem 1.6rem;
 
   background-color: ${({ theme }) => theme.colors.white};
 `;
@@ -67,20 +67,19 @@ const Body2Wrapper = styled.div`
   position: relative;
   top: -2.6rem;
   right: -24.3rem;
-
   display: flex;
 `;
 
 const StarClickWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-
   row-gap: 0.4rem;
+  align-items: center;
 `;
 
 const Head3PinkText = styled.p`
   ${({ theme }) => theme.fonts.head3};
+
   line-height: normal;
   font-style: normal;
   color: ${({ theme }) => theme.colors.pink_400};
@@ -93,6 +92,7 @@ const StarsWrapper = styled.div`
 
 const Detail2Text = styled.p`
   ${({ theme }) => theme.fonts.detail2};
+
   color: ${({ theme }) => theme.colors.grey_400};
 `;
 
@@ -103,6 +103,7 @@ const ReviewTextarea = styled.textarea`
 
   border-radius: 0.8rem;
   border: 1px solid ${({ theme }) => theme.colors.grey_300};
+
   resize: none;
 
   ${({ theme }) => theme.fonts.body2};
@@ -114,19 +115,19 @@ const ReviewTextarea = styled.textarea`
 
 const ByteCountText = styled.p`
   margin-top: 0.8rem;
-
   text-align: right;
   ${({ theme }) => theme.fonts.body2};
+
   font-style: normal;
 `;
 
 const SpoilerCheckboxWrapper = styled.div`
+  position: relative;
+  top: -0.2rem;
+
   display: flex;
   column-gap: 1rem;
   align-items: center;
-
-  position: relative;
-  top: -0.2rem;
 `;
 
 const Body2Text = styled.span`
@@ -145,5 +146,6 @@ const PostButton = styled.button`
   border-radius: 0.8rem;
   background: ${({ theme }) => theme.colors.blue_400};
   ${({ theme }) => theme.fonts.title2_bold};
+
   color: ${({ theme }) => theme.colors.white};
 `;

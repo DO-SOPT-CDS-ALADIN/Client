@@ -28,21 +28,21 @@ export default DetailEvent;
 const DetailEventWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
   flex-shrink: 0;
+  align-items: flex-start;
+  justify-content: center;
 
   height: 30.6rem;
   margin-top: 1.2rem;
   padding: 2.4rem 0 2.4rem 1.6rem;
+
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
 const DetailEventTitleWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
+  justify-content: space-between;
   width: 100%;
 `;
 
@@ -53,7 +53,6 @@ const Title1BoldText = styled.span`
 const Body2TextWrapper = styled.div`
   display: flex;
   align-items: center;
-
   color: ${({ theme }) => theme.colors.grey_400};
 `;
 
@@ -62,12 +61,12 @@ const Body2Text = styled.span`
 `;
 
 const EventScrollWrapper = styled.div`
+  overflow-x: auto;
   display: flex;
 
   width: 100%;
   height: 22rem;
   margin-top: 1.6rem;
-  overflow-x: auto;
 
   &::-webkit-scrollbar {
     display: none;
@@ -79,7 +78,7 @@ const EventScrollCard = styled.img`
   height: 22rem;
   margin-right: 0.8rem;
 
+  object-fit: cover;
   border-radius: 0.8rem;
   box-shadow: ${({ theme }) => theme.shadows.mini};
-  object-fit: cover;
 `;

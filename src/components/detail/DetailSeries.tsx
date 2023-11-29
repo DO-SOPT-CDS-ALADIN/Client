@@ -82,8 +82,8 @@ const Body2Text = styled.span`
 
 const SeriesTitleWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   width: 100%;
   margin-bottom: 2.6rem;
@@ -91,15 +91,14 @@ const SeriesTitleWrapper = styled.div`
 
 const TitleWrapper = styled.div`
   display: flex;
-  justify-content: left;
   align-items: center;
+  justify-content: left;
 `;
 
 const DetailTextsWrapper = styled.div`
   display: flex;
-  justify-content: left;
   align-items: center;
-
+  justify-content: left;
   margin-top: 0.2rem;
 `;
 
@@ -123,19 +122,18 @@ const Detail1Text = styled.span`
 
 const CheckboxWrapper = styled.div`
   display: flex;
-  justify-content: left;
+  column-gap: 1.8rem;
   align-items: center;
+  justify-content: left;
 
   width: 100%;
-  column-gap: 1.8rem;
 `;
 
 const TotalCheckboxWrapper = styled.div`
   display: flex;
-  justify-content: left;
-  align-items: center;
-
   column-gap: 1.4rem;
+  align-items: center;
+  justify-content: left;
 `;
 
 const SeriesInfoWrapper = styled.div`
@@ -146,45 +144,44 @@ const SeriesInfoWrapper = styled.div`
 const Divider = styled.div`
   width: 34.3rem;
   margin: 1.6rem 0;
-
   border-top: 1px solid ${({ theme }) => theme.colors.grey_300};
 `;
 
 const SeriesUnderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-
   width: 100%;
 `;
 
 const SeriesButtonsWrapper = styled.div`
   display: flex;
-  align-items: center;
   column-gap: 0.8rem;
+  align-items: center;
 `;
 
 const WideButtonImageWrapper = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  line-height: 1.96rem;
+  justify-content: center;
 
   width: 7.8rem;
   height: 4rem;
 
-  border-radius: 0.4rem;
+  line-height: 1.96rem;
+  text-align: center;
+
   border: 0.1rem solid ${({ theme }) => theme.colors.grey_300};
+  border-radius: 0.4rem;
 `;
 
 const ButtonImageWrapper = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 4rem;
   height: 4rem;
 
-  border-radius: 0.4rem;
   border: 0.1rem solid ${({ theme }) => theme.colors.grey_300};
+  border-radius: 0.4rem;
 `;

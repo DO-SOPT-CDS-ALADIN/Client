@@ -18,12 +18,11 @@ export default CartHeader;
 
 const HeaderWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   width: 37.5rem;
   height: 4.8rem;
-
   padding-left: 1.2rem;
 
   background-color: ${({ theme }) => theme.colors.white};

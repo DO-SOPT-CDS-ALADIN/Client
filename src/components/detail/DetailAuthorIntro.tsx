@@ -49,6 +49,7 @@ export default DetailAuthorIntro;
 
 const DetailAuthorIntroWrapper = styled.div`
   position: relative;
+
   display: flex;
   flex-direction: column;
   row-gap: 1.6rem;
@@ -56,45 +57,49 @@ const DetailAuthorIntroWrapper = styled.div`
   height: 27.4rem;
   margin-top: 1.2rem;
   padding: 2.4rem 1.6rem;
+
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
 const AuthorIntroTitleWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
+  justify-content: space-between;
   width: 100%;
 `;
 
 const Title1Text = styled.span`
+  ${({ theme }) => theme.fonts.title1_reg};
+
   line-height: normal;
-  font: ${({ theme }) => theme.fonts.title1_reg};
 `;
 
 const Title1BoldText = styled.span`
-  font: ${({ theme }) => theme.fonts.title1_bold};
+  ${({ theme }) => theme.fonts.title1_bold};
+
   line-height: normal;
 `;
 
 const Body2TextWrapper = styled.div`
   display: flex;
   align-items: center;
-
   color: ${({ theme }) => theme.colors.grey_400};
 `;
 
 const Body2Text = styled.span`
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
 `;
 
 const Body2TextBox = styled.p`
-  font: ${({ theme }) => theme.fonts.body2};
+  overflow: hidden;
+  display: box;
+
+  ${({ theme }) => theme.fonts.body2};
+
   text-align: left;
   word-wrap: break-word;
-  display: -webkit-box;
-  overflow: hidden;
   white-space: pre-wrap;
+
   -webkit-box-orient: vertical;
 
   &.text1 {
@@ -104,29 +109,29 @@ const Body2TextBox = styled.p`
 
 const AuthorTitleWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
+  justify-content: space-between;
   width: 100%;
 `;
 
 const TitleWrapper = styled.div`
   display: flex;
-  justify-content: left;
   align-items: center;
+  justify-content: left;
 `;
 
 const Detail2Wrapper = styled.div`
   display: flex;
-  justify-content: right;
-  align-items: center;
   column-gap: 0.8rem;
+  align-items: center;
+  justify-content: right;
 `;
 
 const Detail2Text = styled.span`
-  font: ${({ theme }) => theme.fonts.detail2};
-  color: ${({ theme }) => theme.colors.black};
+  ${({ theme }) => theme.fonts.detail2};
+
   line-height: normal;
+  color: ${({ theme }) => theme.colors.black};
   &.blue {
     color: ${({ theme }) => theme.colors.blue_500};
   }
@@ -138,15 +143,15 @@ const TextBoxWrapper = styled.div`
 `;
 
 const MoreBox = styled.div`
-  display: flex;
-  justify-content: flex-end;
-
   position: absolute;
   bottom: 0;
   left: 0;
 
-  height: 8rem;
+  display: flex;
+  justify-content: flex-end;
+
   width: 100%;
+  height: 8rem;
 
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
 

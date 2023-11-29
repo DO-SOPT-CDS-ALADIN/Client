@@ -27,11 +27,10 @@ const ButtonWrapper = styled.div<ButtonWrapperProps>`
     page === PAGE.DETAIL ? '6.8rem' : page === PAGE.CART ? '11.2rem' : '7.2rem'};
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 4.8rem;
   height: 4.8rem;
-
   padding: 0.5rem;
 `;

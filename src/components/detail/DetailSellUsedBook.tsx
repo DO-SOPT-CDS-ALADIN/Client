@@ -32,13 +32,13 @@ export default DetailSellUsedBook;
 const UsedBookDivWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  row-gap: 0.8rem;
   justify-content: left;
 
   width: 100%;
   height: 16.6rem;
   margin-top: 1.2rem;
   padding: 2.4rem 1.6rem;
-  row-gap: 0.8rem;
 
   background-color: ${({ theme }) => theme.colors.white};
 `;
@@ -73,16 +73,17 @@ const SellOptionBoxWrapper = styled.div`
 
 const SellOptionBox = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
 
   width: 11.1rem;
   height: 6rem;
   padding: 0.8rem 1.6rem;
 
-  border-radius: 0.4rem;
+  text-align: center;
+
   border: 1px solid ${({ theme }) => theme.colors.blue_400};
+  border-radius: 0.4rem;
 
   &.selected {
     background-color: ${({ theme }) => theme.colors.blue_400};
@@ -94,6 +95,7 @@ const OptionText = styled.div`
   white-space: pre-line;
 
   ${({ theme }) => theme.fonts.body1};
+
   color: ${({ theme }) => theme.colors.blue_400};
 
   &.selected {

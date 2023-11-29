@@ -81,6 +81,7 @@ export default DetailMyReviewItem;
 
 const DetailMyReviewItemWrapper = styled.div`
   position: relative;
+
   display: flex;
   flex-direction: column;
   row-gap: 0.8rem;
@@ -90,9 +91,8 @@ const DetailMyReviewItemWrapper = styled.div`
 
 const ReviewWriterInfoWrapper = styled.div`
   display: flex;
-  align-items: center;
   column-gap: 0.8rem;
-
+  align-items: center;
   margin-bottom: 0.8rem;
 
   & > .more {
@@ -111,8 +111,10 @@ const WriterInfoWrapper = styled.div`
 
 const BuyerLabel = styled.div`
   display: flex;
+
   width: 3.6rem;
   height: 2.3rem;
+
   justify-content: center;
   align-items: center;
 
@@ -120,6 +122,7 @@ const BuyerLabel = styled.div`
   background: ${({ theme }) => theme.colors.blue_100};
 
   ${({ theme }) => theme.fonts.detail1};
+
   color: ${({ theme }) => theme.colors.blue_500};
   line-height: normal;
   letter-spacing: -0.6px;
@@ -128,31 +131,33 @@ const BuyerLabel = styled.div`
 const WriterInfoStarsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-
   row-gap: 1rem;
 `;
 
 const Body1Text = styled.p`
   ${({ theme }) => theme.fonts.body1_copy};
+
   height: 9.6rem;
+
   text-align: left;
   word-wrap: break-word;
-  display: -webkit-box;
+
+  display: box;
   overflow: hidden;
 
   -webkit-box-orient: vertical;
 `;
 
 const MoreBox = styled.div`
-  display: flex;
-  justify-content: flex-end;
-
   position: absolute;
   bottom: 5rem;
   left: 0;
 
-  height: 8rem;
+  display: flex;
+  justify-content: flex-end;
+
   width: 100%;
+  height: 8rem;
 
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
 
@@ -172,7 +177,6 @@ const Body2Text = styled.span`
 const CountsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-
   padding-bottom: 1.5rem;
   border-bottom: solid 1px ${({ theme }) => theme.colors.grey_300};
 `;

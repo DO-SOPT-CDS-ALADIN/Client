@@ -30,7 +30,6 @@ const FilterWrapper = styled.div`
   align-items: center;
 
   height: 5.4rem;
-
   padding: 0rem 0.8rem;
 
   background-color: ${({ theme }) => theme.colors.white};
@@ -40,13 +39,12 @@ const CheckBox = styled.div`
   position: relative;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
 
   width: 2rem;
   height: 2rem;
-
   margin: 0 1.4rem 0 1rem;
 
   background: ${({ theme }) => theme.colors.pink_400};
@@ -64,23 +62,20 @@ const CheckText = styled.p`
 const ButtonWrapper = styled.div`
   position: absolute;
   right: 0;
-
   display: flex;
 `;
 
 const Button = styled.button`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 3.2rem;
   height: 3.2rem;
-
-  padding: 0.3rem;
   margin-right: 1.2rem;
-
-  border: 1px solid ${({ theme }) => theme.colors.grey_300};
-  border-radius: 0.4rem;
+  padding: 0.3rem;
 
   background: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.grey_300};
+  border-radius: 0.4rem;
 `;

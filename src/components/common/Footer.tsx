@@ -39,11 +39,10 @@ const FooterWrapper = styled.div`
 
 const MenuWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   width: 37.5rem;
-
   padding: 0.4rem 1.6rem;
 
   border-bottom: 1px solid ${({ theme }) => theme.colors.grey_200};
@@ -62,9 +61,9 @@ const Menu = styled.p`
 
 const CompanyWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
 
   margin-top: 2.4rem;
 `;
@@ -75,9 +74,9 @@ const Company = styled.p`
 
 const ContactWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
 
   margin-top: 1.2rem;
 `;
@@ -93,13 +92,12 @@ const Tel = styled.p`
 const ButtonSection = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 0.8rem;
-
-  margin: 1.6rem auto;
+  justify-content: center;
 
   width: 34.3rem;
   height: 8.8rem;
+  margin: 1.6rem auto;
 `;
 const ShortButton = styled.button`
   display: flex;
@@ -108,12 +106,10 @@ const ShortButton = styled.button`
   flex: 1 0 0;
 
   padding-top: 2px;
-
   width: 16.8rem;
   height: 3.8rem;
 
   border-radius: 0.6rem;
-
   background: ${({ theme }) => theme.colors.white};
 
   ${({ theme }) => theme.fonts.body2};

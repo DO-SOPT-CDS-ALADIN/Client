@@ -33,6 +33,6 @@ function Cart() {
 export default Cart;
 
 const CartWrapper = styled.div`
-  background-color: ${({ theme }) => theme.colors.grey_200};
   padding-bottom: 10.8rem;
+  background-color: ${({ theme }) => theme.colors.grey_200};
 `;

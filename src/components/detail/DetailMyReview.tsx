@@ -36,9 +36,8 @@ function DetailMyReview() {
 export default DetailMyReview;
 
 const DetailMyReviewWrapper = styled.div`
-  padding: 2.4rem 1.6rem 2.1rem 1.6rem;
   margin-top: 1.2rem;
-
+  padding: 2.4rem 1.6rem 2.1rem 1.6rem;
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
@@ -49,9 +48,8 @@ const Title1BoldText = styled.span`
 
 const MyReviewNavWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
+  justify-content: space-between;
   height: 4.4rem;
 `;
 
@@ -65,20 +63,21 @@ const NavItem = styled.div`
 
   &.bold {
     ${({ theme }) => theme.fonts.body1};
+
     border-bottom: 4px solid ${({ theme }) => theme.colors.blue_400};
   }
 `;
 
 const SelectBoxWrapper = styled.div`
-  display: flex;
   position: relative;
+  display: flex;
   align-items: center;
 
   & > .icon {
     position: absolute;
     right: 0;
-    border-radius: 0rem 0.4rem 0.4rem 0rem;
     background: ${({ theme }) => theme.colors.blue_100};
+    border-radius: 0rem 0.4rem 0.4rem 0rem;
   }
 `;
 
@@ -86,6 +85,7 @@ const Select = styled.select`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   width: 6.4rem;
   height: 2.4rem;
   padding-left: 0.7rem;
@@ -93,10 +93,10 @@ const Select = styled.select`
   border-radius: 0.4rem;
   border: 1px solid ${({ theme }) => theme.colors.blue_100};
   background: ${({ theme }) => theme.colors.white};
-
   appearance: none;
 
   ${({ theme }) => theme.fonts.detail2};
+
   cursor: pointer;
   &:focus {
     outline: 0;
@@ -111,6 +111,7 @@ const WriteButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   height: 4.8rem;
   padding: 0.8rem;
   margin-top: 1.8rem;
@@ -118,5 +119,6 @@ const WriteButton = styled.div`
   border-radius: 0.8rem;
   background: ${({ theme }) => theme.colors.blue_400};
   ${({ theme }) => theme.fonts.title2_bold};
+
   color: ${({ theme }) => theme.colors.white};
 `;

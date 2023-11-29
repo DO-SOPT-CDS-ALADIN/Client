@@ -15,12 +15,12 @@ export default DetailReturnRefund;
 
 const DetailReturnRefundWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   height: 4.8rem;
-  padding: 0 1.2rem 0 1.6rem;
   margin-top: 1.2rem;
+  padding: 0 1.2rem 0 1.6rem;
 
   background-color: ${({ theme }) => theme.colors.white};
 `;

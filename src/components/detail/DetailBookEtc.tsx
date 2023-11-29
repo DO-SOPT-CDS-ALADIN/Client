@@ -61,15 +61,14 @@ export default DetailBookEtc;
 const BookEtcWrapper = styled.div`
   width: 100%;
   height: 31rem;
-  padding: 2.4rem 1.6rem;
   margin-top: 1.2rem;
+  padding: 2.4rem 1.6rem;
 
   background-color: ${({ theme }) => theme.colors.white};
 `;
 const BookScoreWrapper = styled.span`
   display: flex;
   justify-content: space-between;
-
   width: 100%;
   margin-bottom: 1.7rem;
 `;
@@ -78,12 +77,12 @@ const StarWrapper = styled.span`
   display: flex;
   column-gap: 0.5rem;
   align-items: center;
-
   line-height: 2rem;
 `;
 
 const ReviewScore = styled.span`
-  font: ${({ theme }) => theme.fonts.head4};
+  ${({ theme }) => theme.fonts.head4};
+
   color: ${({ theme }) => theme.colors.pink_400};
 `;
 
@@ -94,10 +93,10 @@ const ReviewNumWrapper = styled.span`
 
 const DescriptionWrapper = styled.p`
   display: flex;
-  justify-content: left;
-  align-items: center;
-
   column-gap: 0.4rem;
+  align-items: center;
+  justify-content: left;
+
   line-height: 1.96rem;
 
   &.category {
@@ -106,12 +105,14 @@ const DescriptionWrapper = styled.p`
 `;
 
 const Body1Text = styled.span`
-  font: ${({ theme }) => theme.fonts.body1};
+  ${({ theme }) => theme.fonts.body1};
+
   color: ${({ theme }) => theme.colors.black};
 `;
 
 const Body2Text = styled.span`
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
+
   color: ${({ theme }) => theme.colors.black};
 
   &.blue {
@@ -135,26 +136,24 @@ const Divider = styled.div`
   width: 34.3rem;
   height: 0.1rem;
   margin: 1.6rem 0;
-
   background-color: ${({ theme }) => theme.colors.grey_300};
 `;
 
 const TopicTitleWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
+  justify-content: space-between;
   margin-bottom: 1.6rem;
 `;
 
 const Title1Text = styled.span`
-  font: ${({ theme }) => theme.fonts.title1_bold};
+  ${({ theme }) => theme.fonts.title1_bold};
 `;
 
 const Detail2Text = styled.div`
   display: flex;
   justify-content: space-between;
+  ${({ theme }) => theme.fonts.detail2};
 
-  font: ${({ theme }) => theme.fonts.detail2};
   color: ${({ theme }) => theme.colors.blue_500};
 `;

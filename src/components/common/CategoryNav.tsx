@@ -28,30 +28,32 @@ export default CategoryNav;
 
 const CategoryNavWrapper = styled.div`
   position: relative;
+
   overflow-x: auto;
 
   height: 5.6rem;
-
   padding: 1.2rem 1.4rem 0.4rem 1.6rem;
+
+  white-space: nowrap;
 
   background-color: ${({ theme }) => theme.colors.white};
   &::-webkit-scrollbar {
     height: 0;
   }
-  white-space: nowrap;
 `;
 
 const CategoryWrapper = styled.div`
   display: flex;
-  align-items: center;
   gap: 0.4rem;
-
+  align-items: center;
   height: 4rem;
 `;
 
 const Active = styled.div`
   display: flex;
+
   padding: 0.5rem 2rem;
+
   justify-content: center;
   align-items: center;
   gap: 1rem;
@@ -60,10 +62,10 @@ const Active = styled.div`
   height: 3rem;
 
   border-radius: 2.4rem;
-
   background-color: ${({ theme }) => theme.colors.black};
 
   ${({ theme }) => theme.fonts.body1};
+
   color: ${({ theme }) => theme.colors.white};
 `;
 
@@ -74,10 +76,10 @@ const Category = styled.div`
   gap: 10px;
 
   height: 40px;
-
   padding: 6px 8px;
 
   ${({ theme }) => theme.fonts.body2};
+
   color: ${({ theme }) => theme.colors.grey_500};
 `;
 
@@ -86,12 +88,11 @@ const ShowButton = styled.div`
   right: -1.4rem;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 4.8rem;
   height: 4.8rem;
-
   padding: 1.2rem;
 
   background: linear-gradient(270deg, #fff 70.83%, rgba(255, 255, 255, 0) 100%);

@@ -48,30 +48,27 @@ export default DetailBookInfoBox;
 const BookInfoWrapper = styled.div`
   width: 100%;
   height: 24.2rem;
-
   padding: 1.6rem;
-
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
 const InfoSubjectWrapper = styled.div`
   display: flex;
   width: 100%;
-
   margin-bottom: 1.6rem;
 `;
 
 const BookInfoSubject = styled.span`
   width: 8.4rem;
+  ${({ theme }) => theme.fonts.body1};
 
-  font: ${({ theme }) => theme.fonts.body1};
   text-align: left;
   vertical-align: middle;
 `;
 
 const Body2Text = styled.span`
-  font: ${({ theme }) => theme.fonts.body2};
   display: inline-block;
+  ${({ theme }) => theme.fonts.body2};
 
   background-color: ${({ theme }) => theme.colors.white};
   &.mileage {
@@ -90,8 +87,7 @@ const Body2Text = styled.span`
 
 const BookInfoContentPink = styled.span`
   margin-left: 0.8rem;
-
-  font: ${({ theme }) => theme.fonts.head4};
+  ${({ theme }) => theme.fonts.head4};
 
   color: ${({ theme }) => theme.colors.pink_400};
 `;
@@ -100,8 +96,7 @@ const DeliveryContent = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 0.4rem;
-
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
 `;
 
 const DeliveryWrapper = styled.div`
@@ -110,16 +105,14 @@ const DeliveryWrapper = styled.div`
 
 const DeliveryContentPink = styled.span`
   margin-left: 0.4rem;
+  ${({ theme }) => theme.fonts.body1};
 
-  font: ${({ theme }) => theme.fonts.body1};
   color: ${({ theme }) => theme.colors.pink_400};
 `;
 
 const Divider = styled.div`
   width: 34.3rem;
   height: 0.1rem;
-
   margin-bottom: 1.6rem;
-
   background-color: ${({ theme }) => theme.colors.grey_300};
 `;

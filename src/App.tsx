@@ -5,12 +5,14 @@ import theme from './styles/theme';
 import { useEffect } from 'react';
 
 const Wrapper = styled.div`
-  border: none;
-  min-height: calc(var(--vh, 1vh) * 100);
-  max-width: var(--app-max-width, 375px);
-  margin-left: auto;
-  margin-right: auto;
   position: relative;
+
+  max-width: var(--app-max-width, 375px);
+  min-height: calc(var(--vh, 1vh) * 100);
+  margin-right: auto;
+  margin-left: auto;
+
+  border: none;
 `;
 
 function App() {

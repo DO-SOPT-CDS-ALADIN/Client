@@ -29,43 +29,47 @@ export default DetailBookContents;
 
 const DetailBookContentsWrapper = styled.div`
   position: relative;
+
   display: flex;
   flex-direction: column;
 
   height: 14.6rem;
-  padding: 2.4rem 1.6rem;
   margin-top: 1.2rem;
+  padding: 2.4rem 1.6rem;
 
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
 const Title1BoldText = styled.span`
-  font: ${({ theme }) => theme.fonts.title1_bold};
+  ${({ theme }) => theme.fonts.title1_bold};
 `;
 
 const Body2Text = styled.p`
-  margin-top: 1.6rem;
+  overflow: hidden;
+  display: box;
+
   height: 5.88rem;
-  white-space: pre-wrap;
-  font: ${({ theme }) => theme.fonts.body2};
+  margin-top: 1.6rem;
+
+  ${({ theme }) => theme.fonts.body2};
+
   text-align: left;
   word-wrap: break-word;
-  display: -webkit-box;
-  overflow: hidden;
+  white-space: pre-wrap;
 
   -webkit-box-orient: vertical;
 `;
 
 const MoreBox = styled.div`
-  display: flex;
-  justify-content: flex-end;
-
   position: absolute;
   bottom: 0;
   left: 0;
 
-  height: 8rem;
+  display: flex;
+  justify-content: flex-end;
+
   width: 100%;
+  height: 8rem;
 
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
 

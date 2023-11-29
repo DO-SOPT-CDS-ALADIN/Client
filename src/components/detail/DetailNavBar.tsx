@@ -36,11 +36,11 @@ export default TopNav;
 
 const Nav = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
-  height: 4.8rem;
   width: 25%;
+  height: 4.8rem;
 `;
 
 const NavText = styled.p`

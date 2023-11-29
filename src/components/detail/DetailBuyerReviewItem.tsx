@@ -74,14 +74,13 @@ const DetailBuyerReviewItemWrapper = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 0.8rem;
-
   padding: 1.6rem 1.6rem 0 1.6rem;
 `;
 
 const ReviewWriterInfoWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   & > .more {
     position: relative;
@@ -97,8 +96,10 @@ const WriterInfoWrapper = styled.div`
 
 const BuyerLabel = styled.div`
   display: flex;
+
   width: 3.6rem;
   height: 2.3rem;
+
   justify-content: center;
   align-items: center;
 
@@ -106,6 +107,7 @@ const BuyerLabel = styled.div`
   background: ${({ theme }) => theme.colors.blue_100};
 
   ${({ theme }) => theme.fonts.detail1};
+
   color: ${({ theme }) => theme.colors.blue_500};
   line-height: normal;
   letter-spacing: -0.6px;
@@ -121,7 +123,6 @@ const Body2Text = styled.span`
 const CountsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-
   padding-bottom: 1.5rem;
   border-bottom: solid 1px ${({ theme }) => theme.colors.grey_300};
 `;

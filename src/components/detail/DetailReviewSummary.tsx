@@ -48,8 +48,8 @@ const DetailReviewSummaryWrapper = styled.div`
   row-gap: 1.6rem;
 
   height: 15.4rem;
-  padding: 2.4rem 1.6rem;
   margin-top: 1.2rem;
+  padding: 2.4rem 1.6rem;
 
   background-color: ${({ theme }) => theme.colors.white};
 `;
@@ -67,7 +67,6 @@ const ReviewSummaryWrapper = styled.div`
 const DetailCountsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-
   width: 21.2rem;
 `;
 

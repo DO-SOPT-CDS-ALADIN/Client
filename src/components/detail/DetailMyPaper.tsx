@@ -14,9 +14,8 @@ function DetailMyPaper() {
 export default DetailMyPaper;
 
 const DetailMyReviewWrapper = styled.div`
-  padding: 2.4rem 1.6rem;
   margin: 1.2rem 0;
-
+  padding: 2.4rem 1.6rem;
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
@@ -28,10 +27,10 @@ const Title1BoldText = styled.span`
 const Body2Text = styled.div`
   display: flex;
   justify-content: center;
-
   margin: 2.4rem 0;
 
   ${({ theme }) => theme.fonts.body2};
+
   font-style: normal;
 `;
 
@@ -39,6 +38,7 @@ const WriteButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   height: 4.8rem;
   padding: 0.8rem;
   margin-top: 1.8rem;
@@ -46,5 +46,6 @@ const WriteButton = styled.div`
   border-radius: 0.8rem;
   background: ${({ theme }) => theme.colors.blue_400};
   ${({ theme }) => theme.fonts.title2_bold};
+
   color: ${({ theme }) => theme.colors.white};
 `;

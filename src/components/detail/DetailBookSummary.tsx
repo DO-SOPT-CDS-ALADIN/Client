@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { IcBigcircleLeft, IcBigcircleRight, IcBook, IcShare, IcHeartOff } from '../../assets/icons';
-import DetailBookInfoBox from './DetailbookInfoBox';
+import DetailBookInfoBox from './DetailBookInfoBox';
 
 const BOOK_INFO = {
   title: '설자은, 금성으로 돌아오다',
@@ -58,12 +58,12 @@ function DetailBookSummary() {
 export default DetailBookSummary;
 
 const BookSummaryWrapper = styled.article`
+  display: flex;
+  flex-direction: column;
+
   width: 100%;
   height: 87.8rem;
   margin-top: 4.8rem;
-
-  display: flex;
-  flex-direction: column;
 
   background-color: ${({ theme }) => theme.colors.white};
 `;
@@ -71,37 +71,36 @@ const BookSummaryWrapper = styled.article`
 const BookCoverImageWrapper = styled.div`
   display: flex;
   justify-content: center;
-
   width: 100%;
   height: 40rem;
 `;
 
 const BookCoverImage = styled.div`
+  position: relative;
+
   width: 27rem;
   height: 40rem;
-
-  position: relative;
   margin-top: 2.77rem;
+
   background-color: ${({ theme }) => theme.colors.yellow};
   box-shadow: ${({ theme }) => theme.shadows.large};
 `;
 
 const IconWrapper = styled.div`
-  display: flex;
-  width: 27rem;
-  padding: 0 0.45rem;
-
   position: absolute;
-  margin-top: 17.2rem;
 
+  display: flex;
   justify-content: space-between;
+
+  width: 27rem;
+  margin-top: 17.2rem;
+  padding: 0 0.45rem;
 `;
 
 const BookMainInfoWrapper = styled.div`
   width: 100%;
-
-  padding: 0 1.6rem;
   margin-bottom: 0.9rem;
+  padding: 0 1.6rem;
 `;
 
 const BookTitle = styled.p`
@@ -116,6 +115,7 @@ const BookInfo = styled.p`
 
 const BookGifts = styled.p`
   ${({ theme }) => theme.fonts.body2};
+
   color: ${({ theme }) => theme.colors.pink_400};
 `;
 
@@ -126,15 +126,15 @@ const ButtonsWrapper = styled.div`
 
 const ButtonImageWrapper = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 4rem;
   height: 4rem;
-  padding: 0.8rem;
   margin-right: 0.8rem;
+  padding: 0.8rem;
 
-  border-radius: 0.4rem;
-  border: 0.1rem solid ${({ theme }) => theme.colors.grey_300};
   background: ${({ theme }) => theme.colors.white};
+  border: 0.1rem solid ${({ theme }) => theme.colors.grey_300};
+  border-radius: 0.4rem;
 `;

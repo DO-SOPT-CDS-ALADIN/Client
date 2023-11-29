@@ -46,8 +46,8 @@ const DetailBuyerReviewListWrapper = styled.div`
 `;
 const BuyerReviewListNavWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   height: 4.4rem;
   padding: 0 1.6rem;
@@ -63,20 +63,21 @@ const NavItem = styled.div`
 
   &.bold {
     ${({ theme }) => theme.fonts.body1};
+
     border-bottom: 4px solid ${({ theme }) => theme.colors.blue_400};
   }
 `;
 
 const SelectBoxWrapper = styled.div`
-  display: flex;
   position: relative;
+  display: flex;
   align-items: center;
 
   & > .icon {
     position: absolute;
     right: 0;
-    border-radius: 0rem 0.4rem 0.4rem 0rem;
     background: ${({ theme }) => theme.colors.blue_100};
+    border-radius: 0rem 0.4rem 0.4rem 0rem;
   }
 `;
 
@@ -84,6 +85,7 @@ const Select = styled.select`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   width: 6.4rem;
   height: 2.4rem;
   padding-left: 0.7rem;
@@ -91,10 +93,10 @@ const Select = styled.select`
   border-radius: 0.4rem;
   border: 1px solid ${({ theme }) => theme.colors.blue_100};
   background: ${({ theme }) => theme.colors.white};
-
   appearance: none;
 
   ${({ theme }) => theme.fonts.detail2};
+
   cursor: pointer;
   &:focus {
     outline: 0;
@@ -114,5 +116,6 @@ const MoreButton = styled.div`
   column-gap: 0.4rem;
 
   ${({ theme }) => theme.fonts.detail2};
+
   cursor: pointer;
 `;

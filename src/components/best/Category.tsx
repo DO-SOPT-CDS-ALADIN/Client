@@ -21,12 +21,12 @@ export default Category;
 
 const CategoryWrapper = styled.div`
   overflow-x: auto;
-  white-space: nowrap;
-
   display: flex;
   gap: 0.8rem;
 
   padding: 0 1.6rem;
+
+  white-space: nowrap;
 
   &::-webkit-scrollbar {
     height: 0;

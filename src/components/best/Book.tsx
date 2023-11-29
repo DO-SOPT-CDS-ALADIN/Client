@@ -82,11 +82,10 @@ export default Book;
 const BookWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 1rem;
+  align-items: flex-start;
 
   width: 37.5rem;
-
   padding: 1.6rem;
 
   border-bottom: 0.5px solid ${({ theme }) => theme.colors.grey_300};
@@ -95,14 +94,13 @@ const BookWrapper = styled.div`
 const BookImg = styled.img`
   width: 8.2rem;
   height: 12.4rem;
-
   border: 0.05rem solid ${({ theme }) => theme.colors.grey_200};
 `;
 
 const BookInner = styled.div`
   display: flex;
-  align-items: flex-start;
   gap: 1rem;
+  align-items: flex-start;
 `;
 
 const Left = styled.div`
@@ -112,35 +110,35 @@ const Left = styled.div`
 
 const PreviewButton = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-shrink: 0;
   gap: 0.3rem;
+  align-items: center;
+  justify-content: center;
 
   width: 8.2rem;
   height: 2.7rem;
-  flex-shrink: 0;
   margin-top: 0.6rem;
-  border-radius: 0.2rem;
-  border: 1px solid ${({ theme }) => theme.colors.grey_300};
+
   background: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.grey_300};
+  border-radius: 0.2rem;
 `;
 
 const PreviewText = styled.p`
-  color: ${({ theme }) => theme.colors.grey_400};
   font: ${({ theme }) => theme.fonts.detail2};
+  color: ${({ theme }) => theme.colors.grey_400};
 `;
 
 const Right = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 0.2rem;
+  align-items: flex-start;
 `;
 const Title = styled.div`
   display: flex;
-  gap: 0.2rem;
   flex-wrap: wrap;
-
+  gap: 0.2rem;
   width: 25rem;
 `;
 
@@ -150,10 +148,10 @@ const LargeBlackText = styled.p`
 
 const Writer = styled.div`
   display: flex;
-  align-items: flex-start;
-  align-content: flex-start;
-  gap: 0.4rem;
   flex-wrap: wrap;
+  gap: 0.4rem;
+  align-content: flex-start;
+  align-items: flex-start;
 
   width: 25rem;
 `;
@@ -163,8 +161,8 @@ const BlackText = styled.p`
 `;
 
 const GreyText = styled.p`
-  color: ${({ theme }) => theme.colors.grey_400};
   font: ${({ theme }) => theme.fonts.detail2};
+  color: ${({ theme }) => theme.colors.grey_400};
 `;
 
 const Info = styled.div`
@@ -182,14 +180,14 @@ const Score = styled.p`
 
 const Tag = styled.div<TagProps>`
   display: flex;
-  justify-content: center;
+  gap: 1rem;
   align-items: center;
+  justify-content: center;
 
   padding: 0.2rem 0.8rem;
 
-  gap: 1rem;
-
-  border-radius: 1rem;
+  font: ${({ theme }) => theme.fonts.detail1};
+  color: ${({ theme }) => theme.colors.white};
 
   background: ${({ theme, type }) =>
     type === TAG.DELIVERY.ID
@@ -197,53 +195,46 @@ const Tag = styled.div<TagProps>`
       : type === TAG.GIFT.ID
         ? theme.colors.tangerine
         : theme.colors.pink_800};
-
-  color: ${({ theme }) => theme.colors.white};
-
-  font: ${({ theme }) => theme.fonts.detail1};
+  border-radius: 1rem;
 `;
 
 const Price = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
-  margin-top: 1rem;
   width: 25.1rem;
+  margin-top: 1rem;
 `;
 
 const Discount = styled.p`
   margin-right: 0.4rem;
-
-  color: ${({ theme }) => theme.colors.pink_400};
   font: ${({ theme }) => theme.fonts.body1};
+  color: ${({ theme }) => theme.colors.pink_400};
 `;
 
 const Mileage = styled.div`
   display: flex;
-
   margin-left: 0.4rem;
 `;
 const ButtonWrapper = styled.div`
   display: flex;
   gap: 0.4rem;
-
   margin-left: 1.4rem;
 `;
 
 const Button = styled.button`
-  justify-content: center;
-  align-items: center;
-
   display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 4rem;
   height: 4rem;
   padding: 0.8rem;
 
-  border-radius: 0.4rem;
-  border: 1px solid ${({ theme }) => theme.colors.grey_300};
-
   background: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.grey_300};
+  border-radius: 0.4rem;
 `;
 
 const Rank = styled.div`
@@ -254,6 +245,6 @@ const RankNum = styled.p`
   top: 0rem;
   left: 0.45rem;
 
-  color: ${({ theme }) => theme.colors.white};
   font: ${({ theme }) => theme.fonts.detail1};
+  color: ${({ theme }) => theme.colors.white};
 `;

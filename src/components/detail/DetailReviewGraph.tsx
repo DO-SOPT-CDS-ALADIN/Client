@@ -83,9 +83,8 @@ export default DetailReviewGraph;
 
 const DetailReviewGraphWrapper = styled.div`
   height: 49.3rem;
-  padding: 2.4rem 1.6rem;
   margin-top: 1rem;
-
+  padding: 2.4rem 1.6rem;
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
@@ -120,9 +119,7 @@ const PercentageText = styled.span`
 const GraphWrapper = styled.div<{ direction: string }>`
   display: flex;
   justify-content: ${({ direction }) => direction};
-
   width: 10.6rem;
-
   background-color: ${({ theme }) => theme.colors.grey_200};
   &.rate {
     width: 20rem;
@@ -131,7 +128,6 @@ const GraphWrapper = styled.div<{ direction: string }>`
 
 const GraphPink = styled.div<{ percentage: number }>`
   width: ${({ percentage }) => percentage}%;
-
   background-color: ${({ theme }) => theme.colors.pink_400};
 `;
 
@@ -141,9 +137,9 @@ const AgeText = styled.p`
   justify-content: center;
 
   width: 5.4rem;
+
   text-align: center;
   line-height: normal;
-
   letter-spacing: -0.6px;
 
   ${({ theme }) => theme.fonts.detail1};
@@ -151,50 +147,48 @@ const AgeText = styled.p`
 
 const GenderWrapper = styled.div`
   display: flex;
-  justify-content: center;
-
   column-gap: 5.4rem;
+  justify-content: center;
   margin-bottom: 1.6rem;
 `;
 
 const Detail2Text = styled.span`
   ${({ theme }) => theme.fonts.detail2};
+
   letter-spacing: -0.6px;
 `;
 
 const Divider = styled.div`
   width: 34.3rem;
   height: 0.1rem;
-
   margin-bottom: 1.7rem;
-
   background-color: ${({ theme }) => theme.colors.grey_300};
 `;
 
 const ReviewRateTitleWrapper = styled.div`
-  height: 2rem;
   display: flex;
   column-gap: 3.8rem;
+  height: 2rem;
   margin-bottom: 1.3rem;
 `;
 
 const TotalReviewRateGraphWrapper = styled.div`
   display: flex;
   flex-direction: column;
-
   row-gap: 1.2rem;
 `;
 
 const StarsWrapper = styled.div`
   display: inline-flex;
-  align-items: center;
   column-gap: 0.5rem;
+  align-items: center;
 `;
 
 const Head4PinkText = styled.span`
   display: flex;
 
   ${({ theme }) => theme.fonts.head4};
+
   color: ${({ theme }) => theme.colors.pink_400};
 `;
 const ReviewRateGraphWrapper = styled.div`
