@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { IcCheckboxGray, IcEnterXsGrey, IcStarLargePink } from '../../assets/icons';
-import DETAIL_TEXTS from '../../constants/detail';
+import DETAIL_TEXTS from '../../constants/DETAIL_TEXTS';
 
 function DetailPostReview() {
   const [textAreaValue, setTextAreaValue] = useState('');
@@ -80,9 +80,9 @@ const StarClickWrapper = styled.div`
 `;
 
 const Head3PinkText = styled.p`
-  margin-top: 0.6rem;
-
   ${({ theme }) => theme.fonts.head3};
+  line-height: normal;
+  font-style: normal;
   color: ${({ theme }) => theme.colors.pink_400};
 `;
 

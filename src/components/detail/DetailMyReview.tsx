@@ -1,16 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import DetailBuyerReviewItem from './DetailBuyerReviewItem';
-import DETAIL_REVIEW_LIST from '../../constants/DETAIL_REVIEW_LIST';
-import { IcDetailsSelectRectangle, IcDown, IcDownXsBlue } from '../../assets/icons';
+import { IcDetailsSelectRectangle, IcDownXsBlue } from '../../assets/icons';
+import DetailMyReviewItem from './DetailMyReviewItem';
+import DETAIL_MY_REVIEW from '../../constants/DETAIL_MY_REVIEW';
 
-function DetailBuyerReviewList() {
+function DetailMyReview() {
   return (
-    <DetailBuyerReviewListWrapper>
-      <BuyerReviewListNavWrapper>
+    <DetailMyReviewWrapper>
+      <Title1BoldText>마이리뷰</Title1BoldText>
+      <MyReviewNavWrapper>
         <NavWrapper>
-          <NavItem className="bold">구매자(10)</NavItem>
-          <NavItem>전체(11)</NavItem>
+          <NavItem className="bold">구매자(1)</NavItem>
+          <NavItem>전체(3)</NavItem>
         </NavWrapper>
         <SelectBoxWrapper>
           <Select>
@@ -19,38 +20,39 @@ function DetailBuyerReviewList() {
           <IcDetailsSelectRectangle className="icon" />
           <IcDownXsBlue className="icon arrow" />
         </SelectBoxWrapper>
-      </BuyerReviewListNavWrapper>
-      {DETAIL_REVIEW_LIST.map((review, index) => (
-        <DetailBuyerReviewItem
-          key={index}
-          userId={review.userId}
-          date={review.date}
-          content={review.content}
-          agreeNum={review.agreeNum}
-          commentNum={review.commentNum}
-        />
-      ))}
-      <MoreButton>
-        더보기
-        <IcDown />
-      </MoreButton>
-    </DetailBuyerReviewListWrapper>
+      </MyReviewNavWrapper>
+      <DetailMyReviewItem
+        userId={DETAIL_MY_REVIEW.userId}
+        date={DETAIL_MY_REVIEW.date}
+        content={DETAIL_MY_REVIEW.content}
+        agreeNum={DETAIL_MY_REVIEW.agreeNum}
+        commentNum={DETAIL_MY_REVIEW.commentNum}
+      />
+      <WriteButton>쓰기</WriteButton>
+    </DetailMyReviewWrapper>
   );
 }
 
-export default DetailBuyerReviewList;
+export default DetailMyReview;
 
-const DetailBuyerReviewListWrapper = styled.div`
-  margin-top: 1.4rem;
+const DetailMyReviewWrapper = styled.div`
+  padding: 2.4rem 1.6rem 2.1rem 1.6rem;
+  margin-top: 1.2rem;
+
   background-color: ${({ theme }) => theme.colors.white};
 `;
-const BuyerReviewListNavWrapper = styled.div`
+
+const Title1BoldText = styled.span`
+  margin-bottom: 0.8rem;
+  ${({ theme }) => theme.fonts.title1_bold};
+`;
+
+const MyReviewNavWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   height: 4.4rem;
-  padding: 0 1.6rem;
 `;
 
 const NavWrapper = styled.div`
@@ -105,14 +107,16 @@ const SelectOption = styled.option`
   ${({ theme }) => theme.fonts.detail2};
 `;
 
-const MoreButton = styled.div`
-  height: 4rem;
-
+const WriteButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: 0.4rem;
+  height: 4.8rem;
+  padding: 0.8rem;
+  margin-top: 1.8rem;
 
-  ${({ theme }) => theme.fonts.detail2};
-  cursor: pointer;
+  border-radius: 0.8rem;
+  background: ${({ theme }) => theme.colors.blue_400};
+  ${({ theme }) => theme.fonts.title2_bold};
+  color: ${({ theme }) => theme.colors.white};
 `;

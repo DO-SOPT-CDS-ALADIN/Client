@@ -14,13 +14,13 @@ function DetailSellUsedBook() {
       </SellPriceWrapper>
       <SellOptionBoxWrapper>
         <SellOptionBox>
-          <OptionText>중고{`\n`}알라딘에 팔기</OptionText>
+          <OptionText>{`중고\n알라딘에 팔기`}</OptionText>
         </SellOptionBox>
         <SellOptionBox>
-          <OptionText>중고{'\n'}회원에게 팔기</OptionText>
+          <OptionText>{`중고\n회원에게 팔기`}</OptionText>
         </SellOptionBox>
         <SellOptionBox className="selected">
-          <OptionText className="selected">중고 등록{'\n'}알림 신청</OptionText>
+          <OptionText className="selected">{`중고 등록\n알림 신청`}</OptionText>
         </SellOptionBox>
       </SellOptionBoxWrapper>
     </UsedBookDivWrapper>
@@ -44,7 +44,7 @@ const UsedBookDivWrapper = styled.div`
 `;
 
 const Title1BoldText = styled.span`
-  font: ${({ theme }) => theme.fonts.title1_bold};
+  ${({ theme }) => theme.fonts.title1_bold};
 `;
 
 const SellPriceWrapper = styled.div`
@@ -53,14 +53,14 @@ const SellPriceWrapper = styled.div`
 `;
 
 const Body2Text = styled.span`
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
   &.pink {
     color: ${({ theme }) => theme.colors.pink_400};
   }
 `;
 
 const Body1Text = styled.span`
-  font: ${({ theme }) => theme.fonts.body1};
+  ${({ theme }) => theme.fonts.body1};
   &.pink {
     color: ${({ theme }) => theme.colors.pink_400};
   }
@@ -93,7 +93,7 @@ const OptionText = styled.div`
   text-align: center;
   white-space: pre-line;
 
-  font: ${({ theme }) => theme.fonts.body1};
+  ${({ theme }) => theme.fonts.body1};
   color: ${({ theme }) => theme.colors.blue_400};
 
   &.selected {

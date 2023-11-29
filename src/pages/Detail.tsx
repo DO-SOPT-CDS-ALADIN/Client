@@ -14,12 +14,19 @@ import DetailReviewSummary from '../components/detail/DetailReviewSummary';
 import DetailReviewGraph from '../components/detail/DetailReviewGraph';
 import DetailBuyerReviewList from '../components/detail/DetailBuyerReviewList';
 import DetailPostReview from '../components/detail/DetailPostReview';
+import DetailMyReview from '../components/detail/DetailMyReview';
+import DetailMyPaper from '../components/detail/DetailMyPaper';
+import BuyWith from '../components/common/BuyWith';
+import ClickWith from '../components/detail/ClickWith';
+import Footer from '../components/common/Footer';
+import DetailReturnRefund from '../components/detail/DetailReturnRefund';
+import DetailBottomBar from '../components/detail/DetailBottomBar';
 
 function Detail() {
   const [section, setSection] = useState('이벤트');
   // lint 때문에 임시로 추가. 추후 기능 구현 때 삭제 예정
   setSection('이벤트');
-  // setSection('이벤트');
+
   return (
     <>
       <Header />
@@ -37,6 +44,13 @@ function Detail() {
       <DetailReviewGraph />
       <DetailBuyerReviewList />
       <DetailPostReview />
+      <DetailMyReview />
+      <DetailMyPaper />
+      <BuyWith />
+      <ClickWith />
+      <DetailReturnRefund />
+      <Footer />
+      <DetailBottomBar />
     </>
   );
 }
