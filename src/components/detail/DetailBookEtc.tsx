@@ -2,13 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import { IcEllipse51, IcEllipse51Grey, IcStar5 } from '../../assets/icons';
 
-function DetailBookEtc() {
+interface DetailBookEtcProps {
+  star: number;
+}
+
+function DetailBookEtc({ star }: DetailBookEtcProps) {
   return (
     <BookEtcWrapper>
       <BookScoreWrapper>
         <StarWrapper>
           <IcStar5 />
-          <ReviewScore>4.5</ReviewScore>
+          <ReviewScore>{star}.0</ReviewScore>
         </StarWrapper>
         <ReviewNumWrapper>
           <ReviewNum>

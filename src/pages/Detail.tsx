@@ -21,32 +21,53 @@ import ClickWith from '../components/detail/ClickWith';
 import Footer from '../components/common/Footer';
 import DetailReturnRefund from '../components/detail/DetailReturnRefund';
 import DetailBottomBar from '../components/detail/DetailBottomBar';
+import { useParams } from 'react-router-dom';
+import useGetDetailBook from '../hooks/useGetDetailBook';
 
 function Detail() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [section, setSection] = useState('이벤트');
+  const { bookId } = useParams<{ bookId: string }>();
+
+  const parsedBookId = bookId ? parseInt(bookId, 10) : undefined;
+
+  const { response, error, loading } = useGetDetailBook(parsedBookId as number);
 
   return (
     <>
       <Header />
-      <DetailBookSummary />
-      <DetailBookEtc />
-      <DetailSellUsedBook />
-      <DetailSeries />
-      <DetailNavBar section={section} />
-      <DetailEvent />
-      <DetailBookIntro />
-      <DetailBookContents />
-      <DetailAuthorIntro />
-      <DetailPublisherIntro />
-      <DetailReviewSummary />
-      <DetailReviewGraph />
-      <DetailBuyerReviewList />
-      <DetailPostReview />
-      <DetailMyReview />
-      <DetailMyPaper />
-      <BuyWith />
-      <ClickWith />
+      {!error && !loading && response && (
+        <>
+          <DetailBookSummary
+            title={response.title}
+            src={response.imgUrl}
+            author={response.writer}
+            company={response.publisher}
+            date={response.pubDate}
+            price={response.originPrice}
+            discount_price={response.discountPrice}
+            mileage={response.mileage}
+            heart={response.heart}
+          />
+          <DetailBookEtc star={response.star} />
+          <DetailSellUsedBook />
+          <DetailSeries />
+          <DetailNavBar section={section} />
+          <DetailEvent />
+          <DetailBookIntro />
+          <DetailBookContents />
+          <DetailAuthorIntro />
+          <DetailPublisherIntro />
+          <DetailReviewSummary />
+          <DetailReviewGraph />
+          <DetailBuyerReviewList />
+          <DetailPostReview />
+          <DetailMyReview />
+          <DetailMyPaper />
+          <BuyWith />
+          <ClickWith />
+        </>
+      )}
       <DetailReturnRefund />
       <Footer />
       <DetailBottomBar />

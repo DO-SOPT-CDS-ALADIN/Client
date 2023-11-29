@@ -1,34 +1,51 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IcBigcircleLeft, IcBigcircleRight, IcBook, IcShare, IcHeartOff } from '../../assets/icons';
+import {
+  IcBigcircleLeft,
+  IcBigcircleRight,
+  IcBook,
+  IcShare,
+  IcHeartOff,
+  IcHeartOn,
+} from '../../assets/icons';
 import DetailBookInfoBox from './DetailBookInfoBox';
 
-const BOOK_INFO = {
-  title: '설자은, 금성으로 돌아오다',
-  src: '',
-  author: '정세랑',
-  company: '문학동네',
-  date: '2023-10-30',
-  price: '16,800원',
-  discount_price: '15,120원',
-  mileage: '840원',
-  heart: false,
-};
+interface DetailBookSummaryProps {
+  title: string;
+  src: string;
+  author: string;
+  company: string;
+  date: string;
+  price: string;
+  discount_price: string;
+  mileage: string;
+  heart: boolean;
+}
 
-function DetailBookSummary() {
+function DetailBookSummary({
+  title,
+  src,
+  author,
+  company,
+  date,
+  price,
+  discount_price,
+  mileage,
+  heart,
+}: DetailBookSummaryProps) {
   return (
     <BookSummaryWrapper>
       <BookCoverImageWrapper>
-        <BookCoverImage />
+        <BookCoverImage src={src} />
         <IconWrapper>
           <IcBigcircleLeft />
           <IcBigcircleRight />
         </IconWrapper>
       </BookCoverImageWrapper>
       <BookMainInfoWrapper>
-        <BookTitle>{BOOK_INFO.title}</BookTitle>
+        <BookTitle>{title}</BookTitle>
         <BookInfo>
-          {BOOK_INFO.author}(지은이) {BOOK_INFO.company} {BOOK_INFO.date}
+          {author}(지은이) {company} {date}
         </BookInfo>
         <BookGifts>
           설자은 환귀금성 공책, 정세랑 작가 노트, 작가 메시지 엽서 삽지 + 유리 찻잔 세트 (소설/시
@@ -42,15 +59,9 @@ function DetailBookSummary() {
         <ButtonImageWrapper>
           <IcShare />
         </ButtonImageWrapper>
-        <ButtonImageWrapper>
-          <IcHeartOff />
-        </ButtonImageWrapper>
+        <ButtonImageWrapper>{heart ? <IcHeartOn /> : <IcHeartOff />}</ButtonImageWrapper>
       </ButtonsWrapper>
-      <DetailBookInfoBox
-        price={BOOK_INFO.price}
-        discount_price={BOOK_INFO.discount_price}
-        mileage={BOOK_INFO.mileage}
-      />
+      <DetailBookInfoBox price={price} discount_price={discount_price} mileage={mileage} />
     </BookSummaryWrapper>
   );
 }
@@ -75,13 +86,14 @@ const BookCoverImageWrapper = styled.div`
   height: 40rem;
 `;
 
-const BookCoverImage = styled.div`
+const BookCoverImage = styled.img`
   position: relative;
 
   width: 27rem;
   height: 40rem;
   margin-top: 2.77rem;
 
+  object-fit: cover;
   background-color: ${({ theme }) => theme.colors.yellow};
   box-shadow: ${({ theme }) => theme.shadows.large};
 `;
