@@ -6,6 +6,7 @@ import {
   IcReviewThankstoOn,
   IcReviewThankstoOff,
   IcStar5,
+  IcBtnShowDown,
 } from '../../assets/icons';
 import ImgMyReviewProfile from '../../assets/imgs/img_my_review_profile.png';
 
@@ -20,6 +21,11 @@ interface MyReviewItemProps {
 function DetailMyReviewItem({ userId, date, content, agreeNum, commentNum }: MyReviewItemProps) {
   const [thanks, setThanks] = useState(false);
   const [like, setLike] = useState(false);
+  const [isMore, setIsMore] = useState(false);
+
+  const hideText = (str: string, n: number) => {
+    return str?.length > n ? str.slice(0, n) + '...' : str;
+  };
 
   const handleClickThanks = () => {
     setThanks(!thanks);
@@ -27,6 +33,10 @@ function DetailMyReviewItem({ userId, date, content, agreeNum, commentNum }: MyR
 
   const handleClickLike = () => {
     setLike(!like);
+  };
+
+  const onClickMoreButton = () => {
+    setIsMore(!isMore);
   };
 
   return (
@@ -42,7 +52,10 @@ function DetailMyReviewItem({ userId, date, content, agreeNum, commentNum }: MyR
           <IcStar5 />
         </WriterInfoStarsWrapper>
       </ReviewWriterInfoWrapper>
-      <Body2Text>{content}</Body2Text>
+      <Body1Text>{hideText(content, 133)}</Body1Text>
+      <MoreBox>
+        <IcBtnShowDown onClick={onClickMoreButton} />
+      </MoreBox>
       <CountsWrapper>
         <Body2Text>
           공감({agreeNum}) 댓글({commentNum})
@@ -67,11 +80,12 @@ function DetailMyReviewItem({ userId, date, content, agreeNum, commentNum }: MyR
 export default DetailMyReviewItem;
 
 const DetailMyReviewItemWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: 0.8rem;
 
-  padding: 1.6rem 1.6rem 0 1.6rem;
+  padding-top: 1.6rem;
 `;
 
 const ReviewWriterInfoWrapper = styled.div`
@@ -116,6 +130,36 @@ const WriterInfoStarsWrapper = styled.div`
   flex-direction: column;
 
   row-gap: 1rem;
+`;
+
+const Body1Text = styled.p`
+  ${({ theme }) => theme.fonts.body1_copy};
+  height: 9.6rem;
+  text-align: left;
+  word-wrap: break-word;
+  display: -webkit-box;
+  overflow: hidden;
+
+  -webkit-box-orient: vertical;
+`;
+
+const MoreBox = styled.div`
+  display: flex;
+  justify-content: flex-end;
+
+  position: absolute;
+  bottom: 5rem;
+  left: 0;
+
+  height: 8rem;
+  width: 100%;
+
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+
+  & > svg {
+    position: absolute;
+    bottom: 0;
+  }
 `;
 
 const Body2Text = styled.span`

@@ -28,6 +28,7 @@ function DetailMyReview() {
         agreeNum={DETAIL_MY_REVIEW.agreeNum}
         commentNum={DETAIL_MY_REVIEW.commentNum}
       />
+      <WriteButton>등록</WriteButton>
     </DetailMyReviewWrapper>
   );
 }
@@ -104,4 +105,18 @@ const Select = styled.select`
 
 const SelectOption = styled.option`
   ${({ theme }) => theme.fonts.detail2};
+`;
+
+const WriteButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4.8rem;
+  padding: 0.8rem;
+  margin-top: 1.8rem;
+
+  border-radius: 0.8rem;
+  background: ${({ theme }) => theme.colors.blue_400};
+  ${({ theme }) => theme.fonts.title2_bold};
+  color: ${({ theme }) => theme.colors.white};
 `;

@@ -20,7 +20,7 @@ function Detail() {
   const [section, setSection] = useState('이벤트');
   // lint 때문에 임시로 추가. 추후 기능 구현 때 삭제 예정
   setSection('이벤트');
-  // setSection('이벤트');
+
   return (
     <>
       <Header />

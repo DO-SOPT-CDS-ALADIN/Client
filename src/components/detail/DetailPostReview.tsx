@@ -80,9 +80,9 @@ const StarClickWrapper = styled.div`
 `;
 
 const Head3PinkText = styled.p`
-  margin-top: 0.6rem;
-
   ${({ theme }) => theme.fonts.head3};
+  line-height: normal;
+  font-style: normal;
   color: ${({ theme }) => theme.colors.pink_400};
 `;
 
