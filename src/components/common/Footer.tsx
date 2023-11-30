@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { IcDown } from '../../assets/icons';
 
@@ -50,8 +49,8 @@ const MenuWrapper = styled.div`
 
 const Menu = styled.p`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 6rem;
   height: 4rem;
@@ -101,16 +100,16 @@ const ButtonSection = styled.div`
 `;
 const ShortButton = styled.button`
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex: 1 0 0;
+  align-items: center;
+  justify-content: center;
 
-  padding-top: 2px;
   width: 16.8rem;
   height: 3.8rem;
+  padding-top: 2px;
 
-  border-radius: 0.6rem;
   background: ${({ theme }) => theme.colors.white};
+  border-radius: 0.6rem;
 
   ${({ theme }) => theme.fonts.body2};
 `;

@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { IcCircleBack } from '../../assets/icons';
 import { useNavigate } from 'react-router-dom';

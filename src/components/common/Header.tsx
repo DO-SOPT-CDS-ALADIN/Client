@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 import { IcLogo, IcSearch, IcCart } from '../../assets/icons';
-import { useCart } from '../../hooks/useCartCount';
+import { cartCountState } from '../../recoil/atoms/cartCountState';
+import { useRecoilValue } from 'recoil';
 
 function Header() {
-  const { cartCount } = useCart();
-
+  const cartCount = useRecoilValue(cartCountState);
   return (
     <HeaderWrapper>
       <LogoButton>

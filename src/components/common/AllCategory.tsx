@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import CATEGORY from '../../constants/category';
 
@@ -59,17 +58,17 @@ const CategoryWrapper = styled.div`
 
 const SelectCategoryButton = styled.div<SelectedCategoryProps>`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 11.3rem;
   height: 3.4rem;
 
-  border: 0.05rem solid ${({ theme }) => theme.colors.grey_200};
-  background: ${({ theme, active }) =>
-    active === true ? theme.colors.grey_400 : theme.colors.white};
-
   color: ${({ theme, active }) => (active === true ? theme.colors.white : theme.colors.grey_600)};
   text-align: center;
   ${({ theme }) => theme.fonts.detail2};
+
+  background: ${({ theme, active }) =>
+    active === true ? theme.colors.grey_400 : theme.colors.white};
+  border: 0.05rem solid ${({ theme }) => theme.colors.grey_200};
 `;

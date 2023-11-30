@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import CATEGORY from '../../constants/category';
 import { IcDown, IcUp } from '../../assets/icons';
@@ -51,29 +51,27 @@ const CategoryWrapper = styled.div`
 
 const Active = styled.div`
   display: flex;
-
-  padding: 0.5rem 2rem;
-
-  justify-content: center;
-  align-items: center;
   gap: 1rem;
+  align-items: center;
+  justify-content: center;
 
   width: 6.5rem;
   height: 3rem;
-
-  border-radius: 2.4rem;
-  background-color: ${({ theme }) => theme.colors.black};
-
-  ${({ theme }) => theme.fonts.body1};
+  padding: 0.5rem 2rem;
 
   color: ${({ theme }) => theme.colors.white};
+
+  background-color: ${({ theme }) => theme.colors.black};
+  border-radius: 2.4rem;
+
+  ${({ theme }) => theme.fonts.body1};
 `;
 
 const Category = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
+  align-items: center;
+  justify-content: center;
 
   height: 40px;
   padding: 6px 8px;
