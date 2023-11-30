@@ -7,6 +7,7 @@ interface CartData {
   cartCount: number;
   response: string;
   addToCart: (bookId: number) => Promise<void>;
+  cartList: [];
 }
 
 const _getCartCount = async (setCartCount: (count: number) => void) => {
@@ -22,6 +23,7 @@ const _getCartCount = async (setCartCount: (count: number) => void) => {
 export function useCart(): CartData {
   const [cartCount, setCartCount] = useRecoilState(cartCountState);
   const [response, setResponse] = useState<string>('');
+  const [cartList, setCartList] = useState<[]>([]);
 
   useEffect(() => {
     _getCartCount(setCartCount);
@@ -37,5 +39,17 @@ export function useCart(): CartData {
     }
   };
 
-  return { cartCount, response, addToCart };
+  useEffect(() => {
+    const _getCartList = async () => {
+      try {
+        const response = await cart.getCartList();
+        setCartList(response.data.data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    _getCartList();
+  }, []);
+
+  return { cartCount, response, addToCart, cartList };
 }
