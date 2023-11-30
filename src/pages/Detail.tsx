@@ -21,38 +21,92 @@ import ClickWith from '../components/detail/ClickWith';
 import Footer from '../components/common/Footer';
 import DetailReturnRefund from '../components/detail/DetailReturnRefund';
 import DetailBottomBar from '../components/detail/DetailBottomBar';
+import { useParams } from 'react-router-dom';
+import useGetDetailBook from '../hooks/useGetDetailBook';
+import usePostHeart from '../hooks/usePostHeart';
+import Toast from '../components/common/Toast';
 import DetailCarousel from '../components/detail/DetailCarousel';
 import styled from 'styled-components';
 
 function Detail() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [section, setSection] = useState('이벤트');
+  const { bookId } = useParams<{ bookId: string }>();
+  const [toast, setToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+
+  const parsedBookId = bookId ? parseInt(bookId, 10) : 1;
+  const { heartResponse, heartError, heartLoading, postHeart } = usePostHeart(parsedBookId);
+  const { response, error, loading } = useGetDetailBook(parsedBookId as number);
+
+  const [heartOn, setHeartOn] = useState(heartResponse.heart);
+
+  const handleHeartClick = async () => {
+    try {
+      setHeartOn(prevHeartOn => !prevHeartOn);
+      await postHeart();
+      if (!heartError && !heartLoading && heartResponse) {
+        setToastMessage(heartResponse.message);
+        setToast(true);
+        setHeartOn(heartResponse.heart);
+      }
+    } catch (error) {
+      setToastMessage(heartResponse.message);
+      setToast(true);
+    }
+  };
 
   return (
     <DetailWrapper>
       <Header />
-      <DetailBookSummary />
-      <DetailBookEtc />
-      <DetailSellUsedBook />
-      <DetailSeries />
-      <DetailCarousel />
-      <DetailNavBar section={section} />
-      <DetailEvent />
-      <DetailBookIntro />
-      <DetailBookContents />
-      <DetailAuthorIntro />
-      <DetailPublisherIntro />
-      <DetailReviewSummary />
-      <DetailReviewGraph />
-      <DetailBuyerReviewList />
-      <DetailPostReview />
-      <DetailMyReview />
-      <DetailMyPaper />
-      <BuyWith />
-      <ClickWith />
+      {!error && !loading && response && (
+        <>
+          <DetailBookSummary
+            title={response.title}
+            src={response.imgUrl}
+            author={response.writer}
+            company={response.publisher}
+            date={response.pubDate}
+            price={response.originPrice}
+            discount_price={response.discountPrice}
+            mileage={response.mileage}
+            heartOn={heartOn}
+            handleHeartClick={handleHeartClick}
+          />
+          <DetailBookEtc star={response.star} />
+          <DetailSellUsedBook />
+          <DetailSeries />
+          <DetailCarousel />
+          <DetailNavBar section={section} />
+          <DetailEvent />
+          <DetailBookIntro />
+          <DetailBookContents />
+          <DetailAuthorIntro />
+          <DetailPublisherIntro />
+          <DetailReviewSummary />
+          <DetailReviewGraph />
+          <DetailBuyerReviewList />
+          <DetailPostReview
+            bookId={parsedBookId}
+            setToast={setToast}
+            setToastMessage={setToastMessage}
+          />
+          <DetailMyReview />
+          <DetailMyPaper />
+          <BuyWith />
+          <ClickWith />
+        </>
+      )}
       <DetailReturnRefund />
       <Footer />
-      <DetailBottomBar />
+      <DetailBottomBar
+        bookId={parsedBookId}
+        heartOn={heartOn}
+        handleHeartClick={handleHeartClick}
+        setToast={setToast}
+        setToastMessage={setToastMessage}
+      />
+      {toast && <Toast setToast={setToast} message={toastMessage} />}
     </DetailWrapper>
   );
 }

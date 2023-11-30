@@ -1,13 +1,52 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { IcCheckboxGray, IcEnterXsGrey, IcStarLargePink } from '../../assets/icons';
+import {
+  IcCheckboxGray,
+  IcEnterXsGrey,
+  IcStarLargeGray,
+  IcStarLargePink,
+} from '../../assets/icons';
 import DETAIL_TEXTS from '../../constants/DETAIL_TEXTS';
+import usePostReview from '../../hooks/usePostReview';
 
-function DetailPostReview() {
+interface DetailPostReviewProps {
+  bookId: number;
+  setToast: React.Dispatch<React.SetStateAction<boolean>>;
+  setToastMessage: React.Dispatch<React.SetStateAction<string>>;
+}
+
+function DetailPostReview({ bookId, setToast, setToastMessage }: DetailPostReviewProps) {
   const [textAreaValue, setTextAreaValue] = useState('');
+  const [star, setStar] = useState(5);
+  const [clickedStars, setClickedStars] = useState([true, true, true, true, true]);
+
+  const { reviewResponse, reviewError, reviewLoading, postReview } = usePostReview(bookId);
 
   const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setTextAreaValue(e.target.value);
+  };
+
+  const handleClickPostButton = async () => {
+    try {
+      await postReview(star, textAreaValue);
+      if (!reviewError && !reviewLoading && reviewResponse) {
+        setToastMessage(reviewResponse.message);
+        setToast(true);
+        setTextAreaValue('');
+        setStar(5);
+        setClickedStars([true, true, true, true, true]);
+      }
+    } catch (error) {
+      setToastMessage(reviewResponse.message);
+      setToast(true);
+    }
+  };
+
+  const handleClickStar = (index: number) => {
+    const clickStates = clickedStars.map((_, i) => i <= index);
+    setClickedStars(clickStates);
+    const starNum = clickStates.filter(status => status).length;
+    setStar(starNum);
   };
 
   return (
@@ -18,13 +57,15 @@ function DetailPostReview() {
         <IcEnterXsGrey />
       </Body2Wrapper>
       <StarClickWrapper>
-        <Head3PinkText>5</Head3PinkText>
+        <Head3PinkText>{star}</Head3PinkText>
         <StarsWrapper>
-          <IcStarLargePink />
-          <IcStarLargePink />
-          <IcStarLargePink />
-          <IcStarLargePink />
-          <IcStarLargePink />
+          {clickedStars.map((clicked, index) =>
+            clicked ? (
+              <IcStarLargePink key={index} onClick={() => handleClickStar(index)} />
+            ) : (
+              <IcStarLargeGray key={index} onClick={() => handleClickStar(index)} />
+            )
+          )}
         </StarsWrapper>
         <Detail2Text>{DETAIL_TEXTS.SELECT_STARS}</Detail2Text>
       </StarClickWrapper>
@@ -39,7 +80,9 @@ function DetailPostReview() {
         <IcCheckboxGray />
         <Body2Text>스포일러 포함</Body2Text>
       </SpoilerCheckboxWrapper>
-      <PostButton type="button">등록</PostButton>
+      <PostButton type="button" onClick={handleClickPostButton}>
+        등록
+      </PostButton>
     </DetailPostReviewWrapper>
   );
 }
@@ -88,6 +131,10 @@ const Head3PinkText = styled.p`
 const StarsWrapper = styled.div`
   display: flex;
   column-gap: 0.8rem;
+
+  svg {
+    cursor: pointer;
+  }
 `;
 
 const Detail2Text = styled.p`

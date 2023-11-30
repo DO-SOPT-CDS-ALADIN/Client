@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import {
   IcCart,
@@ -6,9 +6,15 @@ import {
   IcCheckboxUncheckedGrey,
   IcEnterXs,
   IcHeartOff,
+  IcHeartOn,
 } from '../../assets/icons';
 
 function DetailSeries() {
+  const [seriesLike, setSeriesLike] = useState(false);
+
+  const handleSeriesLikeClick = () => {
+    setSeriesLike(!seriesLike);
+  };
   return (
     <DetailSeriesWrapper>
       <SeriesTitleWrapper>
@@ -39,8 +45,8 @@ function DetailSeries() {
           <WideButtonImageWrapper>
             <Body2Text className="grey">모두보기</Body2Text>
           </WideButtonImageWrapper>
-          <ButtonImageWrapper>
-            <IcHeartOff />
+          <ButtonImageWrapper onClick={handleSeriesLikeClick}>
+            {seriesLike ? <IcHeartOn /> : <IcHeartOff />}
           </ButtonImageWrapper>
           <ButtonImageWrapper>
             <IcCart />
@@ -176,6 +182,8 @@ const WideButtonImageWrapper = styled.div`
 `;
 
 const ButtonImageWrapper = styled.div`
+  cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;

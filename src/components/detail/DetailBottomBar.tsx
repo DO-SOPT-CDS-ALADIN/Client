@@ -1,19 +1,43 @@
+import React from 'react';
 import styled from 'styled-components';
-import { IcGift, IcHeartOff } from '../../assets/icons';
+import { IcGift, IcHeartOff, IcHeartOn } from '../../assets/icons';
+import { useCart } from '../../hooks/useCart';
 
-function DetailBottomBar() {
+interface DetailBottomBarProps {
+  bookId: number;
+  heartOn: boolean;
+  handleHeartClick: () => Promise<void>;
+  setToast: React.Dispatch<React.SetStateAction<boolean>>;
+  setToastMessage: React.Dispatch<React.SetStateAction<string>>;
+}
+
+function DetailBottomBar({
+  bookId,
+  heartOn,
+  handleHeartClick,
+  setToast,
+  setToastMessage,
+}: DetailBottomBarProps) {
+  const { response, addToCart } = useCart();
+
+  const handleAddToCart = async () => {
+    await addToCart(bookId);
+    setToastMessage(response);
+    setToast(true);
+  };
+
   return (
     <DetailBottomWrapper>
       <ButtonsWrapper>
-        <ButtonImageWrapper>
-          <IcHeartOff />
+        <ButtonImageWrapper onClick={handleHeartClick}>
+          {heartOn ? <IcHeartOn /> : <IcHeartOff />}
         </ButtonImageWrapper>
         <ButtonImageWrapper>
           <IcGift />
         </ButtonImageWrapper>
       </ButtonsWrapper>
       <ButtonsWrapper>
-        <GiftButton>장바구니</GiftButton>
+        <GiftButton onClick={handleAddToCart}>장바구니</GiftButton>
         <BuyButton>구매하기</BuyButton>
       </ButtonsWrapper>
     </DetailBottomWrapper>
@@ -41,6 +65,8 @@ const ButtonsWrapper = styled.div`
 `;
 
 const ButtonImageWrapper = styled.div`
+  cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
