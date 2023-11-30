@@ -1,5 +1,3 @@
-// 편집장의 선택 API
-
 import { useEffect, useState } from 'react';
 import editorchoice from '../apis/editorchoice';
 import { EditorChoiceProps } from '../utils/EditorChoiceProps';

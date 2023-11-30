@@ -7,8 +7,8 @@ import { useGetEditorChoice } from '../../hooks/useGetEditorChoice';
 function EditorSelect() {
   const { editorChoiceBookList } = useGetEditorChoice();
 
-  const TOTAL_SLIDES = editorChoiceBookList.length - 1;
-  const containerWidth = `${editorChoiceBookList.length * 11.2}rem`;
+  const TOTAL_SLIDES = editorChoiceBookList?.length - 1;
+  const containerWidth = `${editorChoiceBookList?.length * 11.2}rem`;
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -30,13 +30,6 @@ function EditorSelect() {
     }
   };
 
-  const clampText = (text: string, maxLength: number): string => {
-    if (text.length <= maxLength) {
-      return text;
-    }
-    return text.slice(0, maxLength - 1) + '...';
-  };
-
   useEffect(() => {
     if (slideRef.current) {
       slideRef.current.style.transition = 'all 0.5s ease-in-out';
@@ -48,7 +41,7 @@ function EditorSelect() {
     <EditorSelectWrapper>
       <SectionHeader title="편집장의 선택" icon={<IcEnter />} />
       <EditorSelectBookImgContainer containerWidth={containerWidth} ref={slideRef}>
-        {editorChoiceBookList.map(({ imgUrl }, index) => (
+        {editorChoiceBookList?.map(({ imgUrl }, index) => (
           <EditorSelectBookImg key={index} src={imgUrl} isCurrent={index === currentSlide} />
         ))}
       </EditorSelectBookImgContainer>
@@ -59,10 +52,12 @@ function EditorSelect() {
         <IcBigcircleRight />
       </NextButton>
       <BookInfoContainer>
-        <Title>{editorChoiceBookList[currentSlide].title}</Title>
-        <SubTitle>{editorChoiceBookList[currentSlide].subtitle}</SubTitle>
+        <Title>{editorChoiceBookList[currentSlide]?.title}</Title>
+        <SubTitle>{editorChoiceBookList[currentSlide]?.subtitle}</SubTitle>
         <DetailContainer>
-          {clampText(editorChoiceBookList[currentSlide].description, 100)}
+          <DetailContainerText>
+            {editorChoiceBookList[currentSlide]?.description}
+          </DetailContainerText>
         </DetailContainer>
       </BookInfoContainer>
     </EditorSelectWrapper>
@@ -154,11 +149,17 @@ const DetailContainer = styled.div`
   border-radius: ${({ theme }) => theme.radius.s};
 
   color: white;
+`;
 
-  white-space: wrap;
+const DetailContainerText = styled.p`
+  ${({ theme }) => theme.fonts.body2};
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+
+  width: 31.1rem;
+  height: 8rem;
   overflow: hidden;
   text-overflow: hidden;
+  white-space: wrap;
 `;
