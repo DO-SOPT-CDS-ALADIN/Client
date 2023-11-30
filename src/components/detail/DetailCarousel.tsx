@@ -8,6 +8,7 @@ import { DETAIL_CAROUSEL_ITEMS } from '../../constants/DETAIL_CAROUSEL_ITEMS';
 function DetailCarousel() {
   const settings = {
     dots: true,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -36,19 +37,49 @@ const StyledSlider = styled(Slider)`
   height: 19.6rem;
   margin-top: 1.2rem;
 
+  .slick-dots {
+    position: absolute;
+    bottom: 1.6rem;
+    display: flex;
+  }
+
+  .slick-dots li {
+    cursor: pointer;
+
+    display: inline-block;
+
+    width: 0.6rem;
+    height: 0.6rem;
+    margin: 0;
+    padding: 0.4rem;
+  }
+
+  .slick-dots li button {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+
   .slick-list {
     overflow-x: hidden;
     margin: 0 auto;
   }
 
-  .slick-dots {
-    bottom: 1.6rem;
-    display: flex;
-    justify-content: center;
+  .slick-dots li button:before {
+    content: '•';
+
+    width: 0.6rem;
+    height: 0.6rem;
+
     color: ${({ theme }) => theme.colors.transculent};
-    li.slick-active button:before {
-      color: white;
-    }
+    text-align: center;
+  }
+  .slick-dots li.slick-active button:before {
+    color: ${({ theme }) => theme.colors.white};
   }
 `;
 
