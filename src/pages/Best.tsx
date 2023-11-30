@@ -23,8 +23,8 @@ function Best() {
       <BookList />
       <Pagenation />
       <Footer />
-      <BackButton />
-      <TopButton />
+      <BackButton page={PAGE.BEST} />
+      <TopButton page={PAGE.BEST} />
       <BottomNav />
     </BestWrapper>
   );
@@ -33,5 +33,6 @@ function Best() {
 export default Best;
 
 const BestWrapper = styled.div`
-  padding: 10.8rem 0 6.8rem;
+  padding: 9.6rem 0 6.8rem;
+  background-color: ${({ theme }) => theme.colors.white};
 `;
