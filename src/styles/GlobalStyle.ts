@@ -50,11 +50,48 @@ export const reset = css`
 export const GlobalStyle = createGlobalStyle`
 ${reset}
 
- @font-face {
+ /* @font-face {
     font-family: "AppleSDGothicNeo";
     font-style: normal;
-    src: local("AppleSDGothicNeoR"), url(${AppleSDGothicNeoRegular}) format('truetype');
+    src: local("AppleSDGothicNeoM"), url(${AppleSDGothicNeoRegular}) format('truetype');
+} */
+
+@font-face {
+    font-family: "AppleSDGothicNeo";
+    font-weight: 100;
+    src: url("../assets/fonts/AppleSDGothicNeo/AppleSDGothicNeoT.ttf") format("truetype");
 }
+
+@font-face {
+    font-family: "AppleSDGothicNeo";
+    font-weight: 200;
+    src: url("../assets/fonts/AppleSDGothicNeo/AppleSDGothicNeoUL.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "AppleSDGothicNeo";
+    font-weight: 300;
+    src: url("../assets/fonts/AppleSDGothicNeo/AppleSDGothicNeoL.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "AppleSDGothicNeo";
+    font-weight: 400;
+    src: url("../assets/fonts/AppleSDGothicNeo/AppleSDGothicNeoR.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "AppleSDGothicNeo";
+    font-weight: 500;
+    src: url("../assets/fonts/AppleSDGothicNeo/AppleSDGothicNeoM.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "AppleSDGothicNeo";
+    font-weight: 600;
+    src: url("../assets/fonts/AppleSDGothicNeo/AppleSDGothicNeoSB.ttf") format("truetype");
+}
+
 
 #root, body, html {
     scrollbar-width: none; /* 파이어폭스 */
