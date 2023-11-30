@@ -29,6 +29,8 @@ export const reset = css`
   }
   html,
   body {
+    touch-action: none;
+    overflow-x: hidden;
     height: 100%;
   }
   button {

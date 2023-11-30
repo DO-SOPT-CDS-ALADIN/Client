@@ -21,6 +21,8 @@ import ClickWith from '../components/detail/ClickWith';
 import Footer from '../components/common/Footer';
 import DetailReturnRefund from '../components/detail/DetailReturnRefund';
 import DetailBottomBar from '../components/detail/DetailBottomBar';
+import DetailCarousel from '../components/detail/DetailCarousel';
+import { DETAIL_CAROUSEL_ITEMS } from '../constants/DETAIL_CAROUSEL_ITEMS';
 
 function Detail() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -33,6 +35,7 @@ function Detail() {
       <DetailBookEtc />
       <DetailSellUsedBook />
       <DetailSeries />
+      <DetailCarousel slides={DETAIL_CAROUSEL_ITEMS} />
       <DetailNavBar section={section} />
       <DetailEvent />
       <DetailBookIntro />
