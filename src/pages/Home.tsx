@@ -11,6 +11,8 @@ import {
   CONCENTRATE_BOOKS,
   DISCOUNT_BOOKS,
   PURE_BOOKS,
+  ALADIN_AUDIO_BOOKS,
+  BEST_CLIP_BOOKS,
 } from '../constants/home';
 import HotBook from '../components/home/HotBook';
 import MadeGift from '../components/home/MadeGift';
@@ -21,6 +23,13 @@ import AnotherCover from '../components/home/AnotherCover';
 import PureBookSlider from '../components/home/PureBookSlider';
 import BookFund from '../components/home/BookFund';
 import ToBeContinuedSlider from '../components/home/ToBeContinuedSlider';
+import TodayPoem from '../components/home/TodayPoem';
+import CardReviewSlider from '../components/home/CardReviewSlider';
+import AladinerTVSlider from '../components/home/AladinerTVSlider';
+import Footer from '../components/common/Footer';
+import BottomNav from '../components/common/BottomNav';
+import AdditionalInfos from '../components/home/AdditionalInfos';
+import { IcBtnPage } from '../assets/icons';
 
 function Home() {
   return (
@@ -33,6 +42,7 @@ function Home() {
       <TopTen />
       <BannerImgWrapper>
         <BannerImg src={MIDDLE_BANNER_IMAGE_LINK} />
+        <StyledIcBtnPage />
       </BannerImgWrapper>
       <HotBook />
       <MadeGift />
@@ -43,6 +53,14 @@ function Home() {
       <PureBookSlider books={PURE_BOOKS} />
       <BookFund />
       <ToBeContinuedSlider />
+      <BookSlider section_title="최고의 클립" books={BEST_CLIP_BOOKS} />
+      <BookSlider section_title="알라딘 오디오북" books={ALADIN_AUDIO_BOOKS} />
+      <TodayPoem />
+      <CardReviewSlider />
+      <AladinerTVSlider />
+      <AdditionalInfos />
+      <Footer />
+      <BottomNav />
     </HomeWrapper>
   );
 }
@@ -59,8 +77,16 @@ const BannerImgWrapper = styled.div`
   display: flex;
   justify-content: center;
   background-color: rgba(0, 136, 160, 1);
+
+  position: relative;
 `;
 
 const BannerImg = styled.img`
   object-fit: scale-down;
+`;
+
+const StyledIcBtnPage = styled(IcBtnPage)`
+  position: absolute;
+  right: 1.6rem;
+  bottom: 1.3rem;
 `;

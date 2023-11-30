@@ -127,6 +127,108 @@ const TO_BE_CONTINUED_BOOKS = [
   },
 ];
 
+const BEST_CLIP_BOOKS = [
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/0b69/b1aa/239cc223c407a284d69b0e84b0aea486?Expires=1702252800&Signature=k5aP-cQ4ljgW4Sr288swJ7Wk64HWlxvqMPzezSFdqyCBYetkOdWbsuRHw8JJKsn8x1-VUUkdEDu9X8B9V6jbX-Uxu0Aw-nPLhN7tRm9B4eVm4gVwmYaJZhAbwdcyCbVDfAi0ZVOIoxnypCahPDroWvLFqCnKm9YsNy20M4MT4tKbsDYaKq0CUZ~xmbT3pbTLYU0EROYJ51cpdtIf0qo6f2lPAWSqbmhy~WONm3rDTljo8sNRnnToKGemVpN~CBgWTvL~8AntYzbjumhTc5pv62Cnx7YS8i8Uh1uTJ8me9DJR~vzMzzv56tyJSrhDROcoTe1LdZ9zDgV4tZYY3Xxl7Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '역사 컬렉터, 탐정이 되다',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/0b69/b1aa/239cc223c407a284d69b0e84b0aea486?Expires=1702252800&Signature=k5aP-cQ4ljgW4Sr288swJ7Wk64HWlxvqMPzezSFdqyCBYetkOdWbsuRHw8JJKsn8x1-VUUkdEDu9X8B9V6jbX-Uxu0Aw-nPLhN7tRm9B4eVm4gVwmYaJZhAbwdcyCbVDfAi0ZVOIoxnypCahPDroWvLFqCnKm9YsNy20M4MT4tKbsDYaKq0CUZ~xmbT3pbTLYU0EROYJ51cpdtIf0qo6f2lPAWSqbmhy~WONm3rDTljo8sNRnnToKGemVpN~CBgWTvL~8AntYzbjumhTc5pv62Cnx7YS8i8Uh1uTJ8me9DJR~vzMzzv56tyJSrhDROcoTe1LdZ9zDgV4tZYY3Xxl7Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '역사 컬렉터, 탐정이 되다',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/0b69/b1aa/239cc223c407a284d69b0e84b0aea486?Expires=1702252800&Signature=k5aP-cQ4ljgW4Sr288swJ7Wk64HWlxvqMPzezSFdqyCBYetkOdWbsuRHw8JJKsn8x1-VUUkdEDu9X8B9V6jbX-Uxu0Aw-nPLhN7tRm9B4eVm4gVwmYaJZhAbwdcyCbVDfAi0ZVOIoxnypCahPDroWvLFqCnKm9YsNy20M4MT4tKbsDYaKq0CUZ~xmbT3pbTLYU0EROYJ51cpdtIf0qo6f2lPAWSqbmhy~WONm3rDTljo8sNRnnToKGemVpN~CBgWTvL~8AntYzbjumhTc5pv62Cnx7YS8i8Uh1uTJ8me9DJR~vzMzzv56tyJSrhDROcoTe1LdZ9zDgV4tZYY3Xxl7Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '역사 컬렉터, 탐정이 되다',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/0b69/b1aa/239cc223c407a284d69b0e84b0aea486?Expires=1702252800&Signature=k5aP-cQ4ljgW4Sr288swJ7Wk64HWlxvqMPzezSFdqyCBYetkOdWbsuRHw8JJKsn8x1-VUUkdEDu9X8B9V6jbX-Uxu0Aw-nPLhN7tRm9B4eVm4gVwmYaJZhAbwdcyCbVDfAi0ZVOIoxnypCahPDroWvLFqCnKm9YsNy20M4MT4tKbsDYaKq0CUZ~xmbT3pbTLYU0EROYJ51cpdtIf0qo6f2lPAWSqbmhy~WONm3rDTljo8sNRnnToKGemVpN~CBgWTvL~8AntYzbjumhTc5pv62Cnx7YS8i8Uh1uTJ8me9DJR~vzMzzv56tyJSrhDROcoTe1LdZ9zDgV4tZYY3Xxl7Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '역사 컬렉터, 탐정이 되다',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/0b69/b1aa/239cc223c407a284d69b0e84b0aea486?Expires=1702252800&Signature=k5aP-cQ4ljgW4Sr288swJ7Wk64HWlxvqMPzezSFdqyCBYetkOdWbsuRHw8JJKsn8x1-VUUkdEDu9X8B9V6jbX-Uxu0Aw-nPLhN7tRm9B4eVm4gVwmYaJZhAbwdcyCbVDfAi0ZVOIoxnypCahPDroWvLFqCnKm9YsNy20M4MT4tKbsDYaKq0CUZ~xmbT3pbTLYU0EROYJ51cpdtIf0qo6f2lPAWSqbmhy~WONm3rDTljo8sNRnnToKGemVpN~CBgWTvL~8AntYzbjumhTc5pv62Cnx7YS8i8Uh1uTJ8me9DJR~vzMzzv56tyJSrhDROcoTe1LdZ9zDgV4tZYY3Xxl7Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '역사 컬렉터, 탐정이 되다',
+  },
+];
+
+const ALADIN_AUDIO_BOOKS = [
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/bcad/163a/bd3ddc53d7ac5c7a49a3009c7d59a696?Expires=1702252800&Signature=NdzoF6FUfk6qvRW2zzPpMhR2BuBozw~EGCjEYw6wzZbtAdSEu0mIt65otUdtFfDTTkFuAOgUD~EzifO46A27BuZAqobikrauC61rQ48-0mFPScC0bVehocD~LKovlFt4pS-eiy3VFZHlTizU~IUoJT3V8tcl-MsfXQj9iCRGtDh3iPnJurCmSKIxO8isjbaS-6qGUckrsoukYrYYLmrY8UspT-jbXJ6Hz1R~MjwziD-wXp6Crh5ODyrNvKbwJo2u-85sHtH89oSS3LS2ujNBuiZdxvsMCLrbUL8~RFM92gWJN3UTp7mYaA~ExKA8AO~1OsOW3ixKVaJCHTxmkIqkRQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '나의 하루는 세 번 시작된다',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/bcad/163a/bd3ddc53d7ac5c7a49a3009c7d59a696?Expires=1702252800&Signature=NdzoF6FUfk6qvRW2zzPpMhR2BuBozw~EGCjEYw6wzZbtAdSEu0mIt65otUdtFfDTTkFuAOgUD~EzifO46A27BuZAqobikrauC61rQ48-0mFPScC0bVehocD~LKovlFt4pS-eiy3VFZHlTizU~IUoJT3V8tcl-MsfXQj9iCRGtDh3iPnJurCmSKIxO8isjbaS-6qGUckrsoukYrYYLmrY8UspT-jbXJ6Hz1R~MjwziD-wXp6Crh5ODyrNvKbwJo2u-85sHtH89oSS3LS2ujNBuiZdxvsMCLrbUL8~RFM92gWJN3UTp7mYaA~ExKA8AO~1OsOW3ixKVaJCHTxmkIqkRQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '나의 하루는 세 번 시작된다',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/bcad/163a/bd3ddc53d7ac5c7a49a3009c7d59a696?Expires=1702252800&Signature=NdzoF6FUfk6qvRW2zzPpMhR2BuBozw~EGCjEYw6wzZbtAdSEu0mIt65otUdtFfDTTkFuAOgUD~EzifO46A27BuZAqobikrauC61rQ48-0mFPScC0bVehocD~LKovlFt4pS-eiy3VFZHlTizU~IUoJT3V8tcl-MsfXQj9iCRGtDh3iPnJurCmSKIxO8isjbaS-6qGUckrsoukYrYYLmrY8UspT-jbXJ6Hz1R~MjwziD-wXp6Crh5ODyrNvKbwJo2u-85sHtH89oSS3LS2ujNBuiZdxvsMCLrbUL8~RFM92gWJN3UTp7mYaA~ExKA8AO~1OsOW3ixKVaJCHTxmkIqkRQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '나의 하루는 세 번 시작된다',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/bcad/163a/bd3ddc53d7ac5c7a49a3009c7d59a696?Expires=1702252800&Signature=NdzoF6FUfk6qvRW2zzPpMhR2BuBozw~EGCjEYw6wzZbtAdSEu0mIt65otUdtFfDTTkFuAOgUD~EzifO46A27BuZAqobikrauC61rQ48-0mFPScC0bVehocD~LKovlFt4pS-eiy3VFZHlTizU~IUoJT3V8tcl-MsfXQj9iCRGtDh3iPnJurCmSKIxO8isjbaS-6qGUckrsoukYrYYLmrY8UspT-jbXJ6Hz1R~MjwziD-wXp6Crh5ODyrNvKbwJo2u-85sHtH89oSS3LS2ujNBuiZdxvsMCLrbUL8~RFM92gWJN3UTp7mYaA~ExKA8AO~1OsOW3ixKVaJCHTxmkIqkRQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '나의 하루는 세 번 시작된다',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/bcad/163a/bd3ddc53d7ac5c7a49a3009c7d59a696?Expires=1702252800&Signature=NdzoF6FUfk6qvRW2zzPpMhR2BuBozw~EGCjEYw6wzZbtAdSEu0mIt65otUdtFfDTTkFuAOgUD~EzifO46A27BuZAqobikrauC61rQ48-0mFPScC0bVehocD~LKovlFt4pS-eiy3VFZHlTizU~IUoJT3V8tcl-MsfXQj9iCRGtDh3iPnJurCmSKIxO8isjbaS-6qGUckrsoukYrYYLmrY8UspT-jbXJ6Hz1R~MjwziD-wXp6Crh5ODyrNvKbwJo2u-85sHtH89oSS3LS2ujNBuiZdxvsMCLrbUL8~RFM92gWJN3UTp7mYaA~ExKA8AO~1OsOW3ixKVaJCHTxmkIqkRQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '나의 하루는 세 번 시작된다',
+  },
+];
+
+const CARD_REVIEW_BOOKS = [
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/6d57/8b82/9e2527bc3925669a82841bcc10ad55c2?Expires=1702252800&Signature=dzR-GmKXh74QtKB7WFs4WMCOr~Sh0AC66Nn1TdKXYvkQ3iI7~rH0mR-XGiTLTBF-bIy2WhD5mA~2GR0ar97zJDwDBYm9eCgmDpEWMVrn7zEDZV1M2eCnTnGrqCZeSo9gCfNRLmjUzTlBvkP-~JwVlzYJf~SwINdLO1uGaQNGfxAUpD2aYgpBHBPHms8WrHTJgv6micoQhpr6px6teyqcBOXTxGgjc6nyfV~CB075RFGdMCNFlr62xPv1yZVtBqLZF7O5cdpeZjKGgrENtmX~DaJiJszg40Ow81ALXJVQlCaIlIi1BUclhlNwey8v8GA5kl9Rt4qYA1V3-mIvm-Yf3A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    description: '세스 고딘이 제시하는 일과 일터의 새로운 돌파구',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/6d57/8b82/9e2527bc3925669a82841bcc10ad55c2?Expires=1702252800&Signature=dzR-GmKXh74QtKB7WFs4WMCOr~Sh0AC66Nn1TdKXYvkQ3iI7~rH0mR-XGiTLTBF-bIy2WhD5mA~2GR0ar97zJDwDBYm9eCgmDpEWMVrn7zEDZV1M2eCnTnGrqCZeSo9gCfNRLmjUzTlBvkP-~JwVlzYJf~SwINdLO1uGaQNGfxAUpD2aYgpBHBPHms8WrHTJgv6micoQhpr6px6teyqcBOXTxGgjc6nyfV~CB075RFGdMCNFlr62xPv1yZVtBqLZF7O5cdpeZjKGgrENtmX~DaJiJszg40Ow81ALXJVQlCaIlIi1BUclhlNwey8v8GA5kl9Rt4qYA1V3-mIvm-Yf3A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    description: '세스 고딘이 제시하는 일과 일터의 새로운 돌파구',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/6d57/8b82/9e2527bc3925669a82841bcc10ad55c2?Expires=1702252800&Signature=dzR-GmKXh74QtKB7WFs4WMCOr~Sh0AC66Nn1TdKXYvkQ3iI7~rH0mR-XGiTLTBF-bIy2WhD5mA~2GR0ar97zJDwDBYm9eCgmDpEWMVrn7zEDZV1M2eCnTnGrqCZeSo9gCfNRLmjUzTlBvkP-~JwVlzYJf~SwINdLO1uGaQNGfxAUpD2aYgpBHBPHms8WrHTJgv6micoQhpr6px6teyqcBOXTxGgjc6nyfV~CB075RFGdMCNFlr62xPv1yZVtBqLZF7O5cdpeZjKGgrENtmX~DaJiJszg40Ow81ALXJVQlCaIlIi1BUclhlNwey8v8GA5kl9Rt4qYA1V3-mIvm-Yf3A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    description: '세스 고딘이 제시하는 일과 일터의 새로운 돌파구',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/6d57/8b82/9e2527bc3925669a82841bcc10ad55c2?Expires=1702252800&Signature=dzR-GmKXh74QtKB7WFs4WMCOr~Sh0AC66Nn1TdKXYvkQ3iI7~rH0mR-XGiTLTBF-bIy2WhD5mA~2GR0ar97zJDwDBYm9eCgmDpEWMVrn7zEDZV1M2eCnTnGrqCZeSo9gCfNRLmjUzTlBvkP-~JwVlzYJf~SwINdLO1uGaQNGfxAUpD2aYgpBHBPHms8WrHTJgv6micoQhpr6px6teyqcBOXTxGgjc6nyfV~CB075RFGdMCNFlr62xPv1yZVtBqLZF7O5cdpeZjKGgrENtmX~DaJiJszg40Ow81ALXJVQlCaIlIi1BUclhlNwey8v8GA5kl9Rt4qYA1V3-mIvm-Yf3A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    description: '세스 고딘이 제시하는 일과 일터의 새로운 돌파구',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/6d57/8b82/9e2527bc3925669a82841bcc10ad55c2?Expires=1702252800&Signature=dzR-GmKXh74QtKB7WFs4WMCOr~Sh0AC66Nn1TdKXYvkQ3iI7~rH0mR-XGiTLTBF-bIy2WhD5mA~2GR0ar97zJDwDBYm9eCgmDpEWMVrn7zEDZV1M2eCnTnGrqCZeSo9gCfNRLmjUzTlBvkP-~JwVlzYJf~SwINdLO1uGaQNGfxAUpD2aYgpBHBPHms8WrHTJgv6micoQhpr6px6teyqcBOXTxGgjc6nyfV~CB075RFGdMCNFlr62xPv1yZVtBqLZF7O5cdpeZjKGgrENtmX~DaJiJszg40Ow81ALXJVQlCaIlIi1BUclhlNwey8v8GA5kl9Rt4qYA1V3-mIvm-Yf3A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    description: '세스 고딘이 제시하는 일과 일터의 새로운 돌파구',
+  },
+];
+
+const ALADINER_TV_LIST = [
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/8819/7973/0d2786a74cd7d6e8b581cc8eda5fa737?Expires=1702252800&Signature=Dq8o7f5VrdBPpMY9okxevL9jVwfME2cML0k8iSm25TSguH4CkrGUt6L-XCVTYSDmwp2F7SbbwbzVmgvR-vrxZyTFvoSVNWCgoxjI~wYGWhoNtPLSZ6DXHRwxinQU-oTDKC-2Of4LuZ1lLo~WVcBTrDjO1~i8bL-FT-idP6nBQw5dIVwsPjg059ZCuDO~PXkif0nxrjuYLl22MjMsNuz-lTzQW-OXOKObg5JveaEk03YL44SlDAp9JF5By3Bv7Mxei9QApl~rWi-7f0LOHDXfv9eFNEfEfOlO1V6oqXP3V~3BCaijdIhEOVASitZWkd0g4G-16AIsIECNeK5lqto3Jg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '책의 시작, 모험의 시작 ‘반지의 제왕 일러스...',
+    tag: '#책의시작',
+    watch: '39,920',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/8819/7973/0d2786a74cd7d6e8b581cc8eda5fa737?Expires=1702252800&Signature=Dq8o7f5VrdBPpMY9okxevL9jVwfME2cML0k8iSm25TSguH4CkrGUt6L-XCVTYSDmwp2F7SbbwbzVmgvR-vrxZyTFvoSVNWCgoxjI~wYGWhoNtPLSZ6DXHRwxinQU-oTDKC-2Of4LuZ1lLo~WVcBTrDjO1~i8bL-FT-idP6nBQw5dIVwsPjg059ZCuDO~PXkif0nxrjuYLl22MjMsNuz-lTzQW-OXOKObg5JveaEk03YL44SlDAp9JF5By3Bv7Mxei9QApl~rWi-7f0LOHDXfv9eFNEfEfOlO1V6oqXP3V~3BCaijdIhEOVASitZWkd0g4G-16AIsIECNeK5lqto3Jg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '책의 시작, 모험의 시작 ‘반지의 제왕 일러스...',
+    tag: '#책의시작',
+    watch: '39,920',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/8819/7973/0d2786a74cd7d6e8b581cc8eda5fa737?Expires=1702252800&Signature=Dq8o7f5VrdBPpMY9okxevL9jVwfME2cML0k8iSm25TSguH4CkrGUt6L-XCVTYSDmwp2F7SbbwbzVmgvR-vrxZyTFvoSVNWCgoxjI~wYGWhoNtPLSZ6DXHRwxinQU-oTDKC-2Of4LuZ1lLo~WVcBTrDjO1~i8bL-FT-idP6nBQw5dIVwsPjg059ZCuDO~PXkif0nxrjuYLl22MjMsNuz-lTzQW-OXOKObg5JveaEk03YL44SlDAp9JF5By3Bv7Mxei9QApl~rWi-7f0LOHDXfv9eFNEfEfOlO1V6oqXP3V~3BCaijdIhEOVASitZWkd0g4G-16AIsIECNeK5lqto3Jg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '책의 시작, 모험의 시작 ‘반지의 제왕 일러스...',
+    tag: '#책의시작',
+    watch: '39,920',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/8819/7973/0d2786a74cd7d6e8b581cc8eda5fa737?Expires=1702252800&Signature=Dq8o7f5VrdBPpMY9okxevL9jVwfME2cML0k8iSm25TSguH4CkrGUt6L-XCVTYSDmwp2F7SbbwbzVmgvR-vrxZyTFvoSVNWCgoxjI~wYGWhoNtPLSZ6DXHRwxinQU-oTDKC-2Of4LuZ1lLo~WVcBTrDjO1~i8bL-FT-idP6nBQw5dIVwsPjg059ZCuDO~PXkif0nxrjuYLl22MjMsNuz-lTzQW-OXOKObg5JveaEk03YL44SlDAp9JF5By3Bv7Mxei9QApl~rWi-7f0LOHDXfv9eFNEfEfOlO1V6oqXP3V~3BCaijdIhEOVASitZWkd0g4G-16AIsIECNeK5lqto3Jg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '책의 시작, 모험의 시작 ‘반지의 제왕 일러스...',
+    tag: '#책의시작',
+    watch: '39,920',
+  },
+  {
+    img: 'https://s3-alpha-sig.figma.com/img/8819/7973/0d2786a74cd7d6e8b581cc8eda5fa737?Expires=1702252800&Signature=Dq8o7f5VrdBPpMY9okxevL9jVwfME2cML0k8iSm25TSguH4CkrGUt6L-XCVTYSDmwp2F7SbbwbzVmgvR-vrxZyTFvoSVNWCgoxjI~wYGWhoNtPLSZ6DXHRwxinQU-oTDKC-2Of4LuZ1lLo~WVcBTrDjO1~i8bL-FT-idP6nBQw5dIVwsPjg059ZCuDO~PXkif0nxrjuYLl22MjMsNuz-lTzQW-OXOKObg5JveaEk03YL44SlDAp9JF5By3Bv7Mxei9QApl~rWi-7f0LOHDXfv9eFNEfEfOlO1V6oqXP3V~3BCaijdIhEOVASitZWkd0g4G-16AIsIECNeK5lqto3Jg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    title: '책의 시작, 모험의 시작 ‘반지의 제왕 일러스...',
+    tag: '#책의시작',
+    watch: '39,920',
+  },
+];
+
 export {
   FIRST_BANNER_IMAGE_LINKS,
   HOT_BOOK_IMAGE_LINKS,
@@ -139,4 +241,8 @@ export {
   PURE_BOOKS,
   BOOKFUND_BOOK_LINK,
   TO_BE_CONTINUED_BOOKS,
+  BEST_CLIP_BOOKS,
+  ALADIN_AUDIO_BOOKS,
+  CARD_REVIEW_BOOKS,
+  ALADINER_TV_LIST,
 };
