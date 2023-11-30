@@ -67,6 +67,7 @@ const DetailSeriesWrapper = styled.div`
   width: 100%;
   height: 20.7rem;
   margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
   padding: 2.4rem 1.6rem;
 
   background-color: ${({ theme }) => theme.colors.white};

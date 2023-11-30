@@ -25,6 +25,8 @@ import { useParams } from 'react-router-dom';
 import useGetDetailBook from '../hooks/useGetDetailBook';
 import usePostHeart from '../hooks/usePostHeart';
 import Toast from '../components/common/Toast';
+import DetailCarousel from '../components/detail/DetailCarousel';
+import styled from 'styled-components';
 
 function Detail() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -55,7 +57,7 @@ function Detail() {
   };
 
   return (
-    <>
+    <DetailWrapper>
       <Header />
       {!error && !loading && response && (
         <>
@@ -74,6 +76,7 @@ function Detail() {
           <DetailBookEtc star={response.star} />
           <DetailSellUsedBook />
           <DetailSeries />
+          <DetailCarousel />
           <DetailNavBar section={section} />
           <DetailEvent />
           <DetailBookIntro />
@@ -104,8 +107,12 @@ function Detail() {
         setToastMessage={setToastMessage}
       />
       {toast && <Toast setToast={setToast} message={toastMessage} />}
-    </>
+    </DetailWrapper>
   );
 }
 
 export default Detail;
+
+const DetailWrapper = styled.div`
+  padding-bottom: 6.8rem;
+`;

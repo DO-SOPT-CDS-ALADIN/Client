@@ -1,9 +1,18 @@
 import styled from 'styled-components';
-import { IcCheckPink, IcMileage, IcMinus, IcPlus, IcHeartOn, IcClose } from '../../assets/icons';
-import book from '../../assets/imgs/bookImg.png';
+import {
+  IcCheckPink,
+  IcMileage,
+  IcMinus,
+  IcPlus,
+  IcHeartOn,
+  IcHeartOff,
+  IcClose,
+} from '../../assets/icons';
 import { TAG } from '../../constants/tag';
+import { CartItemProps } from '../../utils/CartItemProps';
 
-function Book() {
+function Book(props: CartItemProps) {
+  const { title, imgUrl, discountPrice, mileage, heart } = props;
   return (
     <BookWrapper>
       <CheckButton>
@@ -12,14 +21,14 @@ function Book() {
         </CheckBox>
       </CheckButton>
       <InnerWrapper>
-        <BookImg src={book} />
+        <BookImg src={imgUrl} />
         <BookInfo>
-          <Title>설자은, 금성으로 돌아오다</Title>
+          <Title>{title}</Title>
           <PriceWrapper>
-            <BlackText>15,120원</BlackText>
+            <BlackText>{discountPrice}</BlackText>
             <MileageWrapper>
               <IcMileage />
-              <GreyText>840원</GreyText>
+              <GreyText>{mileage}</GreyText>
             </MileageWrapper>
           </PriceWrapper>
           <Option>
@@ -28,9 +37,7 @@ function Book() {
               <StepNum>1</StepNum>
               <IcPlus />
             </Stapper>
-            <Button>
-              <IcHeartOn />
-            </Button>
+            <Button>{heart ? <IcHeartOn /> : <IcHeartOff />}</Button>
           </Option>
           <DeliveryInfo>
             <Tag>{TAG.DELIVERY.TEXT}</Tag>
@@ -143,8 +150,8 @@ const Stapper = styled.div`
 
 const StepNum = styled.p`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 3.2rem;
   padding: 0.6rem 0rem;
@@ -175,17 +182,16 @@ const Button = styled.button`
 
 const Tag = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   padding: 0 0.8rem 0.2rem;
 
-  border-radius: 1rem;
-  background: ${({ theme }) => theme.colors.orange};
-
   color: ${({ theme }) => theme.colors.white};
-
   ${({ theme }) => theme.fonts.detail1};
+
+  background: ${({ theme }) => theme.colors.orange};
+  border-radius: 1rem;
 `;
 
 const DeliveryInfo = styled.div`
