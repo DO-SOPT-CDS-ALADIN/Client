@@ -50,8 +50,8 @@ const StyledSlider = styled(Slider)`
 
     width: 0.6rem;
     height: 0.6rem;
-    margin: 0;
-    padding: 0.4rem;
+    margin: 0.2rem;
+    padding: 0;
   }
 
   .slick-dots li button {

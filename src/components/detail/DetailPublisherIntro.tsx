@@ -17,7 +17,9 @@ function DetailPublisherIntro() {
   return (
     <DetailPublisherIntroWrapper>
       <Title1BoldText>출판사 제공 책소개</Title1BoldText>
-      <Body2Text>{hideText(DETAIL_TEXTS.PUBLISHER_INTRO, 130)}</Body2Text>
+      <Body2Text isMore={isMore}>
+        {isMore ? DETAIL_TEXTS.PUBLISHER_INTRO : hideText(DETAIL_TEXTS.PUBLISHER_INTRO, 130)}
+      </Body2Text>
       <MoreBox>
         <IcBtnShowDown onClick={onClickMoreButton} />
       </MoreBox>
@@ -33,7 +35,7 @@ const DetailPublisherIntroWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  height: 17.8rem;
+  /* height: 17.8rem; */
   margin-top: 1.2rem;
   padding: 2.4rem 1.6rem;
 
@@ -41,15 +43,15 @@ const DetailPublisherIntroWrapper = styled.div`
 `;
 
 const Title1BoldText = styled.span`
-  font: ${({ theme }) => theme.fonts.title1_bold};
+  ${({ theme }) => theme.fonts.title1_bold_re};
 `;
 
-const Body2Text = styled.p`
+const Body2Text = styled.p<{ isMore: boolean }>`
   overflow: hidden;
   display: box;
 
-  height: 9.2rem;
   margin-top: 1.6rem;
+  margin-bottom: ${({ isMore }) => (isMore ? `8rem` : `0rem`)};
 
   font: ${({ theme }) => theme.fonts.body2_large};
   text-align: left;
@@ -72,6 +74,7 @@ const MoreBox = styled.div`
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
 
   & > svg {
+    cursor: pointer;
     position: absolute;
     bottom: 0;
   }

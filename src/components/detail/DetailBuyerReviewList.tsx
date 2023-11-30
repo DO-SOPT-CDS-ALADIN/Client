@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import DetailBuyerReviewItem from './DetailBuyerReviewItem';
 import DETAIL_REVIEW_LIST from '../../constants/DETAIL_REVIEW_LIST';
-import { IcDetailsSelectRectangle, IcDown, IcDownXsBlue } from '../../assets/icons';
+import { IcDetailsSelectRectangle, IcDown, IcDownXsBlue, IcUp } from '../../assets/icons';
 
 function DetailBuyerReviewList() {
+  const [isMore, setIsMore] = useState(false);
+
+  const onClickMoreButton = () => {
+    setIsMore(!isMore);
+  };
+
+  let displayedReviews = DETAIL_REVIEW_LIST;
+
+  if (!isMore) {
+    displayedReviews = DETAIL_REVIEW_LIST.slice(0, 6);
+  }
+
   return (
     <DetailBuyerReviewListWrapper>
       <BuyerReviewListNavWrapper>
@@ -20,7 +32,7 @@ function DetailBuyerReviewList() {
           <IcDownXsBlue className="icon arrow" />
         </SelectBoxWrapper>
       </BuyerReviewListNavWrapper>
-      {DETAIL_REVIEW_LIST.map((review, index) => (
+      {displayedReviews.map((review, index) => (
         <DetailBuyerReviewItem
           key={index}
           userId={review.userId}
@@ -30,9 +42,9 @@ function DetailBuyerReviewList() {
           commentNum={review.commentNum}
         />
       ))}
-      <MoreButton>
-        더보기
-        <IcDown />
+      <MoreButton onClick={onClickMoreButton}>
+        {isMore ? '접기' : '더보기'}
+        {isMore ? <IcUp /> : <IcDown />}
       </MoreButton>
     </DetailBuyerReviewListWrapper>
   );
@@ -82,6 +94,8 @@ const SelectBoxWrapper = styled.div`
 `;
 
 const Select = styled.select`
+  cursor: pointer;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -90,14 +104,13 @@ const Select = styled.select`
   height: 2.4rem;
   padding-left: 0.7rem;
 
-  border-radius: 0.4rem;
-  border: 1px solid ${({ theme }) => theme.colors.blue_100};
-  background: ${({ theme }) => theme.colors.white};
   appearance: none;
+  background: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.blue_100};
+  border-radius: 0.4rem;
 
   ${({ theme }) => theme.fonts.detail2};
 
-  cursor: pointer;
   &:focus {
     outline: 0;
   }
@@ -108,14 +121,14 @@ const SelectOption = styled.option`
 `;
 
 const MoreButton = styled.div`
-  height: 4rem;
+  cursor: pointer;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
   column-gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+
+  height: 4rem;
 
   ${({ theme }) => theme.fonts.detail2};
-
-  cursor: pointer;
 `;

@@ -54,6 +54,13 @@ const fonts = {
     font-weight: 700;
     line-height: auto;
   `,
+  title1_bold_re: css`
+    font-family: 'AppleSDGothicNeo';
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-style: normal;
+    line-height: normal;
+  `,
   title1_reg: css`
     font-family: 'AppleSDGothicNeo';
     font-size: 1.8rem;
