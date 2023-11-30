@@ -69,6 +69,7 @@ export default Home;
 
 const HomeWrapper = styled.div`
   padding: 10.8rem 0 6.8rem;
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 
 const BannerImgWrapper = styled.div`
