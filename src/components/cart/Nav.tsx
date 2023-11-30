@@ -13,7 +13,6 @@ export default Nav;
 
 const NavWrapper = styled.div`
   display: flex;
-
   background-color: ${({ theme }) => theme.colors.white};
 `;
 const NavButton = styled.button`
@@ -31,7 +30,6 @@ const NavButton = styled.button`
 
 const ActiveNavButton = styled(NavButton)`
   box-shadow: 0 -4px 0 0 inset ${({ theme }) => theme.colors.blue_600};
-
   color: ${({ theme }) => theme.colors.blue_600};
   ${({ theme }) => theme.fonts.title2_bold};
 `;

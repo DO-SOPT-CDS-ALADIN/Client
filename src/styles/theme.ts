@@ -26,62 +26,70 @@ const colors = {
 const fonts = {
   head1: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 800;
     font-size: 2.8rem;
+    font-weight: 800;
     line-height: auto;
   `,
   head2: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 800;
     font-size: 2.4rem;
+    font-weight: 800;
     line-height: auto;
   `,
   head3: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 700;
     font-size: 2.2rem;
+    font-weight: 700;
     line-height: auto;
   `,
   head4: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 700;
     font-size: 2rem;
+    font-weight: 700;
     line-height: auto;
   `,
   title1_bold: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 700;
     font-size: 1.8rem;
+    font-weight: 700;
     line-height: auto;
   `,
   title1_reg: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 400;
     font-size: 1.8rem;
+    font-weight: 400;
     line-height: auto;
   `,
   title2_bold: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 700;
     font-size: 1.6rem;
+    font-weight: 700;
     line-height: auto;
   `,
   title2_reg: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 400;
     font-size: 1.6rem;
+    font-weight: 400;
     line-height: auto;
   `,
   body1: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 700;
     font-size: 1.4rem;
+    font-weight: 700;
     line-height: auto;
+  `,
+  body1_copy: css`
+    font-family: 'AppleSDGothicNeo';
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 160%;
+    letter-spacing: -0.045rem;
   `,
   body2: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 400;
     font-size: 1.4rem;
+    font-weight: 400;
     line-height: 140%;
   `,
   body3: css`
@@ -98,14 +106,14 @@ const fonts = {
   `,
   detail1: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 700;
     font-size: 1.2rem;
+    font-weight: 700;
     line-height: auto;
   `,
   detail2: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 400;
     font-size: 1.2rem;
+    font-weight: 400;
     line-height: 160%;
   `,
 };

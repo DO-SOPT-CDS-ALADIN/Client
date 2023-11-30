@@ -48,8 +48,8 @@ export default Receipt;
 const ReceiptWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1.6rem;
+  align-items: center;
 
   width: 37.5rem;
   padding: 1.6rem 0;
@@ -59,13 +59,12 @@ const ReceiptWrapper = styled.div`
 
 const FlexBox = styled.div`
   position: relative;
+
+  display: flex;
   align-items: center;
   justify-content: space-between;
 
-  display: flex;
-
   width: 100%;
-
   padding: 0 1.6rem;
 `;
 
@@ -89,7 +88,6 @@ const MileageIconWrapper = styled.div`
 
 const TotalPriceWrapper = styled(FlexBox)`
   height: 6.4rem;
-
   background: ${({ theme }) => theme.colors.white};
 `;
 
@@ -105,14 +103,11 @@ const TotalPrice = styled.p`
 const NoticeWrapper = styled.div`
   display: flex;
   flex-direction: column;
-
   width: 100%;
 `;
 
 const Notice = styled(FlexBox)`
   height: 4.8rem;
-
   background: ${({ theme }) => theme.colors.white};
-
   border-bottom: 1px solid ${({ theme }) => theme.colors.grey_200};
 `;

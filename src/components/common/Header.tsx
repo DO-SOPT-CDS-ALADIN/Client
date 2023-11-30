@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 import { IcLogo, IcSearch, IcCart } from '../../assets/icons';
-import { useCart } from '../../hooks/useCartCount';
+import { cartCountState } from '../../recoil/atoms/cartCountState';
+import { useRecoilValue } from 'recoil';
 
 function Header() {
-  const { cartCount } = useCart();
-
+  const cartCount = useRecoilValue(cartCountState);
   return (
     <HeaderWrapper>
       <LogoButton>
@@ -31,16 +31,15 @@ export default Header;
 
 const HeaderWrapper = styled.div`
   position: fixed;
-  top: 0;
   z-index: 10;
+  top: 0;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   width: 37.5rem;
   height: 4.8rem;
-
   padding-left: 0.8rem;
 
   background-color: ${({ theme }) => theme.colors.white};
@@ -48,28 +47,25 @@ const HeaderWrapper = styled.div`
 
 const LogoButton = styled.button`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 52px;
   height: 48px;
-
   padding: 12px 2px;
 `;
 
 const SearchBar = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   width: 23.6rem;
   height: 3.2rem;
-
   padding: 0px 1.6rem;
 
-  border-radius: 16px;
-
   background-color: ${({ theme }) => theme.colors.grey_100};
+  border-radius: 16px;
 `;
 
 const PlaceHolder = styled.p`
@@ -80,7 +76,6 @@ const PlaceHolder = styled.p`
 
 const CartButton = styled.button`
   position: relative;
-
   width: 4.8rem;
   height: 4.8rem;
 `;
@@ -91,14 +86,14 @@ const CartNumberWrapper = styled.div`
   left: 0.9rem;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 1.7rem;
   height: 1.7rem;
 
-  border-radius: 100%;
   background-color: ${({ theme }) => theme.colors.pink_400};
+  border-radius: 100%;
 `;
 
 const CartNumber = styled.p`
@@ -113,6 +108,7 @@ const CartNumber = styled.p`
 
   color: ${({ theme }) => theme.colors.white};
   text-align: center;
+  ${({ theme }) => theme.fonts.detail1};
   ${({ theme }) => theme.fonts.detail1};
 `;
 

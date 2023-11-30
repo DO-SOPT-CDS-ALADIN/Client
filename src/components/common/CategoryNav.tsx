@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import CATEGORY from '../../constants/category';
 import { IcDown, IcUp } from '../../assets/icons';
@@ -28,53 +28,52 @@ export default CategoryNav;
 
 const CategoryNavWrapper = styled.div`
   position: relative;
+
   overflow-x: auto;
 
   height: 5.6rem;
-
   padding: 1.2rem 1.4rem 0.4rem 1.6rem;
+
+  white-space: nowrap;
 
   background-color: ${({ theme }) => theme.colors.white};
   &::-webkit-scrollbar {
     height: 0;
   }
-  white-space: nowrap;
 `;
 
 const CategoryWrapper = styled.div`
   display: flex;
-  align-items: center;
   gap: 0.4rem;
-
+  align-items: center;
   height: 4rem;
 `;
 
 const Active = styled.div`
   display: flex;
-  padding: 0.5rem 2rem;
-  justify-content: center;
-  align-items: center;
   gap: 1rem;
+  align-items: center;
+  justify-content: center;
 
   width: 6.5rem;
   height: 3rem;
+  padding: 0.5rem 2rem;
 
-  border-radius: 2.4rem;
+  color: ${({ theme }) => theme.colors.white};
 
   background-color: ${({ theme }) => theme.colors.black};
+  border-radius: 2.4rem;
 
   ${({ theme }) => theme.fonts.body1};
-  color: ${({ theme }) => theme.colors.white};
 `;
 
 const Category = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
+  align-items: center;
+  justify-content: center;
 
   height: 40px;
-
   padding: 6px 8px;
 
   ${({ theme }) => theme.fonts.body2};
@@ -86,12 +85,11 @@ const ShowButton = styled.div`
   right: -1.4rem;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 4.8rem;
   height: 4.8rem;
-
   padding: 1.2rem;
 
   background: linear-gradient(270deg, #fff 70.83%, rgba(255, 255, 255, 0) 100%);

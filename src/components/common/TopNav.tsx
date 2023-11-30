@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import PAGE from '../../constants/page';
 
@@ -35,9 +34,9 @@ export default TopNav;
 
 const Nav = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
   gap: 1rem;
+  align-items: flex-start;
+  justify-content: center;
 
   padding: 1.6rem 1rem 1.2rem 1rem;
 `;
