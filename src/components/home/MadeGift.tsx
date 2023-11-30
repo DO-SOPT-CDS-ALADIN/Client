@@ -40,7 +40,7 @@ const SlideContainer = styled.div`
   display: flex;
 
   width: 301%;
-  height: 22.6rem;
+  height: 23rem;
 `;
 
 const SlideBannerImgContainer = styled.div`

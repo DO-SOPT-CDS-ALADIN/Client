@@ -21,9 +21,11 @@ export default HotBookBanner;
 const HotBookBannerWrapper = styled.div`
   display: flex;
   column-gap: 1.2rem;
+
   width: 33.5rem;
   height: 18.4rem;
   padding: 1.6rem;
+
   background-color: ${({ theme }) => theme.colors.grey_100};
   border-radius: ${({ theme }) => theme.radius.m};
 `;
@@ -48,6 +50,8 @@ const BookInfo = styled.p`
 `;
 const BookInfoPink = styled.p`
   ${({ theme }) => theme.fonts.detail1};
-  color: ${({ theme }) => theme.colors.pink_400};
+
   margin-top: 0.8rem;
+
+  color: ${({ theme }) => theme.colors.pink_400};
 `;

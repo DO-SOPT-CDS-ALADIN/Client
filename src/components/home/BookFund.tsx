@@ -29,12 +29,13 @@ const BookFundWrapper = styled.div`
   height: 50rem;
   padding-left: 1.6rem;
   padding-top: 2.4rem;
+  margin-top: 4rem;
+
   background: linear-gradient(
     to bottom,
     ${({ theme }) => theme.colors.blue_600} 50%,
     ${({ theme }) => theme.colors.grey_100} 50%
   );
-  margin-top: 4rem;
 `;
 
 const BookFundTitle = styled.p`

@@ -37,6 +37,7 @@ const AnotherCoverTitleWrapper = styled.div`
   position: absolute;
   bottom: 0;
   right: 0;
+
   width: 35.9rem;
   height: 9.2rem;
   padding: 2rem 11.4rem 2rem 2rem;
@@ -48,26 +49,30 @@ const AnotherCoverTitleWrapper = styled.div`
 
 const AnotherCoverSubTitle = styled.p`
   ${({ theme }) => theme.fonts.title2_reg};
+
   color: ${({ theme }) => theme.colors.grey_400};
 `;
 
 const AnotherCoverTitle = styled.p`
   ${({ theme }) => theme.fonts.head2};
+
   color: ${({ theme }) => theme.colors.black};
 `;
 
 const BlackTag = styled.div`
-  width: 7rem;
-  height: 2.4rem;
-  background-color: ${({ theme }) => theme.colors.black};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   position: absolute;
   top: 27.5rem;
   right: 0.8rem;
   z-index: 2;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 7rem;
+  height: 2.4rem;
+
+  background-color: ${({ theme }) => theme.colors.black};
 `;
 
 const BlackTagText = styled.p`

@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { IcEnter, IcRank, IcTime } from '../../assets/icons';
 import SectionHeader from './SectionHeader';
-
-const tagTextList = ['스킵과로퍼', '정세랑', '한동일', '고양이깜냥'];
+import { TOP_TEN_BOOK_LINK, TOP_TEN_TAG_TEXT_LIST } from '../../constants/home';
 
 function TopTen() {
   return (
@@ -10,7 +9,7 @@ function TopTen() {
       <NowTime />
       <SectionHeader title="실시간 클릭 Top 10" icon={<IcEnter />} />
       <FirstRankBook>
-        <FirstRankBookImg src="https://image.aladin.co.kr/Tobe/Note/62S4ES/4433X7/638338480211363098_0.png?RS=195x175&CS=196x175&RT=1&AR=0" />
+        <FirstRankBookImg src={TOP_TEN_BOOK_LINK} />
         <FirstRankBookTitle>
           <BookRank>1.</BookRank>
           <BookTitle>단 한 사람</BookTitle>
@@ -19,7 +18,7 @@ function TopTen() {
         <RankNumber>1</RankNumber>
       </FirstRankBook>
       <TagList>
-        {tagTextList.map(item => (
+        {TOP_TEN_TAG_TEXT_LIST.map(item => (
           <Tag text={item} />
         ))}
       </TagList>

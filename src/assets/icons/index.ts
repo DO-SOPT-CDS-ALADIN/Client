@@ -80,6 +80,7 @@ import IcAd from './ic_ad.svg?react';
 import IcOpenQuota from './ic_open_quota.svg?react';
 import IcCloseQuota from './ic_close_quota.svg?react';
 import IcFundingBar from './ic_funding_bar.svg?react';
+import IcBtnPage from './ic_btn_page.svg?react';
 
 export {
   IcUp,
@@ -162,4 +163,5 @@ export {
   IcOpenQuota,
   IcCloseQuota,
   IcFundingBar,
+  IcBtnPage,
 };
