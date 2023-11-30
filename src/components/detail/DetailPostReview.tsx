@@ -8,14 +8,14 @@ import {
 } from '../../assets/icons';
 import DETAIL_TEXTS from '../../constants/DETAIL_TEXTS';
 import usePostReview from '../../hooks/usePostReview';
-import Toast from '../common/Toast';
 
 interface DetailPostReviewProps {
   bookId: number;
+  setToast: React.Dispatch<React.SetStateAction<boolean>>;
+  setToastMessage: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function DetailPostReview({ bookId }: DetailPostReviewProps) {
-  const [toast, setToast] = useState(false);
+function DetailPostReview({ bookId, setToast, setToastMessage }: DetailPostReviewProps) {
   const [textAreaValue, setTextAreaValue] = useState('');
   const [star, setStar] = useState(5);
   const [clickedStars, setClickedStars] = useState([true, true, true, true, true]);
@@ -30,12 +30,14 @@ function DetailPostReview({ bookId }: DetailPostReviewProps) {
     try {
       await postReview(star, textAreaValue);
       if (!reviewError && !reviewLoading && reviewResponse) {
+        setToastMessage(reviewResponse.message);
         setToast(true);
         setTextAreaValue('');
         setStar(5);
         setClickedStars([true, true, true, true, true]);
       }
     } catch (error) {
+      setToastMessage(reviewResponse.message);
       setToast(true);
     }
   };
@@ -81,7 +83,6 @@ function DetailPostReview({ bookId }: DetailPostReviewProps) {
       <PostButton type="button" onClick={handleClickPostButton}>
         등록
       </PostButton>
-      {toast && <Toast setToast={setToast} message={reviewResponse.message} />}
     </DetailPostReviewWrapper>
   );
 }

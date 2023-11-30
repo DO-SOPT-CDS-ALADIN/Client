@@ -31,6 +31,7 @@ function Detail() {
   const [section, setSection] = useState('이벤트');
   const { bookId } = useParams<{ bookId: string }>();
   const [toast, setToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
 
   const parsedBookId = bookId ? parseInt(bookId, 10) : 1;
   const { heartResponse, heartError, heartLoading, postHeart } = usePostHeart(parsedBookId);
@@ -43,10 +44,12 @@ function Detail() {
       setHeartOn(prevHeartOn => !prevHeartOn);
       await postHeart();
       if (!heartError && !heartLoading && heartResponse) {
+        setToastMessage(heartResponse.message);
         setToast(true);
         setHeartOn(heartResponse.heart);
       }
     } catch (error) {
+      setToastMessage(heartResponse.message);
       setToast(true);
     }
   };
@@ -80,7 +83,11 @@ function Detail() {
           <DetailReviewSummary />
           <DetailReviewGraph />
           <DetailBuyerReviewList />
-          <DetailPostReview bookId={parsedBookId} />
+          <DetailPostReview
+            bookId={parsedBookId}
+            setToast={setToast}
+            setToastMessage={setToastMessage}
+          />
           <DetailMyReview />
           <DetailMyPaper />
           <BuyWith />
@@ -89,8 +96,14 @@ function Detail() {
       )}
       <DetailReturnRefund />
       <Footer />
-      <DetailBottomBar heartOn={heartOn} handleHeartClick={handleHeartClick} />
-      {toast && <Toast setToast={setToast} message={heartResponse.message} />}
+      <DetailBottomBar
+        bookId={parsedBookId}
+        heartOn={heartOn}
+        handleHeartClick={handleHeartClick}
+        setToast={setToast}
+        setToastMessage={setToastMessage}
+      />
+      {toast && <Toast setToast={setToast} message={toastMessage} />}
     </>
   );
 }
