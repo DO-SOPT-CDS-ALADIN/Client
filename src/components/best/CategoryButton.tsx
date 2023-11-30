@@ -30,23 +30,22 @@ export default CategoryButton;
 const Category = styled.label`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 0.8rem;
   flex-shrink: 0;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: flex-end;
 
   width: 7.8rem;
   height: 8.8rem;
-
   padding: 1.8rem 1.5rem 0.8rem 1.4rem;
 
-  border-radius: 0.8rem;
   border: 1px solid ${({ theme }) => theme.colors.grey_300};
+  border-radius: 0.8rem;
 `;
 
 const CategoryName = styled.p`
-  color: ${({ theme }) => theme.colors.grey_400};
   font: ${({ theme }) => theme.fonts.body2};
+  color: ${({ theme }) => theme.colors.grey_400};
 `;
 
 const RadioInput = styled.input`
@@ -57,8 +56,8 @@ const RadioInput = styled.input`
     box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.blue_400} inset;
 
     ${CategoryName} {
-      color: ${({ theme }) => theme.colors.blue_400};
       font: ${({ theme }) => theme.fonts.body1};
+      color: ${({ theme }) => theme.colors.blue_400};
     }
   }
 `;

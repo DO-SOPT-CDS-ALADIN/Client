@@ -5,9 +5,10 @@ export const reset = css`
   * {
     margin: 0;
     padding: 0;
+
     font-size: 62.5%;
-    vertical-align: baseline;
     color: inherit;
+    vertical-align: baseline;
   }
   *,
   :after,
@@ -15,29 +16,34 @@ export const reset = css`
     box-sizing: border-box;
   }
   :root {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
     line-height: 1.5;
-    overflow-wrap: break-word;
+    text-size-adjust: 100%;
+    text-size-adjust: 100%;
     word-break: break-word;
+    overflow-wrap: break-word;
     tab-size: 4;
+
+    background-color: ${({ theme }) => theme.colors.grey_200};
+
+    -webkit-tap-highlight-color: transparent;
   }
   html,
   body {
+    touch-action: none;
+    overflow-x: hidden;
     height: 100%;
   }
   button {
+    cursor: pointer;
     background: none;
     border: 0;
-    cursor: pointer;
   }
   a {
     text-decoration: none;
   }
   table {
-    border-collapse: collapse;
     border-spacing: 0;
+    border-collapse: collapse;
   }
 `;
 
@@ -46,16 +52,19 @@ ${reset}
 
  @font-face {
     font-family: "AppleSDGothicNeo";
-    src: local("AppleSDGothicNeoR"), url(${AppleSDGothicNeoRegular}) format('truetype');
     font-style: normal;
+    src: local("AppleSDGothicNeoR"), url(${AppleSDGothicNeoRegular}) format('truetype');
 }
 
 #root, body, html {
+    scrollbar-width: none; /* 파이어폭스 */
+
+    overflow-y: auto;
+
     max-width: 43rem;
     margin: 0 auto;
-    overflow-y: auto;
+
     -ms-overflow-style: none; /* 인터넷 익스플로러 */
-    scrollbar-width: none; /* 파이어폭스 */
 }
 
 #root::-webkit-scrollbar {
