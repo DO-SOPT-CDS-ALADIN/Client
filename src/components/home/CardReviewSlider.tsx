@@ -57,10 +57,10 @@ const CardReviewItemWrapper = styled.div`
 `;
 
 const CardReviewWrapper = styled.div`
+  position: relative;
+
   width: 28.2rem;
   height: 26rem;
-
-  position: relative;
 
   border-radius: ${({ theme }) => theme.radius.m};
 `;

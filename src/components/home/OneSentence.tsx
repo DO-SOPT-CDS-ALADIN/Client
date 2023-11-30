@@ -50,13 +50,13 @@ const OneSentenceTitleText = styled.p`
 `;
 
 const BookInfoContainer = styled.div`
+  display: flex;
+  column-gap: 3.9rem;
+
   position: relative;
 
   width: 100%;
-  display: flex;
   margin-top: 1.4rem;
-
-  column-gap: 3.9rem;
 `;
 
 const BookImg = styled.img`

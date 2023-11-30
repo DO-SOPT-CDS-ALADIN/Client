@@ -32,27 +32,31 @@ function TodayPoem() {
 export default TodayPoem;
 
 const TodayPoemWrapper = styled.div`
+  position: relative;
+
   width: 100%;
   height: 22.1rem;
   margin-top: 4rem;
-  position: relative;
 `;
 
 const BackgroundImg = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   position: absolute;
   top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
 `;
 
 const TodayPoemInfo = styled.div`
   width: 100%;
   height: 100%;
+  padding: 1.2rem 1.6rem;
+
   position: absolute;
   top: 0;
   z-index: 1;
-  padding: 1.2rem 1.6rem;
 `;
 
 const TodayPoemHeader = styled.div`
@@ -65,6 +69,7 @@ const TodayPoemTitle = styled.div`
   display: flex;
   align-items: center;
   column-gap: 0.8rem;
+
   padding: 1rem 0;
 `;
 
@@ -81,26 +86,33 @@ const MiddleContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   margin-top: 2rem;
 `;
 
 const TodayPoemContentBox = styled.div`
   width: 34.3rem;
   height: 7.2rem;
-  background-color: ${({ theme }) => theme.colors.translucent};
   padding: 1.6rem;
+
+  background-color: ${({ theme }) => theme.colors.translucent};
+
   border-radius: ${({ theme }) => theme.radius.m};
 `;
 
 const TodayPoemContent = styled.p`
   ${({ theme }) => theme.fonts.body2};
+
   color: ${({ theme }) => theme.colors.white};
+
   line-height: 140%;
 `;
 
 const TodayPoemAuthor = styled.p`
   ${({ theme }) => theme.fonts.detail2};
+
   margin-top: 1.6rem;
+
   color: ${({ theme }) => theme.colors.grey_400};
   line-height: 160%;
   letter-spacing: -0.06rem;

@@ -96,13 +96,14 @@ const AladinerTVTag = styled.p`
 const AladinerTVWatchWrapper = styled.div`
   display: flex;
   align-items: center;
+
   margin-top: 0.85rem;
   column-gap: 0.4rem;
 `;
 
 const AladinerTVWatch = styled.p`
   ${({ theme }) => theme.fonts.detail2};
-  color: ${({ theme }) => theme.colors.grey_400};
 
+  color: ${({ theme }) => theme.colors.grey_400};
   letter-spacing: -0.06rem;
 `;
