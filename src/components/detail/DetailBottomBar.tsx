@@ -1,12 +1,17 @@
 import styled from 'styled-components';
-import { IcGift, IcHeartOff } from '../../assets/icons';
+import { IcGift, IcHeartOff, IcHeartOn } from '../../assets/icons';
 
-function DetailBottomBar() {
+interface DetailBottomBarProps {
+  heartOn: boolean;
+  handleHeartClick: () => Promise<void>;
+}
+
+function DetailBottomBar({ heartOn, handleHeartClick }: DetailBottomBarProps) {
   return (
     <DetailBottomWrapper>
       <ButtonsWrapper>
-        <ButtonImageWrapper>
-          <IcHeartOff />
+        <ButtonImageWrapper onClick={handleHeartClick}>
+          {heartOn ? <IcHeartOn /> : <IcHeartOff />}
         </ButtonImageWrapper>
         <ButtonImageWrapper>
           <IcGift />
@@ -41,6 +46,8 @@ const ButtonsWrapper = styled.div`
 `;
 
 const ButtonImageWrapper = styled.div`
+  cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;

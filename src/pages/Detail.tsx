@@ -23,15 +23,33 @@ import DetailReturnRefund from '../components/detail/DetailReturnRefund';
 import DetailBottomBar from '../components/detail/DetailBottomBar';
 import { useParams } from 'react-router-dom';
 import useGetDetailBook from '../hooks/useGetDetailBook';
+import usePostHeart from '../hooks/usePostHeart';
+import Toast from '../components/common/Toast';
 
 function Detail() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [section, setSection] = useState('이벤트');
   const { bookId } = useParams<{ bookId: string }>();
+  const [toast, setToast] = useState(false);
 
   const parsedBookId = bookId ? parseInt(bookId, 10) : 1;
-
+  const { heartResponse, heartError, heartLoading, postHeart } = usePostHeart(bookId);
   const { response, error, loading } = useGetDetailBook(parsedBookId as number);
+
+  const [heartOn, setHeartOn] = useState(heartResponse.heart);
+
+  const handleHeartClick = async () => {
+    try {
+      setHeartOn(prevHeartOn => !prevHeartOn);
+      await postHeart();
+      if (!heartError && !heartLoading && heartResponse) {
+        setToast(true);
+        setHeartOn(heartResponse.heart);
+      }
+    } catch (error) {
+      setToast(true);
+    }
+  };
 
   return (
     <>
@@ -39,7 +57,6 @@ function Detail() {
       {!error && !loading && response && (
         <>
           <DetailBookSummary
-            bookId={parsedBookId}
             title={response.title}
             src={response.imgUrl}
             author={response.writer}
@@ -48,7 +65,8 @@ function Detail() {
             price={response.originPrice}
             discount_price={response.discountPrice}
             mileage={response.mileage}
-            heart={response.heart}
+            heartOn={heartOn}
+            handleHeartClick={handleHeartClick}
           />
           <DetailBookEtc star={response.star} />
           <DetailSellUsedBook />
@@ -71,7 +89,8 @@ function Detail() {
       )}
       <DetailReturnRefund />
       <Footer />
-      <DetailBottomBar />
+      <DetailBottomBar heartOn={heartOn} handleHeartClick={handleHeartClick} />
+      {toast && <Toast setToast={setToast} message={heartResponse.message} />}
     </>
   );
 }

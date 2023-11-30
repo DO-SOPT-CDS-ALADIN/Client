@@ -10,9 +10,9 @@ interface HeartResponse {
 }
 
 const usePostHeart = (bookId: number) => {
-  const [response, setResponse] = useState<HeartProps>({ heart: false, message: '' });
-  const [error, setError] = useState<AxiosError>();
-  const [loading, setLoading] = useState(true);
+  const [heartResponse, setHeartResponse] = useState<HeartProps>({ heart: false, message: '' });
+  const [heartError, setHeartError] = useState<AxiosError>();
+  const [heartLoading, setLoading] = useState(true);
 
   const postHeart = async () => {
     await heart
@@ -20,10 +20,10 @@ const usePostHeart = (bookId: number) => {
       .then(res => {
         const data: HeartResponse = res.data;
         const heart_status = data.message === '좋아요 저장' ? true : false;
-        setResponse({ heart: heart_status, message: data.message });
+        setHeartResponse({ heart: heart_status, message: data.message });
       })
       .catch(err => {
-        setError(err);
+        setHeartError(err);
       })
       .finally(() => {
         setLoading(false);
@@ -34,7 +34,7 @@ const usePostHeart = (bookId: number) => {
     postHeart();
   }, []);
 
-  return { response, error, loading, postHeart };
+  return { heartResponse, heartError, heartLoading, postHeart };
 };
 
 export default usePostHeart;

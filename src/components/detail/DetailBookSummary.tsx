@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {
   IcBigcircleLeft,
@@ -9,11 +9,8 @@ import {
   IcHeartOn,
 } from '../../assets/icons';
 import DetailBookInfoBox from './DetailBookInfoBox';
-import usePostHeart from '../../hooks/usePostHeart';
-import Toast from '../common/Toast';
 
 interface DetailBookSummaryProps {
-  bookId: number;
   title: string;
   src: string;
   author: string;
@@ -22,11 +19,11 @@ interface DetailBookSummaryProps {
   price: string;
   discount_price: string;
   mileage: string;
-  heart: boolean;
+  heartOn: boolean;
+  handleHeartClick: () => Promise<void>;
 }
 
 function DetailBookSummary({
-  bookId,
   title,
   src,
   author,
@@ -35,28 +32,9 @@ function DetailBookSummary({
   price,
   discount_price,
   mileage,
-  heart,
+  heartOn,
+  handleHeartClick,
 }: DetailBookSummaryProps) {
-  const [toast, setToast] = useState(false);
-  const [heartOn, setHeartOn] = useState(heart);
-
-  const { response, error, loading, postHeart } = usePostHeart(bookId);
-
-  const handleHeartClick = async () => {
-    try {
-      setHeartOn(prevHeartOn => !prevHeartOn);
-
-      await postHeart();
-
-      if (!error && !loading && response) {
-        setToast(true);
-        setHeartOn(response.heart);
-      }
-    } catch (error) {
-      setToast(true);
-    }
-  };
-
   return (
     <BookSummaryWrapper>
       <BookCoverImageWrapper>
@@ -87,8 +65,7 @@ function DetailBookSummary({
           {heartOn ? <IcHeartOn /> : <IcHeartOff />}
         </ButtonImageWrapper>
       </ButtonsWrapper>
-      <DetailBookInfoBox price={price} discount_price={discount_price} mileage={mileage} />
-      {toast && <Toast setToast={setToast} message={response.message} />}
+      <DetailBookInfoBox price={price} discount_price={discount_price} mileage={mileage} />{' '}
     </BookSummaryWrapper>
   );
 }
