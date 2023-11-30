@@ -42,8 +42,8 @@ export default AladinCoffee;
 const PromotionWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 0.4rem;
+  justify-content: center;
 
   margin-top: 1.2rem;
   padding: 2.4rem 0rem 2.4rem 1.6rem;
@@ -61,18 +61,18 @@ const Title = styled.p`
   ${({ theme }) => theme.fonts.title1_bold};
   span {
     ${({ theme }) => theme.fonts.title1_bold};
+
     color: ${({ theme }) => theme.colors.pink_400};
   }
 `;
 
 const ShowMoreWrapper = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 5.8rem;
   height: 4rem;
-
   margin-right: 0.8rem;
   padding: 1rem 0rem 1rem 0.1rem;
 `;
@@ -84,7 +84,6 @@ const ShowMore = styled.p`
 
 const List = styled.div`
   overflow-y: auto;
-
   display: flex;
   align-items: center;
 
@@ -95,13 +94,13 @@ const List = styled.div`
 
 const CoffeeWrapper = styled.div`
   position: relative;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 0.8rem;
+  align-items: center;
 
   width: 12.8rem;
-
   margin: 0.4rem 1.6rem 0 0;
 
   text-align: center;
@@ -122,6 +121,5 @@ const CoffeeTitle = styled.p`
 const PromotionImg = styled.img`
   width: 12.2rem;
   height: 12.2rem;
-
   border: 1px solid ${({ theme }) => theme.colors.grey_200};
 `;

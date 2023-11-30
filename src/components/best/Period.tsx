@@ -24,22 +24,25 @@ export default Period;
 
 const PeriodWrapper = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
   width: 37.5rem;
   padding: 1.6rem 0.8rem 0rem 31.7rem;
-  justify-content: flex-end;
-  align-items: center;
-  border-bottom: 0.5px solid ${({ theme }) => theme.colors.grey_300};
+
   background: ${({ theme }) => theme.colors.white};
+  border-bottom: 0.5px solid ${({ theme }) => theme.colors.grey_300};
 `;
 
 const PeriodButton = styled.button`
   display: flex;
+  flex-shrink: 0;
+  align-items: flex-start;
+  justify-content: center;
+
   width: 5rem;
   height: 4rem;
   padding: 1rem 0.2rem 1rem 0.3rem;
-  justify-content: center;
-  align-items: flex-start;
-  flex-shrink: 0;
 `;
 
 const PeriodText = styled.p`

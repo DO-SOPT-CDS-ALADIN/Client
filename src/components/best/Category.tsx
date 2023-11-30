@@ -28,6 +28,8 @@ const CategoryWrapper = styled.div`
 
   white-space: nowrap;
 
+  white-space: nowrap;
+
   &::-webkit-scrollbar {
     height: 0;
   }

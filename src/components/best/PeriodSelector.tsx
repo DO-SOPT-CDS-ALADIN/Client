@@ -20,8 +20,8 @@ function PeriodSelector({ setIsShowSelector }: PeriodSelectorProps) {
 export default PeriodSelector;
 
 const Overlay = styled.div`
-  z-index: 2;
   position: fixed;
+  z-index: 2;
   top: 0;
   left: 0;
 
@@ -30,35 +30,35 @@ const Overlay = styled.div`
 `;
 
 const SelectorWrapper = styled.div`
-  z-index: 3;
-  overflow: hidden;
   position: absolute;
+  z-index: 3;
   right: 0.8rem;
+
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 6.7rem;
   height: 16rem;
 
-  border-radius: 0.4rem;
-  border: 0.05rem solid ${({ theme }) => theme.colors.grey_300};
   background: ${({ theme }) => theme.colors.white};
+  border: 0.05rem solid ${({ theme }) => theme.colors.grey_300};
+  border-radius: 0.4rem;
   box-shadow: ${({ theme }) => theme.shadows.mini};
 `;
 
 const Selector = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 6.7rem;
   height: 4rem;
-
   padding: 1rem 2.3rem 1.1rem 2.3rem;
 
+  font: ${({ theme }) => theme.fonts.detail2};
   color: ${({ theme }) => theme.colors.grey_600};
   text-align: center;
-  font: ${({ theme }) => theme.fonts.detail2};
 `;

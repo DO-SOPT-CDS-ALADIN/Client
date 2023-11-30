@@ -7,17 +7,27 @@ import {
   IcHeartOn,
   IcHeartOff,
   IcClose,
+  IcCheckboxEmpty,
 } from '../../assets/icons';
 import { TAG } from '../../constants/tag';
 import { CartItemProps } from '../../utils/CartItemProps';
 
 function Book(props: CartItemProps) {
-  const { title, imgUrl, discountPrice, mileage, heart } = props;
+  const { index, title, imgUrl, discountPrice, mileage, heart, isCheckedList, setIsCheckedList } =
+    props;
+
+  const handleCheck = () => {
+    setIsCheckedList(prev => {
+      const updatedList = [...prev];
+      updatedList[index] = !updatedList[index];
+      return updatedList;
+    });
+  };
   return (
     <BookWrapper>
       <CheckButton>
-        <CheckBox>
-          <IcCheckPink />
+        <CheckBox onClick={handleCheck}>
+          {isCheckedList[index] ? <IcCheckPink /> : <IcCheckboxEmpty />}
         </CheckBox>
       </CheckButton>
       <InnerWrapper>
