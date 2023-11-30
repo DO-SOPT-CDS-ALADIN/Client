@@ -1,16 +1,28 @@
 import styled from 'styled-components';
 import { IcInfoGray, IcMileage, IcDown } from '../../assets/icons';
+import {
+  totalItemCountState,
+  totalMileageState,
+  totalPriceState,
+} from '../../recoil/atoms/receiptState';
+import { useRecoilValue } from 'recoil';
+import { formatPrice } from '../../utils/Price';
 
 function Receipt() {
+  const cartCount = useRecoilValue(totalPriceState);
+  const mileage = useRecoilValue(totalMileageState);
+  const itemCount = useRecoilValue(totalItemCountState);
   return (
     <ReceiptWrapper>
       <FlexBox>
         <Title>총 상품수</Title>
-        <Value>2종 2개</Value>
+        <Value>
+          {itemCount}종 {itemCount}개
+        </Value>
       </FlexBox>
       <FlexBox>
         <Title>총 상품금액</Title>
-        <Value>33,120원 (3,680원 할인)</Value>
+        <Value>{formatPrice(cartCount)} (3,680원 할인)</Value>
       </FlexBox>
       <FlexBox>
         <Title>총 배송비</Title>
@@ -24,11 +36,11 @@ function Receipt() {
         <MileageIconWrapper>
           <IcMileage />
         </MileageIconWrapper>
-        <Value>1,840원</Value>
+        <Value>{formatPrice(mileage)}</Value>
       </FlexBox>
       <TotalPriceWrapper>
         <TotalTitle>총 결제 예상 금액</TotalTitle>
-        <TotalPrice>33,120원</TotalPrice>
+        <TotalPrice>{formatPrice(cartCount)}</TotalPrice>
       </TotalPriceWrapper>
       <NoticeWrapper>
         <Notice>

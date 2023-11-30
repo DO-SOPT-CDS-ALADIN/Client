@@ -1,13 +1,18 @@
 import styled from 'styled-components';
 import { IcGift } from '../../assets/icons';
+import { useRecoilValue } from 'recoil';
+import { totalItemCountState, totalPriceState } from '../../recoil/atoms/receiptState';
+import { formatPrice } from '../../utils/Price';
 
 function BottomBar() {
+  const cartCount = useRecoilValue(totalPriceState);
+  const itemCount = useRecoilValue(totalItemCountState);
   return (
     <BottomWrapper>
       <Receipt>
         <Title>전체 상품</Title>
         <Price>
-          총 2종 2개 <span>33,120원</span>
+          총 {itemCount}종 {itemCount}개 <span>{formatPrice(cartCount)}</span>
         </Price>
       </Receipt>
       <ButtonWrapper>
