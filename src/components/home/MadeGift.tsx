@@ -10,8 +10,8 @@ function MadeGift() {
       <SectionHeader title="알라딘이 만든 사은품" icon={<IcEnter />}></SectionHeader>
       <SlideBannerContainer>
         <SlideContainer>
-          {GIFT_IMAGE_LINKS.map(item => (
-            <SlideBannerImgContainer>
+          {GIFT_IMAGE_LINKS.map((item, index) => (
+            <SlideBannerImgContainer key={index}>
               <MadeGiftBanner src={item} />
             </SlideBannerImgContainer>
           ))}

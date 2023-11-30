@@ -14,8 +14,8 @@ function CardReviewSlider() {
       <SectionHeader title="카드리뷰" icon={<IcEnter />}></SectionHeader>
       <CardReviewContainer>
         <CardReviewItemWrapper style={{ width: `${CARD_REVIEW_BOOKS.length * 30}rem` }}>
-          {CARD_REVIEW_BOOKS.map(({ img, description }) => (
-            <CardReview img={img} description={description} />
+          {CARD_REVIEW_BOOKS.map(({ img, description }, index) => (
+            <CardReview key={index} img={img} description={description} />
           ))}
         </CardReviewItemWrapper>
       </CardReviewContainer>

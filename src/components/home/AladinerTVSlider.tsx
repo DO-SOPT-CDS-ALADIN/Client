@@ -16,8 +16,8 @@ function AladinerTVSlider() {
       <SectionHeader title="알라디너 TV" icon={<IcEnter />}></SectionHeader>
       <AladinerTVContainer>
         <AladinerTVItemWrapper style={{ width: `${ALADINER_TV_LIST.length * 30}rem` }}>
-          {ALADINER_TV_LIST.map(({ img, title, tag, watch }) => (
-            <AladinerTV img={img} title={title} tag={tag} watch={watch} />
+          {ALADINER_TV_LIST.map(({ img, title, tag, watch }, index) => (
+            <AladinerTV key={index} img={img} title={title} tag={tag} watch={watch} />
           ))}
         </AladinerTVItemWrapper>
       </AladinerTVContainer>

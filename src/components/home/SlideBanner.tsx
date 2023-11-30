@@ -34,6 +34,7 @@ const SlideContainer = styled.div`
   display: flex;
 
   width: 301%;
+  height: 22.5rem;
 `;
 
 const SlideBannerImgContainer = styled.div`
@@ -41,7 +42,6 @@ const SlideBannerImgContainer = styled.div`
   justify-content: center;
 
   width: 100%;
-  height: 100%;
 
   scroll-snap-align: start;
 `;
