@@ -52,7 +52,7 @@ function DetailMyReviewItem({ userId, date, content, agreeNum, commentNum }: MyR
           <IcStar5 />
         </WriterInfoStarsWrapper>
       </ReviewWriterInfoWrapper>
-      <Body1Text>{hideText(content, 133)}</Body1Text>
+      <Body1Text isMore={isMore}>{isMore ? content : hideText(content, 133)}</Body1Text>
       <MoreBox>
         <IcBtnShowDown onClick={onClickMoreButton} />
       </MoreBox>
@@ -111,21 +111,20 @@ const WriterInfoWrapper = styled.div`
 
 const BuyerLabel = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
 
   width: 3.6rem;
   height: 2.3rem;
 
-  justify-content: center;
-  align-items: center;
+  line-height: normal;
+  color: ${({ theme }) => theme.colors.blue_500};
+  letter-spacing: -0.6px;
 
-  border-radius: 0.4rem;
   background: ${({ theme }) => theme.colors.blue_100};
+  border-radius: 0.4rem;
 
   ${({ theme }) => theme.fonts.detail1};
-
-  color: ${({ theme }) => theme.colors.blue_500};
-  line-height: normal;
-  letter-spacing: -0.6px;
 `;
 
 const WriterInfoStarsWrapper = styled.div`
@@ -134,16 +133,16 @@ const WriterInfoStarsWrapper = styled.div`
   row-gap: 1rem;
 `;
 
-const Body1Text = styled.p`
+const Body1Text = styled.p<{ isMore: boolean }>`
   ${({ theme }) => theme.fonts.body1_copy};
 
-  height: 9.6rem;
+  overflow: hidden;
+  display: box;
+
+  margin-bottom: ${({ isMore }) => (isMore ? `8rem` : `0rem`)};
 
   text-align: left;
   word-wrap: break-word;
-
-  display: box;
-  overflow: hidden;
 
   -webkit-box-orient: vertical;
 `;
@@ -162,6 +161,7 @@ const MoreBox = styled.div`
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
 
   & > svg {
+    cursor: pointer;
     position: absolute;
     bottom: 0;
   }

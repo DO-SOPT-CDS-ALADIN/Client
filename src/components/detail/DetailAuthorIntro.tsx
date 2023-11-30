@@ -15,7 +15,7 @@ function DetailAuthorIntro() {
   };
 
   return (
-    <DetailAuthorIntroWrapper>
+    <DetailAuthorIntroWrapper isMore={isMore}>
       <AuthorIntroTitleWrapper>
         <Title1BoldText>저자 소개</Title1BoldText>
         <Body2TextWrapper>
@@ -34,9 +34,11 @@ function DetailAuthorIntro() {
         </Detail2Wrapper>
       </AuthorTitleWrapper>
       <Title1Text>최근작</Title1Text>
-      <TextBoxWrapper>
+      <TextBoxWrapper isMore={isMore}>
         <Body2TextBox className="text1">{DETAIL_TEXTS.AUTHOR_INTRO_1}</Body2TextBox>
-        <Body2TextBox>{hideText(DETAIL_TEXTS.AUTHOR_INTRO_2, 98)}</Body2TextBox>
+        <Body2TextBox>
+          {isMore ? DETAIL_TEXTS.AUTHOR_INTRO_2 : hideText(DETAIL_TEXTS.AUTHOR_INTRO_2, 98)}
+        </Body2TextBox>
       </TextBoxWrapper>
       <MoreBox>
         <IcBtnShowDown onClick={onClickMoreButton} />
@@ -47,14 +49,14 @@ function DetailAuthorIntro() {
 
 export default DetailAuthorIntro;
 
-const DetailAuthorIntroWrapper = styled.div`
+const DetailAuthorIntroWrapper = styled.div<{ isMore: boolean }>`
   position: relative;
 
   display: flex;
   flex-direction: column;
   row-gap: 1.6rem;
 
-  height: 27.4rem;
+  height: ${({ isMore }) => (isMore ? `` : `27.4rem`)};
   margin-top: 1.2rem;
   padding: 2.4rem 1.6rem;
 
@@ -75,9 +77,7 @@ const Title1Text = styled.span`
 `;
 
 const Title1BoldText = styled.span`
-  ${({ theme }) => theme.fonts.title1_bold};
-
-  line-height: normal;
+  ${({ theme }) => theme.fonts.title1_bold_re};
 `;
 
 const Body2TextWrapper = styled.div`
@@ -137,9 +137,10 @@ const Detail2Text = styled.span`
   }
 `;
 
-const TextBoxWrapper = styled.div`
+const TextBoxWrapper = styled.div<{ isMore: boolean }>`
   display: flex;
   flex-direction: column;
+  margin-bottom: ${({ isMore }) => (isMore ? `8rem` : `0rem`)};
 `;
 
 const MoreBox = styled.div`
@@ -156,6 +157,7 @@ const MoreBox = styled.div`
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
 
   & > svg {
+    cursor: pointer;
     position: absolute;
     bottom: 0;
   }
