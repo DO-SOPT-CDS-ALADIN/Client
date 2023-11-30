@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { IcCircleTop } from '../../assets/icons';
 import PAGE from '../../constants/page';

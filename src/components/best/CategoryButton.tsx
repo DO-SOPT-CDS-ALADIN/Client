@@ -52,7 +52,9 @@ const RadioInput = styled.input`
   display: none;
 
   &:checked + label {
-    box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.blue_400} inset;
+    border: 1px solid ${({ theme }) => theme.colors.blue_400};
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.blue_400} inset;
+
     ${CategoryName} {
       font: ${({ theme }) => theme.fonts.body1};
       color: ${({ theme }) => theme.colors.blue_400};

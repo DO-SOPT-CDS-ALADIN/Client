@@ -12,6 +12,7 @@ import IcReviewLikeOn from './ic_review_like_on.svg?react';
 import IcReviewLikeOff from './ic_review_like_off.svg?react';
 import IcRanknumber from './ic_ranknumber.svg?react';
 import IcRank from './ic_rank.svg?react';
+import IcRankLarge from './ic_rank_icon_large.svg?react';
 import IcPlus from './ic_plus.svg?react';
 import IcPlusMini from './ic_plus_mini.svg?react';
 import IcPlay from './ic_play.svg?react';
@@ -102,6 +103,7 @@ export {
   IcReviewLikeOn,
   IcReviewLikeOff,
   IcRanknumber,
+  IcRankLarge,
   IcRank,
   IcPlus,
   IcPlusMini,

@@ -1,30 +1,55 @@
 import styled from 'styled-components';
 import {
   IcRanknumber,
+  IcRankLarge,
   IcEye,
   IcBestIstarSmall,
   IcMileage,
   IcHeartOff,
+  IcHeartOn,
   IcCart,
 } from '../../assets/icons';
-import book from '../../assets/imgs/bookImg.png';
 import { TAG } from '../../constants/tag';
-
-interface BookProps {
-  rank: number;
-  tagCount: number;
-}
+import { BookProps } from '../../utils/BookProps';
+import { useCart } from '../../hooks/useCart';
+import Toast from '../common/Toast';
+import { useState } from 'react';
 
 interface TagProps {
   type: number;
 }
 
-function Book({ rank, tagCount }: BookProps) {
+function Book(props: BookProps) {
+  const {
+    bookId,
+    rank,
+    imgUrl,
+    title,
+    subtitle,
+    writer,
+    painter,
+    publisher,
+    pubDate,
+    score,
+    tag,
+    discountPrice,
+    mileage,
+    heart,
+  } = props;
+
+  const [toast, setToast] = useState(false);
+
+  const { response, addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart(bookId);
+    setToast(true);
+  };
   return (
     <BookWrapper>
       <BookInner>
         <Left>
-          <BookImg src={book} />
+          <BookImg src={imgUrl} />
           <PreviewButton>
             <IcEye />
             <PreviewText>미리보기</PreviewText>
@@ -32,48 +57,53 @@ function Book({ rank, tagCount }: BookProps) {
         </Left>
         <Right>
           <Rank>
-            <IcRanknumber />
+            {rank < 10 ? <IcRanknumber /> : <IcRankLarge />}
             <RankNum>{rank}</RankNum>
           </Rank>
           <Title>
-            <LargeBlackText>기적의 자세요정</LargeBlackText>
-            <GreyText>- 무너진 자세를 바로 세우는</GreyText>
+            <LargeBlackText>{title}</LargeBlackText>
+            {subtitle && <GreyText>- {subtitle}</GreyText>}
           </Title>
           <Writer>
-            <BlackText>자세요정</BlackText>
+            <BlackText>{writer}</BlackText>
             <GreyText>(지은이)</GreyText>
+            {painter && (
+              <>
+                <BlackText>, {painter}</BlackText>
+                <GreyText>(옮긴이)</GreyText>
+              </>
+            )}
           </Writer>
           <Writer>
-            <BlackText>다산라이프</BlackText>
-            <GreyText>I 2023년 10월</GreyText>
+            <BlackText>{publisher}</BlackText>
+            <GreyText>I {pubDate}</GreyText>
           </Writer>
           <Info>
             <IcBestIstarSmall />
-            <Score>4.0</Score>
+            <Score>{score}.0</Score>
           </Info>
           <TagWrapper>
-            {tagCount >= 1 && <Tag type={TAG.DELIVERY.ID}>{TAG.DELIVERY.TEXT}</Tag>}
-            {tagCount >= 2 && <Tag type={TAG.GIFT.ID}>{TAG.GIFT.TEXT}</Tag>}
-            {tagCount >= 3 && <Tag type={TAG.RESERVATION.ID}>{TAG.RESERVATION.TEXT}</Tag>}
+            {tag >= 1 && <Tag type={TAG.DELIVERY.ID}>{TAG.DELIVERY.TEXT}</Tag>}
+            {tag >= 2 && <Tag type={TAG.GIFT.ID}>{TAG.GIFT.TEXT}</Tag>}
+            {tag >= 3 && <Tag type={TAG.RESERVATION.ID}>{TAG.RESERVATION.TEXT}</Tag>}
           </TagWrapper>
           <Price>
             <Discount>10%</Discount>
-            <LargeBlackText>19,800원</LargeBlackText>
+            <LargeBlackText>{discountPrice}</LargeBlackText>
             <Mileage>
               <IcMileage />
-              <GreyText>1,100원</GreyText>
+              <GreyText>{mileage}</GreyText>
             </Mileage>
             <ButtonWrapper>
+              <Button>{heart ? <IcHeartOn /> : <IcHeartOff />}</Button>
               <Button>
-                <IcHeartOff />
-              </Button>
-              <Button>
-                <IcCart />
+                <IcCart onClick={handleAddToCart} />
               </Button>
             </ButtonWrapper>
           </Price>
         </Right>
       </BookInner>
+      {toast && <Toast setToast={setToast} message={response} />}
     </BookWrapper>
   );
 }
@@ -242,7 +272,7 @@ const Rank = styled.div`
 `;
 const RankNum = styled.p`
   position: absolute;
-  top: 0rem;
+  top: 0;
   left: 0.45rem;
 
   font: ${({ theme }) => theme.fonts.detail1};

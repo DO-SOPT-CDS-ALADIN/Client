@@ -1,12 +1,28 @@
+import { useBest } from '../../hooks/useBest';
 import Book from './Book';
 
 function BookList() {
-  const totalBooks = 9;
-  const books = Array.from({ length: totalBooks }, (_, index) => index + 1);
+  const { bestBookList } = useBest();
   return (
     <>
-      {books.map(index => (
-        <Book key={index} rank={index} tagCount={Math.floor(Math.random() * 3) + 1} />
+      {bestBookList.map((book, index) => (
+        <Book
+          key={book.bookId}
+          bookId={book.bookId}
+          rank={index + 1}
+          imgUrl={book.imgUrl}
+          title={book.title}
+          subtitle={book.subtitle}
+          painter={book.painter}
+          writer={book.writer}
+          publisher={book.publisher}
+          pubDate={book.pubDate}
+          score={book.score}
+          tag={book.score}
+          discountPrice={book.discountPrice}
+          mileage={book.mileage}
+          heart={book.heart}
+        />
       ))}
     </>
   );
