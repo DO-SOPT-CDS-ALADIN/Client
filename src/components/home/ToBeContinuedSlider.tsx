@@ -55,6 +55,8 @@ const BooksWrapper = styled.div`
   display: flex;
   column-gap: 1.6rem;
 
+  height: 23.5rem;
+
   padding-left: 1.5rem;
 `;
 
