@@ -18,10 +18,20 @@ import {
   totalItemCountState,
 } from '../../recoil/atoms/receiptState';
 import { parsePrice } from '../../utils/Price';
+import { useCart } from '../../hooks/useCart';
 
 function Book(props: CartItemProps) {
-  const { index, title, imgUrl, discountPrice, mileage, heart, isCheckedList, setIsCheckedList } =
-    props;
+  const {
+    id,
+    index,
+    title,
+    imgUrl,
+    discountPrice,
+    mileage,
+    heart,
+    isCheckedList,
+    setIsCheckedList,
+  } = props;
 
   const handleCheck = () => {
     setIsCheckedList(prev => {
@@ -31,7 +41,7 @@ function Book(props: CartItemProps) {
     });
     calculatePrice();
   };
-
+  const { deleteFromCart } = useCart();
   const [, setTotalPrice] = useRecoilState(totalPriceState);
   const [, setTotalMileage] = useRecoilState(totalMileageState);
   const [, setTotalItemCount] = useRecoilState(totalItemCountState);
@@ -42,6 +52,10 @@ function Book(props: CartItemProps) {
     setTotalPrice(prev => (!isCheckedList[index] ? prev + price : prev - price));
     setTotalMileage(prev => (!isCheckedList[index] ? prev + mile : prev - mile));
     setTotalItemCount(prev => (!isCheckedList[index] ? prev + 1 : prev - 1));
+  };
+
+  const handleDeleteFromCart = () => {
+    deleteFromCart(id);
   };
 
   return (
@@ -75,9 +89,9 @@ function Book(props: CartItemProps) {
             <DeliveryDetail>내일 아침 7시 출근전 배송</DeliveryDetail>
           </DeliveryInfo>
         </BookInfo>
-        <CloseButton>
+        <DeleteButton onClick={handleDeleteFromCart}>
           <IcClose />
-        </CloseButton>
+        </DeleteButton>
       </InnerWrapper>
     </BookWrapper>
   );
@@ -235,7 +249,7 @@ const DeliveryDetail = styled(GreyText)`
   line-height: 180%;
 `;
 
-const CloseButton = styled.div`
+const DeleteButton = styled.div`
   position: absolute;
   right: 1.2rem;
 `;

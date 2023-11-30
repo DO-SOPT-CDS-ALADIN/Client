@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useCart } from '../../hooks/useCart';
 import { CartItemProps } from '../../utils/CartItemProps';
 import Book from './Book';
 import styled from 'styled-components';
@@ -9,12 +8,15 @@ import {
   totalMileageState,
   totalPriceState,
 } from '../../recoil/atoms/receiptState';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { parsePrice } from '../../utils/Price';
 import { PriceType } from '../../utils/PriceType';
+import { cartListState } from '../../recoil/atoms/cartListState';
+import { useCart } from '../../hooks/useCart';
 
 function CartList() {
   const { cartList } = useCart();
+  const globalCartList = useRecoilValue(cartListState);
   const [isCheckedList, setIsCheckedList] = useState<boolean[]>([]);
   const [isAllChecked, setIsAllChecked] = useState(true);
   const [, setTotalPrice] = useRecoilState(totalPriceState);
@@ -22,8 +24,8 @@ function CartList() {
   const [, setTotalItemCount] = useRecoilState(totalItemCountState);
 
   useEffect(() => {
-    setIsCheckedList(Array(cartList.length).fill(true));
-  }, [cartList]);
+    setIsCheckedList(Array(globalCartList.length).fill(true));
+  }, [globalCartList]);
 
   useEffect(() => {
     const allChecked = isCheckedList.every(isChecked => isChecked);
@@ -75,10 +77,11 @@ function CartList() {
           </Button>
         </ButtonWrapper>
       </FilterWrapper>
-      {cartList.map((book: CartItemProps, index) => (
+      {globalCartList.map((book: CartItemProps, index: number) => (
         <Book
           key={index}
           index={index}
+          id={book.id}
           title={book.title}
           imgUrl={book.imgUrl}
           discountPrice={book.discountPrice}
