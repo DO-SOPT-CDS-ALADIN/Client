@@ -10,4 +10,13 @@ export const DETAIL_CAROUSEL_ITEMS = [
   ImgAdCard2,
   ImgAdCard3,
   ImgAdCard2,
+  ImgAdCard1,
+  ImgAdCard2,
+  ImgAdCard3,
+  ImgAdCard1,
+  ImgAdCard2,
+  ImgAdCard3,
+  ImgAdCard2,
+  ImgAdCard1,
+  ImgAdCard2,
 ];

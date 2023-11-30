@@ -22,20 +22,20 @@ import Footer from '../components/common/Footer';
 import DetailReturnRefund from '../components/detail/DetailReturnRefund';
 import DetailBottomBar from '../components/detail/DetailBottomBar';
 import DetailCarousel from '../components/detail/DetailCarousel';
-import { DETAIL_CAROUSEL_ITEMS } from '../constants/DETAIL_CAROUSEL_ITEMS';
+import styled from 'styled-components';
 
 function Detail() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [section, setSection] = useState('이벤트');
 
   return (
-    <>
+    <DetailWrapper>
       <Header />
       <DetailBookSummary />
       <DetailBookEtc />
       <DetailSellUsedBook />
       <DetailSeries />
-      <DetailCarousel slides={DETAIL_CAROUSEL_ITEMS} />
+      <DetailCarousel />
       <DetailNavBar section={section} />
       <DetailEvent />
       <DetailBookIntro />
@@ -53,8 +53,12 @@ function Detail() {
       <DetailReturnRefund />
       <Footer />
       <DetailBottomBar />
-    </>
+    </DetailWrapper>
   );
 }
 
 export default Detail;
+
+const DetailWrapper = styled.div`
+  padding-bottom: 6.8rem;
+`;
