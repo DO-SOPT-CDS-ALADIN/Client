@@ -33,7 +33,7 @@ function Detail() {
   const [toast, setToast] = useState(false);
 
   const parsedBookId = bookId ? parseInt(bookId, 10) : 1;
-  const { heartResponse, heartError, heartLoading, postHeart } = usePostHeart(bookId);
+  const { heartResponse, heartError, heartLoading, postHeart } = usePostHeart(parsedBookId);
   const { response, error, loading } = useGetDetailBook(parsedBookId as number);
 
   const [heartOn, setHeartOn] = useState(heartResponse.heart);
@@ -80,7 +80,7 @@ function Detail() {
           <DetailReviewSummary />
           <DetailReviewGraph />
           <DetailBuyerReviewList />
-          <DetailPostReview />
+          <DetailPostReview bookId={parsedBookId} />
           <DetailMyReview />
           <DetailMyPaper />
           <BuyWith />
