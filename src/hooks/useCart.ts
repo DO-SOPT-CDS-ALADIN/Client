@@ -15,7 +15,7 @@ interface CartData {
   cartCount: number;
   response: string;
   addToCart: (bookId: number) => Promise<void>;
-  deleteFromCart: (bookId: number) => Promise<void>;
+  deleteFromCart: (selectedIds: number[]) => Promise<void>;
   cartList: [];
 }
 
@@ -80,10 +80,11 @@ export function useCart(): CartData {
     _getCartList();
   }, []);
 
-  const deleteFromCart = async (bookId: number) => {
+  const deleteFromCart = async (selectedIds: number[]) => {
     try {
-      const response = await cart.deleteFromCart(bookId);
-      setResponse(response.data.message);
+      for (const id of selectedIds) {
+        await cart.deleteFromCart(id);
+      }
       _getCartList();
     } catch (err) {
       console.error(err);

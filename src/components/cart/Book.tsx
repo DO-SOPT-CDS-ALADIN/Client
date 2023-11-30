@@ -55,7 +55,7 @@ function Book(props: CartItemProps) {
   };
 
   const handleDeleteFromCart = () => {
-    deleteFromCart(id);
+    deleteFromCart([id]);
   };
 
   return (

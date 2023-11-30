@@ -15,8 +15,8 @@ import { cartListState } from '../../recoil/atoms/cartListState';
 import { useCart } from '../../hooks/useCart';
 
 function CartList() {
-  const { cartList } = useCart();
-  const globalCartList = useRecoilValue(cartListState);
+  const { cartList, deleteFromCart } = useCart();
+  const globalCartList: CartItemProps[] = useRecoilValue(cartListState);
   const [isCheckedList, setIsCheckedList] = useState<boolean[]>([]);
   const [isAllChecked, setIsAllChecked] = useState(true);
   const [, setTotalPrice] = useRecoilState(totalPriceState);
@@ -24,8 +24,8 @@ function CartList() {
   const [, setTotalItemCount] = useRecoilState(totalItemCountState);
 
   useEffect(() => {
-    setIsCheckedList(Array(globalCartList.length).fill(true));
-  }, [globalCartList]);
+    setIsCheckedList(Array(cartList.length).fill(true));
+  }, [cartList]);
 
   useEffect(() => {
     const allChecked = isCheckedList.every(isChecked => isChecked);
@@ -61,6 +61,15 @@ function CartList() {
 
     setTotalItemCount(cartList.length);
   };
+
+  const deleteSelectedItem = () => {
+    const selectedIds = globalCartList
+      .map((book, index) => ({ id: book.id, isChecked: isCheckedList[index] }))
+      .filter(book => book.isChecked)
+      .map(book => book.id);
+    deleteFromCart(selectedIds);
+  };
+
   return (
     <>
       <FilterWrapper>
@@ -72,12 +81,12 @@ function CartList() {
           <Button>
             <IcHeartOff />
           </Button>
-          <Button>
+          <Button onClick={deleteSelectedItem}>
             <IcDelete />
           </Button>
         </ButtonWrapper>
       </FilterWrapper>
-      {globalCartList.map((book: CartItemProps, index: number) => (
+      {cartList.map((book: CartItemProps, index: number) => (
         <Book
           key={index}
           index={index}
