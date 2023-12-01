@@ -7,6 +7,8 @@ const cart = {
   addToCart: (bookId: number) => api.post(`${BASE_PATH}?bookId=${bookId}`),
   getCartList: () => api.get(`${BASE_PATH}/my`),
   deleteFromCart: (bookId: number) => api.delete(`${BASE_PATH}/${bookId}`),
+  patchItemCount: (bookId: number, requestBody: object) =>
+    api.patch(`${BASE_PATH}/${bookId}`, requestBody),
 };
 
 export default cart;

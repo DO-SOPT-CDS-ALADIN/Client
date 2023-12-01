@@ -91,6 +91,7 @@ function CartList() {
           key={index}
           index={index}
           id={book.id}
+          count={book.count}
           title={book.title}
           imgUrl={book.imgUrl}
           discountPrice={book.discountPrice}

@@ -24,6 +24,7 @@ function Book(props: CartItemProps) {
   const {
     id,
     index,
+    count,
     title,
     imgUrl,
     discountPrice,
@@ -41,7 +42,7 @@ function Book(props: CartItemProps) {
     });
     calculatePrice();
   };
-  const { deleteFromCart } = useCart();
+  const { deleteFromCart, patchItemCount } = useCart();
   const [, setTotalPrice] = useRecoilState(totalPriceState);
   const [, setTotalMileage] = useRecoilState(totalMileageState);
   const [, setTotalItemCount] = useRecoilState(totalItemCountState);
@@ -58,6 +59,13 @@ function Book(props: CartItemProps) {
     deleteFromCart([id]);
   };
 
+  const increaseItemCount = () => {
+    patchItemCount(id, count + 1);
+  };
+
+  const decreaseItemCount = () => {
+    patchItemCount(id, count - 1);
+  };
   return (
     <BookWrapper>
       <CheckButton>
@@ -78,9 +86,9 @@ function Book(props: CartItemProps) {
           </PriceWrapper>
           <Option>
             <Stapper>
-              <IcMinus />
-              <StepNum>1</StepNum>
-              <IcPlus />
+              <IcMinus onClick={decreaseItemCount} />
+              <StepNum>{count}</StepNum>
+              <IcPlus onClick={increaseItemCount} />
             </Stapper>
             <Button>{heart ? <IcHeartOn /> : <IcHeartOff />}</Button>
           </Option>
