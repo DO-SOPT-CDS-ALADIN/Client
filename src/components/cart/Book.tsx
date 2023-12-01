@@ -52,8 +52,8 @@ function Book(props: CartItemProps) {
   const calculatePrice = () => {
     const price = parsePrice(discountPrice);
     const mile = parsePrice(mileage);
-    setTotalPrice(prev => (!isCheckedList[index] ? prev + price : prev - price));
-    setTotalMileage(prev => (!isCheckedList[index] ? prev + mile : prev - mile));
+    setTotalPrice(prev => (!isCheckedList[index] ? prev + price * count : prev - price * count));
+    setTotalMileage(prev => (!isCheckedList[index] ? prev + mile * count : prev - mile * count));
     setTotalItemCount(prev => (!isCheckedList[index] ? prev + 1 : prev - 1));
     setTotalBookCount(prev => (!isCheckedList[index] ? prev + count : prev - count));
   };
