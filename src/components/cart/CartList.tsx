@@ -4,16 +4,26 @@ import { CartItemProps } from '../../utils/CartItemProps';
 import Book from './Book';
 import styled from 'styled-components';
 import { IcCheckboxGray, IcCheckboxFilled, IcDelete, IcHeartOff } from '../../assets/icons';
+import {
+  totalItemCountState,
+  totalMileageState,
+  totalPriceState,
+} from '../../recoil/atoms/receiptState';
+import { useRecoilState } from 'recoil';
+import { parsePrice } from '../../utils/Price';
+import { PriceType } from '../../utils/PriceType';
 
 function CartList() {
   const { cartList } = useCart();
   const [isCheckedList, setIsCheckedList] = useState<boolean[]>([]);
+  const [isAllChecked, setIsAllChecked] = useState(true);
+  const [, setTotalPrice] = useRecoilState(totalPriceState);
+  const [, setTotalMileage] = useRecoilState(totalMileageState);
+  const [, setTotalItemCount] = useRecoilState(totalItemCountState);
 
   useEffect(() => {
     setIsCheckedList(Array(cartList.length).fill(true));
   }, [cartList]);
-
-  const [isAllChecked, setIsAllChecked] = useState(true);
 
   useEffect(() => {
     const allChecked = isCheckedList.every(isChecked => isChecked);
@@ -22,7 +32,32 @@ function CartList() {
 
   const fillCheckedList = () => {
     setIsAllChecked(prev => !prev);
+    isAllChecked ? clearAllItemPrice() : setAllItemPrice();
     setIsCheckedList(Array(cartList.length).fill(!isAllChecked));
+  };
+
+  const clearAllItemPrice = () => {
+    setTotalPrice(0);
+    setTotalMileage(0);
+    setTotalItemCount(0);
+  };
+
+  const setAllItemPrice = () => {
+    setTotalPrice(
+      cartList.reduce((acc: number, item: PriceType) => {
+        const discountPrice = parsePrice(item.discountPrice);
+        return acc + discountPrice;
+      }, 0)
+    );
+
+    setTotalMileage(
+      cartList.reduce((acc: number, item: PriceType) => {
+        const milege = parsePrice(item.mileage);
+        return acc + milege;
+      }, 0)
+    );
+
+    setTotalItemCount(cartList.length);
   };
   return (
     <>

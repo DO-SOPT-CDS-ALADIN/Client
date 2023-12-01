@@ -11,6 +11,13 @@ import {
 } from '../../assets/icons';
 import { TAG } from '../../constants/tag';
 import { CartItemProps } from '../../utils/CartItemProps';
+import { useRecoilState } from 'recoil';
+import {
+  totalPriceState,
+  totalMileageState,
+  totalItemCountState,
+} from '../../recoil/atoms/receiptState';
+import { parsePrice } from '../../utils/Price';
 
 function Book(props: CartItemProps) {
   const { index, title, imgUrl, discountPrice, mileage, heart, isCheckedList, setIsCheckedList } =
@@ -22,7 +29,21 @@ function Book(props: CartItemProps) {
       updatedList[index] = !updatedList[index];
       return updatedList;
     });
+    calculatePrice();
   };
+
+  const [, setTotalPrice] = useRecoilState(totalPriceState);
+  const [, setTotalMileage] = useRecoilState(totalMileageState);
+  const [, setTotalItemCount] = useRecoilState(totalItemCountState);
+
+  const calculatePrice = () => {
+    const price = parsePrice(discountPrice);
+    const mile = parsePrice(mileage);
+    setTotalPrice(prev => (!isCheckedList[index] ? prev + price : prev - price));
+    setTotalMileage(prev => (!isCheckedList[index] ? prev + mile : prev - mile));
+    setTotalItemCount(prev => (!isCheckedList[index] ? prev + 1 : prev - 1));
+  };
+
   return (
     <BookWrapper>
       <CheckButton>
