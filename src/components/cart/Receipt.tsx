@@ -97,7 +97,6 @@ const TotalTitle = styled.p`
 
 const TotalPrice = styled.p`
   ${({ theme }) => theme.fonts.head3};
-
   color: ${({ theme }) => theme.colors.pink_400};
 `;
 
