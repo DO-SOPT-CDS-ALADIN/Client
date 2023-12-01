@@ -18,13 +18,13 @@ export default SectionHeader;
 
 const SectionHeaderWrapper = styled.header`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   width: 100%;
   height: 4.8rem;
-  padding-left: 1.6rem;
   padding-right: 1.2rem;
+  padding-left: 1.6rem;
 `;
 
 const SectionHeaderTitle = styled.p`

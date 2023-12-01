@@ -20,7 +20,6 @@ export default AnotherCover;
 
 const AnotherCoverWrapper = styled.div`
   position: relative;
-
   width: 100%;
   height: 38rem;
   margin-top: 4rem;
@@ -29,21 +28,19 @@ const AnotherCoverWrapper = styled.div`
 const AnotherCoverImg = styled.img`
   width: 100%;
   height: 33rem;
-
   object-fit: cover;
 `;
 
 const AnotherCoverTitleWrapper = styled.div`
   position: absolute;
-  bottom: 0;
   right: 0;
+  bottom: 0;
 
   width: 35.9rem;
   height: 9.2rem;
   padding: 2rem 11.4rem 2rem 2rem;
 
   background-color: ${({ theme }) => theme.colors.white};
-
   box-shadow: ${({ theme }) => theme.shadows.mini};
 `;
 
@@ -60,14 +57,14 @@ const AnotherCoverTitle = styled.p`
 `;
 
 const BlackTag = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   position: absolute;
+  z-index: 2;
   top: 27.5rem;
   right: 0.8rem;
-  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   width: 7rem;
   height: 2.4rem;
@@ -77,6 +74,7 @@ const BlackTag = styled.div`
 
 const BlackTagText = styled.p`
   ${({ theme }) => theme.fonts.detail1};
+
   color: ${({ theme }) => theme.colors.white};
   letter-spacing: -0.06rem;
 `;

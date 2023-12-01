@@ -37,20 +37,19 @@ function TextInfos({ title }: InfosProps) {
 const AdditionalInfosWrapper = styled.div`
   width: 100%;
   margin-top: 4rem;
-
   border-top: 0.1rem solid ${({ theme }) => theme.colors.grey_200};
   border-bottom: 0.1rem solid ${({ theme }) => theme.colors.grey_200};
 `;
 
 const LinkInfosWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   width: 100%;
   height: 4.8rem;
-  padding-left: 1.6rem;
   padding-right: 1.2rem;
+  padding-left: 1.6rem;
 `;
 
 const TextInfosWrapper = styled.div`
@@ -67,7 +66,6 @@ const TextInfosWrapper = styled.div`
 const InfosTitle = styled.p`
   ${({ theme }) => theme.fonts.body2};
 
-  color: ${({ theme }) => theme.colors.black};
-
   line-height: 140%;
+  color: ${({ theme }) => theme.colors.black};
 `;

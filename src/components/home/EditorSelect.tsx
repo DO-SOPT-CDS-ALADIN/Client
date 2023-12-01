@@ -69,14 +69,14 @@ export default EditorSelect;
 const EditorSelectWrapper = styled.section`
   position: relative;
 
+  overflow: hidden;
+
   width: 100%;
   height: 52rem;
   padding-top: 1.2rem;
 
   background: linear-gradient(to bottom, white 40%, rgba(61, 73, 159, 1) 40%);
   border-top: 0.1rem solid ${({ theme }) => theme.colors.grey_300};
-
-  overflow: hidden;
 `;
 
 const EditorSelectBookImgContainer = styled.section<{ containerWidth: string }>`
@@ -84,18 +84,18 @@ const EditorSelectBookImgContainer = styled.section<{ containerWidth: string }>`
   column-gap: 4rem;
 
   width: ${({ containerWidth }) => containerWidth};
-  padding-left: 11.5rem;
   margin-top: 2rem;
+  padding-left: 11.5rem;
 `;
 
 const EditorSelectBookImg = styled.img<{ isCurrent: boolean }>`
+  position: relative;
+  z-index: 1;
+
   width: ${props => (props.isCurrent ? '14.7rem' : '11.8rem')};
   height: ${props => (props.isCurrent ? '21.5rem' : '17.2rem')};
   margin-top: ${props => (props.isCurrent ? '0' : '4.8rem')};
 
-  position: relative;
-
-  z-index: 1;
   object-fit: cover;
 `;
 
@@ -103,7 +103,6 @@ const PrevButton = styled.button`
   position: absolute;
   top: 17rem;
   left: 0.45rem;
-
   font-size: 3rem;
 `;
 
@@ -111,7 +110,6 @@ const NextButton = styled.button`
   position: absolute;
   top: 17rem;
   right: 0.45rem;
-
   font-size: 3rem;
 `;
 
@@ -125,7 +123,6 @@ const Title = styled.p`
   ${({ theme }) => theme.fonts.title1_bold};
 
   margin-top: 2.4rem;
-
   color: white;
 `;
 
@@ -133,7 +130,6 @@ const SubTitle = styled.p`
   ${({ theme }) => theme.fonts.detail2};
 
   margin-top: 0.2rem;
-
   color: white;
 `;
 
@@ -145,21 +141,24 @@ const DetailContainer = styled.div`
   margin-top: 1.5rem;
   padding: 1.4rem 1.6rem;
 
+  color: ${({ theme }) => theme.colors.white};
+
   background-color: ${({ theme }) => theme.colors.translucent};
   border-radius: ${({ theme }) => theme.radius.s};
-
-  color: white;
 `;
 
 const DetailContainerText = styled.p`
   ${({ theme }) => theme.fonts.body2};
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+  display: box;
 
   width: 31.1rem;
   height: 8rem;
-  overflow: hidden;
+
   text-overflow: hidden;
   white-space: wrap;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
 `;

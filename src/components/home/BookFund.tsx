@@ -27,9 +27,9 @@ export default BookFund;
 const BookFundWrapper = styled.div`
   width: 100%;
   height: 50rem;
-  padding-left: 1.6rem;
-  padding-top: 2.4rem;
   margin-top: 4rem;
+  padding-top: 2.4rem;
+  padding-left: 1.6rem;
 
   background: linear-gradient(
     to bottom,
@@ -40,26 +40,25 @@ const BookFundWrapper = styled.div`
 
 const BookFundTitle = styled.p`
   ${({ theme }) => theme.fonts.head3};
+
   width: 27.7rem;
-
   line-height: normal;
-
   color: ${({ theme }) => theme.colors.white};
-
   white-space: initial;
 `;
 
 const BookFundInfo = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 `;
 
 const BookImg = styled.img`
   width: 15.4rem;
   height: 17.8rem;
   margin-top: 5.5rem;
+
   object-fit: cover;
   border: 0.2rem solid ${({ theme }) => theme.colors.blue_400};
   box-shadow: ${({ theme }) => theme.shadows.mini};
@@ -69,7 +68,6 @@ const BookTitle = styled.p`
   ${({ theme }) => theme.fonts.title1_bold};
 
   margin-top: 1.6rem;
-
   color: ${({ theme }) => theme.colors.black};
 `;
 
@@ -78,9 +76,11 @@ const TargetAmountBox = styled.div`
   height: 2.4rem;
   margin-top: 1.2rem;
   margin-bottom: 0.8rem;
+
+  text-align: center;
+
   background-color: ${({ theme }) => theme.colors.blue_100};
   border-radius: ${({ theme }) => theme.radius.s};
-  text-align: center;
 `;
 
 const TargetAmount = styled.p`
@@ -91,15 +91,14 @@ const TargetAmount = styled.p`
 
 const FundingInfoWrapper = styled.div`
   display: flex;
-  align-items: center;
   column-gap: 0.4rem;
+  align-items: center;
   margin-top: 1.2rem;
 `;
 
 const FundingInfo = styled.p`
   ${({ theme }) => theme.fonts.title1_bold};
 
-  color: ${({ theme }) => theme.colors.black};
-
   line-height: normal;
+  color: ${({ theme }) => theme.colors.black};
 `;

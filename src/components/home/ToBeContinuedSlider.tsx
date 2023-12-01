@@ -44,55 +44,53 @@ const ToBeContinuedSliderWrapper = styled.div`
 `;
 
 const BooksContainer = styled.div`
+  overflow-x: auto;
   width: 100%;
   margin-top: 0.8rem;
-
-  overflow-x: auto;
   white-space: nowrap;
 `;
 
 const BooksWrapper = styled.div`
   display: flex;
   column-gap: 1.6rem;
-
   height: 23.5rem;
-
   padding-left: 1.5rem;
 `;
 
 const ToBeContinuedWrapper = styled.div`
+  position: relative;
   width: 25.4rem;
   height: 23rem;
-  position: relative;
 `;
 
 const ToBeContinuedImg = styled.img`
   width: 100%;
   height: 100%;
-
   object-fit: cover;
 `;
 
 const ToBeContinuedInfo = styled.div`
+  position: absolute;
+  bottom: 2.5rem;
+  left: 0;
+
   width: 12.1rem;
   height: 8.5rem;
   padding-top: 1.2rem;
   padding-left: 1.3rem;
-
-  position: absolute;
-  bottom: 2.5rem;
-  left: 0;
 
   background-color: ${({ theme }) => theme.colors.black};
 `;
 
 const ToBeContinuedTitle = styled.p`
   ${({ theme }) => theme.fonts.title2_bold};
+
   color: ${({ theme }) => theme.colors.white};
 `;
 
 const ToBeContinuedAuthor = styled.p`
   ${({ theme }) => theme.fonts.detail2};
-  color: ${({ theme }) => theme.colors.white};
+
   margin-top: 0.4rem;
+  color: ${({ theme }) => theme.colors.white};
 `;

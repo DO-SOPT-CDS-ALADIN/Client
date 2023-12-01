@@ -48,24 +48,21 @@ const BookWrapper = styled.div`
 `;
 
 const BooksContainer = styled.div`
+  overflow-x: auto;
   width: 100%;
   margin-top: 0.8rem;
-
-  overflow-x: auto;
   white-space: nowrap;
 `;
 
 const BooksWrapper = styled.div`
   display: flex;
   column-gap: 1.6rem;
-
   padding-left: 1.5rem;
 `;
 
 const BookImg = styled.img`
   width: 12.8rem;
   height: 17.4rem;
-
   object-fit: cover;
 `;
 
@@ -74,6 +71,5 @@ const BookTitle = styled.p`
 
   width: 100%;
   margin-top: 1.2rem;
-
   white-space: initial;
 `;

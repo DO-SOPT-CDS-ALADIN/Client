@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 function DetailMyPaper() {
@@ -36,16 +35,17 @@ const Body2Text = styled.div`
 
 const WriteButton = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   height: 4.8rem;
-  padding: 0.8rem;
   margin-top: 1.8rem;
-
-  border-radius: 0.8rem;
-  background: ${({ theme }) => theme.colors.blue_400};
-  ${({ theme }) => theme.fonts.title2_bold};
+  padding: 0.8rem;
 
   color: ${({ theme }) => theme.colors.white};
+
+  background: ${({ theme }) => theme.colors.blue_400};
+  border-radius: 0.8rem;
+
+  ${({ theme }) => theme.fonts.title2_bold};
 `;
