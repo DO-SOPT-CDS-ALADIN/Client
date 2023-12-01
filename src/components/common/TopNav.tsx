@@ -46,7 +46,6 @@ const NavText = styled.p`
 `;
 const ActiveNavText = styled.p`
   ${({ theme }) => theme.fonts.title2_bold};
-
   color: ${({ theme }) => theme.colors.blue_600};
 `;
 
