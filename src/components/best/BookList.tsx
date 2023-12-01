@@ -1,8 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import { useBest } from '../../hooks/useBest';
 import Book from './Book';
 
 function BookList() {
   const { bestBookList } = useBest();
+  const navigate = useNavigate();
+
+  const onClickItem = (bookId: number) => {
+    navigate(`/detail/${bookId}`);
+  };
+
   return (
     <>
       {bestBookList.map((book, index) => (
@@ -22,6 +29,7 @@ function BookList() {
           discountPrice={book.discountPrice}
           mileage={book.mileage}
           heart={book.heart}
+          onClick={() => onClickItem(book.bookId)}
         />
       ))}
     </>
