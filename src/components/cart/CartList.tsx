@@ -1,19 +1,31 @@
 import { useEffect, useState } from 'react';
-import { useCart } from '../../hooks/useCart';
 import { CartItemProps } from '../../utils/CartItemProps';
 import Book from './Book';
 import styled from 'styled-components';
 import { IcCheckboxGray, IcCheckboxFilled, IcDelete, IcHeartOff } from '../../assets/icons';
+import {
+  totalItemCountState,
+  totalMileageState,
+  totalPriceState,
+} from '../../recoil/atoms/receiptState';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { parsePrice } from '../../utils/Price';
+import { PriceType } from '../../utils/PriceType';
+import { cartListState } from '../../recoil/atoms/cartListState';
+import { useCart } from '../../hooks/useCart';
 
 function CartList() {
-  const { cartList } = useCart();
+  const { cartList, deleteFromCart } = useCart();
+  const globalCartList: CartItemProps[] = useRecoilValue(cartListState);
   const [isCheckedList, setIsCheckedList] = useState<boolean[]>([]);
+  const [isAllChecked, setIsAllChecked] = useState(true);
+  const [, setTotalPrice] = useRecoilState(totalPriceState);
+  const [, setTotalMileage] = useRecoilState(totalMileageState);
+  const [, setTotalItemCount] = useRecoilState(totalItemCountState);
 
   useEffect(() => {
     setIsCheckedList(Array(cartList.length).fill(true));
   }, [cartList]);
-
-  const [isAllChecked, setIsAllChecked] = useState(true);
 
   useEffect(() => {
     const allChecked = isCheckedList.every(isChecked => isChecked);
@@ -22,8 +34,42 @@ function CartList() {
 
   const fillCheckedList = () => {
     setIsAllChecked(prev => !prev);
+    isAllChecked ? clearAllItemPrice() : setAllItemPrice();
     setIsCheckedList(Array(cartList.length).fill(!isAllChecked));
   };
+
+  const clearAllItemPrice = () => {
+    setTotalPrice(0);
+    setTotalMileage(0);
+    setTotalItemCount(0);
+  };
+
+  const setAllItemPrice = () => {
+    setTotalPrice(
+      cartList.reduce((acc: number, item: PriceType) => {
+        const discountPrice = parsePrice(item.discountPrice);
+        return acc + discountPrice;
+      }, 0)
+    );
+
+    setTotalMileage(
+      cartList.reduce((acc: number, item: PriceType) => {
+        const milege = parsePrice(item.mileage);
+        return acc + milege;
+      }, 0)
+    );
+
+    setTotalItemCount(cartList.length);
+  };
+
+  const deleteSelectedItem = () => {
+    const selectedIds = globalCartList
+      .map((book, index) => ({ id: book.id, isChecked: isCheckedList[index] }))
+      .filter(book => book.isChecked)
+      .map(book => book.id);
+    deleteFromCart(selectedIds);
+  };
+
   return (
     <>
       <FilterWrapper>
@@ -35,15 +81,16 @@ function CartList() {
           <Button>
             <IcHeartOff />
           </Button>
-          <Button>
+          <Button onClick={deleteSelectedItem}>
             <IcDelete />
           </Button>
         </ButtonWrapper>
       </FilterWrapper>
-      {cartList.map((book: CartItemProps, index) => (
+      {cartList.map((book: CartItemProps, index: number) => (
         <Book
           key={index}
           index={index}
+          id={book.id}
           title={book.title}
           imgUrl={book.imgUrl}
           discountPrice={book.discountPrice}

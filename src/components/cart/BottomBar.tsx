@@ -1,13 +1,18 @@
 import styled from 'styled-components';
 import { IcGift } from '../../assets/icons';
+import { useRecoilValue } from 'recoil';
+import { totalItemCountState, totalPriceState } from '../../recoil/atoms/receiptState';
+import { formatPrice } from '../../utils/Price';
 
 function BottomBar() {
+  const cartCount = useRecoilValue(totalPriceState);
+  const itemCount = useRecoilValue(totalItemCountState);
   return (
     <BottomWrapper>
       <Receipt>
         <Title>전체 상품</Title>
         <Price>
-          총 2종 2개 <span>33,120원</span>
+          총 {itemCount}종 {itemCount}개 <span>{formatPrice(cartCount)}</span>
         </Price>
       </Receipt>
       <ButtonWrapper>
@@ -59,20 +64,20 @@ const ButtonWrapper = styled.div`
 `;
 const GiftButton = styled.button`
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
 
   width: 16.8rem;
   height: 4.8rem;
 
-  border-radius: 0.8rem;
-  border: 1px solid ${({ theme }) => theme.colors.pink_400};
+  color: ${({ theme }) => theme.colors.pink_400};
+
   background: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.pink_400};
+  border-radius: 0.8rem;
 
   ${({ theme }) => theme.fonts.title2_bold};
-
-  color: ${({ theme }) => theme.colors.pink_400};
 `;
 
 const BuyButton = styled(GiftButton)`

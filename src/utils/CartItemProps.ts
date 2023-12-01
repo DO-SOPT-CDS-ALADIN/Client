@@ -1,6 +1,7 @@
 import React from 'react';
 
 export interface CartItemProps {
+  id: number;
   index: number;
   title: string;
   imgUrl: string;
