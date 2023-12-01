@@ -88,6 +88,7 @@ function Detail() {
             price={response.originPrice}
             discount_price={response.discountPrice}
             mileage={response.mileage}
+            tag={response.tag}
             heartOn={heartOn}
             handleHeartClick={handleHeartClick}
           />
