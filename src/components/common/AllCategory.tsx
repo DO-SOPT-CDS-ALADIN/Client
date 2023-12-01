@@ -31,10 +31,12 @@ const Overlay = styled.div`
   z-index: 9998;
   z-index: 9998;
   top: 0;
+  right: 0;
   left: 0;
 
-  width: 100vw;
-  height: 100vh;
+  width: 37.5rem;
+  height: 100%;
+  margin: 0 auto;
 
   opacity: 25%;
   background-color: ${({ theme }) => theme.colors.black};
@@ -42,7 +44,7 @@ const Overlay = styled.div`
 const CategoryWrapper = styled.div`
   position: absolute;
   z-index: 9999;
-  left: calc((100vw - 33.9rem) / 2);
+  left: calc((100% - 33.9rem) / 2);
 
   overflow: hidden;
   display: flex;

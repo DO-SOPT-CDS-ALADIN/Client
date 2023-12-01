@@ -26,15 +26,16 @@ const ButtonWrapper = styled.div<ButtonWrapperProps>`
   cursor: pointer;
 
   position: fixed;
-  right: 0.8rem;
   bottom: ${({ page }) =>
     page === PAGE.DETAIL ? '6.8rem' : page === PAGE.CART ? '11.2rem' : '7.2rem'};
+  left: calc((100% - 4.8rem) / 2);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 4.8rem;
+  width: 36.5rem;
   height: 4.8rem;
+  margin: 0 auto;
   padding: 0.5rem;
 `;
