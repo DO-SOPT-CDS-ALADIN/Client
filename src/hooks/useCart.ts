@@ -42,6 +42,7 @@ export function useCart(): CartData {
 
   useEffect(() => {
     _getCartCount(setCartCount);
+    _getCartList();
   }, [setCartCount]);
 
   const addToCart = async (bookId: number) => {
@@ -57,38 +58,11 @@ export function useCart(): CartData {
   const _getCartList = async () => {
     try {
       const response = await cart.getCartList();
-      setCartList(response.data.data);
-
-      setTotalPrice(
-        response.data.data.reduce((acc: number, item: PriceType) => {
-          const discountPrice = parsePrice(item.discountPrice);
-          return acc + discountPrice * item.count;
-        }, 0)
-      );
-
-      setTotalMileage(
-        response.data.data.reduce((acc: number, item: PriceType) => {
-          const milege = parsePrice(item.mileage);
-          return acc + milege * item.count;
-        }, 0)
-      );
-
-      setTotalItemCount(response.data.data.length);
-
-      setTotalBookCount(
-        response.data.data.reduce((acc: number, item: PriceType) => {
-          const count = item.count;
-          return acc + count;
-        }, 0)
-      );
+      updateGlobalState(response.data.data);
     } catch (err) {
       console.error(err);
     }
   };
-
-  useEffect(() => {
-    _getCartList();
-  }, []);
 
   const deleteFromCart = async (selectedIds: number[]) => {
     try {
@@ -111,6 +85,33 @@ export function useCart(): CartData {
     } catch (err) {
       console.error(err);
     }
+  };
+
+  const updateGlobalState = (cartList: []) => {
+    setCartList(cartList);
+
+    setTotalPrice(
+      cartList.reduce((acc: number, item: PriceType) => {
+        const discountPrice = parsePrice(item.discountPrice);
+        return acc + discountPrice * item.count;
+      }, 0)
+    );
+
+    setTotalMileage(
+      cartList.reduce((acc: number, item: PriceType) => {
+        const milege = parsePrice(item.mileage);
+        return acc + milege * item.count;
+      }, 0)
+    );
+
+    setTotalItemCount(cartList.length);
+
+    setTotalBookCount(
+      cartList.reduce((acc: number, item: PriceType) => {
+        const count = item.count;
+        return acc + count;
+      }, 0)
+    );
   };
   return { cartCount, response, addToCart, deleteFromCart, cartList, patchItemCount };
 }
