@@ -4,8 +4,10 @@ import { IcLogo, IcSearch, IcCart } from '../../assets/icons';
 import { cartCountState } from '../../recoil/atoms/cartCountState';
 import { useRecoilValue } from 'recoil';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../hooks/useCart';
 
 function Header() {
+  useCart();
   const cartCount = useRecoilValue(cartCountState);
   const navigate = useNavigate();
 
