@@ -41,6 +41,7 @@ function DetailPostReview({ bookId, setToast, setToastMessage }: DetailPostRevie
         setTextAreaValue('');
         setStar(5);
         setClickedStars([true, true, true, true, true]);
+        setIsChecked(false);
       }
     } catch (error) {
       setToastMessage(reviewResponse.message);
