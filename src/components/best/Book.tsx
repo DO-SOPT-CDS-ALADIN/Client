@@ -19,7 +19,11 @@ interface TagProps {
   type: number;
 }
 
-function Book(props: BookProps) {
+interface BestBookProps extends BookProps {
+  onClick: () => void;
+}
+
+function Book(props: BestBookProps) {
   const {
     bookId,
     rank,
@@ -35,6 +39,7 @@ function Book(props: BookProps) {
     discountPrice,
     mileage,
     heart,
+    onClick,
   } = props;
 
   const [toast, setToast] = useState(false);
@@ -46,7 +51,7 @@ function Book(props: BookProps) {
     setToast(true);
   };
   return (
-    <BookWrapper>
+    <BookWrapper onClick={onClick}>
       <BookInner>
         <Left>
           <BookImg src={imgUrl} />
@@ -110,6 +115,8 @@ function Book(props: BookProps) {
 export default Book;
 
 const BookWrapper = styled.div`
+  cursor: pointer;
+
   display: flex;
   flex-direction: column;
   gap: 1rem;
