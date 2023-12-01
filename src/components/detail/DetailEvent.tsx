@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { IcEnterXsGrey } from '../../assets/icons';
 import ImgDetailEventCard from '../../assets/imgs/img_event_1.png';
+import ImgDetailEventCard2 from '../../assets/imgs/img_event_2.png';
 
 interface DetailEventProps {
   eventRef: React.RefObject<HTMLDivElement>;
@@ -19,9 +20,9 @@ function DetailEvent({ eventRef }: DetailEventProps) {
       </DetailEventTitleWrapper>
       <EventScrollWrapper>
         <EventScrollCard src={ImgDetailEventCard} />
+        <EventScrollCard src={ImgDetailEventCard2} />
         <EventScrollCard src={ImgDetailEventCard} />
-        <EventScrollCard src={ImgDetailEventCard} />
-        <EventScrollCard src={ImgDetailEventCard} />
+        <EventScrollCard src={ImgDetailEventCard2} />
       </EventScrollWrapper>
     </DetailEventWrapper>
   );
