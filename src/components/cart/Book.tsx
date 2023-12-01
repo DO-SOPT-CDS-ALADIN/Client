@@ -7,17 +7,73 @@ import {
   IcHeartOn,
   IcHeartOff,
   IcClose,
+  IcCheckboxEmpty,
 } from '../../assets/icons';
 import { TAG } from '../../constants/tag';
 import { CartItemProps } from '../../utils/CartItemProps';
+import { useRecoilState } from 'recoil';
+import {
+  totalPriceState,
+  totalMileageState,
+  totalItemCountState,
+  totalBookCountState,
+} from '../../recoil/atoms/receiptState';
+import { parsePrice } from '../../utils/Price';
+import { useCart } from '../../hooks/useCart';
 
 function Book(props: CartItemProps) {
-  const { title, imgUrl, discountPrice, mileage, heart } = props;
+  const {
+    id,
+    index,
+    count,
+    title,
+    imgUrl,
+    discountPrice,
+    mileage,
+    heart,
+    isCheckedList,
+    setIsCheckedList,
+  } = props;
+
+  const handleCheck = () => {
+    setIsCheckedList(prev => {
+      const updatedList = [...prev];
+      updatedList[index] = !updatedList[index];
+      return updatedList;
+    });
+    calculatePrice();
+  };
+  const { deleteFromCart, patchItemCount } = useCart();
+  const [, setTotalPrice] = useRecoilState(totalPriceState);
+  const [, setTotalMileage] = useRecoilState(totalMileageState);
+  const [, setTotalItemCount] = useRecoilState(totalItemCountState);
+  const [, setTotalBookCount] = useRecoilState(totalBookCountState);
+
+  const calculatePrice = () => {
+    const price = parsePrice(discountPrice);
+    const mile = parsePrice(mileage);
+    setTotalPrice(prev => (!isCheckedList[index] ? prev + price : prev - price));
+    setTotalMileage(prev => (!isCheckedList[index] ? prev + mile : prev - mile));
+    setTotalItemCount(prev => (!isCheckedList[index] ? prev + 1 : prev - 1));
+    setTotalBookCount(prev => (!isCheckedList[index] ? prev + count : prev - count));
+  };
+
+  const handleDeleteFromCart = () => {
+    deleteFromCart([id]);
+  };
+
+  const increaseItemCount = () => {
+    patchItemCount(id, count + 1);
+  };
+
+  const decreaseItemCount = () => {
+    count > 1 && patchItemCount(id, count - 1);
+  };
   return (
     <BookWrapper>
       <CheckButton>
-        <CheckBox>
-          <IcCheckPink />
+        <CheckBox onClick={handleCheck}>
+          {isCheckedList[index] ? <IcCheckPink /> : <IcCheckboxEmpty />}
         </CheckBox>
       </CheckButton>
       <InnerWrapper>
@@ -33,9 +89,9 @@ function Book(props: CartItemProps) {
           </PriceWrapper>
           <Option>
             <Stapper>
-              <IcMinus />
-              <StepNum>1</StepNum>
-              <IcPlus />
+              <IcMinus onClick={decreaseItemCount} />
+              <StepNum>{count}</StepNum>
+              <IcPlus onClick={increaseItemCount} />
             </Stapper>
             <Button>{heart ? <IcHeartOn /> : <IcHeartOff />}</Button>
           </Option>
@@ -44,9 +100,9 @@ function Book(props: CartItemProps) {
             <DeliveryDetail>내일 아침 7시 출근전 배송</DeliveryDetail>
           </DeliveryInfo>
         </BookInfo>
-        <CloseButton>
+        <DeleteButton onClick={handleDeleteFromCart}>
           <IcClose />
-        </CloseButton>
+        </DeleteButton>
       </InnerWrapper>
     </BookWrapper>
   );
@@ -204,7 +260,7 @@ const DeliveryDetail = styled(GreyText)`
   line-height: 180%;
 `;
 
-const CloseButton = styled.div`
+const DeleteButton = styled.div`
   position: absolute;
   right: 1.2rem;
 `;
