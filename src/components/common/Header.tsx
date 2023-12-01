@@ -114,7 +114,6 @@ const CartNumber = styled.p`
   color: ${({ theme }) => theme.colors.white};
   text-align: center;
   ${({ theme }) => theme.fonts.detail1};
-  ${({ theme }) => theme.fonts.detail1};
 `;
 
 const CartIconWrapper = styled.div`
