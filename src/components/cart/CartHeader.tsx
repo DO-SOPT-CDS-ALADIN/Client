@@ -17,6 +17,7 @@ function CartHeader() {
         </BackButton>
         <HeaderTitle>장바구니</HeaderTitle>
         <IcNaviBtnHomeBlack
+          className="home"
           onClick={() => {
             navigate('/');
           }}
@@ -44,6 +45,10 @@ const HeaderWrapper = styled.div`
   padding-left: 1.2rem;
 
   background-color: ${({ theme }) => theme.colors.white};
+
+  .home {
+    cursor: pointer;
+  }
 `;
 const HeaderTitle = styled.p`
   ${({ theme }) => theme.fonts.title2_bold};

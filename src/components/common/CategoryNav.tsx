@@ -82,6 +82,8 @@ const Category = styled.div`
 `;
 
 const ShowButton = styled.div`
+  cursor: pointer;
+
   position: sticky;
   right: -1.4rem;
 

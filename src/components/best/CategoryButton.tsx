@@ -28,6 +28,8 @@ function CategoryButton(props: CategoryProps) {
 export default CategoryButton;
 
 const Category = styled.label`
+  cursor: pointer;
+
   display: flex;
   flex-direction: column;
   flex-shrink: 0;

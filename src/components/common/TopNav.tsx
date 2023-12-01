@@ -35,6 +35,8 @@ function TopNav({ page }: TopNavProps) {
 export default TopNav;
 
 const Nav = styled.div`
+  cursor: pointer;
+
   display: flex;
   gap: 1rem;
   align-items: flex-start;
