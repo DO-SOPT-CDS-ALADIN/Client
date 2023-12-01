@@ -42,58 +42,49 @@ const CardReviewSliderWrapper = styled.div`
 `;
 
 const CardReviewContainer = styled.div`
+  overflow-x: auto;
   width: 100%;
   margin-top: 0.8rem;
-
-  overflow-x: auto;
   white-space: nowrap;
 `;
 
 const CardReviewItemWrapper = styled.div`
   display: flex;
   column-gap: 1.6rem;
-
   padding-left: 1.5rem;
 `;
 
 const CardReviewWrapper = styled.div`
   position: relative;
-
   width: 28.2rem;
   height: 26rem;
-
   border-radius: ${({ theme }) => theme.radius.m};
 `;
 
 const CardReviewImg = styled.img`
   width: 100%;
   height: 25.4rem;
-
-  border-radius: inherit;
-
   object-fit: fill;
+  border-radius: inherit;
 `;
 
 const CardReviewDescriptionBox = styled.div`
-  width: 100%;
-  height: 8rem;
-
-  background-color: ${({ theme }) => theme.colors.black};
-
-  border-radius: 0 0 ${({ theme }) => theme.radius.m} ${({ theme }) => theme.radius.m};
-
-  padding: 2rem;
-
   position: absolute;
   bottom: 0;
+
+  width: 100%;
+  height: 8rem;
+  padding: 2rem;
+
+  background-color: ${({ theme }) => theme.colors.black};
+  border-radius: 0 0 ${({ theme }) => theme.radius.m} ${({ theme }) => theme.radius.m};
 `;
 
 const CardReviewDescription = styled.p`
   width: 14.5rem;
   ${({ theme }) => theme.fonts.body1};
+
   color: ${({ theme }) => theme.colors.white};
-
   line-height: 140%;
-
   white-space: initial;
 `;

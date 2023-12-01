@@ -29,20 +29,20 @@ function OneSentence() {
 export default OneSentence;
 
 const OneSentenceWrapper = styled.div`
+  overflow: hidden;
+
   width: 100%;
   height: 18.7rem;
   margin-top: 4rem;
   padding: 1.6rem 1.6rem 1.3rem 1.6rem;
 
   background-color: ${({ theme }) => theme.colors.blue_100};
-
-  overflow: hidden;
 `;
 
 const OneSentenceTitle = styled.div`
   display: flex;
-  align-items: center;
   column-gap: 0.8rem;
+  align-items: center;
 `;
 
 const OneSentenceTitleText = styled.p`
@@ -50,10 +50,10 @@ const OneSentenceTitleText = styled.p`
 `;
 
 const BookInfoContainer = styled.div`
+  position: relative;
+
   display: flex;
   column-gap: 3.9rem;
-
-  position: relative;
 
   width: 100%;
   margin-top: 1.4rem;
@@ -62,9 +62,7 @@ const BookInfoContainer = styled.div`
 const BookImg = styled.img`
   width: 8rem;
   height: 11.9rem;
-
   object-fit: cover;
-
   box-shadow: ${({ theme }) => theme.shadows.large};
 `;
 
@@ -74,16 +72,16 @@ const BookInfo = styled.div`
 
 const BookDetail = styled.p`
   ${({ theme }) => theme.fonts.detail2};
-  width: 100%;
 
+  width: 100%;
   letter-spacing: -0.06rem;
 `;
 
 const BookAuthor = styled.p`
   ${({ theme }) => theme.fonts.detail2};
+
   width: 100%;
   margin-top: 0.7rem;
-
   letter-spacing: -0.06rem;
 `;
 

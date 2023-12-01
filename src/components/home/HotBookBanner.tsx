@@ -46,12 +46,12 @@ const BookTitle = styled.p`
 
 const BookInfo = styled.p`
   ${({ theme }) => theme.fonts.body2};
+
   margin-top: 0.4rem;
 `;
 const BookInfoPink = styled.p`
   ${({ theme }) => theme.fonts.detail1};
 
   margin-top: 0.8rem;
-
   color: ${({ theme }) => theme.colors.pink_400};
 `;

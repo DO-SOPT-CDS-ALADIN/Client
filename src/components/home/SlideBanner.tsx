@@ -25,33 +25,28 @@ function SlideBanner({ imageLinks }: SlideProps) {
 export default SlideBanner;
 
 const SlideBannerContainer = styled.div`
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
 `;
 
 const SlideContainer = styled.div`
   display: flex;
-
   width: 301%;
   height: 22.5rem;
 `;
 
 const SlideBannerImgContainer = styled.div`
+  scroll-snap-align: start;
   display: flex;
   justify-content: center;
-
   width: 100%;
-
-  scroll-snap-align: start;
 `;
 
 const SlideBannerImgBox = styled.div`
+  position: relative;
   width: 34.1rem;
   height: 21.2rem;
-
-  position: relative;
-
   border-radius: 1rem;
 `;
 
@@ -59,7 +54,6 @@ const SlideBannerImg = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-
   border-radius: inherit;
 `;
 

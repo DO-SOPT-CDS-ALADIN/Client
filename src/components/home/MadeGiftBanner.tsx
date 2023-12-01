@@ -20,11 +20,9 @@ function MadeGiftBanner({ src }: MadeGiftProps) {
 export default MadeGiftBanner;
 
 const MadeGiftBannerWrapper = styled.div`
+  position: relative;
   width: 34.1rem;
   height: 23rem;
-
-  position: relative;
-
   border-radius: ${({ theme }) => theme.radius.m};
 `;
 
@@ -35,26 +33,26 @@ const GiftImg = styled.img`
 `;
 
 const GiftInfo = styled.div`
-  width: 100%;
-  height: 8.5rem;
-  padding-left: 2rem;
-  padding-top: 4.3rem;
-
-  border-radius: 0 0 ${({ theme }) => theme.radius.m} ${({ theme }) => theme.radius.m};
-
-  background-color: ${({ theme }) => theme.colors.black};
-
   position: absolute;
   bottom: 0;
+
+  width: 100%;
+  height: 8.5rem;
+  padding-top: 4.3rem;
+  padding-left: 2rem;
+
+  background-color: ${({ theme }) => theme.colors.black};
+  border-radius: 0 0 ${({ theme }) => theme.radius.m} ${({ theme }) => theme.radius.m};
 `;
 
 const GiftInfoText = styled.p`
   ${({ theme }) => theme.fonts.title1_bold};
+
   color: ${({ theme }) => theme.colors.white};
 `;
 
 const StyledIcBtnPage = styled(IcBtnPage)`
   position: absolute;
-  bottom: 0.8rem;
   right: 0.8rem;
+  bottom: 0.8rem;
 `;

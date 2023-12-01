@@ -27,7 +27,6 @@ const CategoryWrapper = styled.div`
   padding: 1.2rem 1.6rem 0;
 
   white-space: nowrap;
-
   white-space: nowrap;
 
   &::-webkit-scrollbar {

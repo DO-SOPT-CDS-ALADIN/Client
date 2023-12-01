@@ -47,7 +47,6 @@ export function NowTime() {
 
 const TopTenWrapper = styled.div`
   position: relative;
-
   width: 100%;
   height: 23rem;
   padding-top: 4rem;
@@ -71,15 +70,16 @@ const FirstRankBookImg = styled.img`
 
 const FirstRankBookTitle = styled.div`
   display: flex;
-  align-items: center;
   column-gap: 0.8rem;
+  align-items: center;
 
-  margin-left: 1rem;
   margin-right: 0.47rem;
+  margin-left: 1rem;
 `;
 
 const BookRank = styled.p`
   ${({ theme }) => theme.fonts.title2_bold};
+
   font-style: italic;
 `;
 
@@ -95,8 +95,8 @@ const RankNumber = styled.p`
 
 const TagList = styled.div`
   display: flex;
-  justify-content: center;
   column-gap: 1rem;
+  justify-content: center;
 
   width: 100%;
   margin-top: 0.8rem;
@@ -106,21 +106,21 @@ const TagWrapper = styled.div`
   ${({ theme }) => theme.fonts.detail2};
 
   padding: 0.8rem 1.6rem;
-
   border: 0.1rem solid ${({ theme }) => theme.colors.grey_300};
   border-radius: 2rem;
 `;
 
 const NowTimeWrapper = styled.div`
-  display: flex;
-  align-items: center;
-
   position: absolute;
   top: 5.5rem;
   right: 4.5rem;
+
+  display: flex;
+  align-items: center;
 `;
 
 const TimeText = styled.p`
   ${({ theme }) => theme.fonts.detail1};
+
   color: ${({ theme }) => theme.colors.blue_600};
 `;

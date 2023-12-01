@@ -47,17 +47,15 @@ const AladinTVSliderWrapper = styled.div`
 `;
 
 const AladinerTVContainer = styled.div`
+  overflow-x: auto;
   width: 100%;
   margin-top: 0.8rem;
-
-  overflow-x: auto;
   white-space: nowrap;
 `;
 
 const AladinerTVItemWrapper = styled.div`
   display: flex;
   column-gap: 1.6rem;
-
   padding-left: 1.5rem;
 `;
 
@@ -69,36 +67,31 @@ const AladinerTVWrapper = styled.div`
 const AladinerTVImg = styled.img`
   width: 100%;
   height: 16.3rem;
-
-  border-radius: ${({ theme }) => theme.radius.m};
-
   object-fit: cover;
+  border-radius: ${({ theme }) => theme.radius.m};
 `;
 
 const AladinerTVTitle = styled.p`
   ${({ theme }) => theme.fonts.title2_bold};
+
   color: ${({ theme }) => theme.colors.black};
-
   margin-top: 1.6rem;
-
   line-height: normal;
 `;
 
 const AladinerTVTag = styled.p`
   ${({ theme }) => theme.fonts.body2};
+
   color: ${({ theme }) => theme.colors.blue_600};
-
   margin-top: 0.4rem;
-
   line-height: 140%;
 `;
 
 const AladinerTVWatchWrapper = styled.div`
   display: flex;
-  align-items: center;
-
-  margin-top: 0.85rem;
   column-gap: 0.4rem;
+  align-items: center;
+  margin-top: 0.85rem;
 `;
 
 const AladinerTVWatch = styled.p`

@@ -30,14 +30,14 @@ const HotBookWrapper = styled.div`
 
 const HeaderWrapper = styled.header`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   width: 100%;
   height: 4.8rem;
-  padding-left: 1.6rem;
-  padding-right: 1.2rem;
   margin-bottom: 1.6rem;
+  padding-right: 1.2rem;
+  padding-left: 1.6rem;
 `;
 
 const HeaderTitle = styled.p`
@@ -45,23 +45,22 @@ const HeaderTitle = styled.p`
 `;
 
 const SlideBannerContainer = styled.div`
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
 `;
 
 const SlideContainer = styled.div`
   display: flex;
-
   width: 301%;
 `;
 
 const SlideBannerImgContainer = styled.div`
+  scroll-snap-align: start;
+
   display: flex;
   justify-content: center;
 
   width: 37.5rem;
   height: 100%;
-
-  scroll-snap-align: start;
 `;

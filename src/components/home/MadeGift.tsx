@@ -29,26 +29,24 @@ const MadeGiftWrapper = styled.div`
 `;
 
 const SlideBannerContainer = styled.div`
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
   margin-top: 1.6rem;
 `;
 
 const SlideContainer = styled.div`
   display: flex;
-
   width: 301%;
   height: 23rem;
 `;
 
 const SlideBannerImgContainer = styled.div`
+  scroll-snap-align: start;
+
   display: flex;
   justify-content: center;
 
   width: 37.5rem;
   height: 22.6rem;
-
-  scroll-snap-align: start;
 `;
