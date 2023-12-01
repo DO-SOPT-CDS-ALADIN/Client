@@ -58,7 +58,8 @@ const Selector = styled.div`
   height: 4rem;
   padding: 1rem 2.3rem 1.1rem 2.3rem;
 
-  font: ${({ theme }) => theme.fonts.detail2};
+  ${({ theme }) => theme.fonts.detail2};
+
   color: ${({ theme }) => theme.colors.grey_600};
   text-align: center;
 `;

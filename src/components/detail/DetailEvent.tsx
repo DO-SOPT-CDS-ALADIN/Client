@@ -51,7 +51,7 @@ const DetailEventTitleWrapper = styled.div`
 `;
 
 const Title1BoldText = styled.span`
-  font: ${({ theme }) => theme.fonts.title1_bold};
+  ${({ theme }) => theme.fonts.title1_bold};
 `;
 
 const Body2TextWrapper = styled.div`
@@ -61,7 +61,7 @@ const Body2TextWrapper = styled.div`
 `;
 
 const Body2Text = styled.span`
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
 `;
 
 const EventScrollWrapper = styled.div`

@@ -74,11 +74,11 @@ const DetailSeriesWrapper = styled.div`
 `;
 
 const Title1BoldText = styled.span`
-  font: ${({ theme }) => theme.fonts.title1_bold};
+  ${({ theme }) => theme.fonts.title1_bold};
 `;
 
 const Body2Text = styled.span`
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
   &.pink {
     color: ${({ theme }) => theme.colors.pink_400};
   }
@@ -110,7 +110,8 @@ const DetailTextsWrapper = styled.div`
 `;
 
 const Detail2Text = styled.span`
-  font: ${({ theme }) => theme.fonts.detail2};
+  ${({ theme }) => theme.fonts.detail2};
+
   color: ${({ theme }) => theme.colors.black};
 
   &.blue {
@@ -119,7 +120,8 @@ const Detail2Text = styled.span`
 `;
 
 const Detail1Text = styled.span`
-  font: ${({ theme }) => theme.fonts.detail1};
+  ${({ theme }) => theme.fonts.detail1};
+
   color: ${({ theme }) => theme.colors.black};
 
   &.pink {
