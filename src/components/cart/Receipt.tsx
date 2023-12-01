@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { IcInfoGray, IcMileage, IcDown } from '../../assets/icons';
 import {
+  totalBookCountState,
   totalItemCountState,
   totalMileageState,
   totalPriceState,
@@ -12,12 +13,13 @@ function Receipt() {
   const cartCount = useRecoilValue(totalPriceState);
   const mileage = useRecoilValue(totalMileageState);
   const itemCount = useRecoilValue(totalItemCountState);
+  const bookCount = useRecoilValue(totalBookCountState);
   return (
     <ReceiptWrapper>
       <FlexBox>
         <Title>총 상품수</Title>
         <Value>
-          {itemCount}종 {itemCount}개
+          {itemCount}종 {bookCount}개
         </Value>
       </FlexBox>
       <FlexBox>
@@ -109,6 +111,7 @@ const TotalTitle = styled.p`
 
 const TotalPrice = styled.p`
   ${({ theme }) => theme.fonts.head3};
+
   color: ${({ theme }) => theme.colors.pink_400};
 `;
 

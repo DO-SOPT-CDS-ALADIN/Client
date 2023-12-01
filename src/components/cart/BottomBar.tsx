@@ -1,18 +1,23 @@
 import styled from 'styled-components';
 import { IcGift } from '../../assets/icons';
 import { useRecoilValue } from 'recoil';
-import { totalItemCountState, totalPriceState } from '../../recoil/atoms/receiptState';
+import {
+  totalBookCountState,
+  totalItemCountState,
+  totalPriceState,
+} from '../../recoil/atoms/receiptState';
 import { formatPrice } from '../../utils/Price';
 
 function BottomBar() {
   const cartCount = useRecoilValue(totalPriceState);
   const itemCount = useRecoilValue(totalItemCountState);
+  const bookCount = useRecoilValue(totalBookCountState);
   return (
     <BottomWrapper>
       <Receipt>
         <Title>전체 상품</Title>
         <Price>
-          총 {itemCount}종 {itemCount}개 <span>{formatPrice(cartCount)}</span>
+          총 {itemCount}종 {bookCount}개 <span>{formatPrice(cartCount)}</span>
         </Price>
       </Receipt>
       <ButtonWrapper>
@@ -30,6 +35,7 @@ export default BottomBar;
 const BottomWrapper = styled.div`
   position: fixed;
   bottom: 0;
+
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
