@@ -4,6 +4,7 @@ import Book from './Book';
 import styled from 'styled-components';
 import { IcCheckboxGray, IcCheckboxFilled, IcDelete, IcHeartOff } from '../../assets/icons';
 import {
+  totalBookCountState,
   totalItemCountState,
   totalMileageState,
   totalPriceState,
@@ -22,6 +23,7 @@ function CartList() {
   const [, setTotalPrice] = useRecoilState(totalPriceState);
   const [, setTotalMileage] = useRecoilState(totalMileageState);
   const [, setTotalItemCount] = useRecoilState(totalItemCountState);
+  const [, setTotalBookCount] = useRecoilState(totalBookCountState);
 
   useEffect(() => {
     setIsCheckedList(Array(cartList.length).fill(true));
@@ -42,6 +44,7 @@ function CartList() {
     setTotalPrice(0);
     setTotalMileage(0);
     setTotalItemCount(0);
+    setTotalBookCount(0);
   };
 
   const setAllItemPrice = () => {
@@ -60,6 +63,13 @@ function CartList() {
     );
 
     setTotalItemCount(cartList.length);
+
+    setTotalBookCount(
+      cartList.reduce((acc: number, item: PriceType) => {
+        const count = item.count;
+        return acc + count;
+      }, 0)
+    );
   };
 
   const deleteSelectedItem = () => {
