@@ -115,8 +115,8 @@ function Detail() {
           <DetailBuyerReviewList />
           <DetailMyReview />
           <DetailMyPaper />
-          <BuyWith />
-          <ClickWith />
+          <BuyWith page={PAGE.DETAIL} />
+          <ClickWith page={PAGE.DETAIL} />
         </>
       )}
       <DetailReturnRefund refundRef={refundRef} />
