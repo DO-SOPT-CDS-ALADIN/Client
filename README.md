@@ -4,73 +4,76 @@
 
 <div align="center">
 <h1> 🧞알라딘🧞 </h1>
-<h2> 구현 사진 </h2>
+<img width="1399" alt="스크린샷 2023-12-01 오후 6 35 00" src="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Client/assets/60962533/4cb4cfda-4008-46a4-b6bc-322236b8f5f5">
+
 
 </div>
 <h4>알라딘의 메인페이지, 베스트 페이지, 상세 페이지, 장바구니 페이지를 구현하였습니다!</h4>
 
 <h2>🖥 화면 소개</h2>
-<h3> 1️⃣ page명 </h3>
-<!-- 뷰 스크린샷 첨부 -->
-<img src="https://github.com/SopkathonTeam3/Client/assets/81609304/ad52dd2a-7fa7-493f-bdbb-a825b2f1a134"  alt="기능1-대표이미지" />
-<div ><strong> 최근 청원 </strong>  
+<h3> 1️⃣ Home 페이지 </h3>
+
+| <img width="300" alt="image" src="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Client/assets/60962533/a4f33b10-ec48-48cc-bb06-0623a5a232bd"> | <img width="300" alt="image" src="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Client/assets/60962533/ddba4c59-e291-4675-86ac-1a81de9ed5b6"> | <img width="300" alt="image" src="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Client/assets/60962533/165841c6-532e-4905-9edc-61cca22db2c0"> |
+| :--------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------: |
+| <div align="center"><b>편집장의 선택 & 실시간 클릭 Top 10</b></div> | <div align="center"><b>이 책의 한 문장 & 어나더커버</b></div> | <div align="center"><b>페이지 하단 부분</b></div> |
+
   <ul> 
-    <li>이슈 청원 확인</li>
-      <li>최근 청원 리스트 확인 (본인이 동의한 청원은 동의 수 파란색, 본인이 방문한 청원은 청원 제목 회색 )</li>
-        <li>최근 청원 리스트 검색기능 </li>
-       <li>나의 청원 routing</li>
-      <li>청원 리스트 클릭시 상세페이지 routing</li>
+    <li>편집장의 선택 커스텀 Carousel</li>
+    <li>책 리스트 가로 스크롤</li>
+    <li>배너 슬라이더 부분 슬라이드 시 각 단일 아이템만 화면에 등장</li>
+    <li>베스트 네비게이션 탭 눌렀을 때 Best 페이지로 이동</li>
+    <li>헤더 좌측 로고 눌렀을 때 Home 페이지로 이동</li>
+    <li>헤더 우측 장바구니 아이콘 눌렀을 때 Cart 페이지로 이동</li>
   </ul><br/></div>
 
-<h3> 2️⃣ 청원 상세보기 page </h3>
+<h3> 2️⃣ Best 페이지 </h3>
 <img src="https://github.com/SopkathonTeam3/Client/assets/81609304/5508a245-a4e6-41ab-904b-7b67f9e9d5cc"  alt="기능1-대표이미지" />
 <div >
   <ul> 
-    <li>청원 진행중 여부, 마감날짜 확인</li>
-      <li>청원 동의 기능</li>
-       <li>청원 인원 수 확인</li>
-      <li>청원 인원 리스트 확인</li>
+    <li></li>
+    <li></li>
+    <li></li> 
   </ul>
   <br/></div>
 
-<h3> 3️⃣ 나의 청원 page  </h3>
+<h3> 3️⃣ Detail 페이지  </h3>
 <img src="https://github.com/SopkathonTeam3/Client/assets/81609304/70955436-9e51-460c-a575-dcade5e3dfa1"  alt="기능1-대표이미지" />
 <div >
     <ul> 
-   <li>나의 청원 리스트 확인 (본인이 동의한 청원은 동의 수 파란색, 본인이 방문한 청원은 청원 제목 회색 )</li>
-      <li>나의 청원 리스트 검색가능</li>
-      <li>페이지네이션 적용</li>
+     <li></li>
+      <li></li>
+      <li></li>
   </ul>
   <br/></div>
 
-<h3> 4️⃣ 청원 작성 page </h3>
+<h3> 4️⃣ Cart 페이지 </h3>
 <img src="https://github.com/SopkathonTeam3/Client/assets/81609304/3e93b242-d5db-45ea-8f3b-ed9ca877cb66"  alt="기능1-대표이미지" />
 <div >
     <ul> 
-    <li>청원 글 작성을 위한 폼 구현</li>
-             <li>내용 확인 체크</li>
-      <li>필수 입력 사항 미입력시 버튼 기능 비활성화</li>
+    <li></li>
+    <li></li>
+    <li></li>
   </ul>
   <br/></div>
 
 ## ✨ OUR TEAM
 
-| <img src="https://github.com/CDS-Seminar-Team3/CDS3-Client/assets/92876819/86b76119-439a-4340-8a15-5efeb79a0488" width="200" alt="프로필사진"> | <img src="https://github.com/CDS-Seminar-Team3/CDS3-Client/assets/92876819/7aa610ff-fc78-460c-9a64-417b28d8df49" width="200" alt="프로필사진"> | <img src="https://avatars.githubusercontent.com/u/92876819?v=4" width="200" alt="프로필사진"> |
+| <img src="https://avatars.githubusercontent.com/u/92876819?v=4" width="200" alt="프로필사진"> | <img src="https://avatars.githubusercontent.com/u/60962533?v=4" width="200" alt="프로필사진"> | <img src="https://avatars.githubusercontent.com/u/46593078?v=4" width="200" alt="프로필사진"> |
 | :--------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------: |
-|                                                    <div align = "center"><b>현수</b></div>                                                     |                                                    <div align = "center"><b>재훈</b></div>                                                     |                            <div align = "center"><b>지민</b></div>                            |
-|                                                    [@borimong](https://github.com/borimong)                                                    |                                                     [@ljh0608](https://github.com/ljh0608)                                                     |                            [@urjimyu](https://github.com/urjimyu)                             |
+|                                                    <div align = "center"><b>지민</b></div>                                                     |                                                    <div align = "center"><b>정우</b></div>                                                     |                            <div align = "center"><b>수빈</b></div>                            |
+|                                                    [@urjimyu](https://github.com/urjimyu)                                                     |                                                     [@jungwoo3490](https://github.com/jungwoo3490)                                                     |                            [@binllionaire](https://github.com/binllionaire)                             |
 
-#### 팀원1
+#### 지민
 
-`초기 세팅`, `청원 작성 페이지`, `나의 청원 페이지`, `페이지네이션 전체`, `나의 청원 GET API`, `청원 작성 POST API`, `vercel 배포`
+`초기 세팅`, 
 
-#### 팀원2
+#### 정우
 
-`메인 페이지`, `청원 동의 POST API`, `최근 청원 GET API`, `README 작성`
+`초기 세팅`, `메인 페이지`, `편집장의 선택 GET API`, `README 작성`
 
-#### 팀원3
+#### 수빈
+`초기 세팅`,
 
-`청원 상세 페이지 청원 내용`, `청원 상세 내용 GET API`, `청원 동의 리스트 GET API`, `헤더`, `푸터`, `README 작성`
 
 <h2> 🛠 기술스택 </h2>
 
@@ -132,7 +135,7 @@
 - **main**: 최종 Merge를 하는 곳 ❗️
 - **develop**: 개발용 브랜치, 모든 페이지를 Merge 하는 곳
 - **feature/페이지명**: 페이지별로 기능 개발 후 Merge 하는 곳
-- **페이지명/#이슈번호**: 기능을 개발하면서 각자가 사용한 브랜치
+- **페이지명/#이슈번호**: 각 페이지별 기능을 개발할 때 사용한 브랜치
 
 <br/>
 
