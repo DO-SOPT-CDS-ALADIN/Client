@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { IcEllipse51, IcEllipse51Grey, IcStar5 } from '../../assets/icons';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { IcDetailsSelectRectangle, IcDownXsBlue } from '../../assets/icons';
 import DetailMyReviewItem from './DetailMyReviewItem';

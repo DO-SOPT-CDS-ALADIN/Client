@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { IcCircleMini, IcMinicircleDown } from '../../assets/icons';
 import { TAG } from '../../constants/tag';
