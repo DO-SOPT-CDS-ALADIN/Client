@@ -41,10 +41,7 @@ export const reset = css`
   }
   html,
   body {
-    touch-action: none;
-
     height: 100%;
-
     font-smooth: never;
 
     -webkit-font-smoothing: antialiased;
