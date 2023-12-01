@@ -132,5 +132,6 @@ function Detail() {
 export default Detail;
 
 const DetailWrapper = styled.div`
+  width: 100%;
   padding-bottom: 6.8rem;
 `;

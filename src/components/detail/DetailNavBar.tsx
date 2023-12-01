@@ -61,8 +61,8 @@ const ActiveNavText = styled.p`
 
 const DetailNavWrapper = styled.div<DetailNavProps>`
   position: sticky;
-  z-index: 10;
-  top: 4.8rem;
+  z-index: 9;
+  top: 4.7rem;
   left: 0;
 
   display: flex;
