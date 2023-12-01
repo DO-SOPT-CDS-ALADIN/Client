@@ -83,6 +83,8 @@ const SelectBoxWrapper = styled.div`
 `;
 
 const Select = styled.select`
+  cursor: pointer;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,14 +93,11 @@ const Select = styled.select`
   height: 2.4rem;
   padding-left: 0.7rem;
 
-  border-radius: 0.4rem;
-  border: 1px solid ${({ theme }) => theme.colors.blue_100};
-  background: ${({ theme }) => theme.colors.white};
   appearance: none;
-
+  background: ${({ theme }) => theme.colors.white};
+  border-radius: 0.4rem;
   ${({ theme }) => theme.fonts.detail2};
 
-  cursor: pointer;
   &:focus {
     outline: 0;
   }
@@ -110,16 +109,16 @@ const SelectOption = styled.option`
 
 const WriteButton = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   height: 4.8rem;
-  padding: 0.8rem;
   margin-top: 1.8rem;
-
-  border-radius: 0.8rem;
-  background: ${({ theme }) => theme.colors.blue_400};
-  ${({ theme }) => theme.fonts.title2_bold};
+  padding: 0.8rem;
 
   color: ${({ theme }) => theme.colors.white};
+
+  background: ${({ theme }) => theme.colors.blue_400};
+  border-radius: 0.8rem;
+  ${({ theme }) => theme.fonts.title2_bold};
 `;

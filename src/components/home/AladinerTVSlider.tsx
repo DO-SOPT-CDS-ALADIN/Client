@@ -74,17 +74,17 @@ const AladinerTVImg = styled.img`
 const AladinerTVTitle = styled.p`
   ${({ theme }) => theme.fonts.title2_bold};
 
-  color: ${({ theme }) => theme.colors.black};
   margin-top: 1.6rem;
   line-height: normal;
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 const AladinerTVTag = styled.p`
   ${({ theme }) => theme.fonts.body2};
 
-  color: ${({ theme }) => theme.colors.blue_600};
   margin-top: 0.4rem;
   line-height: 140%;
+  color: ${({ theme }) => theme.colors.blue_600};
 `;
 
 const AladinerTVWatchWrapper = styled.div`

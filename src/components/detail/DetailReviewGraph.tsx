@@ -138,8 +138,8 @@ const AgeText = styled.p`
 
   width: 5.4rem;
 
-  text-align: center;
   line-height: normal;
+  text-align: center;
   letter-spacing: -0.6px;
 
   ${({ theme }) => theme.fonts.detail1};

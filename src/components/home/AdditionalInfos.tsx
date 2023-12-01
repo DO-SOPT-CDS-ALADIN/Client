@@ -66,6 +66,6 @@ const TextInfosWrapper = styled.div`
 const InfosTitle = styled.p`
   ${({ theme }) => theme.fonts.body2};
 
-  color: ${({ theme }) => theme.colors.black};
   line-height: 140%;
+  color: ${({ theme }) => theme.colors.black};
 `;

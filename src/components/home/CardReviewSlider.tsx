@@ -84,7 +84,7 @@ const CardReviewDescription = styled.p`
   width: 14.5rem;
   ${({ theme }) => theme.fonts.body1};
 
-  color: ${({ theme }) => theme.colors.white};
   line-height: 140%;
+  color: ${({ theme }) => theme.colors.white};
   white-space: initial;
 `;

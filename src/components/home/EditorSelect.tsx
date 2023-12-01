@@ -141,25 +141,24 @@ const DetailContainer = styled.div`
   margin-top: 1.5rem;
   padding: 1.4rem 1.6rem;
 
+  color: ${({ theme }) => theme.colors.white};
+
   background-color: ${({ theme }) => theme.colors.translucent};
   border-radius: ${({ theme }) => theme.radius.s};
-
-  color: white;
 `;
 
 const DetailContainerText = styled.p`
   ${({ theme }) => theme.fonts.body2};
 
+  overflow: hidden;
   display: box;
-
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
 
   width: 31.1rem;
   height: 8rem;
 
-  overflow: hidden;
-
   text-overflow: hidden;
   white-space: wrap;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
 `;

@@ -87,20 +87,20 @@ const ButtonImageWrapper = styled.div`
 
 const GiftButton = styled.button`
   display: flex;
+  gap: 0.8rem;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
 
   width: 12.4rem;
   height: 4.8rem;
 
-  border-radius: 0.8rem;
-  border: 1px solid ${({ theme }) => theme.colors.pink_400};
+  color: ${({ theme }) => theme.colors.pink_400};
+
   background: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.pink_400};
+  border-radius: 0.8rem;
 
   ${({ theme }) => theme.fonts.title2_bold};
-
-  color: ${({ theme }) => theme.colors.pink_400};
 `;
 
 const BuyButton = styled(GiftButton)`

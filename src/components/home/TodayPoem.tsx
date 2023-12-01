@@ -100,16 +100,16 @@ const TodayPoemContentBox = styled.div`
 const TodayPoemContent = styled.p`
   ${({ theme }) => theme.fonts.body2};
 
-  color: ${({ theme }) => theme.colors.white};
   line-height: 140%;
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 const TodayPoemAuthor = styled.p`
   ${({ theme }) => theme.fonts.detail2};
 
   margin-top: 1.6rem;
-  color: ${({ theme }) => theme.colors.grey_400};
   line-height: 160%;
+  color: ${({ theme }) => theme.colors.grey_400};
   letter-spacing: -0.06rem;
 `;
 

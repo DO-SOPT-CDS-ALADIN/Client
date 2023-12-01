@@ -91,6 +91,6 @@ const ToBeContinuedTitle = styled.p`
 const ToBeContinuedAuthor = styled.p`
   ${({ theme }) => theme.fonts.detail2};
 
-  color: ${({ theme }) => theme.colors.white};
   margin-top: 0.4rem;
+  color: ${({ theme }) => theme.colors.white};
 `;

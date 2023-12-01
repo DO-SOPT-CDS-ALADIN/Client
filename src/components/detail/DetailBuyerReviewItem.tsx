@@ -96,21 +96,20 @@ const WriterInfoWrapper = styled.div`
 
 const BuyerLabel = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
 
   width: 3.6rem;
   height: 2.3rem;
 
-  justify-content: center;
-  align-items: center;
+  line-height: normal;
+  color: ${({ theme }) => theme.colors.blue_500};
+  letter-spacing: -0.6px;
 
-  border-radius: 0.4rem;
   background: ${({ theme }) => theme.colors.blue_100};
+  border-radius: 0.4rem;
 
   ${({ theme }) => theme.fonts.detail1};
-
-  color: ${({ theme }) => theme.colors.blue_500};
-  line-height: normal;
-  letter-spacing: -0.6px;
 `;
 
 const Body2Text = styled.span`

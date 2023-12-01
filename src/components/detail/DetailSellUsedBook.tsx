@@ -90,12 +90,11 @@ const SellOptionBox = styled.div`
 `;
 
 const OptionText = styled.div`
+  color: ${({ theme }) => theme.colors.blue_400};
   text-align: center;
   white-space: pre-line;
 
   ${({ theme }) => theme.fonts.body1};
-
-  color: ${({ theme }) => theme.colors.blue_400};
 
   &.selected {
     color: ${({ theme }) => theme.colors.white};

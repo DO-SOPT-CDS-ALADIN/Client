@@ -99,6 +99,6 @@ const FundingInfoWrapper = styled.div`
 const FundingInfo = styled.p`
   ${({ theme }) => theme.fonts.title1_bold};
 
-  color: ${({ theme }) => theme.colors.black};
   line-height: normal;
+  color: ${({ theme }) => theme.colors.black};
 `;
