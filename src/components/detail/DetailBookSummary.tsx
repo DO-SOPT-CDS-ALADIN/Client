@@ -84,39 +84,35 @@ const BookSummaryWrapper = styled.article`
   flex-direction: column;
 
   width: 100%;
-  height: 87.8rem;
   margin-top: 4.8rem;
 
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
 const BookCoverImageWrapper = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 40rem;
 `;
 
 const BookCoverImage = styled.img`
-  position: relative;
-
   width: 27rem;
   height: 40rem;
-  margin-top: 2.77rem;
+  margin-top: 2.766rem;
 
   object-fit: cover;
-  background-color: ${({ theme }) => theme.colors.yellow};
   box-shadow: ${({ theme }) => theme.shadows.large};
 `;
 
 const IconWrapper = styled.div`
   position: absolute;
+  bottom: 18.034rem;
 
   display: flex;
   justify-content: space-between;
 
   width: 27rem;
-  margin-top: 17.2rem;
   padding: 0 0.45rem;
 `;
 

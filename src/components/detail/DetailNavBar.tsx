@@ -50,6 +50,7 @@ const Nav = styled.div`
 
 const NavText = styled.p`
   cursor: pointer;
+  padding: 0;
   ${({ theme }) => theme.fonts.title2_reg};
 `;
 

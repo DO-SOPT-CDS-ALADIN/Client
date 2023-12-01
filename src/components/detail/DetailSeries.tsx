@@ -150,6 +150,7 @@ const CheckboxWrapper = styled.div`
   justify-content: left;
 
   width: 100%;
+  padding-left: 1rem;
 
   & > svg {
     cursor: pointer;
@@ -161,6 +162,8 @@ const TotalCheckboxWrapper = styled.div`
   column-gap: 1.4rem;
   align-items: center;
   justify-content: left;
+
+  padding-left: 1rem;
 
   & > svg {
     cursor: pointer;

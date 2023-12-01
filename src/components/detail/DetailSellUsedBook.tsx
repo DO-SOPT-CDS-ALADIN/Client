@@ -36,7 +36,6 @@ const UsedBookDivWrapper = styled.div`
   justify-content: left;
 
   width: 100%;
-  height: 16.6rem;
   margin-top: 1.2rem;
   padding: 2.4rem 1.6rem;
 

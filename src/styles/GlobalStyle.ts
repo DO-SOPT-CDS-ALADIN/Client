@@ -5,6 +5,8 @@ import AppleSDGothicNeoUL from '../assets/fonts/AppleSDGothicNeo/AppleSDGothicNe
 import AppleSDGothicNeoL from '../assets/fonts/AppleSDGothicNeo/AppleSDGothicNeoL.ttf';
 import AppleSDGothicNeoM from '../assets/fonts/AppleSDGothicNeo/AppleSDGothicNeoM.ttf';
 import AppleSDGothicNeoSB from '../assets/fonts/AppleSDGothicNeo/AppleSDGothicNeoSB.ttf';
+import AppleSDGothicNeoB from '../assets/fonts/AppleSDGothicNeo/AppleSDGothicNeoB.ttf';
+import AppleSDGothicNeoEB from '../assets/fonts/AppleSDGothicNeo/AppleSDGothicNeoEB.ttf';
 
 export const reset = css`
   * {
@@ -35,7 +37,13 @@ export const reset = css`
   html,
   body {
     touch-action: none;
+
     height: 100%;
+
+    font-smooth: never;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   button {
     cursor: pointer;
@@ -74,7 +82,6 @@ ${reset}
 
 @font-face {
     font-family: "AppleSDGothicNeo";
-    font-weight: 400;
     src: local("AppleSDGothicNeoR"),url(${AppleSDGothicNeoR}) format("truetype");
 }
 
@@ -90,6 +97,17 @@ ${reset}
     src: local("AppleSDGothicNeoSB"),url(${AppleSDGothicNeoSB}) format("truetype");
 }
 
+@font-face {
+    font-family: "AppleSDGothicNeo";
+    font-weight: 700;
+    src: local("AppleSDGothicNeoB"),url(${AppleSDGothicNeoB}) format("truetype");
+}
+
+@font-face {
+    font-family: "AppleSDGothicNeo";
+    font-weight: 800;
+    src:local("AppleSDGothicNeoEB"),url(${AppleSDGothicNeoEB}) format("truetype");
+}
 
 #root, body, html {
     scrollbar-width: none; /* 파이어폭스 */

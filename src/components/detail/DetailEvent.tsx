@@ -36,7 +36,6 @@ const DetailEventWrapper = styled.div`
   align-items: flex-start;
   justify-content: center;
 
-  height: 30.6rem;
   margin-top: 1.2rem;
   padding: 2.4rem 0 2.4rem 1.6rem;
 
@@ -52,6 +51,8 @@ const DetailEventTitleWrapper = styled.div`
 
 const Title1BoldText = styled.span`
   ${({ theme }) => theme.fonts.title1_bold};
+
+  padding: 0;
 `;
 
 const Body2TextWrapper = styled.div`

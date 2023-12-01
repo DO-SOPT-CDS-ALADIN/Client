@@ -17,7 +17,7 @@ interface TagProps {
 function DetailBookInfoBox({ price, discount_price, mileage, tag }: BookInfoProps) {
   return (
     <BookInfoWrapper>
-      <InfoSubjectWrapper>
+      <InfoSubjectWrapper className="price">
         <BookInfoSubject>판매가</BookInfoSubject>
         <Body2Text className="price">{price}</Body2Text>
         <BookInfoContentPink>{discount_price}</BookInfoContentPink>
@@ -57,15 +57,17 @@ export default DetailBookInfoBox;
 
 const BookInfoWrapper = styled.div`
   width: 100%;
-  height: 24.2rem;
-  padding: 1.6rem;
-  background-color: ${({ theme }) => theme.colors.white};
+  padding: 1.6rem 1.6rem 0 1.6rem;
 `;
 
 const InfoSubjectWrapper = styled.div`
   display: flex;
   width: 100%;
   margin-bottom: 1.6rem;
+
+  &.price {
+    align-items: center;
+  }
 `;
 
 const BookInfoSubject = styled.span`
@@ -87,6 +89,7 @@ const Body2Text = styled.span`
 
   &.price {
     color: ${({ theme }) => theme.colors.grey_400};
+    text-decoration: line-through;
     vertical-align: bottom;
   }
 
