@@ -19,6 +19,7 @@ interface DetailBookSummaryProps {
   price: string;
   discount_price: string;
   mileage: string;
+  tag: number;
   heartOn: boolean;
   handleHeartClick: () => Promise<void>;
 }
@@ -32,6 +33,7 @@ function DetailBookSummary({
   price,
   discount_price,
   mileage,
+  tag,
   heartOn,
   handleHeartClick,
 }: DetailBookSummaryProps) {
@@ -65,7 +67,12 @@ function DetailBookSummary({
           {heartOn ? <IcHeartOn /> : <IcHeartOff />}
         </ButtonImageWrapper>
       </ButtonsWrapper>
-      <DetailBookInfoBox price={price} discount_price={discount_price} mileage={mileage} />{' '}
+      <DetailBookInfoBox
+        price={price}
+        discount_price={discount_price}
+        mileage={mileage}
+        tag={tag}
+      />
     </BookSummaryWrapper>
   );
 }
