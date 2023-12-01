@@ -11,7 +11,7 @@ function Header() {
 
   return (
     <HeaderWrapper>
-      <LogoButton>
+      <LogoButton onClick={() => navigate('/')}>
         <IcLogo />
       </LogoButton>
       <SearchBar>
