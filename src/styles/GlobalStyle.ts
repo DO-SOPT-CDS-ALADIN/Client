@@ -23,6 +23,11 @@ export const reset = css`
     box-sizing: border-box;
   }
   :root {
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    width: 100%;
+
     line-height: 1.5;
     text-size-adjust: 100%;
     text-size-adjust: 100%;
