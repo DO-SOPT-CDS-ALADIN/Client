@@ -64,7 +64,7 @@ function Book(props: CartItemProps) {
   };
 
   const decreaseItemCount = () => {
-    patchItemCount(id, count - 1);
+    count > 1 && patchItemCount(id, count - 1);
   };
   return (
     <BookWrapper>
