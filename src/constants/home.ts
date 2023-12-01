@@ -157,23 +157,23 @@ const BEST_CLIP_BOOKS = [
 
 const ALADIN_AUDIO_BOOKS = [
   {
-    img: 'https://s3-alpha-sig.figma.com/img/bcad/163a/bd3ddc53d7ac5c7a49a3009c7d59a696?Expires=1702252800&Signature=NdzoF6FUfk6qvRW2zzPpMhR2BuBozw~EGCjEYw6wzZbtAdSEu0mIt65otUdtFfDTTkFuAOgUD~EzifO46A27BuZAqobikrauC61rQ48-0mFPScC0bVehocD~LKovlFt4pS-eiy3VFZHlTizU~IUoJT3V8tcl-MsfXQj9iCRGtDh3iPnJurCmSKIxO8isjbaS-6qGUckrsoukYrYYLmrY8UspT-jbXJ6Hz1R~MjwziD-wXp6Crh5ODyrNvKbwJo2u-85sHtH89oSS3LS2ujNBuiZdxvsMCLrbUL8~RFM92gWJN3UTp7mYaA~ExKA8AO~1OsOW3ixKVaJCHTxmkIqkRQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    img: 'https://i.ibb.co/6txrKMY/Group-271-3x.png',
     title: '나의 하루는 세 번 시작된다',
   },
   {
-    img: 'https://s3-alpha-sig.figma.com/img/bcad/163a/bd3ddc53d7ac5c7a49a3009c7d59a696?Expires=1702252800&Signature=NdzoF6FUfk6qvRW2zzPpMhR2BuBozw~EGCjEYw6wzZbtAdSEu0mIt65otUdtFfDTTkFuAOgUD~EzifO46A27BuZAqobikrauC61rQ48-0mFPScC0bVehocD~LKovlFt4pS-eiy3VFZHlTizU~IUoJT3V8tcl-MsfXQj9iCRGtDh3iPnJurCmSKIxO8isjbaS-6qGUckrsoukYrYYLmrY8UspT-jbXJ6Hz1R~MjwziD-wXp6Crh5ODyrNvKbwJo2u-85sHtH89oSS3LS2ujNBuiZdxvsMCLrbUL8~RFM92gWJN3UTp7mYaA~ExKA8AO~1OsOW3ixKVaJCHTxmkIqkRQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    img: 'https://i.ibb.co/6txrKMY/Group-271-3x.png',
     title: '나의 하루는 세 번 시작된다',
   },
   {
-    img: 'https://s3-alpha-sig.figma.com/img/bcad/163a/bd3ddc53d7ac5c7a49a3009c7d59a696?Expires=1702252800&Signature=NdzoF6FUfk6qvRW2zzPpMhR2BuBozw~EGCjEYw6wzZbtAdSEu0mIt65otUdtFfDTTkFuAOgUD~EzifO46A27BuZAqobikrauC61rQ48-0mFPScC0bVehocD~LKovlFt4pS-eiy3VFZHlTizU~IUoJT3V8tcl-MsfXQj9iCRGtDh3iPnJurCmSKIxO8isjbaS-6qGUckrsoukYrYYLmrY8UspT-jbXJ6Hz1R~MjwziD-wXp6Crh5ODyrNvKbwJo2u-85sHtH89oSS3LS2ujNBuiZdxvsMCLrbUL8~RFM92gWJN3UTp7mYaA~ExKA8AO~1OsOW3ixKVaJCHTxmkIqkRQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    img: 'https://i.ibb.co/6txrKMY/Group-271-3x.png',
     title: '나의 하루는 세 번 시작된다',
   },
   {
-    img: 'https://s3-alpha-sig.figma.com/img/bcad/163a/bd3ddc53d7ac5c7a49a3009c7d59a696?Expires=1702252800&Signature=NdzoF6FUfk6qvRW2zzPpMhR2BuBozw~EGCjEYw6wzZbtAdSEu0mIt65otUdtFfDTTkFuAOgUD~EzifO46A27BuZAqobikrauC61rQ48-0mFPScC0bVehocD~LKovlFt4pS-eiy3VFZHlTizU~IUoJT3V8tcl-MsfXQj9iCRGtDh3iPnJurCmSKIxO8isjbaS-6qGUckrsoukYrYYLmrY8UspT-jbXJ6Hz1R~MjwziD-wXp6Crh5ODyrNvKbwJo2u-85sHtH89oSS3LS2ujNBuiZdxvsMCLrbUL8~RFM92gWJN3UTp7mYaA~ExKA8AO~1OsOW3ixKVaJCHTxmkIqkRQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    img: 'https://i.ibb.co/6txrKMY/Group-271-3x.png',
     title: '나의 하루는 세 번 시작된다',
   },
   {
-    img: 'https://s3-alpha-sig.figma.com/img/bcad/163a/bd3ddc53d7ac5c7a49a3009c7d59a696?Expires=1702252800&Signature=NdzoF6FUfk6qvRW2zzPpMhR2BuBozw~EGCjEYw6wzZbtAdSEu0mIt65otUdtFfDTTkFuAOgUD~EzifO46A27BuZAqobikrauC61rQ48-0mFPScC0bVehocD~LKovlFt4pS-eiy3VFZHlTizU~IUoJT3V8tcl-MsfXQj9iCRGtDh3iPnJurCmSKIxO8isjbaS-6qGUckrsoukYrYYLmrY8UspT-jbXJ6Hz1R~MjwziD-wXp6Crh5ODyrNvKbwJo2u-85sHtH89oSS3LS2ujNBuiZdxvsMCLrbUL8~RFM92gWJN3UTp7mYaA~ExKA8AO~1OsOW3ixKVaJCHTxmkIqkRQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    img: 'https://i.ibb.co/6txrKMY/Group-271-3x.png',
     title: '나의 하루는 세 번 시작된다',
   },
 ];
