@@ -50,7 +50,7 @@ const StyledSlider = styled(Slider)`
 
     width: 0.6rem;
     height: 0.6rem;
-    margin: 0.2rem;
+    margin: 0.4rem;
     padding: 0;
   }
 
@@ -80,6 +80,7 @@ const StyledSlider = styled(Slider)`
   }
   .slick-dots li.slick-active button:before {
     color: ${({ theme }) => theme.colors.white};
+    opacity: 100;
   }
 `;
 

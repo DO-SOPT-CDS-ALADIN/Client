@@ -46,6 +46,7 @@ const NavText = styled.p`
 `;
 const ActiveNavText = styled.p`
   ${({ theme }) => theme.fonts.title2_bold};
+
   color: ${({ theme }) => theme.colors.blue_600};
 `;
 
@@ -58,7 +59,6 @@ const TopNavWrapper = styled.div<TopNavProps>`
   align-items: center;
   justify-content: center;
 
-  width: 100%;
   height: 4.8rem;
 
   background-color: ${({ theme }) => theme.colors.white};

@@ -155,7 +155,8 @@ const PreviewButton = styled.div`
 `;
 
 const PreviewText = styled.p`
-  font: ${({ theme }) => theme.fonts.detail2};
+  ${({ theme }) => theme.fonts.detail2};
+
   color: ${({ theme }) => theme.colors.grey_400};
 `;
 
@@ -173,7 +174,7 @@ const Title = styled.div`
 `;
 
 const LargeBlackText = styled.p`
-  font: ${({ theme }) => theme.fonts.body1};
+  ${({ theme }) => theme.fonts.body1};
 `;
 
 const Writer = styled.div`
@@ -187,11 +188,12 @@ const Writer = styled.div`
 `;
 
 const BlackText = styled.p`
-  font: ${({ theme }) => theme.fonts.detail2};
+  ${({ theme }) => theme.fonts.detail2};
 `;
 
 const GreyText = styled.p`
-  font: ${({ theme }) => theme.fonts.detail2};
+  ${({ theme }) => theme.fonts.detail2};
+
   color: ${({ theme }) => theme.colors.grey_400};
 `;
 
@@ -205,7 +207,7 @@ const TagWrapper = styled(Info)`
 `;
 
 const Score = styled.p`
-  font: ${({ theme }) => theme.fonts.detail1};
+  ${({ theme }) => theme.fonts.detail1};
 `;
 
 const Tag = styled.div<TagProps>`
@@ -216,7 +218,8 @@ const Tag = styled.div<TagProps>`
 
   padding: 0.2rem 0.8rem;
 
-  font: ${({ theme }) => theme.fonts.detail1};
+  ${({ theme }) => theme.fonts.detail1};
+
   color: ${({ theme }) => theme.colors.white};
 
   background: ${({ theme, type }) =>
@@ -239,7 +242,8 @@ const Price = styled.div`
 
 const Discount = styled.p`
   margin-right: 0.4rem;
-  font: ${({ theme }) => theme.fonts.body1};
+  ${({ theme }) => theme.fonts.body1};
+
   color: ${({ theme }) => theme.colors.pink_400};
 `;
 
@@ -275,6 +279,7 @@ const RankNum = styled.p`
   top: 0;
   left: 0.45rem;
 
-  font: ${({ theme }) => theme.fonts.detail1};
+  ${({ theme }) => theme.fonts.detail1};
+
   color: ${({ theme }) => theme.colors.white};
 `;

@@ -77,7 +77,7 @@ const Title1Text = styled.span`
 `;
 
 const Title1BoldText = styled.span`
-  ${({ theme }) => theme.fonts.title1_bold_re};
+  ${({ theme }) => theme.fonts.title1_bold};
 `;
 
 const Body2TextWrapper = styled.div`

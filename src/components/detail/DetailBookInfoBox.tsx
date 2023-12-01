@@ -1,17 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IcCircleMini, IcMinicircleDown, IcQuickDelivery } from '../../assets/icons';
+import { IcCircleMini, IcMinicircleDown } from '../../assets/icons';
+import { TAG } from '../../constants/tag';
 
 interface BookInfoProps {
   price: string;
   discount_price: string;
   mileage: string;
+  tag: number;
 }
 
-function DetailBookInfoBox({ price, discount_price, mileage }: BookInfoProps) {
+interface TagProps {
+  type: number;
+}
+
+function DetailBookInfoBox({ price, discount_price, mileage, tag }: BookInfoProps) {
   return (
     <BookInfoWrapper>
-      <InfoSubjectWrapper>
+      <InfoSubjectWrapper className="price">
         <BookInfoSubject>판매가</BookInfoSubject>
         <Body2Text className="price">{price}</Body2Text>
         <BookInfoContentPink>{discount_price}</BookInfoContentPink>
@@ -25,7 +31,11 @@ function DetailBookInfoBox({ price, discount_price, mileage }: BookInfoProps) {
         <BookInfoSubject>배송료</BookInfoSubject>
         <DeliveryContent>
           <Body2Text>무료</Body2Text>
-          <IcQuickDelivery />
+          <TagWrapper>
+            {tag >= 1 && <Tag type={TAG.DELIVERY.ID}>{TAG.DELIVERY.TEXT}</Tag>}
+            {tag >= 2 && <Tag type={TAG.GIFT.ID}>{TAG.GIFT.TEXT}</Tag>}
+            {tag >= 3 && <Tag type={TAG.RESERVATION.ID}>{TAG.RESERVATION.TEXT}</Tag>}
+          </TagWrapper>
           <Body2Text>밤 10시까지 주문하면</Body2Text>
           <DeliveryWrapper>
             <Body2Text>내일 아침 7시</Body2Text>
@@ -47,15 +57,17 @@ export default DetailBookInfoBox;
 
 const BookInfoWrapper = styled.div`
   width: 100%;
-  height: 24.2rem;
-  padding: 1.6rem;
-  background-color: ${({ theme }) => theme.colors.white};
+  padding: 1.6rem 1.6rem 0 1.6rem;
 `;
 
 const InfoSubjectWrapper = styled.div`
   display: flex;
   width: 100%;
   margin-bottom: 1.6rem;
+
+  &.price {
+    align-items: center;
+  }
 `;
 
 const BookInfoSubject = styled.span`
@@ -77,6 +89,7 @@ const Body2Text = styled.span`
 
   &.price {
     color: ${({ theme }) => theme.colors.grey_400};
+    text-decoration: line-through;
     vertical-align: bottom;
   }
 
@@ -97,6 +110,36 @@ const DeliveryContent = styled.div`
   flex-direction: column;
   row-gap: 0.4rem;
   ${({ theme }) => theme.fonts.body2};
+`;
+
+const Info = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const TagWrapper = styled(Info)`
+  gap: 0.4rem;
+`;
+
+const Tag = styled.div<TagProps>`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.2rem 0.8rem;
+
+  ${({ theme }) => theme.fonts.detail1};
+
+  color: ${({ theme }) => theme.colors.white};
+
+  background: ${({ theme, type }) =>
+    type === TAG.DELIVERY.ID
+      ? theme.colors.orange
+      : type === TAG.GIFT.ID
+        ? theme.colors.tangerine
+        : theme.colors.pink_800};
+  border-radius: 1rem;
 `;
 
 const DeliveryWrapper = styled.div`

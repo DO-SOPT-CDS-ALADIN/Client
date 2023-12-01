@@ -34,6 +34,7 @@ export default BottomNav;
 
 const BottomNavWrapper = styled.div`
   position: fixed;
+  z-index: 3;
   bottom: 0;
 
   display: flex;

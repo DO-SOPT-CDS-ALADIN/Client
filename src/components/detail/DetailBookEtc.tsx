@@ -64,10 +64,8 @@ export default DetailBookEtc;
 
 const BookEtcWrapper = styled.div`
   width: 100%;
-  height: 31rem;
   margin-top: 1.2rem;
   padding: 2.4rem 1.6rem;
-
   background-color: ${({ theme }) => theme.colors.white};
 `;
 const BookScoreWrapper = styled.span`

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { IcEnterXsGrey } from '../../assets/icons';
 import ImgDetailEventCard from '../../assets/imgs/img_event_1.png';
+import ImgDetailEventCard2 from '../../assets/imgs/img_event_2.png';
 
 interface DetailEventProps {
   eventRef: React.RefObject<HTMLDivElement>;
@@ -19,9 +20,9 @@ function DetailEvent({ eventRef }: DetailEventProps) {
       </DetailEventTitleWrapper>
       <EventScrollWrapper>
         <EventScrollCard src={ImgDetailEventCard} />
+        <EventScrollCard src={ImgDetailEventCard2} />
         <EventScrollCard src={ImgDetailEventCard} />
-        <EventScrollCard src={ImgDetailEventCard} />
-        <EventScrollCard src={ImgDetailEventCard} />
+        <EventScrollCard src={ImgDetailEventCard2} />
       </EventScrollWrapper>
     </DetailEventWrapper>
   );
@@ -36,7 +37,6 @@ const DetailEventWrapper = styled.div`
   align-items: flex-start;
   justify-content: center;
 
-  height: 30.6rem;
   margin-top: 1.2rem;
   padding: 2.4rem 0 2.4rem 1.6rem;
 
@@ -51,7 +51,9 @@ const DetailEventTitleWrapper = styled.div`
 `;
 
 const Title1BoldText = styled.span`
-  font: ${({ theme }) => theme.fonts.title1_bold};
+  ${({ theme }) => theme.fonts.title1_bold};
+
+  padding: 0;
 `;
 
 const Body2TextWrapper = styled.div`
@@ -61,7 +63,7 @@ const Body2TextWrapper = styled.div`
 `;
 
 const Body2Text = styled.span`
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
 `;
 
 const EventScrollWrapper = styled.div`

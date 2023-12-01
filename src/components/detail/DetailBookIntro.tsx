@@ -47,7 +47,7 @@ const DetailBookIntroWrapper = styled.div`
 `;
 
 const Title1BoldText = styled.span`
-  ${({ theme }) => theme.fonts.title1_bold_re};
+  ${({ theme }) => theme.fonts.title1_bold};
 `;
 
 const Body2Text = styled.p<{ isMore: boolean }>`

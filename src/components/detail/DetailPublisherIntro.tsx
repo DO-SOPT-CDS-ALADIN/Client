@@ -43,7 +43,7 @@ const DetailPublisherIntroWrapper = styled.div`
 `;
 
 const Title1BoldText = styled.span`
-  ${({ theme }) => theme.fonts.title1_bold_re};
+  ${({ theme }) => theme.fonts.title1_bold};
 `;
 
 const Body2Text = styled.p<{ isMore: boolean }>`
@@ -53,7 +53,8 @@ const Body2Text = styled.p<{ isMore: boolean }>`
   margin-top: 1.6rem;
   margin-bottom: ${({ isMore }) => (isMore ? `8rem` : `0rem`)};
 
-  font: ${({ theme }) => theme.fonts.body2_large};
+  ${({ theme }) => theme.fonts.body2};
+
   text-align: left;
   word-wrap: break-word;
 

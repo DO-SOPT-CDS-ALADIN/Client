@@ -46,5 +46,5 @@ const PeriodButton = styled.button`
 `;
 
 const PeriodText = styled.p`
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
 `;

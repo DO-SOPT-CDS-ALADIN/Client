@@ -27,6 +27,9 @@ import usePostHeart from '../hooks/usePostHeart';
 import Toast from '../components/common/Toast';
 import DetailCarousel from '../components/detail/DetailCarousel';
 import styled from 'styled-components';
+import PAGE from '../constants/page';
+import BackButton from '../components/common/BackButton';
+import TopButton from '../components/common/TopButton';
 
 function Detail() {
   const [section, setSection] = useState('이벤트');
@@ -88,6 +91,7 @@ function Detail() {
             price={response.originPrice}
             discount_price={response.discountPrice}
             mileage={response.mileage}
+            tag={response.tag}
             heartOn={heartOn}
             handleHeartClick={handleHeartClick}
           />
@@ -103,20 +107,22 @@ function Detail() {
           <DetailPublisherIntro />
           <DetailReviewSummary reviewRef={reviewRef} />
           <DetailReviewGraph />
-          <DetailBuyerReviewList />
           <DetailPostReview
             bookId={parsedBookId}
             setToast={setToast}
             setToastMessage={setToastMessage}
           />
+          <DetailBuyerReviewList />
           <DetailMyReview />
           <DetailMyPaper />
-          <BuyWith />
-          <ClickWith />
+          <BuyWith page={PAGE.DETAIL} />
+          <ClickWith page={PAGE.DETAIL} />
         </>
       )}
       <DetailReturnRefund refundRef={refundRef} />
       <Footer />
+      <BackButton page={PAGE.DETAIL} />
+      <TopButton page={PAGE.DETAIL} />
       <DetailBottomBar
         bookId={parsedBookId}
         heartOn={heartOn}

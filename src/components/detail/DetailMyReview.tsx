@@ -42,7 +42,6 @@ const DetailMyReviewWrapper = styled.div`
 `;
 
 const Title1BoldText = styled.span`
-  margin-bottom: 0.8rem;
   ${({ theme }) => theme.fonts.title1_bold};
 `;
 
@@ -50,7 +49,9 @@ const MyReviewNavWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   height: 4.4rem;
+  margin-top: 0.8rem;
 `;
 
 const NavWrapper = styled.div`

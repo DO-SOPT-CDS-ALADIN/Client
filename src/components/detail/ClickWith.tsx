@@ -3,10 +3,15 @@ import { IcEnterXs } from '../../assets/icons';
 import book1 from '../../assets/imgs/click_with_book_1.jpg';
 import book2 from '../../assets/imgs/click_with_book_2.jpg';
 import book3 from '../../assets/imgs/click_with_book_3.jpg';
+import PAGE from '../../constants/page';
 
-function ClickWith() {
+interface ClickWithProps {
+  page: number;
+}
+
+function ClickWith({ page }: ClickWithProps) {
   return (
-    <ClickWithWrapper>
+    <ClickWithWrapper page={page}>
       <ClickWithHeader>
         <Title>함께 클릭한 도서</Title>
         <ShowMoreWrapper>
@@ -33,14 +38,14 @@ function ClickWith() {
 }
 export default ClickWith;
 
-const ClickWithWrapper = styled.div`
+const ClickWithWrapper = styled.div<{ page: number }>`
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
   justify-content: center;
 
   margin-top: 1.2rem;
-  padding: 2.4rem 0rem 2.4rem 1.6rem;
+  padding: ${({ page }) => (page === PAGE.DETAIL ? '1.5rem' : '2.4rem')} 0rem 2.4rem 1.6rem;
 
   background-color: ${({ theme }) => theme.colors.white};
 `;
