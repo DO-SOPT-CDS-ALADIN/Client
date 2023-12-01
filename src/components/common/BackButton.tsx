@@ -14,7 +14,9 @@ function BackButton({ page }: BackButtonProps) {
   const navigate = useNavigate();
 
   const goBack = () => {
-    navigate(-1); // 바로 이전 페이지로 이동
+    {
+      page === PAGE.CART ? navigate(-1) : navigate('/best');
+    }
   };
 
   return (

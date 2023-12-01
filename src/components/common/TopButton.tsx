@@ -11,8 +11,11 @@ interface ButtonWrapperProps {
 }
 
 function TopButton({ page }: TopButtonProps) {
+  const onClickTopButton = () => {
+    scrollTo({ behavior: 'smooth', top: 0 });
+  };
   return (
-    <ButtonWrapper page={page}>
+    <ButtonWrapper page={page} onClick={onClickTopButton}>
       <IcCircleTop />
     </ButtonWrapper>
   );
@@ -20,6 +23,8 @@ function TopButton({ page }: TopButtonProps) {
 export default TopButton;
 
 const ButtonWrapper = styled.div<ButtonWrapperProps>`
+  cursor: pointer;
+
   position: fixed;
   right: 0.8rem;
   bottom: ${({ page }) =>
