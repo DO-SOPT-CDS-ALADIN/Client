@@ -95,6 +95,7 @@ const ReviewCategory = styled.p`
 const DetailEtcCountsWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  row-gap: 0.4rem;
   justify-content: space-between;
 `;
 

@@ -53,7 +53,7 @@ const Body2Text = styled.p<{ isMore: boolean }>`
   margin-top: 1.6rem;
   margin-bottom: ${({ isMore }) => (isMore ? `8rem` : `0rem`)};
 
-  ${({ theme }) => theme.fonts.body2_large};
+  ${({ theme }) => theme.fonts.body2};
 
   text-align: left;
   word-wrap: break-word;

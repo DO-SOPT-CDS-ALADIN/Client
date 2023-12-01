@@ -107,12 +107,12 @@ function Detail() {
           <DetailPublisherIntro />
           <DetailReviewSummary reviewRef={reviewRef} />
           <DetailReviewGraph />
-          <DetailBuyerReviewList />
           <DetailPostReview
             bookId={parsedBookId}
             setToast={setToast}
             setToastMessage={setToastMessage}
           />
+          <DetailBuyerReviewList />
           <DetailMyReview />
           <DetailMyPaper />
           <BuyWith />
