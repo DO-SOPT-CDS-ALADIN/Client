@@ -16,6 +16,7 @@ import {
   totalPriceState,
   totalMileageState,
   totalItemCountState,
+  totalBookCountState,
 } from '../../recoil/atoms/receiptState';
 import { parsePrice } from '../../utils/Price';
 import { useCart } from '../../hooks/useCart';
@@ -24,6 +25,7 @@ function Book(props: CartItemProps) {
   const {
     id,
     index,
+    count,
     title,
     imgUrl,
     discountPrice,
@@ -41,10 +43,11 @@ function Book(props: CartItemProps) {
     });
     calculatePrice();
   };
-  const { deleteFromCart } = useCart();
+  const { deleteFromCart, patchItemCount } = useCart();
   const [, setTotalPrice] = useRecoilState(totalPriceState);
   const [, setTotalMileage] = useRecoilState(totalMileageState);
   const [, setTotalItemCount] = useRecoilState(totalItemCountState);
+  const [, setTotalBookCount] = useRecoilState(totalBookCountState);
 
   const calculatePrice = () => {
     const price = parsePrice(discountPrice);
@@ -52,12 +55,20 @@ function Book(props: CartItemProps) {
     setTotalPrice(prev => (!isCheckedList[index] ? prev + price : prev - price));
     setTotalMileage(prev => (!isCheckedList[index] ? prev + mile : prev - mile));
     setTotalItemCount(prev => (!isCheckedList[index] ? prev + 1 : prev - 1));
+    setTotalBookCount(prev => (!isCheckedList[index] ? prev + count : prev - count));
   };
 
   const handleDeleteFromCart = () => {
     deleteFromCart([id]);
   };
 
+  const increaseItemCount = () => {
+    patchItemCount(id, count + 1);
+  };
+
+  const decreaseItemCount = () => {
+    count > 1 && patchItemCount(id, count - 1);
+  };
   return (
     <BookWrapper>
       <CheckButton>
@@ -78,9 +89,9 @@ function Book(props: CartItemProps) {
           </PriceWrapper>
           <Option>
             <Stapper>
-              <IcMinus />
-              <StepNum>1</StepNum>
-              <IcPlus />
+              <IcMinus onClick={decreaseItemCount} />
+              <StepNum>{count}</StepNum>
+              <IcPlus onClick={increaseItemCount} />
             </Stapper>
             <Button>{heart ? <IcHeartOn /> : <IcHeartOff />}</Button>
           </Option>

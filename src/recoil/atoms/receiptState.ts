@@ -14,3 +14,8 @@ export const totalItemCountState = atom({
   key: 'totalItemCountState',
   default: 0,
 });
+
+export const totalBookCountState = atom({
+  key: 'totalBookCountState',
+  default: 0,
+});

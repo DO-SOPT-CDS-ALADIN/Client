@@ -27,6 +27,7 @@ function AllCategory({ setIsShowAll }: AllCategoryProps) {
 export default AllCategory;
 
 const Overlay = styled.div`
+  z-index: 9998;
   position: fixed;
   z-index: 9998;
   top: 0;

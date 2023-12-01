@@ -77,7 +77,6 @@ const Category = styled.div`
   padding: 6px 8px;
 
   ${({ theme }) => theme.fonts.body2};
-
   color: ${({ theme }) => theme.colors.grey_500};
 `;
 
