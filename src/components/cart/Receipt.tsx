@@ -24,7 +24,7 @@ function Receipt() {
       </FlexBox>
       <FlexBox>
         <Title>총 상품금액</Title>
-        <Value>{formatPrice(cartCount)} (3,680원 할인)</Value>
+        <Value>{formatPrice(cartCount)}</Value>
       </FlexBox>
       <FlexBox>
         <Title>총 배송비</Title>
