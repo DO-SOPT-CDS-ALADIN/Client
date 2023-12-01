@@ -42,12 +42,14 @@ const PagenationWrapper = styled.div<ButtonProps>`
   margin: 1.6rem auto;
 
   & ${PagenationButtton} {
-    font: ${({ theme }) => theme.fonts.body4};
+    ${({ theme }) => theme.fonts.body4};
+
     border: 1px solid ${({ theme }) => theme.colors.grey_300};
   }
 
   & ${PagenationButtton}:nth-child(${props => props.active}) {
-    font: ${({ theme }) => theme.fonts.body3};
+    ${({ theme }) => theme.fonts.body3};
+
     color: ${({ theme }) => theme.colors.blue_400};
     border: 1px solid ${({ theme }) => theme.colors.blue_400};
   }

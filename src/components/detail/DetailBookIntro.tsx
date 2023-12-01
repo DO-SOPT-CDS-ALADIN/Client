@@ -3,7 +3,11 @@ import styled from 'styled-components';
 import { IcBtnShowDown } from '../../assets/icons';
 import DETAIL_TEXTS from '../../constants/DETAIL_TEXTS';
 
-function DetailBookIntro() {
+interface DetailBookProps {
+  bookDetailRef: React.RefObject<HTMLDivElement>;
+}
+
+function DetailBookIntro({ bookDetailRef }: DetailBookProps) {
   const [isMore, setIsMore] = useState(false);
 
   const onClickMoreButton = () => {
@@ -15,9 +19,11 @@ function DetailBookIntro() {
   };
 
   return (
-    <DetailBookIntroWrapper>
+    <DetailBookIntroWrapper ref={bookDetailRef}>
       <Title1BoldText>책소개</Title1BoldText>
-      <Body2Text>{hideText(DETAIL_TEXTS.BOOK_INTRO, 133)}</Body2Text>
+      <Body2Text isMore={isMore}>
+        {isMore ? DETAIL_TEXTS.BOOK_INTRO : hideText(DETAIL_TEXTS.BOOK_INTRO, 133)}
+      </Body2Text>
       <MoreBox>
         <IcBtnShowDown onClick={onClickMoreButton} />
       </MoreBox>
@@ -33,7 +39,7 @@ const DetailBookIntroWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  height: 16.6rem;
+  width: 100%;
   margin-top: 1.2rem;
   padding: 2.4rem 1.6rem;
 
@@ -44,12 +50,12 @@ const Title1BoldText = styled.span`
   ${({ theme }) => theme.fonts.title1_bold};
 `;
 
-const Body2Text = styled.p`
+const Body2Text = styled.p<{ isMore: boolean }>`
   overflow: hidden;
   display: box;
 
-  height: 7.84rem;
   margin-top: 1.6rem;
+  margin-bottom: ${({ isMore }) => (isMore ? `8rem` : `0rem`)};
 
   ${({ theme }) => theme.fonts.body2};
 
@@ -73,6 +79,7 @@ const MoreBox = styled.div`
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
 
   & > svg {
+    cursor: pointer;
     position: absolute;
     bottom: 0;
   }

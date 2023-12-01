@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Header from '../components/common/Header';
 import DetailBookEtc from '../components/detail/DetailBookEtc';
 import DetailBookSummary from '../components/detail/DetailBookSummary';
@@ -27,10 +27,17 @@ import usePostHeart from '../hooks/usePostHeart';
 import Toast from '../components/common/Toast';
 import DetailCarousel from '../components/detail/DetailCarousel';
 import styled from 'styled-components';
+import PAGE from '../constants/page';
+import BackButton from '../components/common/BackButton';
+import TopButton from '../components/common/TopButton';
 
 function Detail() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [section, setSection] = useState('이벤트');
+  const eventRef = useRef<HTMLDivElement>(null);
+  const bookDetailRef = useRef<HTMLDivElement>(null);
+  const reviewRef = useRef<HTMLDivElement>(null);
+  const refundRef = useRef<HTMLDivElement>(null);
+
   const { bookId } = useParams<{ bookId: string }>();
   const [toast, setToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
@@ -56,6 +63,20 @@ function Detail() {
     }
   };
 
+  useEffect(() => {
+    if (eventRef.current && bookDetailRef.current && reviewRef.current && refundRef.current) {
+      if (section === '이벤트') {
+        eventRef.current.scrollIntoView({ behavior: 'smooth' });
+      } else if (section === '상품정보') {
+        bookDetailRef.current.scrollIntoView({ behavior: 'smooth' });
+      } else if (section === '리뷰') {
+        reviewRef.current.scrollIntoView({ behavior: 'smooth' });
+      } else if (section === '반품/교환') {
+        refundRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [section]);
+
   return (
     <DetailWrapper>
       <Header />
@@ -70,6 +91,7 @@ function Detail() {
             price={response.originPrice}
             discount_price={response.discountPrice}
             mileage={response.mileage}
+            tag={response.tag}
             heartOn={heartOn}
             handleHeartClick={handleHeartClick}
           />
@@ -77,28 +99,30 @@ function Detail() {
           <DetailSellUsedBook />
           <DetailSeries />
           <DetailCarousel />
-          <DetailNavBar section={section} />
-          <DetailEvent />
-          <DetailBookIntro />
+          <DetailNavBar section={section} setSection={setSection} />
+          <DetailEvent eventRef={eventRef} />
+          <DetailBookIntro bookDetailRef={bookDetailRef} />
           <DetailBookContents />
           <DetailAuthorIntro />
           <DetailPublisherIntro />
-          <DetailReviewSummary />
+          <DetailReviewSummary reviewRef={reviewRef} />
           <DetailReviewGraph />
-          <DetailBuyerReviewList />
           <DetailPostReview
             bookId={parsedBookId}
             setToast={setToast}
             setToastMessage={setToastMessage}
           />
+          <DetailBuyerReviewList />
           <DetailMyReview />
           <DetailMyPaper />
-          <BuyWith />
-          <ClickWith />
+          <BuyWith page={PAGE.DETAIL} />
+          <ClickWith page={PAGE.DETAIL} />
         </>
       )}
-      <DetailReturnRefund />
+      <DetailReturnRefund refundRef={refundRef} />
       <Footer />
+      <BackButton page={PAGE.DETAIL} />
+      <TopButton page={PAGE.DETAIL} />
       <DetailBottomBar
         bookId={parsedBookId}
         heartOn={heartOn}
@@ -114,5 +138,6 @@ function Detail() {
 export default Detail;
 
 const DetailWrapper = styled.div`
+  width: 100%;
   padding-bottom: 6.8rem;
 `;

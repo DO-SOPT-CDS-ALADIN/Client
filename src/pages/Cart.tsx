@@ -18,7 +18,7 @@ function Cart() {
       <Nav />
       <CartList />
       <Receipt />
-      <BuyWith />
+      <BuyWith page={PAGE.CART} />
       <AladinGoods />
       <AladinCoffee />
       <Footer />

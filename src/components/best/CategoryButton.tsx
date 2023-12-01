@@ -44,7 +44,8 @@ const Category = styled.label`
 `;
 
 const CategoryName = styled.p`
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
+
   color: ${({ theme }) => theme.colors.grey_400};
 `;
 
@@ -56,7 +57,8 @@ const RadioInput = styled.input`
     box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.blue_400} inset;
 
     ${CategoryName} {
-      font: ${({ theme }) => theme.fonts.body1};
+      ${({ theme }) => theme.fonts.body1};
+
       color: ${({ theme }) => theme.colors.blue_400};
     }
   }

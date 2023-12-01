@@ -3,10 +3,15 @@ import { IcEnterXs } from '../../assets/icons';
 import book1 from '../../assets/imgs/buy_with_book_1.png';
 import book2 from '../../assets/imgs/buy_with_book_2.png';
 import book3 from '../../assets/imgs/buy_with_book_3.png';
+import PAGE from '../../constants/page';
 
-function BuyWith() {
+interface BuyWithProps {
+  page: number;
+}
+
+function BuyWith({ page }: BuyWithProps) {
   return (
-    <BuyWithWrapper>
+    <BuyWithWrapper page={page}>
       <BuyWithHeader>
         <Title>함께 구매한 도서</Title>
         <ShowMoreWrapper>
@@ -33,13 +38,13 @@ function BuyWith() {
 }
 export default BuyWith;
 
-const BuyWithWrapper = styled.div`
+const BuyWithWrapper = styled.div<{ page: number }>`
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
   justify-content: center;
 
-  padding: 2.4rem 0rem 2.4rem 1.6rem;
+  padding: ${({ page }) => (page === PAGE.DETAIL ? '1.5rem' : '2.4rem')} 0rem 2.4rem 1.6rem;
 
   background-color: ${({ theme }) => theme.colors.white};
 `;

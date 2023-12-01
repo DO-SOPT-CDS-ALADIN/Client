@@ -50,8 +50,8 @@ const StyledSlider = styled(Slider)`
 
     width: 0.6rem;
     height: 0.6rem;
-    margin: 0;
-    padding: 0.4rem;
+    margin: 0.4rem;
+    padding: 0;
   }
 
   .slick-dots li button {
@@ -80,6 +80,7 @@ const StyledSlider = styled(Slider)`
   }
   .slick-dots li.slick-active button:before {
     color: ${({ theme }) => theme.colors.white};
+    opacity: 100;
   }
 `;
 

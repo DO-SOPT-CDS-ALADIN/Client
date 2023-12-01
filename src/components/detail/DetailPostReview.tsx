@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import {
+  IcCheckboxChecked,
   IcCheckboxGray,
   IcEnterXsGrey,
   IcStarLargeGray,
@@ -19,11 +20,16 @@ function DetailPostReview({ bookId, setToast, setToastMessage }: DetailPostRevie
   const [textAreaValue, setTextAreaValue] = useState('');
   const [star, setStar] = useState(5);
   const [clickedStars, setClickedStars] = useState([true, true, true, true, true]);
+  const [isChecked, setIsChecked] = useState(false);
 
   const { reviewResponse, reviewError, reviewLoading, postReview } = usePostReview(bookId);
 
   const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setTextAreaValue(e.target.value);
+  };
+
+  const onClickCheckbox = () => {
+    setIsChecked(!isChecked);
   };
 
   const handleClickPostButton = async () => {
@@ -77,7 +83,11 @@ function DetailPostReview({ bookId, setToast, setToastMessage }: DetailPostRevie
       />
       <ByteCountText>현재 {textAreaValue.length}/280byte</ByteCountText>
       <SpoilerCheckboxWrapper>
-        <IcCheckboxGray />
+        {isChecked ? (
+          <IcCheckboxChecked onClick={onClickCheckbox} />
+        ) : (
+          <IcCheckboxGray onClick={onClickCheckbox} />
+        )}
         <Body2Text>스포일러 포함</Body2Text>
       </SpoilerCheckboxWrapper>
       <PostButton type="button" onClick={handleClickPostButton}>
@@ -93,7 +103,7 @@ const DetailPostReviewWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  height: 38.6rem;
+  width: 100%;
   margin-top: 1.2rem;
   padding: 2.4rem 1.6rem;
 
@@ -101,8 +111,6 @@ const DetailPostReviewWrapper = styled.div`
 `;
 
 const Title1BoldText = styled.span`
-  line-height: normal;
-  font-style: normal;
   ${({ theme }) => theme.fonts.title1_bold};
 `;
 
@@ -123,8 +131,6 @@ const StarClickWrapper = styled.div`
 const Head3PinkText = styled.p`
   ${({ theme }) => theme.fonts.head3};
 
-  line-height: normal;
-  font-style: normal;
   color: ${({ theme }) => theme.colors.pink_400};
 `;
 
@@ -144,14 +150,14 @@ const Detail2Text = styled.p`
 `;
 
 const ReviewTextarea = styled.textarea`
-  height: 10rem;
-  padding: 1rem;
-  margin-top: 0.85rem;
-
-  border-radius: 0.8rem;
-  border: 1px solid ${({ theme }) => theme.colors.grey_300};
-
   resize: none;
+
+  height: 10rem;
+  margin-top: 0.85rem;
+  padding: 1rem;
+
+  border: 1px solid ${({ theme }) => theme.colors.grey_300};
+  border-radius: 0.8rem;
 
   ${({ theme }) => theme.fonts.body2};
 
@@ -164,8 +170,6 @@ const ByteCountText = styled.p`
   margin-top: 0.8rem;
   text-align: right;
   ${({ theme }) => theme.fonts.body2};
-
-  font-style: normal;
 `;
 
 const SpoilerCheckboxWrapper = styled.div`
@@ -175,6 +179,10 @@ const SpoilerCheckboxWrapper = styled.div`
   display: flex;
   column-gap: 1rem;
   align-items: center;
+
+  & > svg {
+    cursor: pointer;
+  }
 `;
 
 const Body2Text = styled.span`
@@ -187,12 +195,12 @@ const Body2Text = styled.span`
 
 const PostButton = styled.button`
   height: 4.8rem;
-  padding: 0.8rem;
   margin-top: 1.8rem;
-
-  border-radius: 0.8rem;
-  background: ${({ theme }) => theme.colors.blue_400};
-  ${({ theme }) => theme.fonts.title2_bold};
+  padding: 0.8rem;
 
   color: ${({ theme }) => theme.colors.white};
+
+  background: ${({ theme }) => theme.colors.blue_400};
+  border-radius: 0.8rem;
+  ${({ theme }) => theme.fonts.title2_bold};
 `;

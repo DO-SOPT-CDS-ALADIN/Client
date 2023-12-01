@@ -28,55 +28,64 @@ const fonts = {
     font-family: 'AppleSDGothicNeo';
     font-size: 2.8rem;
     font-weight: 800;
-    line-height: auto;
+    font-style: normal;
+    line-height: normal;
   `,
   head2: css`
     font-family: 'AppleSDGothicNeo';
     font-size: 2.4rem;
     font-weight: 800;
-    line-height: auto;
+    font-style: normal;
+    line-height: normal;
   `,
   head3: css`
     font-family: 'AppleSDGothicNeo';
     font-size: 2.2rem;
     font-weight: 700;
-    line-height: auto;
+    font-style: normal;
+    line-height: normal;
   `,
   head4: css`
     font-family: 'AppleSDGothicNeo';
     font-size: 2rem;
     font-weight: 700;
-    line-height: auto;
+    font-style: normal;
+    line-height: normal;
   `,
   title1_bold: css`
     font-family: 'AppleSDGothicNeo';
     font-size: 1.8rem;
     font-weight: 700;
-    line-height: auto;
+    font-style: normal;
+    line-height: normal;
   `,
   title1_reg: css`
     font-family: 'AppleSDGothicNeo';
     font-size: 1.8rem;
     font-weight: 400;
-    line-height: auto;
+    font-style: normal;
+    line-height: normal;
   `,
   title2_bold: css`
     font-family: 'AppleSDGothicNeo';
     font-size: 1.6rem;
     font-weight: 700;
-    line-height: auto;
+    font-style: normal;
+    line-height: normal;
   `,
   title2_reg: css`
     font-family: 'AppleSDGothicNeo';
     font-size: 1.6rem;
     font-weight: 400;
-    line-height: auto;
+    font-style: normal;
+    line-height: normal;
   `,
   body1: css`
     font-family: 'AppleSDGothicNeo';
     font-size: 1.4rem;
     font-weight: 700;
-    line-height: auto;
+    font-style: normal;
+    line-height: 140%;
   `,
   body1_copy: css`
     font-family: 'AppleSDGothicNeo';
@@ -90,6 +99,7 @@ const fonts = {
     font-family: 'AppleSDGothicNeo';
     font-size: 1.4rem;
     font-weight: 400;
+    font-style: normal;
     line-height: 140%;
   `,
   body3: css`
@@ -108,13 +118,17 @@ const fonts = {
     font-family: 'AppleSDGothicNeo';
     font-size: 1.2rem;
     font-weight: 700;
-    line-height: auto;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.6px;
   `,
   detail2: css`
     font-family: 'AppleSDGothicNeo';
     font-size: 1.2rem;
     font-weight: 400;
+    font-style: normal;
     line-height: 160%;
+    letter-spacing: -0.6px;
   `,
 };
 

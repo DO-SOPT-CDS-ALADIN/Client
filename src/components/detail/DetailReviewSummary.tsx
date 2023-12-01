@@ -2,9 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { IcEllipse51 } from '../../assets/icons';
 
-function DetailReviewSummary() {
+interface DetailReviewProps {
+  reviewRef: React.RefObject<HTMLDivElement>;
+}
+
+function DetailReviewSummary({ reviewRef }: DetailReviewProps) {
   return (
-    <DetailReviewSummaryWrapper>
+    <DetailReviewSummaryWrapper ref={reviewRef}>
       <Title1BoldText>리뷰</Title1BoldText>
       <ReviewSummaryWrapper>
         <DetailCountsWrapper>
@@ -55,7 +59,7 @@ const DetailReviewSummaryWrapper = styled.div`
 `;
 
 const Title1BoldText = styled.span`
-  font: ${({ theme }) => theme.fonts.title1_bold};
+  ${({ theme }) => theme.fonts.title1_bold};
 `;
 
 const ReviewSummaryWrapper = styled.div`
@@ -77,7 +81,7 @@ const CountsWrapper = styled.div`
 `;
 
 const ReviewNumber = styled.p`
-  font: ${({ theme }) => theme.fonts.head1};
+  ${({ theme }) => theme.fonts.head1};
 
   &.grey {
     color: ${({ theme }) => theme.colors.grey_300};
@@ -85,12 +89,13 @@ const ReviewNumber = styled.p`
 `;
 
 const ReviewCategory = styled.p`
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
 `;
 
 const DetailEtcCountsWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  row-gap: 0.4rem;
   justify-content: space-between;
 `;
 
@@ -101,5 +106,5 @@ const EtcCountsWrapper = styled.div`
 `;
 
 const Body2Text = styled.span`
-  font: ${({ theme }) => theme.fonts.body2};
+  ${({ theme }) => theme.fonts.body2};
 `;
