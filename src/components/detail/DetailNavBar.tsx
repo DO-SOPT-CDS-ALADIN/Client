@@ -3,31 +3,36 @@ import styled from 'styled-components';
 
 interface DetailNavProps {
   section: string;
+  setSection: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function TopNav({ section }: DetailNavProps) {
+interface NavItem {
+  navName: string;
+}
+
+const navItems: NavItem[] = [
+  { navName: '이벤트' },
+  { navName: '상품정보' },
+  { navName: '리뷰' },
+  { navName: '반품/교환' },
+];
+
+function TopNav({ section, setSection }: DetailNavProps) {
+  const onClickNav = (navName: string) => {
+    setSection(navName);
+  };
+
   return (
-    <DetailNavWrapper section={section}>
-      <Nav>
-        {section === '이벤트' ? <ActiveNavText>이벤트</ActiveNavText> : <NavText>이벤트</NavText>}
-      </Nav>
-      <Nav>
-        {section === '상품정보' ? (
-          <ActiveNavText>상품정보</ActiveNavText>
-        ) : (
-          <NavText>상품정보</NavText>
-        )}
-      </Nav>
-      <Nav>
-        {section === '리뷰' ? <ActiveNavText>리뷰</ActiveNavText> : <NavText>리뷰</NavText>}
-      </Nav>
-      <Nav>
-        {section === '반품/교환' ? (
-          <ActiveNavText>반품/교환</ActiveNavText>
-        ) : (
-          <NavText>반품/교환</NavText>
-        )}
-      </Nav>
+    <DetailNavWrapper section={section} setSection={setSection}>
+      {navItems.map((item, index) => (
+        <Nav key={index} onClick={() => onClickNav(item.navName)}>
+          {section === item.navName ? (
+            <ActiveNavText className="focused">{item.navName}</ActiveNavText>
+          ) : (
+            <NavText>{item.navName}</NavText>
+          )}
+        </Nav>
+      ))}
     </DetailNavWrapper>
   );
 }
@@ -44,18 +49,21 @@ const Nav = styled.div`
 `;
 
 const NavText = styled.p`
+  cursor: pointer;
   font: ${({ theme }) => theme.fonts.title2_reg};
 `;
 
 const ActiveNavText = styled.p`
+  cursor: pointer;
   font: ${({ theme }) => theme.fonts.title2_bold};
   color: ${({ theme }) => theme.colors.blue_600};
 `;
 
 const DetailNavWrapper = styled.div<DetailNavProps>`
   position: sticky;
-  z-index: 10;
-  top: 4.8rem;
+  z-index: 9;
+  top: 4.7rem;
+  left: 0;
 
   display: flex;
   align-items: center;

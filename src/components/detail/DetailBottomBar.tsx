@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { IcGift, IcHeartOff, IcHeartOn } from '../../assets/icons';
 import { useCart } from '../../hooks/useCart';
+import { useNavigate } from 'react-router-dom';
 
 interface DetailBottomBarProps {
   bookId: number;
@@ -19,11 +20,17 @@ function DetailBottomBar({
   setToastMessage,
 }: DetailBottomBarProps) {
   const { response, addToCart } = useCart();
+  const navigate = useNavigate();
 
   const handleAddToCart = async () => {
     await addToCart(bookId);
     setToastMessage(response);
     setToast(true);
+  };
+
+  const onClickBuyButton = async () => {
+    await addToCart(bookId);
+    navigate('/cart');
   };
 
   return (
@@ -38,7 +45,7 @@ function DetailBottomBar({
       </ButtonsWrapper>
       <ButtonsWrapper>
         <GiftButton onClick={handleAddToCart}>장바구니</GiftButton>
-        <BuyButton>구매하기</BuyButton>
+        <BuyButton onClick={onClickBuyButton}>구매하기</BuyButton>
       </ButtonsWrapper>
     </DetailBottomWrapper>
   );

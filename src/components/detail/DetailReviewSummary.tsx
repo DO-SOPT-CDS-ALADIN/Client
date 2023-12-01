@@ -2,9 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { IcEllipse51 } from '../../assets/icons';
 
-function DetailReviewSummary() {
+interface DetailReviewProps {
+  reviewRef: React.RefObject<HTMLDivElement>;
+}
+
+function DetailReviewSummary({ reviewRef }: DetailReviewProps) {
   return (
-    <DetailReviewSummaryWrapper>
+    <DetailReviewSummaryWrapper ref={reviewRef}>
       <Title1BoldText>리뷰</Title1BoldText>
       <ReviewSummaryWrapper>
         <DetailCountsWrapper>

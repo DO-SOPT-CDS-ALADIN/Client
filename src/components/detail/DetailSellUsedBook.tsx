@@ -44,7 +44,7 @@ const UsedBookDivWrapper = styled.div`
 `;
 
 const Title1BoldText = styled.span`
-  ${({ theme }) => theme.fonts.title1_bold};
+  ${({ theme }) => theme.fonts.title1_bold_re};
 `;
 
 const SellPriceWrapper = styled.div`

@@ -2,9 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { IcEnter } from '../../assets/icons';
 
-function DetailReturnRefund() {
+interface DetailReturnRefundProps {
+  refundRef: React.RefObject<HTMLDivElement>;
+}
+
+function DetailReturnRefund({ refundRef }: DetailReturnRefundProps) {
   return (
-    <DetailReturnRefundWrapper>
+    <DetailReturnRefundWrapper ref={refundRef}>
       <Body2Text>반품/교환 안내</Body2Text>
       <IcEnter />
     </DetailReturnRefundWrapper>

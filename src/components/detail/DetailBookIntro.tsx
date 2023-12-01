@@ -3,7 +3,11 @@ import styled from 'styled-components';
 import { IcBtnShowDown } from '../../assets/icons';
 import DETAIL_TEXTS from '../../constants/DETAIL_TEXTS';
 
-function DetailBookIntro() {
+interface DetailBookProps {
+  bookDetailRef: React.RefObject<HTMLDivElement>;
+}
+
+function DetailBookIntro({ bookDetailRef }: DetailBookProps) {
   const [isMore, setIsMore] = useState(false);
 
   const onClickMoreButton = () => {
@@ -15,7 +19,7 @@ function DetailBookIntro() {
   };
 
   return (
-    <DetailBookIntroWrapper>
+    <DetailBookIntroWrapper ref={bookDetailRef}>
       <Title1BoldText>책소개</Title1BoldText>
       <Body2Text isMore={isMore}>
         {isMore ? DETAIL_TEXTS.BOOK_INTRO : hideText(DETAIL_TEXTS.BOOK_INTRO, 133)}
