@@ -1,9 +1,8 @@
 <div align="center">
 <h1> 🧞‍♂️ 알라딘 🧞‍♂️ </h1>
-<img width="1399" alt="스크린샷 2023-12-01 오후 6 35 00" src="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Client/assets/60962533/4cb4cfda-4008-46a4-b6bc-322236b8f5f5">
 
+<img alt="image" src="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Client/assets/60962533/4cc0bbeb-bdf7-4d50-8a9f-f0dd7e71feba">
 </div>
-<h4>알라딘의 메인페이지, 베스트 페이지, 상세 페이지, 장바구니 페이지를 구현하였습니다!</h4>
 
 <h2>🖥 화면 소개</h2>
 <h3> 1️⃣ Home 페이지 </h3>
@@ -128,8 +127,10 @@
 | Library              | ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black)                                                                                                                                                                                                                              |
 | Programming Language | ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white)                                                                                                                                                                                                               |
 | Styling              | ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)                                                                                                                                                                                         |
+| Data Fetching        | ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=Axios&logoColor=white)  |
 | State Management     | ![State Management](https://img.shields.io/badge/recoil-007af4?style=for-the-badge&logo=Recoil&logoColor=white)                                                                                                                                                                                                                 |
 | Formatting           | ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white) ![Prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E) ![StyleLint](https://img.shields.io/badge/stylelint-E0EFEF?style=for-the-badge&logo=stylelint&logoColor=000) |
+| Package Manager      | ![Yarn](https://img.shields.io/badge/Yarn-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white)   |
 | Version Control      | ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)                                                                                                                |
 | Deployment           | ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)                                                                                                                                                                                                                           |
 
