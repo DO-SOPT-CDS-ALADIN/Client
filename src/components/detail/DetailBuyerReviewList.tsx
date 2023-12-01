@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import DetailBuyerReviewItem from './DetailBuyerReviewItem';
 import DETAIL_REVIEW_LIST from '../../constants/DETAIL_REVIEW_LIST';
