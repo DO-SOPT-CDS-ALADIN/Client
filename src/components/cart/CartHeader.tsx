@@ -1,15 +1,26 @@
 import styled from 'styled-components';
 import { IcBack, IcNaviBtnHomeBlack } from '../../assets/icons';
+import { useNavigate } from 'react-router-dom';
 
 function CartHeader() {
+  const navigate = useNavigate();
+
   return (
     <>
       <HeaderWrapper>
-        <BackButton>
+        <BackButton
+          onClick={() => {
+            navigate('/');
+          }}
+        >
           <IcBack />
         </BackButton>
         <HeaderTitle>장바구니</HeaderTitle>
-        <IcNaviBtnHomeBlack />
+        <IcNaviBtnHomeBlack
+          onClick={() => {
+            navigate('/');
+          }}
+        />
       </HeaderWrapper>
     </>
   );
