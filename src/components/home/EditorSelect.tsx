@@ -151,7 +151,7 @@ const DetailContainerText = styled.p`
   ${({ theme }) => theme.fonts.body2};
 
   overflow: hidden;
-  display: box;
+  display: -webkit-box;
 
   width: 31.1rem;
   height: 8rem;
