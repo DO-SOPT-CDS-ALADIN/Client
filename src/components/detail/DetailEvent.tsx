@@ -3,9 +3,13 @@ import styled from 'styled-components';
 import { IcEnterXsGrey } from '../../assets/icons';
 import ImgDetailEventCard from '../../assets/imgs/img_event_1.png';
 
-function DetailEvent() {
+interface DetailEventProps {
+  eventRef: React.RefObject<HTMLDivElement>;
+}
+
+function DetailEvent({ eventRef }: DetailEventProps) {
   return (
-    <DetailEventWrapper>
+    <DetailEventWrapper ref={eventRef}>
       <DetailEventTitleWrapper>
         <Title1BoldText>관련 이벤트</Title1BoldText>
         <Body2TextWrapper>
