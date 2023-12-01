@@ -1,17 +1,19 @@
 import styled from 'styled-components';
 import PAGE from '../../constants/page';
+import { useNavigate } from 'react-router-dom';
 
 interface TopNavProps {
   page: number;
 }
 
 function TopNav({ page }: TopNavProps) {
+  const navigate = useNavigate();
   return (
     <TopNavWrapper page={page}>
-      <Nav>
+      <Nav onClick={() => navigate('/')}>
         {page === PAGE.HOME ? <ActiveNavText>HOME</ActiveNavText> : <NavText>HOME</NavText>}
       </Nav>
-      <Nav>
+      <Nav onClick={() => navigate('/best')}>
         {page === PAGE.BEST ? <ActiveNavText>베스트</ActiveNavText> : <NavText>베스트</NavText>}
       </Nav>
       <Nav>
