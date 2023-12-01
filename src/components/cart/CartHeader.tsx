@@ -10,7 +10,7 @@ function CartHeader() {
       <HeaderWrapper>
         <BackButton
           onClick={() => {
-            navigate('/');
+            navigate(-1);
           }}
         >
           <IcBack />

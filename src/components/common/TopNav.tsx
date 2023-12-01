@@ -63,6 +63,7 @@ const TopNavWrapper = styled.div<TopNavProps>`
   align-items: center;
   justify-content: center;
 
+  width: 37.5rem;
   height: 4.8rem;
 
   background-color: ${({ theme }) => theme.colors.white};
