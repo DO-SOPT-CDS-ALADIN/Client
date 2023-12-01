@@ -57,7 +57,6 @@ const Title = styled.p`
   ${({ theme }) => theme.fonts.title1_bold};
   span {
     ${({ theme }) => theme.fonts.title1_bold};
-
     color: ${({ theme }) => theme.colors.pink_400};
   }
 `;

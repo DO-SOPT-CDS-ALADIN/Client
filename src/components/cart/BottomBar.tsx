@@ -25,7 +25,6 @@ export default BottomBar;
 const BottomWrapper = styled.div`
   position: fixed;
   bottom: 0;
-
   display: flex;
   flex-direction: column;
   gap: 0.8rem;

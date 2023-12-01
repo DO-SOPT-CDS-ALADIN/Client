@@ -80,6 +80,10 @@ import IcBestDomestic from './ic_best_domestic.svg?react';
 import IcBack from './ic_back.svg?react';
 import IcAudio from './ic_audio.svg?react';
 import IcAd from './ic_ad.svg?react';
+import IcOpenQuota from './ic_open_quota.svg?react';
+import IcCloseQuota from './ic_close_quota.svg?react';
+import IcFundingBar from './ic_funding_bar.svg?react';
+import IcBtnPage from './ic_btn_page.svg?react';
 import IcQuickDelivery from './ic_quick_delivery.svg?react';
 import IcDetailsSelectRectangle from './ic_details_select_rectangle.svg?react';
 import IcStar0 from './ic_star_0.svg?react';
@@ -171,6 +175,10 @@ export {
   IcBack,
   IcAudio,
   IcAd,
+  IcOpenQuota,
+  IcCloseQuota,
+  IcFundingBar,
+  IcBtnPage,
   IcQuickDelivery,
   IcStar0,
   IcStar1,
