@@ -106,7 +106,7 @@
 
 <h2>  📄 컨벤션 및 브랜치 전략 </h2>
 <h3>🔽💙1조 웨비들 공간💙🔽</h3>
-<a href="[https://www.notion.so/1-be5da056111d4bd392c2d3dde69f3d1c?pvs=4](https://www.notion.so/9e8cfc89cef244e68afc45f32d597fdf)"><img src="https://img.shields.io/badge/Notion 링크-white?style=for-the-badge&logo=Notion&logoColor=000000"/></a>
+<a href="https://www.notion.so/dosopt/1-be5da056111d4bd392c2d3dde69f3d1c?pvs=4"><img src="https://img.shields.io/badge/Notion 링크-white?style=for-the-badge&logo=Notion&logoColor=000000"/></a>
 
 <details>
 <summary> 1️⃣ Commit 컨벤션  </summary>
