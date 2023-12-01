@@ -3,9 +3,12 @@ import styled from 'styled-components';
 import { IcLogo, IcSearch, IcCart } from '../../assets/icons';
 import { cartCountState } from '../../recoil/atoms/cartCountState';
 import { useRecoilValue } from 'recoil';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
   const cartCount = useRecoilValue(cartCountState);
+  const navigate = useNavigate();
+
   return (
     <HeaderWrapper>
       <LogoButton>
@@ -15,7 +18,7 @@ function Header() {
         <PlaceHolder>&lt;사이언스 2024&gt;</PlaceHolder>
         <IcSearch />
       </SearchBar>
-      <CartButton>
+      <CartButton onClick={() => navigate('/cart')}>
         <CartIconWrapper>
           <IcCart />
         </CartIconWrapper>
