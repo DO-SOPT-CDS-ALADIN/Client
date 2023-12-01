@@ -29,15 +29,15 @@ export default BackButton;
 
 const ButtonWrapper = styled.button<ButtonWrapperProps>`
   position: fixed;
+  right: calc((100% - 4.8rem) / 2);
   bottom: ${({ page }) =>
     page === PAGE.DETAIL ? '6.8rem' : page === PAGE.CART ? '11.2rem' : '7.2rem'};
-  left: 0.8rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 4.8rem;
+  width: 36.5rem;
   height: 4.8rem;
   padding: 0.5rem;
 `;
