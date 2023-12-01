@@ -191,6 +191,8 @@ const MileageWrapper = styled.div`
 `;
 
 const Stapper = styled.div`
+  cursor: pointer;
+
   overflow: hidden;
   display: flex;
   gap: 0.4rem;
@@ -261,6 +263,7 @@ const DeliveryDetail = styled(GreyText)`
 `;
 
 const DeleteButton = styled.div`
+  cursor: pointer;
   position: absolute;
   right: 1.2rem;
 `;

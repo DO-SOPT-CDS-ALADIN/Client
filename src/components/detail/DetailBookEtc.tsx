@@ -1,16 +1,27 @@
 import styled from 'styled-components';
-import { IcEllipse51, IcEllipse51Grey, IcStar5 } from '../../assets/icons';
+import {
+  IcEllipse51,
+  IcEllipse51Grey,
+  IcStar1,
+  IcStar2,
+  IcStar3,
+  IcStar4,
+  IcStar5,
+} from '../../assets/icons';
 
 interface DetailBookEtcProps {
   star: number;
 }
 
 function DetailBookEtc({ star }: DetailBookEtcProps) {
+  const starIcons = [IcStar1, IcStar2, IcStar3, IcStar4, IcStar5];
+  const StarIcon = starIcons[star - 1];
+
   return (
     <BookEtcWrapper>
       <BookScoreWrapper>
         <StarWrapper>
-          <IcStar5 />
+          <StarIcon />
           <ReviewScore>{star}.0</ReviewScore>
         </StarWrapper>
         <ReviewNumWrapper>

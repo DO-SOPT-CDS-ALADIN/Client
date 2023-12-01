@@ -51,10 +51,10 @@ function Book(props: BestBookProps) {
     setToast(true);
   };
   return (
-    <BookWrapper onClick={onClick}>
+    <BookWrapper>
       <BookInner>
         <Left>
-          <BookImg src={imgUrl} />
+          <BookImg src={imgUrl} onClick={onClick} />
           <PreviewButton>
             <IcEye />
             <PreviewText>미리보기</PreviewText>
@@ -65,7 +65,7 @@ function Book(props: BestBookProps) {
             {rank < 10 ? <IcRanknumber /> : <IcRankLarge />}
             <RankNum>{rank}</RankNum>
           </Rank>
-          <Title>
+          <Title onClick={onClick}>
             <LargeBlackText>{title}</LargeBlackText>
             {subtitle && <GreyText>- {subtitle}</GreyText>}
           </Title>
@@ -115,8 +115,6 @@ function Book(props: BestBookProps) {
 export default Book;
 
 const BookWrapper = styled.div`
-  cursor: pointer;
-
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -129,6 +127,7 @@ const BookWrapper = styled.div`
 `;
 
 const BookImg = styled.img`
+  cursor: pointer;
   width: 8.2rem;
   height: 12.4rem;
   border: 0.05rem solid ${({ theme }) => theme.colors.grey_200};
@@ -174,9 +173,12 @@ const Right = styled.div`
   align-items: flex-start;
 `;
 const Title = styled.div`
+  cursor: pointer;
+
   display: flex;
   flex-wrap: wrap;
   gap: 0.2rem;
+
   width: 25rem;
 `;
 
