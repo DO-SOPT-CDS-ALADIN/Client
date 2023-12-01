@@ -54,13 +54,16 @@ const TopNavWrapper = styled.div<TopNavProps>`
   position: fixed;
   z-index: 10;
   top: 4.8rem;
+  right: 0;
+  left: 0;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 100%;
+  width: 37.5rem;
   height: 4.8rem;
+  margin: 0 auto;
 
   background-color: ${({ theme }) => theme.colors.white};
 
