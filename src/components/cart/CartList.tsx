@@ -51,14 +51,14 @@ function CartList() {
     setTotalPrice(
       cartList.reduce((acc: number, item: PriceType) => {
         const discountPrice = parsePrice(item.discountPrice);
-        return acc + discountPrice;
+        return acc + discountPrice * item.count;
       }, 0)
     );
 
     setTotalMileage(
       cartList.reduce((acc: number, item: PriceType) => {
         const milege = parsePrice(item.mileage);
-        return acc + milege;
+        return acc + milege * item.count;
       }, 0)
     );
 
