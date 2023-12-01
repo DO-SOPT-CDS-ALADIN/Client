@@ -16,6 +16,7 @@ import {
   totalPriceState,
   totalMileageState,
   totalItemCountState,
+  totalBookCountState,
 } from '../../recoil/atoms/receiptState';
 import { parsePrice } from '../../utils/Price';
 import { useCart } from '../../hooks/useCart';
@@ -46,6 +47,7 @@ function Book(props: CartItemProps) {
   const [, setTotalPrice] = useRecoilState(totalPriceState);
   const [, setTotalMileage] = useRecoilState(totalMileageState);
   const [, setTotalItemCount] = useRecoilState(totalItemCountState);
+  const [, setTotalBookCount] = useRecoilState(totalBookCountState);
 
   const calculatePrice = () => {
     const price = parsePrice(discountPrice);
@@ -53,6 +55,7 @@ function Book(props: CartItemProps) {
     setTotalPrice(prev => (!isCheckedList[index] ? prev + price : prev - price));
     setTotalMileage(prev => (!isCheckedList[index] ? prev + mile : prev - mile));
     setTotalItemCount(prev => (!isCheckedList[index] ? prev + 1 : prev - 1));
+    setTotalBookCount(prev => (!isCheckedList[index] ? prev + count : prev - count));
   };
 
   const handleDeleteFromCart = () => {
