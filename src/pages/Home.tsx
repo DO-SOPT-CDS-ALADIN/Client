@@ -30,6 +30,8 @@ import Footer from '../components/common/Footer';
 import BottomNav from '../components/common/BottomNav';
 import AdditionalInfos from '../components/home/AdditionalInfos';
 import { IcBtnPage } from '../assets/icons';
+import PAGE from '../constants/page';
+import BackButton from '../components/common/BackButton';
 
 function Home() {
   return (
@@ -60,6 +62,7 @@ function Home() {
       <AladinerTVSlider />
       <AdditionalInfos />
       <Footer />
+      <BackButton page={PAGE.HOME} />
       <BottomNav />
     </HomeWrapper>
   );
@@ -73,13 +76,15 @@ const HomeWrapper = styled.div`
 `;
 
 const BannerImgWrapper = styled.div`
-  width: 100%;
-  height: 21rem;
+  position: relative;
+
   display: flex;
   justify-content: center;
-  background-color: rgba(0, 136, 160, 1);
 
-  position: relative;
+  width: 100%;
+  height: 21rem;
+
+  background-color: rgba(0, 136, 160, 1);
 `;
 
 const BannerImg = styled.img`
