@@ -3,6 +3,7 @@ import React from 'react';
 export interface CartItemProps {
   id: number;
   index: number;
+  count: number;
   title: string;
   imgUrl: string;
   discountPrice: string;
