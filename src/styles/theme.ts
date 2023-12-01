@@ -26,72 +26,118 @@ const colors = {
 const fonts = {
   head1: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 800;
     font-size: 2.8rem;
+    font-weight: 800;
+    font-style: normal;
+    line-height: normal;
   `,
   head2: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 800;
     font-size: 2.4rem;
+    font-weight: 800;
+    font-style: normal;
+    line-height: normal;
   `,
   head3: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 700;
     font-size: 2.2rem;
+    font-weight: 700;
+    font-style: normal;
+    line-height: normal;
   `,
   head4: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 700;
     font-size: 2rem;
+    font-weight: 700;
+    font-style: normal;
+    line-height: normal;
   `,
   title1_bold: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 700;
     font-size: 1.8rem;
+    font-weight: 700;
+    font-style: normal;
+    line-height: normal;
   `,
   title1_reg: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 400;
     font-size: 1.8rem;
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
   `,
   title2_bold: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 700;
     font-size: 1.6rem;
+    font-weight: 700;
+    font-style: normal;
+    line-height: normal;
   `,
   title2_reg: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 400;
     font-size: 1.6rem;
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
   `,
   body1: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 700;
     font-size: 1.4rem;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 140%;
+  `,
+  body1_copy: css`
+    font-family: 'AppleSDGothicNeo';
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 160%;
+    letter-spacing: -0.045rem;
   `,
   body2: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 400;
     font-size: 1.4rem;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 140%;
+  `,
+  body3: css`
+    font-family: 'AppleSDGothicNeo';
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: normal;
+  `,
+  body4: css`
+    font-family: 'AppleSDGothicNeo';
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: normal;
   `,
   detail1: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 700;
     font-size: 1.2rem;
+    font-weight: 700;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.6px;
   `,
   detail2: css`
     font-family: 'AppleSDGothicNeo';
-    font-weight: 400;
     font-size: 1.2rem;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 160%;
+    letter-spacing: -0.6px;
   `,
 };
 
-const Shadows = {
+const shadows = {
   large: '10px 20px 20px 0px rgba(0, 0, 0, 0.25)',
-  mini: '0px 6px 2px 0px rgba(0, 0, 0, 0.05)',
+  mini: '0px 2px 6px 0px rgba(0, 0, 0, 0.05)',
 };
 
-const Radius = {
+const radius = {
   s: '4px',
   m: '8px',
   l: '16px',
@@ -100,8 +146,8 @@ const Radius = {
 const theme = {
   colors,
   fonts,
-  Shadows,
-  Radius,
+  shadows,
+  radius,
 };
 
 export default theme;

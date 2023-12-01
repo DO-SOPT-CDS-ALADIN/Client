@@ -12,6 +12,7 @@ import IcReviewLikeOn from './ic_review_like_on.svg?react';
 import IcReviewLikeOff from './ic_review_like_off.svg?react';
 import IcRanknumber from './ic_ranknumber.svg?react';
 import IcRank from './ic_rank.svg?react';
+import IcRankLarge from './ic_rank_icon_large.svg?react';
 import IcPlus from './ic_plus.svg?react';
 import IcPlusMini from './ic_plus_mini.svg?react';
 import IcPlay from './ic_play.svg?react';
@@ -35,6 +36,7 @@ import IcGift from './ic_gift.svg?react';
 import IcEye from './ic_eye.svg?react';
 import IcEnter from './ic_enter.svg?react';
 import IcEnterXs from './ic_enter_xs.svg?react';
+import IcEnterXsGrey from './ic_enter_xs_grey.svg?react';
 import IcDown from './ic_down.svg?react';
 import IcDownXs from './ic_down_xs.svg?react';
 import IcDownXsGray from './ic_down_xs_gray.svg?react';
@@ -49,6 +51,7 @@ import IcCheckboxGray from './ic_checkbox_gray.svg?react';
 import IcCheckboxFilled from './ic_checkbox_filled.svg?react';
 import IcCheckboxEmpty from './ic_checkbox_empty.svg?react';
 import IcCheckboxChecked from './ic_checkbox_checked.svg?react';
+import IcCheckboxUncheckedGrey from './ic_checkbox_unchecked_grey.svg?react';
 import IcCheckWhite from './ic_check_white.svg?react';
 import IcCheckPink from './ic_check_pink.svg?react';
 import IcCheckGray from './ic_check_gray.svg?react';
@@ -77,6 +80,20 @@ import IcBestDomestic from './ic_best_domestic.svg?react';
 import IcBack from './ic_back.svg?react';
 import IcAudio from './ic_audio.svg?react';
 import IcAd from './ic_ad.svg?react';
+import IcOpenQuota from './ic_open_quota.svg?react';
+import IcCloseQuota from './ic_close_quota.svg?react';
+import IcFundingBar from './ic_funding_bar.svg?react';
+import IcBtnPage from './ic_btn_page.svg?react';
+import IcQuickDelivery from './ic_quick_delivery.svg?react';
+import IcDetailsSelectRectangle from './ic_details_select_rectangle.svg?react';
+import IcStar0 from './ic_star_0.svg?react';
+import IcStar1 from './ic_star_1.svg?react';
+import IcStar2 from './ic_star_2.svg?react';
+import IcStar3 from './ic_star_3.svg?react';
+import IcStar4 from './ic_star_4.svg?react';
+import IcStar5 from './ic_star_5.svg?react';
+import IcEllipse51 from './ic_ellipse_51.svg?react';
+import IcEllipse51Grey from './ic_ellipse_51_grey.svg?react';
 
 export {
   IcUp,
@@ -90,6 +107,7 @@ export {
   IcReviewLikeOn,
   IcReviewLikeOff,
   IcRanknumber,
+  IcRankLarge,
   IcRank,
   IcPlus,
   IcPlusMini,
@@ -114,6 +132,7 @@ export {
   IcEye,
   IcEnter,
   IcEnterXs,
+  IcEnterXsGrey,
   IcDown,
   IcDownXs,
   IcDownXsGray,
@@ -156,4 +175,19 @@ export {
   IcBack,
   IcAudio,
   IcAd,
+  IcOpenQuota,
+  IcCloseQuota,
+  IcFundingBar,
+  IcBtnPage,
+  IcQuickDelivery,
+  IcStar0,
+  IcStar1,
+  IcStar2,
+  IcStar3,
+  IcStar4,
+  IcStar5,
+  IcEllipse51,
+  IcEllipse51Grey,
+  IcCheckboxUncheckedGrey,
+  IcDetailsSelectRectangle,
 };
