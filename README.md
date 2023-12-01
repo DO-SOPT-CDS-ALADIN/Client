@@ -1,9 +1,5 @@
-# Client
-
-💛 DO-SOPT 합동 세미나 1조 웹 레포입니다!
-
 <div align="center">
-<h1> 🧞알라딘🧞 </h1>
+<h1> 🧞‍♂️ 알라딘 🧞‍♂️ </h1>
 <img width="1399" alt="스크린샷 2023-12-01 오후 6 35 00" src="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Client/assets/60962533/4cb4cfda-4008-46a4-b6bc-322236b8f5f5">
 
 
@@ -27,12 +23,18 @@
   </ul><br/></div>
 
 <h3> 2️⃣ Best 페이지 </h3>
-<img src="https://github.com/SopkathonTeam3/Client/assets/81609304/5508a245-a4e6-41ab-904b-7b67f9e9d5cc"  alt="기능1-대표이미지" />
+
+| <img width="300" alt="image" src="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Client/assets/46593078/6e5fa8e7-6afb-4381-bde8-689c927a37aa"> | <img width="300" alt="image" src="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Client/assets/46593078/eda2cda8-faa3-4aef-b3eb-670500ae4460"> | <img width="300" alt="image" src="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Client/assets/46593078/871d3f32-3b2a-4072-8fd3-462bbc9f1ad1"> |
+| :--------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------: |
+| <div align="center"><b>책 카테고리 & 기간 선택 & 책 리스트</b></div> | <div align="center"><b>전체 카테고리 팝업</b></div> | <div align="center"><b>페이지네이션</b></div> |
+
 <div >
   <ul> 
-    <li></li>
-    <li></li>
-    <li></li> 
+    <li>베스트 책 리스트</li>
+    <li>책 타입 선택 가로 스크롤</li>
+    <li>책 카테고리 가로 스크롤</li> 
+    <li>책 전체 카테고리 팝업</li>
+    <li>책 리스트에서 타이틀 클릭 시 상세 페이지로 이동</li> 
   </ul>
   <br/></div>
 
@@ -47,12 +49,25 @@
   <br/></div>
 
 <h3> 4️⃣ Cart 페이지 </h3>
-<img src="https://github.com/SopkathonTeam3/Client/assets/81609304/3e93b242-d5db-45ea-8f3b-ed9ca877cb66"  alt="기능1-대표이미지" />
+
+| <img width="300" alt="image" src="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Client/assets/46593078/88a56819-fce0-45f9-a797-d1a98556a370"> | <img width="300" alt="image" src="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Client/assets/46593078/57e3fb2c-c300-4bc5-9020-f7cd699fce7f"> | <img width="300" alt="image" src="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Client/assets/46593078/916bdd12-7ece-4df4-8886-cb7add6d7736"> |
+| :--------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------: |
+| <div align="center"><b>헤더 & 탭바 & 필터 & 장바구니 리스트</b></div> | <div align="center"><b>영수증 & 함께 구매한 도서</b></div> | <div align="center"><b>알라딘 굿즈 & 알라딘 커피 & 주문 푸터</b></div> |
+
 <div >
     <ul> 
-    <li></li>
-    <li></li>
-    <li></li>
+    <li>헤더 백버튼 클릭시 뒤로가기</li>
+    <li>헤더 홈버튼 클릭시 홈으로 이동</li>
+    <li>전체 선택 클릭 시 아이템 전체 선택 / 전체 해제</li>
+    <li>각 아이템 개별 선택</li>
+    <li>각 아이템 개수 조절</li>
+    <li>선택된 아이템 영수증 계산</li>
+    <li>각 아이템 개별 삭제</li>
+    <li>선택 아이템 일괄 삭제</li>
+    <li>선택된 아이템 영수증 계산</li>
+    <li>함깨 구매한 도서</li>
+    <li>알라딘 굿즈 & 알라딘 커피</li>
+    <li>선물하기 & 주문하기 버튼</li>
   </ul>
   <br/></div>
 
@@ -63,16 +78,27 @@
 |                                                    <div align = "center"><b>지민</b></div>                                                     |                                                    <div align = "center"><b>정우</b></div>                                                     |                            <div align = "center"><b>수빈</b></div>                            |
 |                                                    [@urjimyu](https://github.com/urjimyu)                                                     |                                                     [@jungwoo3490](https://github.com/jungwoo3490)                                                     |                            [@binllionaire](https://github.com/binllionaire)                             |
 
-#### 지민
+### 👥 역할 분담
 
-`초기 세팅`, 
+#### `👩🏻‍💻 지민`
 
-#### 정우
 
-`초기 세팅`, `메인 페이지`, `편집장의 선택 GET API`, `README 작성`
+#### `👨🏻‍💻 정우`
 
-#### 수빈
-`초기 세팅`,
+| 종류 | 목록 |
+| :---: | --- |
+| setting ⚙️ | `커스텀 스타일`|
+| view 📱 | `메인 페이지` |
+|api 📡 | `편집장의 선택(GET)` |
+|etc ✨ | `README 작성` |
+
+#### `👩🏻‍💻 수빈`
+
+| 종류 | 목록 |
+| :---: | --- |
+| setting ⚙️ | `폴더 구조` `라우팅`|
+| view 📱 | `공통 컴포넌트` `베스트 페이지` `장바구니 페이지` |
+|api 📡 | `베스트 도서 리스트 조회(GET)` `장바구니 개수 조회(GET)` `장바구니 추가(POST)`<br/> `장바구니 삭제(DELETE)` `장바구니 개수 변경(PATCH)` `장바구니 목록 조회(GET)` |
 
 
 <h2> 🛠 기술스택 </h2>
