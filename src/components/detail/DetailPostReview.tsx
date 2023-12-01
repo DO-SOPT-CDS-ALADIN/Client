@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import {
+  IcCheckboxChecked,
   IcCheckboxGray,
   IcEnterXsGrey,
   IcStarLargeGray,
@@ -19,11 +20,16 @@ function DetailPostReview({ bookId, setToast, setToastMessage }: DetailPostRevie
   const [textAreaValue, setTextAreaValue] = useState('');
   const [star, setStar] = useState(5);
   const [clickedStars, setClickedStars] = useState([true, true, true, true, true]);
+  const [isChecked, setIsChecked] = useState(false);
 
   const { reviewResponse, reviewError, reviewLoading, postReview } = usePostReview(bookId);
 
   const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setTextAreaValue(e.target.value);
+  };
+
+  const onClickCheckbox = () => {
+    setIsChecked(!isChecked);
   };
 
   const handleClickPostButton = async () => {
@@ -77,7 +83,11 @@ function DetailPostReview({ bookId, setToast, setToastMessage }: DetailPostRevie
       />
       <ByteCountText>현재 {textAreaValue.length}/280byte</ByteCountText>
       <SpoilerCheckboxWrapper>
-        <IcCheckboxGray />
+        {isChecked ? (
+          <IcCheckboxChecked onClick={onClickCheckbox} />
+        ) : (
+          <IcCheckboxGray onClick={onClickCheckbox} />
+        )}
         <Body2Text>스포일러 포함</Body2Text>
       </SpoilerCheckboxWrapper>
       <PostButton type="button" onClick={handleClickPostButton}>
@@ -175,6 +185,10 @@ const SpoilerCheckboxWrapper = styled.div`
   display: flex;
   column-gap: 1rem;
   align-items: center;
+
+  & > svg {
+    cursor: pointer;
+  }
 `;
 
 const Body2Text = styled.span`

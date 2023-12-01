@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import {
   IcCart,
-  IcCheckboxEmpty,
+  IcCheckboxChecked,
   IcCheckboxUncheckedGrey,
   IcEnterXs,
   IcHeartOff,
@@ -11,10 +11,16 @@ import {
 
 function DetailSeries() {
   const [seriesLike, setSeriesLike] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleSeriesLikeClick = () => {
     setSeriesLike(!seriesLike);
   };
+
+  const onClickCheckbox = () => {
+    setIsChecked(!isChecked);
+  };
+
   return (
     <DetailSeriesWrapper>
       <SeriesTitleWrapper>
@@ -25,7 +31,11 @@ function DetailSeries() {
         <Detail2Text className="blue">신간알리미 신청</Detail2Text>
       </SeriesTitleWrapper>
       <CheckboxWrapper>
-        <IcCheckboxEmpty />
+        {isChecked ? (
+          <IcCheckboxChecked onClick={onClickCheckbox} />
+        ) : (
+          <IcCheckboxUncheckedGrey onClick={onClickCheckbox} />
+        )}
         <SeriesInfoWrapper>
           <Body2Text>설자은, 금성으로 돌아오다</Body2Text>
           <DetailTextsWrapper>
@@ -38,7 +48,11 @@ function DetailSeries() {
       <Divider />
       <SeriesUnderWrapper>
         <TotalCheckboxWrapper>
-          <IcCheckboxUncheckedGrey />
+          {isChecked ? (
+            <IcCheckboxChecked onClick={onClickCheckbox} />
+          ) : (
+            <IcCheckboxUncheckedGrey onClick={onClickCheckbox} />
+          )}
           <Body2Text>전체선택</Body2Text>
         </TotalCheckboxWrapper>
         <SeriesButtonsWrapper>
@@ -136,6 +150,10 @@ const CheckboxWrapper = styled.div`
   justify-content: left;
 
   width: 100%;
+
+  & > svg {
+    cursor: pointer;
+  }
 `;
 
 const TotalCheckboxWrapper = styled.div`
@@ -143,6 +161,10 @@ const TotalCheckboxWrapper = styled.div`
   column-gap: 1.4rem;
   align-items: center;
   justify-content: left;
+
+  & > svg {
+    cursor: pointer;
+  }
 `;
 
 const SeriesInfoWrapper = styled.div`
