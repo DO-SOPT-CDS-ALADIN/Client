@@ -10,8 +10,8 @@ function HotBook() {
       </HeaderWrapper>
       <SlideBannerContainer>
         <SlideContainer>
-          {HOT_BOOK_IMAGE_LINKS.map(() => (
-            <SlideBannerImgContainer>
+          {HOT_BOOK_IMAGE_LINKS.map(index => (
+            <SlideBannerImgContainer key={index}>
               <HotBookBanner />
             </SlideBannerImgContainer>
           ))}

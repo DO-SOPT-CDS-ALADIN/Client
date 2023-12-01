@@ -15,8 +15,8 @@ function ToBeContinuedSlider() {
       <SectionHeader title="투비컨티뉴드 추천 노트" icon={<IcEnter />}></SectionHeader>
       <BooksContainer>
         <BooksWrapper style={{ width: `${TO_BE_CONTINUED_BOOKS.length * 27}rem` }}>
-          {TO_BE_CONTINUED_BOOKS.map(({ img, title, author }) => (
-            <ToBeContinued img={img} title={title} author={author} />
+          {TO_BE_CONTINUED_BOOKS.map(({ img, title, author }, index) => (
+            <ToBeContinued key={index} img={img} title={title} author={author} />
           ))}
         </BooksWrapper>
       </BooksContainer>

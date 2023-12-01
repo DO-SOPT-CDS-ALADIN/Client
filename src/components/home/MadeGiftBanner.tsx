@@ -21,7 +21,7 @@ export default MadeGiftBanner;
 
 const MadeGiftBannerWrapper = styled.div`
   width: 34.1rem;
-  height: 22.6rem;
+  height: 23rem;
 
   position: relative;
 

@@ -2,48 +2,17 @@ import styled from 'styled-components';
 import { useState, useRef, useEffect } from 'react';
 import SectionHeader from './SectionHeader';
 import { IcEnter, IcBigcircleLeft, IcBigcircleRight } from '../../assets/icons';
-
-const dummyData = [
-  {
-    title: `이 아이는 자라서 이렇게 됩니다.`,
-    subtitle: `"길에서 살아남아 성묘가 된 기적의 40냥이들"`,
-    content: `테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스`,
-    imageSrc: `https://image.aladin.co.kr/product/32386/47/cover200/k842935882_1.jpg?RS=170`,
-  },
-  {
-    title: `테스트2`,
-    subtitle: `"테스트2"`,
-    content: `테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2테스트2`,
-    imageSrc: `https://image.aladin.co.kr/product/32386/47/cover200/k842935882_1.jpg?RS=170`,
-  },
-  {
-    title: `테스트3`,
-    subtitle: `테스트3`,
-    content: `테스트3테스트3테스트3테스트3테스트3테스트3테스트3테스트3테스트3테스트3테스트3테스트3테스트3테스트3테스트3테스트3테스트3`,
-    imageSrc: `https://image.aladin.co.kr/product/32386/47/cover200/k842935882_1.jpg?RS=170`,
-  },
-  {
-    title: `테스트4`,
-    subtitle: `테스트4`,
-    content: `테스트4테스트4테스트4테스트4테스트4테스트4테스트4테스트4테스트4테스트4테스트4테스트4테스트4테스트4테스트4`,
-    imageSrc: `https://image.aladin.co.kr/product/32386/47/cover200/k842935882_1.jpg?RS=170`,
-  },
-  {
-    title: `테스트5`,
-    subtitle: `테스트5`,
-    content: `테스트5테스트5테스트5테스트5테스트5테스트5테스트5테스트5테스트5테스트5테스트5테스트5테스트5테스트5테스트5테스트5테스트5테스트5`,
-    imageSrc: `https://image.aladin.co.kr/product/32386/47/cover200/k842935882_1.jpg?RS=170`,
-  },
-];
-
-const TOTAL_SLIDES = dummyData.length - 1;
-
-const containerWidth = `${dummyData.length * 11.2}rem`;
+import { useGetEditorChoice } from '../../hooks/useGetEditorChoice';
 
 function EditorSelect() {
+  const { editorChoiceBookList } = useGetEditorChoice();
+
+  const TOTAL_SLIDES = editorChoiceBookList?.length - 1;
+  const containerWidth = `${editorChoiceBookList?.length * 11.2}rem`;
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const slideRef = useRef(null);
+  const slideRef = useRef<HTMLElement>(null);
 
   const PrevSlide = () => {
     if (currentSlide === 0) {
@@ -61,13 +30,6 @@ function EditorSelect() {
     }
   };
 
-  const clampText = (text: string, maxLength: number): string => {
-    if (text.length <= maxLength) {
-      return text;
-    }
-    return text.slice(0, maxLength - 1) + '...';
-  };
-
   useEffect(() => {
     if (slideRef.current) {
       slideRef.current.style.transition = 'all 0.5s ease-in-out';
@@ -78,9 +40,9 @@ function EditorSelect() {
   return (
     <EditorSelectWrapper>
       <SectionHeader title="편집장의 선택" icon={<IcEnter />} />
-      <EditorSelectBookImgContainer ref={slideRef}>
-        {dummyData.map(({ imageSrc }, index) => (
-          <EditorSelectBookImg key={index} src={imageSrc} isCurrent={index === currentSlide} />
+      <EditorSelectBookImgContainer containerWidth={containerWidth} ref={slideRef}>
+        {editorChoiceBookList?.map(({ imgUrl }, index) => (
+          <EditorSelectBookImg key={index} src={imgUrl} isCurrent={index === currentSlide} />
         ))}
       </EditorSelectBookImgContainer>
       <PrevButton onClick={PrevSlide} className="prev_button">
@@ -90,9 +52,13 @@ function EditorSelect() {
         <IcBigcircleRight />
       </NextButton>
       <BookInfoContainer>
-        <Title>{dummyData[currentSlide].title}</Title>
-        <SubTitle>{dummyData[currentSlide].subtitle}</SubTitle>
-        <DetailContainer>{clampText(dummyData[currentSlide].content, 100)}</DetailContainer>
+        <Title>{editorChoiceBookList[currentSlide]?.title}</Title>
+        <SubTitle>{editorChoiceBookList[currentSlide]?.subtitle}</SubTitle>
+        <DetailContainer>
+          <DetailContainerText>
+            {editorChoiceBookList[currentSlide]?.description}
+          </DetailContainerText>
+        </DetailContainer>
       </BookInfoContainer>
     </EditorSelectWrapper>
   );
@@ -113,11 +79,11 @@ const EditorSelectWrapper = styled.section`
   overflow: hidden;
 `;
 
-const EditorSelectBookImgContainer = styled.section`
+const EditorSelectBookImgContainer = styled.section<{ containerWidth: string }>`
   display: flex;
   column-gap: 4rem;
 
-  width: ${containerWidth}px;
+  width: ${({ containerWidth }) => containerWidth};
   padding-left: 11.5rem;
   margin-top: 2rem;
 `;
@@ -183,11 +149,17 @@ const DetailContainer = styled.div`
   border-radius: ${({ theme }) => theme.radius.s};
 
   color: white;
+`;
 
-  white-space: wrap;
+const DetailContainerText = styled.p`
+  ${({ theme }) => theme.fonts.body2};
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+
+  width: 31.1rem;
+  height: 8rem;
   overflow: hidden;
   text-overflow: hidden;
+  white-space: wrap;
 `;

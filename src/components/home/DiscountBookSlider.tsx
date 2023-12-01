@@ -20,8 +20,9 @@ function DiscountBookSlider({ section_title, books }: BookSliderProps) {
       <SectionHeader title={section_title} icon={<IcEnter />}></SectionHeader>
       <BooksContainer>
         <BooksWrapper style={{ width: `${books.length * 14.7}rem` }}>
-          {books.map(({ img, title, original_price, discount_price }) => (
+          {books.map(({ img, title, original_price, discount_price }, index) => (
             <DiscountBook
+              key={index}
               img={img}
               title={title}
               original_price={original_price}

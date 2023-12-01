@@ -18,8 +18,8 @@ function TopTen() {
         <RankNumber>1</RankNumber>
       </FirstRankBook>
       <TagList>
-        {TOP_TEN_TAG_TEXT_LIST.map(item => (
-          <Tag text={item} />
+        {TOP_TEN_TAG_TEXT_LIST.map((item, index) => (
+          <Tag key={index} text={item} />
         ))}
       </TagList>
     </TopTenWrapper>
