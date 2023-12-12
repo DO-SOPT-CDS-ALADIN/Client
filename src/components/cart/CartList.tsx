@@ -47,29 +47,17 @@ function CartList() {
     setTotalBookCount(0);
   };
 
+  const setProperty = (cartList: PriceType[], property: string) => {
+    return cartList.reduce((acc: number, item: PriceType) => {
+      const value = parsePrice(item[property]);
+      return acc + value * item.count;
+    }, 0);
+  };
   const setAllItemPrice = () => {
-    setTotalPrice(
-      cartList.reduce((acc: number, item: PriceType) => {
-        const discountPrice = parsePrice(item.discountPrice);
-        return acc + discountPrice * item.count;
-      }, 0)
-    );
-
-    setTotalMileage(
-      cartList.reduce((acc: number, item: PriceType) => {
-        const milege = parsePrice(item.mileage);
-        return acc + milege * item.count;
-      }, 0)
-    );
-
+    setTotalPrice(setProperty(cartList, 'discountPrice'));
+    setTotalMileage(setProperty(cartList, 'mileage'));
     setTotalItemCount(cartList.length);
-
-    setTotalBookCount(
-      cartList.reduce((acc: number, item: PriceType) => {
-        const count = item.count;
-        return acc + count;
-      }, 0)
-    );
+    setTotalBookCount(setProperty(cartList, 'count'));
   };
 
   const deleteSelectedItem = () => {
